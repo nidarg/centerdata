@@ -1,6 +1,4 @@
-// import { Title } from '@/components/Title';
 
-// import { ContainerScroll } from '@/components/ui/container-scroll-animation';
 
 
 import TextImage from '@/components/TextImage';
