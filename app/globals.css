@@ -1,0 +1,186 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scrollbar-gutter: stable;
+}
+body {
+  @apply !min-w-full;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* #__next {
+  @apply h-full;
+  overflow-y: scroll;
+} */
+
+@layer components {
+  .container {
+    @apply mx-auto sm:w-full max-w-screen-2xl  md:px-10;
+  }
+}
+
+
+
+
+/*
+:root {
+
+  --background: 254 100% 95%;
+  --foreground: 254 5% 10%;
+  --card: 254 50% 90%;
+  --card-foreground: 254 5% 15%;
+  --popover: 254 100% 95%;
+  --popover-foreground: 254 100% 10%;
+
+
+  --primary: 180 100% 30%; /* Bright Cyan 
+  --primary-foreground: 0 0% 100%; /* White text on primary 
+  --secondary: 35 30% 85%; /* Soft, warm beige 
+  --secondary-foreground: 254 5% 15%; /* Dark gray text for contrast 
+
+  
+  --muted: 216 30% 85%;  Light muted gray 
+  --muted-foreground: 254 5% 40%;  Mid-gray for readability 
+  --accent: 174 70% 25%;  Darker cyan 
+  --accent-foreground: 0 0% 98%;  White text on accent 
+
+   Destructive Colors 
+  --destructive: 0 100% 50%;  Bright red for warnings 
+  --destructive-foreground: 254 5% 90%;  Light foreground for contrast 
+
+   Border and Input Colors 
+  --border: 254 30% 40%;  Darker gray border 
+  --input: 254 30% 50%;  Light input background 
+
+   Misc 
+  --ring: 180 100% 50%;  Darker teal ring effect 
+  --radius: 0.5rem;
+
+   Specific Colors 
+  --cyan: 180 100% 30%;  Bright Cyan 
+  --teal: 174 75% 20%;  Bright Teal 
+}
+
+.dark {
+   Background and Foreground Colors 
+  --background: 240 32% 16%;  Deep Navy Blue 
+  --foreground: 265 10% 98%;  Light text 
+  --card: 263 50% 10%;  Darker card background 
+  --card-foreground: 265 10% 98%;  Light card text 
+  --popover: 263 50% 10%;  Dark background for popovers 
+  --popover-foreground: 265 10% 98%;  Light popover text 
+
+   Primary and Secondary Colors 
+  --primary: 180 100% 30%;  Bright vibrant teal 
+  --primary-foreground: 0 0% 100%;  White on primary 
+  --secondary: 263 30% 25%;  Dark grayish-beige for contrast 
+  --secondary-foreground: 265 10% 98%;  Light text on secondary 
+
+   Muted and Accent Colors 
+  --muted: 263 20% 20%;  Dark muted purple-gray 
+  --muted-foreground: 265 10% 60%;  Gray-muted foreground 
+  --accent: 180 100% 50%;  Bright Cyan 
+  --accent-foreground: 0 0% 98%;  Light on accent 
+
+   Destructive Colors 
+  --destructive: 0 62.8% 30.6%;  Darker red 
+  --destructive-foreground: 265 10% 98%;  Light on red 
+
+   Border and Input Colors 
+  --border: 263 30% 12%;  Darker muted purple for contrast 
+  --input: 263 30% 12%;  Dark input background 
+
+   Misc 
+  --ring: 180 100% 50%;  Bright Cyan ring effect 
+  --radius: 0.5rem;
+
+   Specific Colors 
+  --cyan: 180 100% 30%;  Bright Cyan 
+  --teal: 174 75% 20%;  Bright Teal 
+}
+*/
+
+:root {
+  --background: 165, 36%, 87%; /* Pale Mint Green */
+  --foreground: 150, 9%, 15%; /* Dark greenish-gray text */
+
+  --primary: 12, 81%, 48%; /* Vibrant Red-Orange */
+  --primary-foreground: 0, 0%, 100%; /* White text on primary */
+
+  --secondary: 35, 38%, 62%; /* Muted warm beige */
+  --secondary-foreground: 150, 9%, 15%; /* Dark greenish-gray text */
+
+  --muted: 200, 17%, 85%; /* Light muted gray */
+  --muted-foreground: 150, 10%, 25%; /* Slightly darker muted text */
+
+  --accent: 182, 70%, 23%; /* Teal */
+  --accent-foreground: 0, 0%, 98%; /* Light text on accent */
+
+  --destructive: 2, 100%, 39%; /* Vivid red */
+  --destructive-foreground: 254, 100%, 95%; /* Off-white text on destructive */
+
+  --border: 150, 9%, 30%; /* Darker muted green-gray border */
+  --input: 200, 20%, 90%; /* Light input background */
+
+  --ring: 180, 40%, 50%; /* Vibrant Teal Ring Effect */
+  --radius: 0.5rem;
+
+  --beige:30, 44%, 69%; /* light beige*/
+  --peach:32, 100%, 79%; /*peach */
+  --cyan: 180, 70%, 60%; /* Bright Cyan */
+  --teal: 174, 75%, 50%; /* Vibrant Teal */
+}
+
+.dark {
+  --background: 150, 10%, 10%; /* Deep dark greenish-gray background */
+  --foreground: 33, 38%, 88%; /* Light beige text */
+
+  --primary: 12, 81%, 48%; /* Vibrant Red-Orange */
+  --primary-foreground: 0, 0%, 100%; /* White text on primary */
+
+  --secondary: 8, 15%, 25%; /* Dark muted red */
+  --secondary-foreground: 33, 38%, 88%; /* Light beige text */
+
+  --muted: 200, 15%, 18%; /* Dark muted gray */
+  --muted-foreground: 200, 30%, 85%; /* Slightly lighter muted text */
+
+  --accent: 182, 70%, 23%; /* Teal */
+  --accent-foreground: 0, 0%, 98%; /* Light text on accent */
+
+  --destructive: 2, 100%, 39%; /* Vivid red */
+  --destructive-foreground: 265, 10%, 98%; /* Light text on destructive */
+
+  --border: 150, 9%, 15%; /* Dark greenish-gray border */
+  --input: 150, 10%, 20%; /* Dark input background */
+
+  --ring: 180, 70%, 50%; /* Bright Cyan Ring Effect */
+  --radius: 0.5rem;
+  --beige:30, 44%, 69%; /* light beige*/
+  --peach:32, 100%, 79%; /*peach */
+  --cyan: 180, 70%, 60%; /* Bright Cyan */
+  --teal: 174, 75%, 50%; /* Vibrant Teal */
+}
+
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}

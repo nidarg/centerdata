@@ -1,0 +1,75 @@
+:root {
+  /* Background Colors */
+  --background: 254 100% 95%; /* Soft background */
+  --foreground: 254 5% 10%; /* Dark foreground for contrast */
+  --card: 254 50% 90%; /* Light card background */
+  --card-foreground: 254 5% 15%; /* Slightly darker for cards */
+  --popover: 254 100% 95%; /* Popovers match background */
+  --popover-foreground: 254 100% 10%; /* Strong contrast foreground */
+
+  /* Primary and Secondary Colors */
+  --primary: 174, 100%, 45%; /* teal */
+  --primary-foreground: 0 0% 100%; /* White text on primary */
+  --secondary: 262 20% 85%; /* Softer purple-gray */
+  --secondary-foreground: 254 5% 15%; /* Dark foreground for legibility */
+
+  /* Muted and Accent Colors */
+  --muted: 216 30% 85%; /* Light muted background */
+  --muted-foreground: 254 5% 40%; /* Mid-gray for readability */
+  --accent: 265 50% 18%; /* Dark purple accent */
+  --accent-foreground: 265 10% 98%; /* White on accent */
+
+  /* Destructive Colors */
+  --destructive: 0 100% 50%; /* Bright red for warnings */
+  --destructive-foreground: 254 5% 90%; /* Light foreground for readability */
+
+  /* Border and Input Colors */
+  --border: 254 30% 62%; /* Soft border */
+  --input: 254 30% 50%; /* Light input background */
+
+  /* Misc */
+  --ring: 254 47% 22.9%;
+  --radius: 0.5rem;
+
+  /* Specific Colors */
+  --cyan: 168, 100%, 50%; /* Cyan for accents */
+  --teal: 174, 100%, 45%; /* Teal */
+}
+
+.dark {
+  /* Background Colors */
+  --background: 261 34% 15%; /* Dark purple background */
+  --foreground: 265 10% 98%; /* Light foreground text */
+  --card: 265 45% 7.8%; /* Darker card background */
+  --card-foreground: 265 10% 98%; /* Light text on cards */
+  --popover: 265 45% 7.8%; /* Matches dark card background */
+  --popover-foreground: 265 10% 98%; /* Light popover text */
+
+  /* Primary and Secondary Colors */
+  --primary: 207 90% 54%; /* Muted blue */
+  --primary-foreground: 0 0% 100%; /* White foreground for primary */
+  --secondary: 262 25% 25%; /* Darker gray-purple for contrast */
+  --secondary-foreground: 265 10% 98%; /* Light text on secondary */
+
+  /* Muted and Accent Colors */
+  --muted: 265 50% 18%; /* Dark muted background */
+  --muted-foreground: 265 10% 56%; /* Gray-muted foreground */
+  --accent: 168, 100%, 50%; /* Cyan for accents */
+  --accent-foreground: 265 10% 98%; /* White text on accent */
+
+  /* Destructive Colors */
+  --destructive: 0 62.8% 30.6%; /* Darker red */
+  --destructive-foreground: 265 10% 98%; /* Light on red */
+
+  /* Border and Input Colors */
+  --border: 265 50% 18%; /* Darker border for contrast */
+  --input: 265 50% 18%; /* Dark input background */
+
+  /* Misc */
+  --ring: 265 100% 60%;
+  --radius: 0.5rem;
+
+  /* Specific Colors */
+  --cyan: 168, 100%, 50%; /* Cyan for accents */
+  --teal: 174, 100%, 45%; /* Teal */
+}
