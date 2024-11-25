@@ -155,17 +155,21 @@ function NavLinks() {
               onOpenChange={setOpenDropdown}
             >
               <DropdownMenuTrigger asChild>
+                {/* <button className='relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50'>
+                  <span className='absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]' />
+                  <span className='inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl'>
+                    Border Magic
+                  </span>
+                </button> */}
+
                 <Button
-                  className='mr-2 lg:min-w-[150px] sm:min-w-[100px] min-w-[60px]'
+                  className='relative mr-2 lg:min-w-[150px] sm:min-w-[100px] min-w-[60px] h-12'
                   variant='outline'
                   asChild
                   onClick={() => setOpenDropdown(!openDropdown)}
                 >
-                  <Link
-                    className={`${isActive ? 'bg-primary text-white' : ''}`}
-                    href='#'
-                  >
-                    <span className='text-xl '>{link.label}</span>
+                  <Link className={`${isActive ? 'bg-primary' : ''}`} href='#'>
+                    <span className='text-xl'>{link.label}</span>
                   </Link>
                 </Button>
               </DropdownMenuTrigger>
@@ -238,14 +242,14 @@ function NavLinks() {
 
         return (
           <Button
-            className='mr-2 lg:min-w-[150px] sm:min-w-[100px] min-w-[60px]' // Adjust width as needed
+            className='mr-2 lg:min-w-[150px] sm:min-w-[100px] min-w-[60px] h-12' // Adjust width as needed
             key={link.href}
             asChild
             variant='outline'
           >
             <Link
               className={`${
-                isActive ? 'bg-primary text-white' : ''
+                isActive ? 'bg-primary' : ''
               } flex justify-center items-center`}
               href={link.href}
             >

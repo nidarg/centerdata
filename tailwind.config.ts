@@ -18,6 +18,7 @@ const config: Config = {
       colors: {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
+        light: 'hsl(var(--background-light))',
         cyan: 'hsl(var(--cyan))',
         teal: 'hsl(var(--teal))',
         card: {
@@ -89,6 +90,19 @@ const config: Config = {
       backgroundImage: {
         'gradient-nav':
           'radial-gradient(circle, hsla(var(--background-light), 1) 0%, hsla(var(--background), 1) 100%)',
+      },
+      animation: {
+        shimmer: 'shimmer 2s linear infinite',
+      },
+      keyframes: {
+        shimmer: {
+          '0%': {
+            backgroundPosition: '-200% 0',
+          },
+          '100%': {
+            backgroundPosition: '200% 0',
+          },
+        },
       },
     },
   },
