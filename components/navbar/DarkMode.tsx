@@ -21,7 +21,7 @@ function DarkMode() {
         <Button variant='destructive' size='icon'>
           <Sun
             style={{ width: '1.7rem', height: '1.7rem' }}
-            className='text-white rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0'
+            className='text-white rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0 hover:from-light hover:to-background'
           />
           <Moon
             style={{ width: '1.7rem', height: '1.7rem' }}
@@ -30,14 +30,14 @@ function DarkMode() {
           <span className='sr-only'>Toggle theme</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align='end'>
-        <DropdownMenuItem onClick={() => setTheme('light')}>
+      <DropdownMenuContent align='end' >
+        <DropdownMenuItem className='mb-2' onClick={() => setTheme('light')}>
           Light
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme('dark')}>
+        <DropdownMenuItem className='mb-2' onClick={() => setTheme('dark')}>
           Dark
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme('system')}>
+        <DropdownMenuItem className='mb-2' onClick={() => setTheme('system')}>
           System
         </DropdownMenuItem>
       </DropdownMenuContent>
