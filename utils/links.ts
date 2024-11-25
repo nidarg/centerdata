@@ -10,3 +10,7 @@ type NavLink = {
     { href: '/services', label: 'Services' },
     { href: '/contact', label: 'Contact' },
   ];
+
+  export const servicesLinks: string[] = [
+    '/specialized-projects','/interim-services','/tailormade-solutions'
+  ];

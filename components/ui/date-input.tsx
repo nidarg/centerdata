@@ -24,7 +24,7 @@ const DateInput = React.forwardRef<HTMLInputElement, InputProps>(
       });
       setInputValue(formattedDate);
       onChange?.({ target: { value: formattedDate } } as React.ChangeEvent<HTMLInputElement>);
-      setShowDatePicker(false); // Close the modal after selecting a date
+      // setShowDatePicker(false); // Close the modal after selecting a date
     };
 
     function handleMouseMove({ currentTarget, clientX, clientY }: React.MouseEvent) {

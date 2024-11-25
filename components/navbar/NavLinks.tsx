@@ -1,7 +1,7 @@
 
 'use client';
 
-import { links } from '@/utils/links';
+import { links, servicesLinks } from '@/utils/links';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React, { useState } from 'react';
@@ -22,7 +22,8 @@ function NavLinks() {
   return (
     <div className='flex flex-col md:flex-row gap-2 mt-2 md:mt-0'>
       {links.map((link) => {
-        const isActive = pathname === link.href;
+         const isActive = pathname === link.href 
+         const isServiceActive =  servicesLinks.includes(pathname);
 
         if (link.href === '/services') {
           return (
@@ -40,13 +41,15 @@ function NavLinks() {
                 </button> */}
 
                 <Button
-                  className='relative mr-2 lg:min-w-[150px] sm:min-w-[100px] min-w-[60px]'
+                  className={`relative mr-2 lg:min-w-[150px] sm:min-w-[100px] min-w-[60px] ${
+                    isServiceActive ? 'text-destructive border border-destructive font-bold' : ''
+                  }`}
                   variant='outline'
                   size='lg'
                   asChild
                   onClick={() => setOpenDropdown(!openDropdown)}
                 >
-                  <Link className={`${isActive ? 'text-neutral-200 border border-destructive' : ''}`} href='#'>
+                  <Link  href='#'>
                     <span className='text-xl'>{link.label}</span>
                   </Link>
                 </Button>
@@ -121,16 +124,16 @@ function NavLinks() {
 
         return (
           <Button
-            className='relative mr-2 lg:min-w-[150px] sm:min-w-[100px] min-w-[60px] ' // Adjust width as needed
+          className={`relative mr-2 lg:min-w-[150px] sm:min-w-[100px] min-w-[60px] ${
+            isActive ? 'text-destructive border border-destructive font-bold' : ''
+          }`} // Adjust width as needed
             key={link.href}
             asChild
             variant='outline'
             size='lg'
           >
             <Link
-              className={`${
-                isActive ? 'text-neutral-200 border border-destructive' : ''
-              } flex justify-center items-center`}
+             
               href={link.href}
             >
               <span className='text-lg md:text-xl'>{link.label}</span>
