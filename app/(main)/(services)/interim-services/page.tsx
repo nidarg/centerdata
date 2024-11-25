@@ -127,7 +127,7 @@ const InterimServices = () => {
       </div>
 
       {/* Description */}
-      <p className="leading-relaxed text-neutral-600 dark:text-white bg-background rounded-md  text-justify">
+      <p className="leading-relaxed text-neutral-600 dark:text-white bg-transparent rounded-md  text-justify">
         {item.description}
       </p>
     </li>

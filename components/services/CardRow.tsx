@@ -66,15 +66,15 @@ const CardRow: React.FC<CardRowProps> = ({ products, header }) => {
                 <li key={index}>{detail}</li>
               ))}
             </ul>
-            <p className="text-lg font-semibold text-primary mb-4">
+            {/* <p className="text-lg font-semibold text-primary mb-4">
               Price: {selectedProduct.price}
-            </p>
+            </p> */}
             <button
               onClick={() => {
                 addToCart(selectedProduct.id);
                 closeModal();
               }}
-              className="bg-primary text-white py-2 px-4 rounded-lg transition mb-10"
+              className="bg-primary text-white py-2 px-4 rounded-lg transition mt-10 mb-10"
             >
               Subscribe
             </button>

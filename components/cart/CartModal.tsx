@@ -95,7 +95,7 @@ const CartModal: React.FC<CartModalProps> = ({ onClose }) => {
               onClick={onClose}
               className='bg-primary text-white py-2 px-4 rounded-lg transition mt-4 block w-full'
             >
-              <Link href='/checkout'>Checkout</Link>
+              <Link className='text-center' href='/checkout'>Checkout</Link>
             </Button>
           </>
         ) : (

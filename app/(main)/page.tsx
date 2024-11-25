@@ -25,8 +25,8 @@ export default function Home() {
       <div className='mt-[85vh]'>
         <ServiceCardMain />
 
-       
-        <TextImage
+       <div id="about-us">
+       <TextImage
           title={consulting.title}
           text={consulting.text}
           imageUrl={consulting.imageUrl}
@@ -38,6 +38,8 @@ export default function Home() {
           imageUrl={innovation.imageUrl}
           reverse={true}
         />
+       </div>
+        
         <WorkWithUsMain />
 
         <Testimonials />
