@@ -135,7 +135,7 @@ function Navbar() {
 
   return (
     <>
-      <nav className='fixed top-0 left-0 right-0 z-50 w-full bg-background  min-h-[128px]'>
+      <nav className='fixed top-0 left-0 right-0 z-50 w-full bg-gradient-nav  min-h-[128px]'>
         <div className='container flex justify-between items-center px-4'>
           {/* Logo */}
           <div

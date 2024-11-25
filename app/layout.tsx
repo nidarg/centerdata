@@ -1,11 +1,5 @@
-
-
-
-
 import type { Metadata } from 'next';
 import './globals.css';
-
-
 
 export const metadata: Metadata = {
   title: 'Nordic Data Compliance Center',
@@ -21,15 +15,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-  
-         
     <html lang='en' suppressHydrationWarning>
-      <body className='container'>
-                {children}
-               
-                </body>
-                </html>
-            
-     
+      <body className='container'>{children}</body>
+    </html>
   );
 }

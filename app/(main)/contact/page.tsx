@@ -43,7 +43,7 @@ export default function Contact() {
   } = useForm<FormSchemaType>({ resolver: zodResolver(formSchema) });
 
   watch();
- 
+
   /*
   async function handleCaptchaSubmission(token: string | null) {
     try {
@@ -117,7 +117,7 @@ export default function Contact() {
 
           <Input id='fullname' type='text' {...register('fullname')} />
           {errors.fullname && isSubmitted && (
-            <span className='text-red-500 text-sm'>
+            <span className='text-destructive text-sm'>
               {errors.fullname.message}
             </span>
           )}
@@ -127,21 +127,25 @@ export default function Contact() {
           <Label htmlFor='email'>Business email</Label>
           <Input id='email' type='email' {...register('email')} />
           {errors.email && isSubmitted && (
-            <span className='text-red-500 text-sm'>{errors.email.message}</span>
+            <span className='text-destructive text-sm'>
+              {errors.email.message}
+            </span>
           )}
         </LabelInputContainer>
         <LabelInputContainer className='mb-4'>
           <Label htmlFor='phone'>Phone number</Label>
           <Input id='phone' type='text' {...register('phone')} />
           {errors.phone && isSubmitted && (
-            <span className='text-red-500 text-sm'>{errors.phone.message}</span>
+            <span className='text-destructive text-sm'>
+              {errors.phone.message}
+            </span>
           )}
         </LabelInputContainer>
         <LabelInputContainer className='mb-8'>
           <Label htmlFor='company'>Company name</Label>
           <Input id='company' type='text' {...register('company')} />
           {errors.company && isSubmitted && (
-            <span className='text-red-500 text-sm'>
+            <span className='text-destructive text-sm'>
               {errors.company.message}
             </span>
           )}
@@ -151,7 +155,7 @@ export default function Contact() {
           <Label htmlFor='period'>Book an appointment</Label>
           <DateInput id='period' type='text' {...register('period')} />
           {errors.period && isSubmitted && (
-            <span className='text-red-500 text-sm'>
+            <span className='text-destructive text-sm'>
               {errors.period.message}
             </span>
           )}
@@ -161,7 +165,7 @@ export default function Contact() {
           <Label htmlFor='message'>How can we help you?</Label>
           <Input id='message' type='text' {...register('message')} />
           {errors.message && isSubmitted && (
-            <span className='text-red-500 text-sm'>
+            <span className='text-destructive text-sm'>
               {errors.message.message}
             </span>
           )}
@@ -189,14 +193,23 @@ export default function Contact() {
                 Accept terms and conditions
               </label>
               <p className='text-sm text-neutral-200'>
-                You agree to our <span>
-                  <Link className='text-primary' href='/terms-and-conditions'>Terms of Service</Link>
-                  </span> and  <span><Link className='text-primary' href='/privacy' >Privacy Policy.</Link></span>
+                You agree to our{' '}
+                <span>
+                  <Link className='text-primary' href='/terms-and-conditions'>
+                    Terms of Service
+                  </Link>
+                </span>{' '}
+                and{' '}
+                <span>
+                  <Link className='text-primary' href='/privacy'>
+                    Privacy Policy.
+                  </Link>
+                </span>
               </p>
             </div>
           </div>
           {errors.checked && isSubmitted && (
-            <span className='text-red-500 text-sm'>
+            <span className='text-destructive text-sm'>
               {errors.checked.message}
             </span>
           )}
@@ -210,10 +223,10 @@ export default function Contact() {
       /> */}
 
         {/* <button  disabled={!isVerified} */}
-        <button 
+        <button
           className='bg-gradient-to-br relative group/btn from-zinc-900  to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]'
           type='submit'
-          disabled={isSubmitting  }
+          disabled={isSubmitting}
         >
           Contact us &rarr;
           <BottomGradient />
@@ -227,9 +240,7 @@ export default function Contact() {
             href='https://linkedin.com/company/nordic-data-compliance-centre'
           >
             <IconBrandLinkedin className='h-4 w-4  text-neutral-300' />
-            <span className='text-neutral-300 text-sm'>
-              Linkedin
-            </span>
+            <span className='text-neutral-300 text-sm'>Linkedin</span>
             <BottomGradient />
           </Link>
         </div>

@@ -21,7 +21,7 @@
 //           <FaTimes size={20} />
 //         </button>
 //         <h2 className='text-xl font-semibold mb-4'>Your Cart</h2>
-        
+
 //         {cart.length > 0 ? (
 //           <>
 //           <ul className='space-y-4'>
@@ -35,10 +35,10 @@
 //           className="bg-primary text-white py-2 px-4 rounded-lg hover:bg-primary/90 transition mt-4"
 //         >
 //           <Link href='/checkout'> Checkout</Link>
-         
+
 //         </Button>
 //           </>
-          
+
 //         ) : (
 //           <p className='text-gray-200'>Your cart is empty.</p>
 //         )}
@@ -64,28 +64,27 @@ const CartModal: React.FC<CartModalProps> = ({ onClose }) => {
   const { cart } = useCartContext();
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-background sm:min-w-[600px] p-5 rounded-lg relative max-h-screen overflow-y-auto ">
+    <div className='fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50'>
+      <div className='bg-background sm:min-w-[600px] p-5 rounded-lg relative max-h-screen overflow-y-auto '>
         <button
           onClick={onClose}
-          className="absolute top-3 right-3 text-gray-600"
+          className='absolute top-3 right-3 text-gray-600'
         >
           <FaTimes size={20} />
         </button>
-        <h2 className="text-xl font-semibold mb-4">Your Cart</h2>
+        <h2 className='text-xl font-semibold mb-4'>Your Cart</h2>
 
         {cart.length > 0 ? (
           <>
             {/* Grid layout for items */}
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-neutral-200">
+            <ul className='grid grid-cols-1 sm:grid-cols-2 gap-4 text-neutral-200'>
               {cart.map((item, index) => (
                 <li
                   key={index}
-                  className="bg-gray-800 p-4 rounded-lg shadow-md hover:shadow-primary transition"
+                  className='bg-gray-800 p-4 rounded-lg shadow-md hover:shadow-primary transition'
                 >
                   <CartItem item={item} />
                   {/* Remove Button Below Item */}
-                  
                 </li>
               ))}
             </ul>
@@ -94,13 +93,13 @@ const CartModal: React.FC<CartModalProps> = ({ onClose }) => {
             <Button
               asChild
               onClick={onClose}
-              className="bg-primary text-white py-2 px-4 rounded-lg transition mt-4 block w-full"
+              className='bg-primary text-white py-2 px-4 rounded-lg transition mt-4 block w-full'
             >
-              <Link href="/checkout">Checkout</Link>
+              <Link href='/checkout'>Checkout</Link>
             </Button>
           </>
         ) : (
-          <p className="text-gray-200">Your cart is empty.</p>
+          <p className='text-destructive'>Your cart is empty.</p>
         )}
       </div>
     </div>
@@ -108,4 +107,3 @@ const CartModal: React.FC<CartModalProps> = ({ onClose }) => {
 };
 
 export default CartModal;
-

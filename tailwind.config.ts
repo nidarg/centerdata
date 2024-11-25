@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss';
+// import plugin from 'tailwindcss';
 
 const {
   default: flattenColorPalette,
@@ -65,7 +66,6 @@ const config: Config = {
           '4': 'hsl(var(--chart-4))',
           '5': 'hsl(var(--chart-5))',
         },
-        
       },
       borderRadius: {
         lg: 'var(--radius)',
@@ -76,15 +76,19 @@ const config: Config = {
         input: `0px 2px 3px -1px rgba(0,0,0,0.1), 0px 1px 0px 0px rgba(25,28,33,0.02), 0px 0px 0px 1px rgba(25,28,33,0.08)`,
       },
       transformOrigin: {
-        'center': 'center',
+        center: 'center',
       },
       perspective: {
-        'none': 'none',
+        none: 'none',
         '500': '500px',
       },
       rotate: {
         'y-0': '0deg',
         'y-180': '180deg',
+      },
+      backgroundImage: {
+        'gradient-nav':
+          'radial-gradient(circle, hsla(var(--background-light), 1) 0%, hsla(var(--background), 1) 100%)',
       },
     },
   },
@@ -94,7 +98,21 @@ const config: Config = {
     },
   },
   // eslint-disable-next-line @typescript-eslint/no-require-imports
-  plugins: [require('tailwindcss-animate'), addVariablesForColors, require("@tailwindcss/forms")],
+  plugins: [
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    require('tailwindcss-animate'),
+    addVariablesForColors,
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    require('@tailwindcss/forms'),
+    // plugin(function ({ addUtilities }) {
+    //   addUtilities({
+    //     '.bg-gradient-nav': {
+    //       backgroundImage:
+    //         'radial-gradient(circle, hsl(var(--background-dark-light)) 0%, hsl(var(--background-dark)) 100%)',
+    //     },
+    //   });
+    // }),
+  ],
 };
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function addVariablesForColors({ addBase, theme }: any) {
