@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { TextGenerateEffect } from './ui/text-generate-effect';
 
 interface VideoBackgroundProps {
   videoUrl: string;
@@ -39,13 +40,19 @@ const VideoBackground: React.FC<VideoBackgroundProps> = ({
       </div>
 
       {/* Text Overlay */}
-      <div className='absolute inset-0 flex flex-col items-start justify-end pb-60 pl-48 gap-y-3'>
+      <div className='absolute inset-0 flex flex-col items-start justify-end pb-60 pl-48 gap-y-3 '>
         {headers.map((header) => {
           return (
             <div key={header} className='text-center max-w-2xl'>
-              <h1 className='text-lg lg:text-4xl md:text-2xl text-destructive font-bold'>
+              <TextGenerateEffect
+                className='text-lg lg:text-4xl md:text-2xl text-destructive font-bold'
+                words={header}
+                filter={true}
+                duration={1}
+              />
+              {/* <h1 className='text-lg lg:text-4xl md:text-2xl text-destructive font-bold'>
                 {header}
-              </h1>
+              </h1> */}
             </div>
           );
         })}
