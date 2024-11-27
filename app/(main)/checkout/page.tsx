@@ -242,7 +242,7 @@ const formSchema = z.object({
   email: z.string().email('Invalid email address'),
   company: z.string().min(1, 'Company is required'),
   phone: z.string().min(1, 'Phone number is required'),
-  message: z.string().min(1, 'Message is required'),
+  message: z.string(),
   period: z.string(),
   checked: z.boolean().refine((val) => val === true, {
     message: 'You must accept the terms and conditions',
@@ -259,7 +259,7 @@ const formSchema = z.object({
 type FormSchemaType = z.infer<typeof formSchema>;
 
 export default function Checkout() {
-  const { cart } = useCartContext();
+  const { cart, removeAllFromCart } = useCartContext();
   // const recaptchaRef = useRef<ReCAPTCHA>(null);
 
   // const [isVerified, setIsVerified] = useState(false);
@@ -324,6 +324,7 @@ export default function Checkout() {
       }
 
       // toast.success('Your message has been sent!');
+      removeAllFromCart();
       reset();
     } catch (error) {
       // toast.error(error instanceof Error ? error.message : 'Something went wrong');
@@ -334,11 +335,13 @@ export default function Checkout() {
   return (
     <div className='max-w-screen-lg w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-gray-800 grid grid-cols-1 md:grid-cols-2  gap-4'>
       <div className='bg-accent flex flex-col items-center justify-center text-neutral-200'>
-      <h2 className='font-bold text-xl lg:text-2xl pt-10 lg:pt-0 leading-tight'>
-        Want to get in touch?
+        <h2 className='font-bold text-xl lg:text-2xl pt-10 lg:pt-0 leading-tight'>
+          Want to get in touch?
         </h2>
         <p className='text-base lg:text-lg mt-4 max-w-md text-center leading-relaxed'>
-        Feel free to reach out to us with any inquiries, concerns, or assistance you may require. Our team is here to help and eager to hear from you!
+          Feel free to reach out to us with any inquiries, concerns, or
+          assistance you may require. Our team is here to help and eager to hear
+          from you!
         </p>
         <ul className='text-neutral-200 mt-6 text-sm lg:text-base space-y-2'>
           <li>Maglebjergvej 6</li>

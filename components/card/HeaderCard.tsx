@@ -47,7 +47,7 @@ interface ProductCardProps {
   type: 'startup' | 'micro' | 'sme';
 }
 
-const HeaderCard:React.FC<ProductCardProps> = ({ type }: { type: string }) => {
+const HeaderCard: React.FC<ProductCardProps> = ({ type }: { type: string }) => {
   const product = productType.find((item) => item.type === type);
 
   if (!product) {
@@ -56,14 +56,16 @@ const HeaderCard:React.FC<ProductCardProps> = ({ type }: { type: string }) => {
 
   const bgClass = {
     startup: 'bg-background', // from root theme
-    micro: 'bg-beige text-accent',
-    sme: 'bg-peach text-destructive',
+    micro: 'bg-beige ',
+    sme: 'bg-peach ',
   }[type];
 
   return (
-    <div className={`relative overflow-hidden shadow-lg   lg:min-w-[250px] ${bgClass}`}>
+    <div
+      className={`relative overflow-hidden shadow-lg   lg:min-w-[250px] ${bgClass}`}
+    >
       {/* Background Image with Overlay */}
-     {/* <div
+      {/* <div
         className='absolute inset-0 bg-cover bg-center opacity-80'
         style={{ backgroundImage: `url(${product.imageUrl})` }}
       >

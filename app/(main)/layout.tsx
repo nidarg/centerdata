@@ -1,6 +1,3 @@
-
-
-
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata } from 'next';
 // import localFont from "next/font/local";
@@ -35,22 +32,20 @@ export default function Layout({
   children: React.ReactNode;
 }>) {
   return (
-    
-        <div
-          className={`${monserrat.className} ${openSans.className} antialiased  container `}
-        >
-          <Providers>
-            <ShopProvider>
-              {<Navbar />}
+    <div
+      className={`${monserrat.className} ${openSans.className} antialiased  container `}
+    >
+      <Providers>
+        <ShopProvider>
+          {<Navbar />}
 
-              <main className='container py-10 pt-32 min-h-screen'>
-                {children}
-                <SpeedInsights />
-              </main>
-              <Footer/>
-            </ShopProvider>
-          </Providers>
-        </div>
-     
+          <main className='container py-10 pt-32 min-h-screen'>
+            {children}
+            <SpeedInsights />
+          </main>
+          <Footer />
+        </ShopProvider>
+      </Providers>
+    </div>
   );
 }
