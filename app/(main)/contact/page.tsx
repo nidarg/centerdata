@@ -13,6 +13,7 @@ import { z } from 'zod';
 
 import Link from 'next/link';
 // import { Checkbox } from "@/components/ui/checkbox"
+import { useToast } from '@/hooks/use-toast';
 
 const formSchema = z.object({
   fullname: z.string().min(1, 'Name is required'),
@@ -28,6 +29,7 @@ const formSchema = z.object({
 type FormSchemaType = z.infer<typeof formSchema>;
 
 export default function Contact() {
+  const { toast } = useToast();
   // const recaptchaRef = useRef<ReCAPTCHA>(null);
 
   // const [isVerified, setIsVerified] = useState(false);
@@ -83,10 +85,15 @@ export default function Contact() {
       });
       console.log(await response.json());
       if (!response.ok) {
-        throw new Error('Failed to send message');
+        toast({
+          title: 'Uh oh! Something went wrong.',
+          description: 'There was a problem with your request.',
+        });
       }
 
-      // toast.success('Your message has been sent!');
+      toast({
+        description: 'Your message was sent successfully.',
+      });
       reset();
     } catch (error) {
       // toast.error(error instanceof Error ? error.message : 'Something went wrong');
@@ -98,10 +105,12 @@ export default function Contact() {
     <div className='max-w-screen-lg w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-gray-800 grid grid-cols-1 md:grid-cols-2  gap-4'>
       <div className='bg-accent flex flex-col items-center justify-center text-neutral-200'>
         <h2 className='font-bold text-xl lg:text-2xl pt-10 lg:pt-0 leading-tight'>
-        Want to get in touch?
+          Want to get in touch?
         </h2>
         <p className='text-base lg:text-lg mt-4 max-w-md text-center leading-relaxed'>
-        Feel free to reach out to us with any inquiries, concerns, or assistance you may require. Our team is here to help and eager to hear from you!
+          Feel free to reach out to us with any inquiries, concerns, or
+          assistance you may require. Our team is here to help and eager to hear
+          from you!
         </p>
         <ul className='text-neutral-200 mt-6 text-sm lg:text-base space-y-2'>
           <li>Maglebjergvej 6</li>
