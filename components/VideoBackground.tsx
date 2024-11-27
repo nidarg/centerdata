@@ -48,7 +48,7 @@ const VideoBackground: React.FC<VideoBackgroundProps> = ({
                 className='text-lg lg:text-4xl md:text-2xl text-destructive font-bold'
                 words={header}
                 filter={true}
-                duration={1}
+                duration={2}
               />
               {/* <h1 className='text-lg lg:text-4xl md:text-2xl text-destructive font-bold'>
                 {header}
