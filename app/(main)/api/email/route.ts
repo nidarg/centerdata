@@ -9,12 +9,12 @@ import rateLimit from 'express-rate-limit';
 dotenv.config();
 
 // Validate environment variables to ensure required configurations are present
-const envSchema = z.object({
-  GMAIL_USER: z.string().email('GMAIL_USER is required'),
-  GMAIL_PASS: z.string().min(6, 'GMAIL_PASS is required'),
-  ALLOWED_ORIGIN: z.string().url().min(2, 'ALLOWED_ORIGIN is required'),
-});
-const env = envSchema.parse(process.env); // Throws an error if validation fails
+// const envSchema = z.object({
+//   GMAIL_USER: z.string().email('GMAIL_USER is required'),
+//   GMAIL_PASS: z.string().min(6, 'GMAIL_PASS is required'),
+//   ALLOWED_ORIGIN: z.string().url().min(2, 'ALLOWED_ORIGIN is required'),
+// });
+// const env = envSchema.parse(process.env); // Throws an error if validation fails
 
 const allowedOrigin = process.env.ALLOWED_ORIGIN || 'http://localhost:3000';
 
@@ -100,8 +100,8 @@ const sendEmail = async ({
   });
 
   const mailConfig = {
-    from: env.GMAIL_USER,
-    to: env.GMAIL_USER, // Send emails to the same Gmail account
+    from: process.env.GMAIL_USER,
+    to: process.env.GMAIL_USER, // Send emails to the same Gmail account
     // from: 'hello@datacompliancecentre.com',
     // to: 'hello@datacompliancecentre.com',
     subject: 'New form submission from NDCC',
