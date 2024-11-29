@@ -242,12 +242,14 @@ export default function Contact() {
           )}
         </LabelInputContainer>
 
-        <ReCAPTCHA
-          sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''}
-          ref={recaptchaRef}
-          onChange={handleChange}
-          onExpired={handleExpired}
-        />
+        <div className=' mb-10'>
+          <ReCAPTCHA
+            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''}
+            ref={recaptchaRef}
+            onChange={handleChange}
+            onExpired={handleExpired}
+          />
+        </div>
 
         {/* <button  disabled={!isVerified} */}
         <button
