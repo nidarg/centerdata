@@ -1,11 +1,11 @@
 'use client';
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { DateInput } from '@/components/ui/date-input';
 import { cn } from '@/lib/utils';
 import { IconBrandLinkedin } from '@tabler/icons-react';
-// import ReCAPTCHA from "react-google-recaptcha";
+import ReCAPTCHA from 'react-google-recaptcha';
 // import { translate } from '@/utils/translate';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
@@ -15,24 +15,44 @@ import Link from 'next/link';
 // import { Checkbox } from "@/components/ui/checkbox"
 import { useToast } from '@/hooks/use-toast';
 
+// Zod schema for form data validation
 const formSchema = z.object({
-  fullname: z.string().min(1, 'Name is required'),
+  fullname: z
+    .string()
+    .min(1, 'Name is required')
+    .max(100, "Name can't be long than 100 characters")
+    .trim(),
   email: z.string().email('Invalid email address'),
-  company: z.string().min(1, 'Company is required'),
-  phone: z.string().min(1, 'Phone number is required'),
-  message: z.string().min(1, 'Message is required'),
+  company: z
+    .string()
+    .min(1, 'Company is required')
+    .max(100, "Company name can't be long than 100 characters")
+    .trim(),
+  phone: z
+    .string()
+    .min(1, 'Phone number is required')
+    .max(20, "Phone Number can't be long than 20 characters")
+    .trim()
+    .regex(/^\d+$/, 'Phone number must contain only numbers'),
+  message: z
+    .string()
+    .min(1, 'Message is required')
+    .max(1000, "Message can't be long than 1000 characters")
+    .trim(),
+  // period: z.string().min(1, 'Period is required').trim(),
   period: z.string(),
   checked: z.boolean().refine((val) => val === true, {
     message: 'You must accept the terms and conditions',
   }),
+  recaptchaToken: z.string(), // reCAPTCHA token validation
 });
 type FormSchemaType = z.infer<typeof formSchema>;
 
 export default function Contact() {
   const { toast } = useToast();
-  // const recaptchaRef = useRef<ReCAPTCHA>(null);
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
 
-  // const [isVerified, setIsVerified] = useState(false);
+  const [isVerified, setIsVerified] = useState(false);
 
   const {
     register,
@@ -46,34 +66,32 @@ export default function Contact() {
 
   watch();
 
-  /*
   async function handleCaptchaSubmission(token: string | null) {
     try {
       if (token) {
-        await fetch("/api/recaptcha", {
-          method: "POST",
+        await fetch('/api/recaptcha', {
+          method: 'POST',
           headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
           },
           body: JSON.stringify({ token }),
         });
         setIsVerified(true);
       }
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (e) {
       setIsVerified(false);
     }
   }
-    */
 
-  // const handleChange = (token: string | null) => {
-  //   handleCaptchaSubmission(token);
-  // };
+  const handleChange = (token: string | null) => {
+    handleCaptchaSubmission(token);
+  };
 
-  // function handleExpired() {
-  //   setIsVerified(false);
-  // }
+  function handleExpired() {
+    setIsVerified(false);
+  }
 
   const onSubmit = async (data: FormSchemaType) => {
     try {
@@ -143,7 +161,7 @@ export default function Contact() {
         </LabelInputContainer>
         <LabelInputContainer className='mb-4'>
           <Label htmlFor='phone'>Phone number</Label>
-          <Input id='phone' type='text' {...register('phone')} />
+          <Input id='phone' type='tel' {...register('phone')} />
           {errors.phone && isSubmitted && (
             <span className='text-destructive text-sm'>
               {errors.phone.message}
@@ -224,18 +242,18 @@ export default function Contact() {
           )}
         </LabelInputContainer>
 
-        {/* <ReCAPTCHA
-        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
-        ref={recaptchaRef}
-        onChange={handleChange}
-        onExpired={handleExpired}
-      /> */}
+        <ReCAPTCHA
+          sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''}
+          ref={recaptchaRef}
+          onChange={handleChange}
+          onExpired={handleExpired}
+        />
 
         {/* <button  disabled={!isVerified} */}
         <button
           className='bg-gradient-to-br relative group/btn from-zinc-900  to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]'
           type='submit'
-          disabled={isSubmitting}
+          disabled={isSubmitting || isVerified}
         >
           Contact us &rarr;
           <BottomGradient />

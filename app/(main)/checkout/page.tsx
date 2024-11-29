@@ -18,11 +18,29 @@ import { useToast } from '@/hooks/use-toast';
 // import { Checkbox } from "@/components/ui/checkbox"
 
 const formSchema = z.object({
-  fullname: z.string().min(1, 'Name is required'),
+  fullname: z
+    .string()
+    .min(1, 'Name is required')
+    .max(100, "Name can't be long than 100 characters")
+    .trim(),
   email: z.string().email('Invalid email address'),
-  company: z.string().min(1, 'Company is required'),
-  phone: z.string().min(1, 'Phone number is required'),
-  message: z.string(),
+  company: z
+    .string()
+    .min(1, 'Company is required')
+    .max(100, "Company name can't be long than 100 characters")
+    .trim(),
+  phone: z
+    .string()
+    .min(1, 'Phone number is required')
+    .max(20, "Phone Number can't be long than 20 characters")
+    .trim()
+    .regex(/^\d+$/, 'Phone number must contain only numbers'),
+  message: z
+    .string()
+    .min(1, 'Message is required')
+    .max(1000, "Message can't be long than 1000 characters")
+    .trim(),
+  // period: z.string().min(1, 'Period is required').trim(),
   period: z.string(),
   checked: z.boolean().refine((val) => val === true, {
     message: 'You must accept the terms and conditions',
@@ -35,6 +53,7 @@ const formSchema = z.object({
       })
     )
     .optional(), // Optional to avoid errors when the cart is empty
+  // recaptchaToken: z.string(), // reCAPTCHA token validation
 });
 type FormSchemaType = z.infer<typeof formSchema>;
 
