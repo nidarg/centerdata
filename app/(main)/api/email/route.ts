@@ -10,9 +10,9 @@ dotenv.config();
 
 // Validate environment variables to ensure required configurations are present
 const envSchema = z.object({
-  GMAIL_USER: z.string().email().nonempty('GMAIL_USER is required'),
-  GMAIL_PASS: z.string().nonempty('GMAIL_PASS is required'),
-  ALLOWED_ORIGIN: z.string().url().nonempty('ALLOWED_ORIGIN is required'),
+  GMAIL_USER: z.string().email('GMAIL_USER is required'),
+  GMAIL_PASS: z.string().min(6, 'GMAIL_PASS is required'),
+  ALLOWED_ORIGIN: z.string().url().min(2, 'ALLOWED_ORIGIN is required'),
 });
 const env = envSchema.parse(process.env); // Throws an error if validation fails
 
