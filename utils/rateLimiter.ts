@@ -4,8 +4,8 @@ import { NextRequest, NextResponse } from "next/server";
 
 const rateLimitMap = new Map<string, { count: number; lastReset: number }>();
 
-export function rateLimitMiddleware(handler: (req: NextRequest, res: NextResponse) => Promise<NextResponse>) {
-  return async (req: NextRequest, res: NextResponse) => {
+export function rateLimitMiddleware(handler: (req: NextRequest) => Promise<NextResponse>) {
+  return async (req: NextRequest): Promise<NextResponse> => {
     const forwardedFor = req.headers.get('x-forwarded-for');
     const ip = forwardedFor?.split(',')[0]?.trim()  || 'unknown-ip'; // Fallback to unknown-ip if none found
     const limit = 20; // Limit of requests per minute per IP
@@ -37,6 +37,6 @@ export function rateLimitMiddleware(handler: (req: NextRequest, res: NextRespons
     ipData.count += 1;
 
     // Proceed to the actual handler
-    return handler(req, res);
+    return await handler(req);
   };
 }

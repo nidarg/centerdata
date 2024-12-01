@@ -74,22 +74,18 @@ const sendEmail = async ({ fullname, email, phone, company, message, period,orde
 };
 
 // Main handler
-const handler = async (req: NextRequest) => {
+const handler = async (req: NextRequest): Promise<NextResponse> => {
   if (req.method !== 'POST') {
-    return new NextResponse(
-      JSON.stringify({ message: 'Method not allowed' }),
-      { status: 405 }
-    );
+    return NextResponse.json({ message: 'Method not allowed' }, { status: 405 });
   }
 
   try {
     const body = await req.json();
     const validatedParams = validateWithZodSchema(formParamsSchema, body);
 
-    // Send the email
     const responseMessage = await sendEmail(validatedParams);
 
-    return new NextResponse(JSON.stringify({ message: responseMessage }), {
+    return NextResponse.json({ message: responseMessage }, {
       status: 200,
       headers: {
         'Access-Control-Allow-Origin': allowedOrigin,
@@ -101,16 +97,13 @@ const handler = async (req: NextRequest) => {
     console.error('Error:', error);
 
     if (error instanceof z.ZodError) {
-      return new NextResponse(JSON.stringify({ errors: error.errors }), {
-        status: 400,
-      });
+      return NextResponse.json({ errors: error.errors }, { status: 400 });
     }
 
-    return new NextResponse(JSON.stringify({ message: 'Internal Server Error' }), {
-      status: 500,
-    });
+    return NextResponse.json({ message: 'Internal Server Error' }, { status: 500 });
   }
 };
+
 
 // Wrap the handler with rate limiter
 export const POST = rateLimitMiddleware(handler);
