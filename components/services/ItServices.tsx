@@ -40,10 +40,10 @@ const ItServices: React.FC = () => {
 
       {/* Description */}
       <div className="space-y-2">
-        <p className="leading-relaxed text-neutral-600 dark:text-white bg-background rounded-md  text-justify">
+        <p className="leading-relaxed text-neutral-600 dark:text-white  rounded-md  text-justify">
           Nearshore IT interim services such as e.g. developers, testers, and supporters for temporary solutions.
         </p>
-        <p className="leading-relaxed text-neutral-600 dark:text-white bg-background rounded-md  text-justify">
+        <p className="leading-relaxed text-neutral-600 dark:text-white  rounded-md  text-justify">
           We provide high-level IT expertise to businesses in need of immediate support to fill short-term gaps, manage projects, or steer IT strategy during transitions.
         </p>
       </div>

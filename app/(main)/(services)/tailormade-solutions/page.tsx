@@ -46,7 +46,7 @@ function TailormadeSolutions() {
           height="80vh"
           headers={headers}
         /> */}
-      </div>
+       </div> 
 
       {/* Main Content */}
       <div className="mt-[90vh]">

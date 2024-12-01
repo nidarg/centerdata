@@ -15,7 +15,7 @@ export const CartItem = ({ item }: IntCartItem) => {
       <div className='flex flex-col gap-4 shadow-md shadow-neutral-900 dark:shadow-neutral-600 p-4 w-full'>
         <h3 className='font-semibold'>{item.title}</h3>
         <p className='text-sm'>Type: {item.type}</p>
-        <p className='text-sm'>Price: {item.price}</p>
+        {/* <p className='text-sm'>Price: {item.price}</p> */}
       </div>
 
       {/* Remove Button */}

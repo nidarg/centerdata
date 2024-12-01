@@ -1,11 +1,11 @@
 'use client';
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { DateInput } from '@/components/ui/date-input';
 import { cn } from '@/lib/utils';
 import { IconBrandLinkedin } from '@tabler/icons-react';
-// import ReCAPTCHA from "react-google-recaptcha";
+import ReCAPTCHA from "react-google-recaptcha";
 // import { translate } from '@/utils/translate';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
@@ -60,9 +60,9 @@ type FormSchemaType = z.infer<typeof formSchema>;
 export default function Checkout() {
   const { cart, removeAllFromCart } = useCartContext();
   const { toast } = useToast();
-  // const recaptchaRef = useRef<ReCAPTCHA>(null);
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
 
-  // const [isVerified, setIsVerified] = useState(false);
+  const [isVerified, setIsVerified] = useState(false);
 
   const {
     register,
@@ -81,34 +81,41 @@ export default function Checkout() {
 
   watch();
 
-  /*
+
   async function handleCaptchaSubmission(token: string | null) {
     try {
       if (token) {
-        await fetch("/api/recaptcha", {
-          method: "POST",
+        // console.log("reCAPTCHA token received:", token);
+        const response = await fetch('/api/recaptcha', {
+          method: 'POST',
           headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
           },
           body: JSON.stringify({ token }),
         });
-        setIsVerified(true);
+        if (response.ok) {
+          // console.log("reCAPTCHA verified successfully.");
+          setIsVerified(true);
+        } else {
+          console.error("reCAPTCHA verification failed.");
+          setIsVerified(false);
+        }
       }
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (e) {
+      console.error("Error during reCAPTCHA submission:", e);
       setIsVerified(false);
     }
   }
-    */
+ 
 
-  // const handleChange = (token: string | null) => {
-  //   handleCaptchaSubmission(token);
-  // };
+  const handleChange = (token: string | null) => {
+    handleCaptchaSubmission(token);
+  };
 
-  // function handleExpired() {
-  //   setIsVerified(false);
-  // }
+  function handleExpired() {
+    setIsVerified(false);
+  }
 
   const onSubmit = async (data: FormSchemaType) => {
     try {
@@ -273,24 +280,26 @@ export default function Checkout() {
             </div>
           </div>
           {errors.checked && isSubmitted && (
-            <span className='text-red-500 text-sm'>
+            <span className='text-destructive text-sm'>
               {errors.checked.message}
             </span>
           )}
         </LabelInputContainer>
 
-        {/* <ReCAPTCHA
-        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
-        ref={recaptchaRef}
-        onChange={handleChange}
-        onExpired={handleExpired}
-      /> */}
+        <div className=' mb-10'>
+          <ReCAPTCHA
+            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''}
+            ref={recaptchaRef}
+            onChange={handleChange}
+            onExpired={handleExpired}
+          />
+        </div>
 
         {/* <button  disabled={!isVerified} */}
         <button
           className='bg-gradient-to-br relative group/btn from-zinc-900  to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]'
           type='submit'
-          disabled={isSubmitting}
+          disabled={isSubmitting || !isVerified}
         >
           Contact us &rarr;
           <BottomGradient />

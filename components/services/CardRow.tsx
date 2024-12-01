@@ -52,14 +52,14 @@ const CardRow: React.FC<CardRowProps> = ({ products, header }) => {
       {/* Modal */}
       {selectedProduct && (
         <div className='fixed inset-0 bg-black/50 z-50 flex justify-end'>
-          <div className='bg-gray-900 shadow-lg w-full max-w-md p-6 transform transition-transform duration-300 translate-x-0 text-gray-100 flex flex-col justify-center'>
+          <div className='bg-gray-900 shadow-lg w-full max-w-md p-6 transform transition-transform duration-300 translate-x-0 text-gray-100 flex flex-col justify-center text-sm sm:text-base'>
             <button
               onClick={closeModal}
               className='absolute top-4 right-4 text-gray-200 hover:text-primary'
             >
               Close
             </button>
-            <h3 className='text-2xl font-bold text-gray-100 mb-4 mt-4'>
+            <h3 className=' text-xl sm:text-2xl font-bold text-gray-100 mb-4 mt-4'>
               {selectedProduct.title}
             </h3>
             <h4 className='font-semibold mb-2'>Product Details</h4>
@@ -73,7 +73,7 @@ const CardRow: React.FC<CardRowProps> = ({ products, header }) => {
             </p> */}
             <div className='flex justify-center w-full'></div>
             <button
-              className='relative inline-flex h-12 overflow-hidden rounded-full p-[4px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 '
+              className='relative inline-flex h-12 overflow-hidden rounded-full p-[4px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 mt-10 mb-10'
               onClick={() => {
                 addToCart(selectedProduct.id);
                 closeModal();

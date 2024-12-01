@@ -44,7 +44,7 @@ const formSchema = z.object({
   checked: z.boolean().refine((val) => val === true, {
     message: 'You must accept the terms and conditions',
   }),
-  recaptchaToken: z.string(), // reCAPTCHA token validation
+  // recaptchaToken: z.string(), // reCAPTCHA token validation
 });
 type FormSchemaType = z.infer<typeof formSchema>;
 
@@ -57,7 +57,7 @@ export default function Contact() {
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting, isSubmitted },
+    formState: { errors,isSubmitting,  isSubmitted },
     watch,
     reset,
     // setValue,
@@ -69,7 +69,8 @@ export default function Contact() {
   async function handleCaptchaSubmission(token: string | null) {
     try {
       if (token) {
-        await fetch('/api/recaptcha', {
+        // console.log("reCAPTCHA token received:", token);
+        const response = await fetch('/api/recaptcha', {
           method: 'POST',
           headers: {
             Accept: 'application/json',
@@ -77,10 +78,16 @@ export default function Contact() {
           },
           body: JSON.stringify({ token }),
         });
-        setIsVerified(true);
+        if (response.ok) {
+          // console.log("reCAPTCHA verified successfully.");
+          setIsVerified(true);
+        } else {
+          console.error("reCAPTCHA verification failed.");
+          setIsVerified(false);
+        }
       }
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (e) {
+      console.error("Error during reCAPTCHA submission:", e);
       setIsVerified(false);
     }
   }
