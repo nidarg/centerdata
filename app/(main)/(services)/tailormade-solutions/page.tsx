@@ -33,7 +33,7 @@ function TailormadeSolutions() {
   }, [type]);
 
   return (
-    <div>
+    <div className='flex flex-cols justify-center gap-6'>
       {/* Video Background Section */}
       <div>
       <MemoizedVideoBackground
@@ -46,7 +46,7 @@ function TailormadeSolutions() {
           height="80vh"
           headers={headers}
         /> */}
-       </div> 
+       
 
       {/* Main Content */}
       <div className="mt-[90vh]">
@@ -102,6 +102,7 @@ function TailormadeSolutions() {
           {type ? <ServicesByType type={type} /> : null}
         </div>
       </div>
+      </div> 
     </div>
   );
 }

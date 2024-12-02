@@ -11,7 +11,8 @@ const headers = ['Specialized Projects'];
 
 const SpecializedProjects = () => {
   return (
-    <div >
+    <div className='flex flex-cols justify-center gap-6'>
+
       <VideoBackground videoUrl="./videos/video3.mp4" height="80vh" headers={headers} />
       {/* <VideoBackground videoUrl="./videos/infographic.mp4" height="80vh" headers={headers} /> */}
       <div className="mt-[90vh]">
@@ -21,7 +22,7 @@ const SpecializedProjects = () => {
           text={specializedProjects.text}
           imageUrl={specializedProjects.imageUrl}
         />
-      </div>
+     
 
      
       <div className=" bg-transparent text-primary space-y-8 mt-8">
@@ -95,6 +96,7 @@ const SpecializedProjects = () => {
           </Link>{' '}
           to discover how we can be of assistance.
         </div>
+      </div>
       </div>
     </div>
   );

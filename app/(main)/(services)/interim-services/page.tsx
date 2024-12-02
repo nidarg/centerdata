@@ -13,7 +13,7 @@ const headers = ['Interim Services']
 
 const InterimServices = () => {
   return (
-    <div >
+    <div className='flex flex-cols justify-center gap-6'>
       <VideoBackground videoUrl="./videos/video2.mp4" height="80vh" headers={headers} />
     {/* <VideoBackground videoUrl="./videos/data-transmission.mp4" height="80vh" headers={headers} /> */}
     <div className="mt-[90vh]">
@@ -23,7 +23,7 @@ const InterimServices = () => {
         text={interimServices.text}
         imageUrl={interimServices.imageUrl}
       />
-    </div>
+   
     
 
 
@@ -145,6 +145,7 @@ const InterimServices = () => {
         </Link>{' '}
         to discover how we can be of assistance
       </div>
+    </div>
     </div>
     </div>
   );
