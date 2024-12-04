@@ -11,7 +11,6 @@ export const mainServices = [
   {
     title: 'Interim Services ',
     description: [
-      'Our interim services:',
       'Offer an effective solution to address expertise gaps',
       'Ensure operational continuity',
       'Support strategic goals on a temporary basis',

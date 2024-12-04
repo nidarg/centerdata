@@ -2,7 +2,6 @@
 
 // import { ContainerScroll } from '@/components/ui/container-scroll-animation';
 
-
 import TextImage from '@/components/TextImage';
 // import { TextGenerateEffect } from '@/components/ui/text-generate-effect';
 
@@ -15,31 +14,35 @@ import WorkWithUsMain from '@/components/work-with-us/WorkWithUsMain';
 import Testimonials from '@/components/Testimonials';
 import VideoBackground from '@/components/VideoBackground';
 
-const headers = ['BE AHEAD.', 'BE SECURE.','BE COMPLIANT.']
+const headers = ['BE AHEAD.', 'BE SECURE.', 'BE COMPLIANT.'];
 
 export default function Home() {
   return (
     <div className='flex flex-cols justify-center gap-6'>
-      <VideoBackground videoUrl='./videos/video1.mp4' height='80vh' headers = {headers} />
+      <VideoBackground
+        videoUrl='./videos/video1.mp4'
+        height='80vh'
+        headers={headers}
+      />
       {/* <VideoBackground videoUrl='./videos/businessman.mp4' height='80vh' headers = {headers} /> */}
       <div className='mt-[85vh]'>
         <ServiceCardMain />
 
-       <div id="about-us">
-       <TextImage
-          title={consulting.title}
-          text={consulting.text}
-          imageUrl={consulting.imageUrl}
-        />
-        <TextImage
-          title={innovation.title}
-          text={innovation.text}
-          subtitle={innovation.subtitle}
-          imageUrl={innovation.imageUrl}
-          reverse={true}
-        />
-       </div>
-        
+        <div id='about-us'>
+          <TextImage
+            title={consulting.title}
+            text={consulting.text}
+            imageUrl={consulting.imageUrl}
+          />
+          <TextImage
+            title={innovation.title}
+            text={innovation.text}
+            subtitle={innovation.subtitle}
+            imageUrl={innovation.imageUrl}
+            reverse={true}
+          />
+        </div>
+
         <WorkWithUsMain />
 
         <Testimonials />

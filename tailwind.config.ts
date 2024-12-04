@@ -57,6 +57,9 @@ const config: Config = {
           DEFAULT: 'hsl(var(--peach))',
           // foreground: 'hsl(var(--destructive-foreground))',
         },
+        goldish: {
+          DEFAULT: 'hsl(var(--goldish))',
+        },
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
@@ -89,7 +92,7 @@ const config: Config = {
       },
       backgroundImage: {
         'gradient-nav':
-          'radial-gradient(circle, hsla(var(--background-light), 1) 0%, hsla(var(--background), 1) 100%)',
+          'radial-gradient(circle, hsla(var(--accent), 1) 0%, hsla(var(--background), 1) 100%)',
       },
       animation: {
         shimmer: 'shimmer 2s linear infinite',

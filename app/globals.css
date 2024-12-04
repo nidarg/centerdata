@@ -15,7 +15,7 @@ nav {
   font-family: 'Open Sans', sans-serif;
   background: radial-gradient(
     circle,
-    hsla(var(--background-light), 1) 0%,
+    hsla(var(--accent), 1) 0%,
     /* Lighter color at the center */ hsla(var(--background), 1) 100%
       /* Original background at the edges */
   );
@@ -44,10 +44,8 @@ h6 {
   }
 }
 
-
-
 :root {
-  --background: 165, 80%, 75%; /* Original pale mint green */
+  --background: 182, 70%, 70%; /* Original pale mint green */
 
   --background-light: 165, 50%, 95%; /* Lighter version of the background */
 
@@ -62,7 +60,7 @@ h6 {
   --muted: 200, 17%, 85%; /* Light muted gray */
   --muted-foreground: 150, 10%, 25%; /* Slightly darker muted text */
 
-  --accent: 182, 70%, 23%; /* Teal */
+  --accent: 165, 80%, 95%; /* Lighter Teal */
   --accent-foreground: 0, 0%, 98%; /* Light text on accent */
 
   --destructive: 2, 100%, 39%; /* Vivid red */
@@ -73,6 +71,8 @@ h6 {
 
   --ring: 180, 40%, 50%; /* Vibrant Teal Ring Effect */
   --radius: 0.5rem;
+
+  --goldish: 45, 100%, 31%;
 
   --beige: 30, 44%, 69%; /* light beige*/
   --peach: 32, 100%, 79%; /*peach */
@@ -104,6 +104,8 @@ h6 {
 
   --border: 150, 9%, 15%; /* Dark greenish-gray border */
   --input: 150, 10%, 20%; /* Dark input background */
+
+  --goldish: 45, 100%, 31%;
 
   --ring: 180, 70%, 50%; /* Bright Cyan Ring Effect */
   --radius: 0.5rem;
