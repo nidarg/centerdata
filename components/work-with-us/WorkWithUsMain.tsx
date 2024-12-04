@@ -8,11 +8,11 @@ function WorkWithUsMain() {
   return (
     <div className='flex flex-col justify-center'>
       <div>
-        <div className='flex flex-col flex-wrap 2xl:flex-nowrap w-full justify-center gap-4 lg:gap-6  mx-auto p-6 '>
-          <h1 className='text-xl font-bold text-destructive text-center mt-20'>
+        <div className='flex flex-col flex-wrap 2xl:flex-nowrap w-full justify-center gap-4 lg:gap-6  mx-auto  '>
+          <h1 className='text-xl font-bold text-destructive text-center '>
             WHY WORK WITH US?
           </h1>
-          <h1 className='text-4xl font-bold dark:text-white text-center mt-10'>
+          <h1 className='text-4xl font-bold dark:text-white text-center '>
             Get Expert Solutions Here
           </h1>
         </div>

@@ -19,7 +19,7 @@ export default function Testimonials() {
   }, [isInView, controls]);
 
   return (
-    <div ref={containerRef} className=" w-full overflow-hidden mt-20">
+    <div ref={containerRef} className=" w-full overflow-hidden ">
       <motion.h2
         initial="hidden"
         animate={controls}
@@ -28,7 +28,7 @@ export default function Testimonials() {
           visible: { scale: 1, opacity: 1 },
         }}
         transition={{ duration: 0.6, ease: 'easeInOut' }}
-        className="text-3xl font-semibold text-center text-destructive mb-12"
+        className="text-3xl font-semibold text-center text-goldish mb-12"
       >
         Client Success Stories
       </motion.h2>
@@ -57,7 +57,7 @@ export default function Testimonials() {
           >
             
             <div className="flex items-center text-neutral-700 dark:text-neutral-300 pt-10 pb-10">
-              <Quote className="w-10 h-10 mr-2 text-destructive" />
+              <Quote className="w-10 h-10 mr-2 text-goldish" />
               <p className="text-md italic">{testimonial.description}</p>
             </div>
             <div className="mt-4">

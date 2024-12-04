@@ -9,11 +9,11 @@ export const mainServices = [
     imageUrl: '/images/technology.jpg',
   },
   {
-    title: 'Interim Services ',
+    title: 'Interim Services',
     description: [
-      'Offer an effective solution to address expertise gaps',
-      'Ensure operational continuity',
-      'Support strategic goals on a temporary basis',
+      'Offer an effective solution to address expertise gaps.',
+      'Ensure operational continuity.',
+      'Support strategic goals on a temporary basis.',
       'Are a flexible and valuable asset across multiple sectors.',
     ],
     href: '/interim-services',

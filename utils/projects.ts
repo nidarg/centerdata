@@ -2,9 +2,19 @@
 
 
 
+
+
+
+
 export const specializedProjects = {
     title:`We’ll navigate the complexities of data compliance together `,
-    text:"We provide consultancy and hands-on practical solutions in specialized projects related to the e.g GDPR, DORA, NIS2, ISO27001, AI-Act/ISO 42001. The specialized projects often focus on implementing, improving, or evaluating compliance measures, in response to the evolving data compliance landscape. These projects may range from advanced technical solutions to complex organizational policy adjustments and often include cross-functional collaboration.",
+    text: [
+        `We provide consultancy and hands-on practical solutions in specialized projects related to the e.g GDPR, DORA, NIS2, ISO27001, AI-Act/ISO 42001.
+        The specialized projects often focus on implementing, improving, or evaluating compliance measures, in response to the evolving data compliance landscape.`,
+        `These projects may range from advanced technical solutions to complex organizational policy adjustments and often include cross-functional collaboration.`,
+        `We adhere to international standards, as well as EU, local, and sector-specific laws and best practices relevant to the country where your business operates.`,
+        `Our adaptable frameworks can be customized to meet the unique requirements of various industries.`,
+      ],
     imageUrl:'/images/evatopictures/motion-fast.jpg'
 }
 

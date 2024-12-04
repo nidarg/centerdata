@@ -6,6 +6,7 @@ import { RightArrow } from '@/components/RightArrow';
 import VideoBackground from '@/components/VideoBackground';
 import TextImage from '@/components/TextImage';
 import { specializedProjects, aiActProjects } from '@/utils/projects';
+import Divider from '@/components/Divider';
 
 const headers = ['Specialized Projects'];
 
@@ -23,68 +24,100 @@ const SpecializedProjects = () => {
           imageUrl={specializedProjects.imageUrl}
         />
      
+      <Divider/>
+
+      
+
+
 
      
-      <div className=" bg-transparent text-primary space-y-8 mt-8">
-        <ul className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 text-primary">
-          <li className="flex items-center text-neutral-600 dark:text-white border-b py-2">
-            <RightArrow />
+      <div className=" bg-transparent text-primary space-y-8 ">
+      <h1 className='text-2xl font-bold text-destructive text-center '>
+        {' '}
+        We can run the project for you or team up with you to: 
+      </h1>
+      <div>
+        <ul className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 text-primary ">
+          <li className="flex items-center text-neutral-600 dark:text-white border-b py-2 ">
+          <span className='flex-shrink-0'>
+            <RightArrow height={24} width={24}  />
+            </span>
             Proactively strengthen the overall approach to data compliance
           </li>
-          <li className="flex items-center text-neutral-600 dark:text-white border-b border-gradient-to-r from-destructive to-accent py-2">
+          <li className="flex items-center text-neutral-600 dark:text-white border-b border-gradient-to-r from-destructive to-accent py-2 ">
+          <span className='flex-shrink-0'>
             <RightArrow />
+            </span>
             Reduce risks
           </li>
-          <li className="flex items-center text-neutral-600 dark:text-white border-b border-gradient-to-r from-destructive to-accent py-2">
-            <RightArrow />
+          <li className="flex items-center text-neutral-600 dark:text-white border-b border-gradient-to-r from-destructive to-accent py-2 pl-10">
+          <span className='flex-shrink-0'>
+            <RightArrow height={24} width={24}/>
+            </span>
             Build trust with users and stakeholders
           </li>
-          <li className="flex items-center text-neutral-600 dark:text-white border-b border-gradient-to-r from-destructive to-accent py-2">
+          <li className="flex items-center text-neutral-600 dark:text-white border-b border-gradient-to-r from-destructive to-accent py-2 pl-10 ">
+          <span className='flex-shrink-0'>
             <RightArrow />
+            </span>
             Achieve certification
           </li>
-          <li className="flex items-center text-neutral-600 dark:text-white border-b border-gradient-to-r from-destructive to-accent py-2">
-            <RightArrow />
+          <li className="flex items-center text-neutral-600 dark:text-white border-b border-gradient-to-r from-destructive to-accent py-2 pl-20">
+            <RightArrow height={24} width={24}/>
             Develop robust and sustainable information security practices
           </li>
-          <li className="flex items-center text-neutral-600 dark:text-white border-b border-gradient-to-r from-destructive to-accent py-2">
-            <RightArrow />
+          <li className="flex items-center text-neutral-600 dark:text-white border-b border-gradient-to-r from-destructive to-accent py-2 pl-20">
+          <span className='flex-shrink-0'>
+            <RightArrow height={24} width={24}/>
+            </span>
             Create a culture of continuous improvement and ensure resilience against emerging threats
           </li>
         </ul>
-        <div  className="mt-20">
+        </div>
+        <Divider/>
+      
+       
         <TextImage
          
           title={aiActProjects.title}
           text={aiActProjects.text}
           imageUrl={aiActProjects.imageUrl}
         />
-        </div>
-
        
 
-       
+       <Divider/>
+
+     
+
+
+
+
+
 
         {/* Subtitle */}
-        <h3 className="text-2xl font-semibold pt-10">How Can We Add Value to Your Company?</h3>
+        <h3 className="text-2xl font-semibold ">How Can We Add Value to Your Company?</h3>
 
         {/* Bullet Points */}
         <ul className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 text-primary">
           <li className="flex items-center text-neutral-600 dark:text-white border-b border-gradient-to-r from-destructive to-accent py-2">
             <RightArrow />
-            Navigate and comply with specialized regulatory frameworks
+            Access to highly qualified professionals to assist with your project either as project managers or integrated team members.
           </li>
           <li className="flex items-center text-neutral-600 dark:text-white border-b border-gradient-to-r from-destructive to-accent py-2">
             <RightArrow />
-            Minimize regulatory risks
+            A customized framework designed specifically for your business and industry.
           </li>
           <li className="flex items-center text-neutral-600 dark:text-white border-b border-gradient-to-r from-destructive to-accent py-2">
             <RightArrow />
-            Enhance operational resilience
+            A pragmatic approach to address the risks and gaps of any organization in any sector. 
           </li>
           <li className="flex items-center text-neutral-600 dark:text-white border-b border-gradient-to-r from-destructive to-accent py-2">
             <RightArrow />
-            Build robust governance structures
+            Hands-on solutions that ensure ongoing compliance and business continuity.
+          </li>
+          <li className="flex items-center text-neutral-600 dark:text-white border-b border-gradient-to-r from-destructive to-accent py-2">
+            <RightArrow />
+            Pragmatic, transparent and trustworthy solutions.
           </li>
         </ul>
 

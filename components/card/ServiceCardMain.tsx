@@ -6,11 +6,11 @@ import { ServiceCard } from './ServiceCard';
 function ServiceCardMain() {
   return (
     <div className='container'>
-      <h1 className='text-4xl font-bold text-destructive text-center mt-20'>
+      <h1 className='text-4xl font-bold text-destructive text-center mt-20 mb-10'>
         {' '}
         Our Services
       </h1>
-      <div className='flex flex-col flex-wrap lg:flex-row 2xl:flex-nowrap w-full justify-center gap-6 lg:gap-8 mb-6'>
+      <div className='flex flex-col flex-wrap lg:flex-row 2xl:flex-nowrap w-full justify-center gap-6 lg:gap-8 '>
         {mainServices.map((service, index) => (
           <div key={index}>
             <Link href={service.href}>

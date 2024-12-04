@@ -13,6 +13,8 @@ import WorkWithUsMain from '@/components/work-with-us/WorkWithUsMain';
 
 import Testimonials from '@/components/Testimonials';
 import VideoBackground from '@/components/VideoBackground';
+import Divider from '@/components/Divider';
+
 
 const headers = ['BE AHEAD.', 'BE SECURE.', 'BE COMPLIANT.'];
 
@@ -27,24 +29,27 @@ export default function Home() {
       {/* <VideoBackground videoUrl='./videos/businessman.mp4' height='80vh' headers = {headers} /> */}
       <div className='mt-[85vh]'>
         <ServiceCardMain />
-
-        <div id='about-us'>
+        
+        <Divider/>
+        <div id='about-us' className="flex flex-col scroll-mt-40">
           <TextImage
-            title={consulting.title}
+            title={consulting.title.toUpperCase()}
             text={consulting.text}
             imageUrl={consulting.imageUrl}
+            
           />
+          <div className='mb-10 mt-10'></div>
           <TextImage
-            title={innovation.title}
+            title={innovation.title.toUpperCase()}
             text={innovation.text}
             subtitle={innovation.subtitle}
             imageUrl={innovation.imageUrl}
             reverse={true}
           />
         </div>
-
+        <Divider/>
         <WorkWithUsMain />
-
+        <Divider/>
         <Testimonials />
       </div>
     </div>

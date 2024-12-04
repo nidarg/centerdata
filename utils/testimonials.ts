@@ -9,7 +9,7 @@ export const testimonials:Testimonial[] = [
     {
         name: 'Emily Parker',
         company:'Parker Industries',
-        description:'We had a fantastic experience with Nordic Data Compliance Centre. They provided invaluable insights fou our data management strategy.'
+        description:'We had a fantastic experience with Nordic Data Compliance Centre. They provided invaluable insights fou our data compliance strategy.'
     },
     {
         name: 'David Thompson',

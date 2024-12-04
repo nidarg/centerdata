@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import React from 'react';
 import { CardBody, CardContainer, CardItem } from '../ui/3d-card';
+import { Check } from 'lucide-react';
 
 export function ServiceCard({
   title,
@@ -29,11 +30,16 @@ export function ServiceCard({
           return (
             <CardItem
               key={index}
-              as='p'
+              as='div'
               translateZ='60'
               className='text-neutral-700 text-sm max-w-sm mt-2 dark:text-neutral-300'
             >
-              {desc}
+              {title === 'Interim Services'?(
+                <div className='flex gap-3'>
+                    <Check/>{' '} {desc}
+                </div>
+                
+                ):desc}
             </CardItem>
           );
         })}
@@ -54,7 +60,7 @@ export function ServiceCard({
           <CardItem
             translateZ={20}
             as='p'
-            className='px-4 py-2 rounded-xl text-xs font-normal dark:text-white cursor-pointer' // Added cursor-pointer for the clickable item
+            className='px-4 py-2 rounded-xl text-xs font-semibold text-destructive cursor-pointer' // Added cursor-pointer for the clickable item
           >
             Try now →
           </CardItem>
