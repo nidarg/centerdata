@@ -62,7 +62,7 @@ const HeaderCard: React.FC<ProductCardProps> = ({ type }: { type: string }) => {
 
   return (
     <div
-      className={`relative overflow-hidden shadow-lg   lg:min-w-[250px] hover:scale-105 hover:z-20 ${bgClass}`}
+      className={`relative overflow-hidden shadow-lg lg:min-w-[250px] hover:scale-105 hover:z-20 transition-all duration-500 ease-in-out ${bgClass}`}
     >
       {/* Background Image with Overlay */}
       {/* <div
