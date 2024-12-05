@@ -20,7 +20,7 @@ const config: Config = {
         foreground: 'hsl(var(--foreground))',
         light: 'hsl(var(--background-light))',
         cyan: 'hsl(var(--cyan))',
-        teal: 'hsl(var(--teal))',
+        // teal: 'hsl(var(--teal))',
         card: {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
@@ -59,6 +59,9 @@ const config: Config = {
         },
         goldish: {
           DEFAULT: 'hsl(var(--goldish))',
+        },
+        teal: {
+          DEFAULT: 'hsl(var(--teal))',
         },
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',

@@ -1,5 +1,6 @@
-
+import { itServices } from '@/utils/projects';
 import React from 'react';
+import TextImage from '../TextImage';
 
 const ItServices: React.FC = () => {
   const services = [
@@ -32,28 +33,29 @@ const ItServices: React.FC = () => {
   const serviceColumns = chunkArray(services, 5);
 
   return (
-    <div >
-      {/* Title */}
-      <h1 className="text-destructive text-2xl font-bold mb-4">
-        Nearshore IT Interim Services
-      </h1>
-
+    <div>
       {/* Description */}
-      <div className="space-y-2">
-        <p className="leading-relaxed text-neutral-600 dark:text-white  rounded-md  text-justify">
-          Nearshore IT interim services such as e.g. developers, testers, and supporters for temporary solutions.
-        </p>
-        <p className="leading-relaxed text-neutral-600 dark:text-white  rounded-md  text-justify">
-          We provide high-level IT expertise to businesses in need of immediate support to fill short-term gaps, manage projects, or steer IT strategy during transitions.
-        </p>
+      <div className='mt-10'>
+        <TextImage
+          reverse
+          title={itServices.title}
+          text={itServices.text}
+          imageUrl={itServices.imageUrl}
+        />
       </div>
 
       {/* Grid Section */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-6">
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-20 '>
         {serviceColumns.map((column, colIndex) => (
-          <div key={colIndex} className="bg-accent p-4 rounded-md shadow-md">
+          <div
+            key={colIndex}
+            className='bg-background dark:bg-accent p-4 rounded-md shadow-md'
+          >
             {column.map((service, serviceIndex) => (
-              <div key={serviceIndex} className="text-white mb-2 last:mb-0">
+              <div
+                key={serviceIndex}
+                className='text-neutral-600 dark:text-white mb-2 last:mb-0'
+              >
                 {service}
               </div>
             ))}

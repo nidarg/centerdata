@@ -55,14 +55,14 @@ const HeaderCard: React.FC<ProductCardProps> = ({ type }: { type: string }) => {
   }
 
   const bgClass = {
-    startup: 'bg-background', // from root theme
-    micro: 'bg-beige ',
-    sme: 'bg-peach ',
+    startup: 'bg-teal-500 text-white',
+    micro: 'bg-teal-600 text-white',
+    sme: 'bg-teal-800 text-white', // from root theme
   }[type];
 
   return (
     <div
-      className={`relative overflow-hidden shadow-lg   lg:min-w-[250px] ${bgClass}`}
+      className={`relative overflow-hidden shadow-lg   lg:min-w-[250px] hover:scale-105 hover:z-20 ${bgClass}`}
     >
       {/* Background Image with Overlay */}
       {/* <div
@@ -73,11 +73,11 @@ const HeaderCard: React.FC<ProductCardProps> = ({ type }: { type: string }) => {
         <div className='absolute inset-0 bg-black/60 backdrop-blur-sm'></div> 
       </div> */}
       {/* Content */}
-      <div className='relative z-10 p-1  flex flex-col justify-center h-full  '>
-        <h2 className='text-3xl font-bold lg:text-sm'>{product.name}</h2>
+      <div className='relative z-10 p-1  flex flex-col justify-evenly min-h-[300px] '>
+        <h2 className='text-2xl font-bold text-goldish'>{product.name}</h2>
         <ul className='space-y-2 text-lg'>
           {product.data.map((item, index) => (
-            <li key={index} className='flex items-center lg:text-xs text-sm'>
+            <li key={index} className='flex items-center  text-md'>
               <span className='bg-primary h-2 w-2 mr-2'></span>
               {item}
             </li>

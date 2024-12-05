@@ -10,7 +10,6 @@ interface ResponsiveTextImageProps {
   text: string | string[];
   imageUrl: string;
   reverse?: boolean; // if true, text will appear on the left, image on the right
- 
 }
 
 export const TextImage: React.FC<ResponsiveTextImageProps> = ({
@@ -38,7 +37,7 @@ export const TextImage: React.FC<ResponsiveTextImageProps> = ({
       className={`flex flex-col items-center w-full lg:mx-auto lg:flex-row  ${
         reverse ? 'lg:flex-row-reverse' : ''
       }`}
-      initial="hidden"
+      initial='hidden'
       animate={controls}
       variants={{
         hidden: { opacity: 0, x: reverse ? 50 : -50 },
@@ -48,8 +47,8 @@ export const TextImage: React.FC<ResponsiveTextImageProps> = ({
     >
       {/* Image container */}
       <motion.div
-        className="flex min-h-96 w-full lg:w-1/2 relative sm:h-96 lg:h-[450px]"
-        initial="hidden"
+        className='flex min-h-96 w-full lg:w-1/2 relative sm:h-96 lg:h-[450px]'
+        initial='hidden'
         animate={controls}
         variants={{
           hidden: { scale: 0.9, opacity: 0 },
@@ -59,7 +58,7 @@ export const TextImage: React.FC<ResponsiveTextImageProps> = ({
       >
         <Image
           src={imageUrl}
-          alt={Array.isArray(text) ? text.join(', '):text}
+          alt={Array.isArray(text) ? text.join(', ') : text}
           fill
           className={`${
             reverse
@@ -71,12 +70,12 @@ export const TextImage: React.FC<ResponsiveTextImageProps> = ({
 
       {/* Text container */}
       <motion.div
-        className={`flex flex-col justify-center w-full lg:w-1/2 text-center md:text-left dark:text-white  p-4 leading-relaxed h-fit min-h-96sm:h-96 lg:h-[450px] bg-background dark:bg-neutral-900 shadow-md shadow-slate-900 ${
+        className={`flex flex-col justify-center w-full lg:w-1/2 text-center md:text-left text-neutral-600 dark:text-white  p-4 leading-relaxed h-fit min-h-96sm:h-96 lg:h-[450px] bg-background dark:bg-neutral-900 shadow-md shadow-slate-900 ${
           reverse
             ? 'rounded-l-lg rounded-r-none'
             : 'rounded-r-lg rounded-l-none'
         }`}
-        initial="hidden"
+        initial='hidden'
         animate={controls}
         variants={{
           hidden: { opacity: 0, x: reverse ? -50 : 50 },
@@ -84,18 +83,18 @@ export const TextImage: React.FC<ResponsiveTextImageProps> = ({
         }}
         transition={{ duration: 0.5, delay: 0.4 }}
       >
-        <h1 className="text-xl md:text-2xl pb-2 pt-4 text-goldish font-bold">
+        <h1 className='text-xl md:text-2xl pb-2 pt-4 text-goldish font-bold'>
           {title}
         </h1>
-        <h2 className="text-lg md:text-xl pb-2">{subtitle}</h2>
+        <h2 className='text-lg md:text-xl pb-2'>{subtitle}</h2>
         {Array.isArray(text) ? (
           text.map((paragraph, index) => (
-            <p key={index} className="text-md mb-2">
+            <p key={index} className='text-md mb-2'>
               {paragraph}
             </p>
           ))
         ) : (
-          <p className="text-md">{text}</p>
+          <p className='text-md'>{text}</p>
         )}
       </motion.div>
     </motion.div>
