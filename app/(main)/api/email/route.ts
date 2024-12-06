@@ -4,41 +4,73 @@ import { rateLimitMiddleware } from '@/utils/rateLimiter';
 import { z } from 'zod';
 import nodemailer from 'nodemailer';
 import dotenv from 'dotenv';
+import escapeHtml from 'escape-html';
 
 dotenv.config();
 
 const allowedOrigin = process.env.ALLOWED_ORIGIN || 'http://localhost:3000';
 
+const safe = (str: string) => escapeHtml(str);
+
+const corsHeaders = {
+  'Access-Control-Allow-Origin': allowedOrigin,
+  'Access-Control-Allow-Methods': 'POST, OPTIONS',
+  'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+};
+const cspHeaders = {
+  'Content-Security-Policy':
+    "default-src 'self'; script-src 'none'; style-src 'self';",
+};
+
 // Zod schema for form validation (same as before)
 const formParamsSchema = z.object({
-  fullname: z.string().min(1, 'Name is required').max(100).trim(),
+  fullname: z
+    .string()
+    .min(1, 'Name is required')
+    .max(100)
+    .regex(/^[a-zA-Z\s]+$/, 'Name can only contain letters and spaces')
+    .trim(),
   email: z.string().email('Invalid email address'),
   company: z.string().min(1).max(100).trim(),
-  phone: z.string().min(1).max(20).trim().regex(/^\d+$/, 'Phone must contain only numbers'),
+  phone: z
+    .string()
+    .min(1)
+    .max(20)
+    .trim()
+    .regex(/^\d+$/, 'Phone must contain only numbers'),
   message: z.string().min(1).max(1000).trim(),
   period: z.string(),
   checked: z.boolean().refine((val) => val === true, {
     message: 'You must accept the terms and conditions',
   }),
   orderedServices: z
-  .array(
-    z.object({
-      title: z.string(),
-      price: z.number(),
-    })
-  )
-  .optional(),
+    .array(
+      z.object({
+        title: z.string(),
+        price: z.number(),
+      })
+    )
+    .optional(),
 });
 
 type FormParams = z.infer<typeof formParamsSchema>;
 
-const sendEmail = async ({ fullname, email, phone, company, message, period,orderedServices }: FormParams) => {
+const sendEmail = async ({
+  fullname,
+  email,
+  phone,
+  company,
+  message,
+  period,
+  orderedServices,
+}: FormParams) => {
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
       user: process.env.GMAIL_USER,
       pass: process.env.GMAIL_PASS,
     },
+    secure: true, // Use TLS for secure connection
   });
 
   const mailConfig = {
@@ -46,22 +78,19 @@ const sendEmail = async ({ fullname, email, phone, company, message, period,orde
     to: process.env.GMAIL_USER,
     subject: 'New form submission from NDCC',
     html: `
-      <h3>New message received!</h3>
-      <p><strong>Name:</strong> ${fullname}</p>
-      <p><strong>Email:</strong> ${email}</p>
-      <p><strong>Phone:</strong> ${phone}</p>
-      <p><strong>Company:</strong> ${company}</p>
-      <p><strong>Period:</strong> ${period}</p>
-      <p><strong>Message:</strong><br>${message}</p>
+       <h3>New message received!</h3>
+      <p><strong>Name:</strong> ${safe(fullname)}</p>
+      <p><strong>Email:</strong> ${safe(email)}</p>
+      <p><strong>Phone:</strong> ${safe(phone)}</p>
+      <p><strong>Company:</strong> ${safe(company)}</p>
+      <p><strong>Period:</strong> ${safe(period)}</p>
+      <p><strong>Message:</strong><br>${safe(message)}</p>
       ${
         orderedServices && orderedServices.length > 0
           ? `<p><strong>Services Ordered:</strong></p>
              <ul>
                ${orderedServices
-                 .map(
-                   (service) =>
-                     `<li>${service.title}</li>`
-                 )
+                 .map((service) => `<li>${safe(service.title)}</li>`)
                  .join('')}
              </ul>`
           : `<p><strong>Services Ordered:</strong> None</p>`
@@ -69,14 +98,54 @@ const sendEmail = async ({ fullname, email, phone, company, message, period,orde
     `,
   };
 
+  // Confirmation email to the client
+  const clientMailConfig = {
+    from: process.env.GMAIL_USER,
+    to: email,
+    subject: 'Thank you for your request',
+    html: `
+      <h3>Thank you for your request</h3>
+      <p>Dear ${safe(fullname)},</p>
+      <p>We have received your request. The requested services are:</p>
+      ${
+        orderedServices && orderedServices.length > 0
+          ? `<ul>
+               ${orderedServices
+                 .map((service) => `<li>${safe(service.title)}</li>`)
+                 .join('')}
+             </ul>`
+          : `<p>None</p>`
+      }
+      <p>Our team will get back to you as soon as possible.</p>
+      <br/>
+      <p>All the best,</p>
+      <p>Nordic Data Compliance Centre</p>
+      <p>Maglebjergvej 6</p>
+      <p>2800 Kongens Lyngby</p>
+      <p>VAT DK 44251434</p>
+      <p><a href="mailto:hello@datacompliancecentre.com">hello@datacompliancecentre.com</a></p>
+      <p>
+        <a href="${
+          process.env.TERMS_URL || '/terms-and-conditions'
+        }">Terms and Conditions</a> | 
+        <a href="${process.env.PRIVACY_URL || '/privacy'}">Privacy Policy</a>
+      </p>
+    `,
+  };
+
+  // Send both emails
   await transporter.sendMail(mailConfig);
+  await transporter.sendMail(clientMailConfig);
   return 'Form sent successfully';
 };
 
 // Main handler
 const handler = async (req: NextRequest): Promise<NextResponse> => {
   if (req.method !== 'POST') {
-    return NextResponse.json({ message: 'Method not allowed' }, { status: 405 });
+    return NextResponse.json(
+      { message: 'Method not allowed' },
+      { status: 405 }
+    );
   }
 
   try {
@@ -85,14 +154,16 @@ const handler = async (req: NextRequest): Promise<NextResponse> => {
 
     const responseMessage = await sendEmail(validatedParams);
 
-    return NextResponse.json({ message: responseMessage }, {
-      status: 200,
-      headers: {
-        'Access-Control-Allow-Origin': allowedOrigin,
-        'Access-Control-Allow-Methods': 'POST, OPTIONS',
-        'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-      },
-    });
+    return NextResponse.json(
+      { message: responseMessage },
+      {
+        status: 200,
+        headers: {
+          ...corsHeaders,
+          ...cspHeaders,
+        },
+      }
+    );
   } catch (error) {
     console.error('Error:', error);
 
@@ -100,10 +171,12 @@ const handler = async (req: NextRequest): Promise<NextResponse> => {
       return NextResponse.json({ errors: error.errors }, { status: 400 });
     }
 
-    return NextResponse.json({ message: 'Internal Server Error' }, { status: 500 });
+    return NextResponse.json(
+      { message: 'Internal Server Error' },
+      { status: 500 }
+    );
   }
 };
-
 
 // Wrap the handler with rate limiter
 export const POST = rateLimitMiddleware(handler);

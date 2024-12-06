@@ -63,9 +63,11 @@ const CardRow: React.FC<CardRowProps> = ({ products, header }) => {
               {selectedProduct.title}
             </h3>
             <h4 className='font-semibold mb-2'>Product Details</h4>
-            <ul className='list-disc list-inside space-y-1'>
+            <ul className='list-disc space-y-1 flex-col justify-start'>
               {selectedProduct.data.map((detail, index) => (
-                <li key={index}>{detail}</li>
+                <li key={index} className='text-left'>
+                  {detail}
+                </li>
               ))}
             </ul>
             {/* <p className="text-lg font-semibold text-primary mb-4">
@@ -82,7 +84,7 @@ const CardRow: React.FC<CardRowProps> = ({ products, header }) => {
               {/* Larger animation with proper scaling */}
               <span className='absolute  inset-[-400%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#d9b08c_0%,#e64833_50%,#d9b08c_100%)] ' />
               <span className='inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-destructive  text-lg font-medium text-white backdrop-blur-3xl px-2 py-3 '>
-                Subscribe
+                Request a quotation
               </span>
             </button>
             {/* <button

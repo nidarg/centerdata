@@ -2,10 +2,10 @@
 import React, { useState, useRef } from 'react';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
-import { DateInput } from '@/components/ui/date-input';
+// import { DateInput } from '@/components/ui/date-input';
 import { cn } from '@/lib/utils';
 import { IconBrandLinkedin } from '@tabler/icons-react';
-import ReCAPTCHA from "react-google-recaptcha";
+import ReCAPTCHA from 'react-google-recaptcha';
 // import { translate } from '@/utils/translate';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
@@ -15,13 +15,15 @@ import { useCartContext } from '@/utils/context/CartContext';
 import Link from 'next/link';
 
 import { useToast } from '@/hooks/use-toast';
+import { Check } from 'lucide-react';
 // import { Checkbox } from "@/components/ui/checkbox"
 
 const formSchema = z.object({
   fullname: z
     .string()
     .min(1, 'Name is required')
-    .max(100, "Name can't be long than 100 characters")
+    .max(100)
+    .regex(/^[a-zA-Z\s]+$/, 'Name can only contain letters and spaces')
     .trim(),
   email: z.string().email('Invalid email address'),
   company: z
@@ -81,7 +83,6 @@ export default function Checkout() {
 
   watch();
 
-
   async function handleCaptchaSubmission(token: string | null) {
     try {
       if (token) {
@@ -98,16 +99,15 @@ export default function Checkout() {
           // console.log("reCAPTCHA verified successfully.");
           setIsVerified(true);
         } else {
-          console.error("reCAPTCHA verification failed.");
+          console.error('reCAPTCHA verification failed.');
           setIsVerified(false);
         }
       }
     } catch (e) {
-      console.error("Error during reCAPTCHA submission:", e);
+      console.error('Error during reCAPTCHA submission:', e);
       setIsVerified(false);
     }
   }
- 
 
   const handleChange = (token: string | null) => {
     handleCaptchaSubmission(token);
@@ -119,7 +119,7 @@ export default function Checkout() {
 
   const onSubmit = async (data: FormSchemaType) => {
     try {
-      console.log(data);
+      // console.log(data);
       const response = await fetch('/api/email', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -147,8 +147,8 @@ export default function Checkout() {
   };
 
   return (
-    <div className='max-w-screen-lg w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-gray-800 grid grid-cols-1 md:grid-cols-2  gap-4'>
-      <div className='bg-accent flex flex-col items-center justify-center text-neutral-200'>
+    <div className='max-w-screen-lg w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-gray-800 grid grid-cols-1 md:grid-cols-2  gap-4 mt-20'>
+      <div className='bg-teal flex flex-col items-center justify-center text-neutral-200'>
         <h2 className='font-bold text-xl lg:text-2xl pt-10 lg:pt-0 leading-tight'>
           Want to get in touch?
         </h2>
@@ -160,8 +160,9 @@ export default function Checkout() {
         <ul className='text-neutral-200 mt-6 text-sm lg:text-base space-y-2'>
           <li>Maglebjergvej 6</li>
           <li>2800 Kongens Lyngby</li>
-          <li>Danmark, DK 🇩🇰</li>
+          {/* <li>Danmark, DK 🇩🇰</li> */}
           <li>VAT DK 44251434</li>
+          <li>hello@datacompliancecentre.com </li>
         </ul>
       </div>
 
@@ -196,7 +197,10 @@ export default function Checkout() {
           )}
         </LabelInputContainer>
         <LabelInputContainer className='mb-8'>
-          <Label htmlFor='company'>Company name</Label>
+          <Label htmlFor='company' className='flex flex-col gap-y-2'>
+            <span>Company name</span>
+            <span>VTA</span>
+          </Label>
           <Input id='company' type='text' {...register('company')} />
           {errors.company && isSubmitted && (
             <span className='text-destructive text-sm'>
@@ -205,7 +209,7 @@ export default function Checkout() {
           )}
         </LabelInputContainer>
 
-        <LabelInputContainer className='mb-8'>
+        {/* <LabelInputContainer className='mb-8'>
           <Label htmlFor='period'>Book an appointment</Label>
           <DateInput id='period' type='text' {...register('period')} />
           {errors.period && isSubmitted && (
@@ -213,11 +217,11 @@ export default function Checkout() {
               {errors.period.message}
             </span>
           )}
-        </LabelInputContainer>
+        </LabelInputContainer> */}
         {/* Ordered Services Section */}
         <LabelInputContainer className='mb-8'>
           <Label className='text-destructive font-semibold'>
-            Ordered services
+            Requested services
           </Label>
           <ul className='text-sm text-primary mt-2 space-y-1'>
             {cart.length > 0 ? (
@@ -233,7 +237,7 @@ export default function Checkout() {
         </LabelInputContainer>
 
         <LabelInputContainer className='mb-8'>
-          <Label htmlFor='message'>How can we help you?</Label>
+          <Label htmlFor='message'>Add a comment</Label>
           <Input id='message' type='text' {...register('message')} />
           {errors.message && isSubmitted && (
             <span className='text-destructive text-sm'>
@@ -241,7 +245,13 @@ export default function Checkout() {
             </span>
           )}
         </LabelInputContainer>
-
+        <div className='flex gap-3'>
+          <Check />{' '}
+          <span className='text-sm text-neutral-200 mb-4'>
+            Requesting a quotation is free of charge and does not obligate you
+            in any way.
+          </span>
+        </div>
         <LabelInputContainer className='mb-8'>
           <div className='items-top flex space-x-2'>
             <input
@@ -261,7 +271,7 @@ export default function Checkout() {
                 htmlFor='checked'
                 className='text-sm text-neutral-200 font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
               >
-                Accept terms and conditions
+                I’ve read terms and conditions and the privacy statement.
               </label>
               <p className='text-sm text-neutral-200'>
                 You agree to our{' '}
@@ -301,7 +311,7 @@ export default function Checkout() {
           type='submit'
           disabled={isSubmitting || !isVerified}
         >
-          Contact us &rarr;
+          Request a quotation &rarr;
           <BottomGradient />
         </button>
 

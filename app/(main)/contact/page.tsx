@@ -20,7 +20,8 @@ const formSchema = z.object({
   fullname: z
     .string()
     .min(1, 'Name is required')
-    .max(100, "Name can't be long than 100 characters")
+    .max(100)
+    .regex(/^[a-zA-Z\s]+$/, 'Name can only contain letters and spaces')
     .trim(),
   email: z.string().email('Invalid email address'),
   company: z
@@ -57,7 +58,7 @@ export default function Contact() {
   const {
     register,
     handleSubmit,
-    formState: { errors,isSubmitting,  isSubmitted },
+    formState: { errors, isSubmitting, isSubmitted },
     watch,
     reset,
     // setValue,
@@ -82,12 +83,12 @@ export default function Contact() {
           // console.log("reCAPTCHA verified successfully.");
           setIsVerified(true);
         } else {
-          console.error("reCAPTCHA verification failed.");
+          console.error('reCAPTCHA verification failed.');
           setIsVerified(false);
         }
       }
     } catch (e) {
-      console.error("Error during reCAPTCHA submission:", e);
+      console.error('Error during reCAPTCHA submission:', e);
       setIsVerified(false);
     }
   }
@@ -127,8 +128,8 @@ export default function Contact() {
   };
 
   return (
-    <div className='max-w-screen-lg w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-gray-800 grid grid-cols-1 md:grid-cols-2  gap-4'>
-      <div className='bg-accent flex flex-col items-center justify-center text-neutral-200'>
+    <div className='max-w-screen-lg w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-gray-800 grid grid-cols-1 md:grid-cols-2  gap-4 mt-20'>
+      <div className='bg-teal flex flex-col items-center justify-center text-neutral-200'>
         <h2 className='font-bold text-xl lg:text-2xl pt-10 lg:pt-0 leading-tight'>
           Want to get in touch?
         </h2>

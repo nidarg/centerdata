@@ -2,16 +2,23 @@
 
 import { FaShoppingBasket } from 'react-icons/fa';
 import { Button } from '../ui/button';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useCartContext } from '@/utils/context/CartContext';
 import CartModal from '../cart/CartModal';
 
 function Basket() {
   const { cartCount } = useCartContext();
   const [showCart, setShowCart] = useState(false);
+  const [isHydrated, setIsHydrated] = useState(false);
+
+  // Ensure the component is fully hydrated
+  useEffect(() => {
+    setIsHydrated(true);
+  }, []);
 
   // Toggle cart modal
   const toggleCart = () => setShowCart(!showCart);
+
   return (
     <>
       <Button
@@ -24,14 +31,11 @@ function Basket() {
           className='text-white'
           style={{ width: '1.7rem', height: '1.7rem' }}
         />
-        {cartCount > 0 && (
+        {isHydrated && cartCount > 0 && (
           <span className='absolute -top-2 -right-2 bg-red-500 text-white rounded-full px-2 py-0.5 text-xs font-bold'>
             {cartCount}
           </span>
         )}
-        {/* <span className='absolute -top-2 -right-4 bg-red-500 text-white rounded-full px-2 py-0.5 text-xs font-bold'>
-          99
-        </span> */}
       </Button>
 
       {showCart && <CartModal onClose={toggleCart} />}

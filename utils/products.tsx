@@ -540,8 +540,6 @@ export const products: IntSubscription[] = [
 ];
 
 export const subscriptions: IntSubscription[] = [
- 
-  
   {
     title: 'GDPR Light implementation',
     price: 1500,
@@ -549,7 +547,7 @@ export const subscriptions: IntSubscription[] = [
     id: 34,
     type: 'startup',
     data: [
-      'We provide a light implementation and is used by our clients that already have done some implementation. The price per month is only for a 12 month period',
+      'We provide a light implementation and is used by our clients that already have done some implementation.',
     ],
     option: 'addon',
   },
@@ -560,7 +558,7 @@ export const subscriptions: IntSubscription[] = [
     id: 35,
     type: 'micro',
     data: [
-      'We provide a light implementation and is used by our clients that already have done some implementation. The price per month is only for a 12 month period',
+      'We provide a light implementation and is used by our clients that already have done some implementation.',
     ],
     option: 'addon',
   },
@@ -571,7 +569,7 @@ export const subscriptions: IntSubscription[] = [
     id: 36,
     type: 'sme',
     data: [
-      'We provide a light implementation and is used by our clients that already have done some implementation. The price per month is only for a 12 month period',
+      'We provide a light implementation and is used by our clients that already have done some implementation. ',
     ],
     option: 'addon',
   },
@@ -582,7 +580,7 @@ export const subscriptions: IntSubscription[] = [
     id: 37,
     type: 'startup',
     data: [
-      'We provide a total implementation and is used by our clients that need to implement everything. The prices per month is only for a 12 month period',
+      'We provide a total implementation and is used by our clients that need to implement everything. ',
     ],
     option: 'addon',
   },
@@ -593,7 +591,7 @@ export const subscriptions: IntSubscription[] = [
     id: 38,
     type: 'micro',
     data: [
-      'We provide a total implementation and is used by our clients that need to implement everything. The prices per month is only for a 12 month period',
+      'We provide a total implementation and is used by our clients that need to implement everything. ',
     ],
     option: 'addon',
   },
@@ -604,7 +602,7 @@ export const subscriptions: IntSubscription[] = [
     id: 39,
     type: 'sme',
     data: [
-      'We provide a total implementation and is used by our clients that need to implement everything. The prices per month is only for a 12 month period',
+      'We provide a total implementation and is used by our clients that need to implement everything. ',
     ],
     option: 'addon',
   },
@@ -617,7 +615,7 @@ export const subscriptions: IntSubscription[] = [
     id: 58,
     type: 'startup',
     data: [
-      'Creating and implementing this process is crucial in your data compliance success',
+      'Creating and implementing this process is crucial for your data compliance success',
     ],
     option: 'addon',
   },
@@ -629,7 +627,7 @@ export const subscriptions: IntSubscription[] = [
     id: 59,
     type: 'micro',
     data: [
-      'Creating and implementing this process is crucial in your data compliance success',
+      'Creating and implementing this process is crucial for your data compliance success',
     ],
     option: 'addon',
   },
@@ -641,7 +639,7 @@ export const subscriptions: IntSubscription[] = [
     id: 60,
     type: 'sme',
     data: [
-      'Creating and implementing this process is crucial in your data compliance success',
+      'Creating and implementing this process is crucial for your data compliance success',
     ],
     option: 'addon',
   },
@@ -1119,9 +1117,4 @@ export const onetimeproduct: IntProduct[] = [
   //   ],
   //   option: 'product',
   // },
- 
-  
- 
- 
-  
 ];
