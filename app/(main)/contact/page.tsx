@@ -41,7 +41,7 @@ const formSchema = z.object({
     .max(1000, "Message can't be long than 1000 characters")
     .trim(),
   // period: z.string().min(1, 'Period is required').trim(),
-  period: z.string(),
+  period: z.string().optional(),
   checked: z.boolean().refine((val) => val === true, {
     message: 'You must accept the terms and conditions',
   }),
@@ -103,7 +103,7 @@ export default function Contact() {
 
   const onSubmit = async (data: FormSchemaType) => {
     try {
-      console.log(data);
+      // console.log(data);
       const response = await fetch('/api/email', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -120,7 +120,15 @@ export default function Contact() {
       toast({
         description: 'Your message was sent successfully.',
       });
-      reset();
+      reset({
+        fullname: '',
+        email: '',
+        company: '',
+        phone: '',
+        message: '',
+        period: '', // Reset the period field
+        checked: false,
+      });
     } catch (error) {
       // toast.error(error instanceof Error ? error.message : 'Something went wrong');
       console.log(error);
@@ -141,8 +149,9 @@ export default function Contact() {
         <ul className='text-neutral-200 mt-6 text-sm lg:text-base space-y-2'>
           <li>Maglebjergvej 6</li>
           <li>2800 Kongens Lyngby</li>
-          <li>Danmark, DK 🇩🇰</li>
+          <li>Danmark</li>
           <li>VAT DK 44251434</li>
+          <li>hello@datacompliancecentre.com </li>
         </ul>
       </div>
 
@@ -177,7 +186,10 @@ export default function Contact() {
           )}
         </LabelInputContainer>
         <LabelInputContainer className='mb-8'>
-          <Label htmlFor='company'>Company name</Label>
+          <Label htmlFor='company' className='flex flex-col gap-y-2'>
+            <span>Company name</span>
+            <span>VTA</span>{' '}
+          </Label>
           <Input id='company' type='text' {...register('company')} />
           {errors.company && isSubmitted && (
             <span className='text-destructive text-sm'>
@@ -225,7 +237,7 @@ export default function Contact() {
                 htmlFor='checked'
                 className='text-sm text-neutral-200 font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
               >
-                Accept terms and conditions
+                I’ve read term and conditions and privacy statement
               </label>
               <p className='text-sm text-neutral-200'>
                 You agree to our{' '}

@@ -39,11 +39,11 @@ const formParamsSchema = z.object({
     .trim()
     .regex(/^\d+$/, 'Phone must contain only numbers'),
   message: z.string().min(1).max(1000).trim(),
-  period: z.string(),
+  period: z.string().optional(),
   checked: z.boolean().refine((val) => val === true, {
     message: 'You must accept the terms and conditions',
   }),
-  orderedServices: z
+  services: z
     .array(
       z.object({
         title: z.string(),
@@ -62,7 +62,7 @@ const sendEmail = async ({
   company,
   message,
   period,
-  orderedServices,
+  services,
 }: FormParams) => {
   const transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -83,14 +83,17 @@ const sendEmail = async ({
       <p><strong>Email:</strong> ${safe(email)}</p>
       <p><strong>Phone:</strong> ${safe(phone)}</p>
       <p><strong>Company:</strong> ${safe(company)}</p>
-      <p><strong>Period:</strong> ${safe(period)}</p>
+      <p><strong>Period:</strong> ${period && safe(period)}</p>
       <p><strong>Message:</strong><br>${safe(message)}</p>
       ${
-        orderedServices && orderedServices.length > 0
+        services && services.length > 0
           ? `<p><strong>Services Ordered:</strong></p>
              <ul>
-               ${orderedServices
-                 .map((service) => `<li>${safe(service.title)}</li>`)
+               ${services
+                 .map(
+                   (service: { title: string; type: string }) =>
+                     `<li>${safe(service.title)}-${safe(service.type)}</li>`
+                 )
                  .join('')}
              </ul>`
           : `<p><strong>Services Ordered:</strong> None</p>`
@@ -106,15 +109,20 @@ const sendEmail = async ({
     html: `
       <h3>Thank you for your request</h3>
       <p>Dear ${safe(fullname)},</p>
-      <p>We have received your request. The requested services are:</p>
+     
       ${
-        orderedServices &&
-        orderedServices.length > 0 &&
-        `<ul>
-               ${orderedServices
-                 .map((service) => `<li>${safe(service.title)}</li>`)
+        services && services.length > 0
+          ? `
+        <p>We have received your request. The requested services are:</p>
+        <ul>
+               ${services
+                 .map(
+                   (service: { title: string; type: string }) =>
+                     `<li>${safe(service.title)}-${safe(service.type)}</li>`
+                 )
                  .join('')}
              </ul>`
+          : `<p>We have received your request.</p>`
       }
       <p>Our team will get back to you as soon as possible.</p>
       <br/>

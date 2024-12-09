@@ -8,6 +8,7 @@ import { TextGenerateEffect } from '@/components/ui/text-generate-effect';
 import Link from 'next/link';
 import Divider from '@/components/Divider';
 import CompanyType from '@/components/CompanyType';
+import { RightArrow } from '@/components/RightArrow';
 
 const headers = ['Tailored solutions for Start-up, Micro and SME'];
 // const words1 = 'Are you a Start-up, Micro or an SME?';
@@ -126,6 +127,54 @@ function TailormadeSolutions() {
           <div ref={servicesRef}>
             {type ? <ServicesByType type={type} /> : null}
           </div>
+          <Divider />
+
+          {/* Subtitle */}
+          <h3 className='text-2xl font-semibold text-primary'>
+            Why choose this solution?
+          </h3>
+
+          {/* Bullet Points */}
+          <ul className='grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 text-primary mt-10'>
+            <li className='flex items-center text-neutral-600 dark:text-white border-b border-gradient-to-r from-destructive to-accent py-2'>
+              <span className='flex-shrink-0'>
+                <RightArrow height={24} width={24} />
+              </span>
+              Effective, Transparent and Trustworthy solution
+            </li>
+            <li className='flex items-center text-neutral-600 dark:text-white border-b border-gradient-to-r from-destructive to-accent py-2'>
+              <span className='flex-shrink-0'>
+                <RightArrow height={24} width={24} />
+              </span>
+              A solution that evolves in line with current legal developments,
+              case law, regulatory guidelines, and global frameworks
+            </li>
+            <li className='flex items-center text-neutral-600 dark:text-white border-b border-gradient-to-r from-destructive to-accent py-2 pl-10'>
+              <span className='flex-shrink-0'>
+                <RightArrow height={24} width={24} />
+              </span>
+              Access to highly skilled professionals in various sectors
+            </li>
+            <li className='flex items-center text-neutral-600 dark:text-white border-b border-gradient-to-r from-destructive to-accent py-2 pl-10'>
+              <span className='flex-shrink-0'>
+                <RightArrow height={24} width={24} />
+              </span>
+              Ensures business continuity
+            </li>
+            <li className='flex items-center text-neutral-600 dark:text-white border-b border-gradient-to-r from-destructive to-accent py-2 pl-20'>
+              <span className='flex-shrink-0'>
+                <RightArrow height={24} width={24} />
+              </span>
+              Rapid response to time sensitive issues such as data breach and
+              complaints from individuals
+            </li>
+            <li className='flex items-center text-neutral-600 dark:text-white border-b border-gradient-to-r from-destructive to-accent py-2 pl-20'>
+              <span className='flex-shrink-0'>
+                <RightArrow height={24} width={24} />
+              </span>
+              Maintaining your compliance is now made easy
+            </li>
+          </ul>
         </div>
       </div>
     </div>

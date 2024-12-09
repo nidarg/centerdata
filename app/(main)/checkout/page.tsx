@@ -378,6 +378,7 @@ import { IntProductPayload } from '@/utils/types';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { IconBrandLinkedin } from '@tabler/icons-react';
+import { Check } from 'lucide-react';
 
 // Zod schema for form data validation
 const formSchema = z.object({
@@ -404,7 +405,7 @@ const formSchema = z.object({
     .min(1, 'Message is required')
     .max(1000, "Message can't be long than 1000 characters")
     .trim(),
-  period: z.string(),
+  period: z.string().optional(),
   checked: z.boolean().refine((val) => val === true, {
     message: 'You must accept the terms and conditions',
   }),
@@ -506,8 +507,9 @@ export default function Checkout() {
         <ul className='text-neutral-200 mt-6 text-sm lg:text-base space-y-2'>
           <li>Maglebjergvej 6</li>
           <li>2800 Kongens Lyngby</li>
-          <li>Danmark, DK 🇩🇰</li>
+          <li>Danmark</li>
           <li>VAT DK 44251434</li>
+          <li>hello@datacompliancecentre.com </li>
         </ul>
       </div>
 
@@ -522,7 +524,6 @@ export default function Checkout() {
             </span>
           )}
         </LabelInputContainer>
-
         {/* Email */}
         <LabelInputContainer className='mb-4'>
           <Label htmlFor='email'>Business email</Label>
@@ -533,7 +534,6 @@ export default function Checkout() {
             </span>
           )}
         </LabelInputContainer>
-
         {/* Phone */}
         <LabelInputContainer className='mb-4'>
           <Label htmlFor='phone'>Phone number</Label>
@@ -544,10 +544,12 @@ export default function Checkout() {
             </span>
           )}
         </LabelInputContainer>
-
         {/* Company Name */}
         <LabelInputContainer className='mb-8'>
-          <Label htmlFor='company'>Company name</Label>
+          <Label htmlFor='company' className='flex flex-col gap-y-2'>
+            <span>Company name</span>
+            <span>VTA</span>{' '}
+          </Label>
           <Input id='company' type='text' {...register('company')} />
           {errors.company && isSubmitted && (
             <span className='text-destructive text-sm'>
@@ -555,12 +557,11 @@ export default function Checkout() {
             </span>
           )}
         </LabelInputContainer>
-
         {/* Display Ordered Services */}
         {selectedServices.length > 0 && (
           <div className='mb-8'>
             <h3 className='text-lg font-bold text-neutral-200'>
-              Ordered Services
+              Requested Services
             </h3>
             <ul className='text-neutral-200'>
               {selectedServices.map((service, index) => (
@@ -572,8 +573,14 @@ export default function Checkout() {
               ))}
             </ul>
           </div>
-        )}
-
+        )}{' '}
+        <div className='flex gap-3'>
+          <Check />{' '}
+          <span className='text-sm text-neutral-200 mb-4'>
+            Requesting a quotation is free of charge and does not obligate you
+            in any way.{' '}
+          </span>{' '}
+        </div>
         {/* Message */}
         <LabelInputContainer className='mb-8'>
           <Label htmlFor='message'>How can we help you?</Label>
@@ -584,7 +591,6 @@ export default function Checkout() {
             </span>
           )}
         </LabelInputContainer>
-
         {/* Terms and Conditions */}
         <LabelInputContainer className='mb-8'>
           <div className='items-top flex space-x-2'>
@@ -604,7 +610,7 @@ export default function Checkout() {
                 htmlFor='checked'
                 className='text-sm text-neutral-200 font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
               >
-                Accept terms and conditions
+                I’ve read terms and conditions and the privacy statement.
               </label>
               <p className='text-sm text-neutral-200'>
                 You agree to our{' '}
@@ -628,7 +634,6 @@ export default function Checkout() {
             </span>
           )}
         </LabelInputContainer>
-
         {/* reCAPTCHA */}
         <div className='mb-10'>
           <ReCAPTCHA
@@ -638,18 +643,15 @@ export default function Checkout() {
             onExpired={() => setIsVerified(false)}
           />
         </div>
-
         {/* Submit Button */}
         <button
           className='bg-gradient-to-br relative group/btn from-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium'
           type='submit'
           disabled={isSubmitting || !isVerified}
         >
-          Contact us &rarr;
+          Request a quotation &rarr;
         </button>
-
         <div className='bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-8 h-[1px] w-full' />
-
         {/* LinkedIn Link */}
         <div className='flex flex-col space-y-4'>
           <Link
