@@ -47,7 +47,7 @@ const formParamsSchema = z.object({
     .array(
       z.object({
         title: z.string(),
-        price: z.number(),
+        type: z.string(),
       })
     )
     .optional(),
@@ -108,13 +108,13 @@ const sendEmail = async ({
       <p>Dear ${safe(fullname)},</p>
       <p>We have received your request. The requested services are:</p>
       ${
-        orderedServices && orderedServices.length > 0
-          ? `<ul>
+        orderedServices &&
+        orderedServices.length > 0 &&
+        `<ul>
                ${orderedServices
                  .map((service) => `<li>${safe(service.title)}</li>`)
                  .join('')}
              </ul>`
-          : `<p>None</p>`
       }
       <p>Our team will get back to you as soon as possible.</p>
       <br/>
