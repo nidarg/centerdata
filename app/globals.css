@@ -6,8 +6,12 @@ html {
   scrollbar-gutter: stable;
   scroll-behavior: smooth;
 }
-body {
+/* body {
   @apply !min-w-full;
+} */
+
+body, html {
+  -webkit-overflow-scrolling: touch;
 }
 
 body,
@@ -44,8 +48,12 @@ h6 {
   }
 }
 
+
+
 :root {
   --background: 182, 70%, 70%; /* Original pale mint green */
+   --bg-light: 182, 60%, 85%; /* Softer, pastel shade */
+  --bg-dark: 182, 80%, 40%;  /* Richer, deeper shade */
 
   --background-light: 165, 50%, 95%; /* Lighter version of the background */
 
@@ -82,6 +90,7 @@ h6 {
 
 .dark {
   --background: 150, 10%, 10%; /* Deep dark greenish-gray background */
+ 
 
   --background-light: 150, 10%, 20%; /* Slightly lighter version for center */
 
@@ -123,3 +132,5 @@ h6 {
     @apply bg-background text-foreground;
   }
 }
+
+

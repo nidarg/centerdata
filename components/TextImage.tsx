@@ -58,6 +58,7 @@ export const TextImage: React.FC<ResponsiveTextImageProps> = ({
       >
         <Image
           src={imageUrl}
+          title={title}
           alt={Array.isArray(text) ? text.join(', ') : text}
           fill
           className={`${
@@ -83,9 +84,9 @@ export const TextImage: React.FC<ResponsiveTextImageProps> = ({
         }}
         transition={{ duration: 0.5, delay: 0.4 }}
       >
-        <h1 className='text-xl md:text-2xl pb-2 pt-4 text-goldish font-bold'>
+        <h2 className='text-xl md:text-2xl pb-2 pt-4 text-goldish font-bold'>
           {title}
-        </h1>
+        </h2>
         <h2 className='text-lg md:text-xl pb-2'>{subtitle}</h2>
         {Array.isArray(text) ? (
           text.map((paragraph, index) => (

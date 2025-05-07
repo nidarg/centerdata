@@ -9,7 +9,9 @@ import { interimServices } from '@/utils/projects';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 // import Link from 'next/link';`
-import React from 'react';
+import React, { memo } from 'react';
+import Head from "next/head";
+import Script from 'next/script';
 
 const headers = ['Interim Services'];
 
@@ -61,6 +63,8 @@ const items = [
   },
 ];
 
+const MemoizedVideoBackground = memo(VideoBackground);
+
 const InterimServices = () => {
   const containerVariants = {
     hidden: {},
@@ -75,7 +79,7 @@ const InterimServices = () => {
     hidden: (custom: number) => ({
       opacity: 0,
       y: custom % 2 === 0 ? 50 : -50, // Randomize initial direction (up or down)
-      x: Math.random() > 0.5 ? 30 : -30, // Randomize initial direction (left or right)
+      x: (custom % 2 === 0 ? 30 : -30), // Randomize initial direction (left or right)
     }),
     visible: {
       opacity: 1,
@@ -88,13 +92,57 @@ const InterimServices = () => {
     },
   };
   return (
-    <div className='flex flex-cols justify-center gap-6'>
-      <VideoBackground
+    <>
+<Head>
+  <meta
+    name="description"
+    content="Discover our Interim Data Compliance Services. We offer immediate support for compliance, risk assessments, policy development, DPO services, and more."
+  />
+   <meta
+          name="keywords"
+          content="GDPR interim services, temporary DPO, data protection support, compliance consulting, privacy consultant"
+        />
+        <link rel="canonical" href="https://www.datacompliancecentre.com/interim-services" />
+      </Head>
+
+ <Script
+        id="interim-schema"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "serviceType": "Interim Data Protection Consulting",
+            "provider": {
+              "@type": "Organization",
+              "name": "Nordic Data Compliance Centre",
+              "url": "https://www.datacompliancecentre.com",
+              "logo": "https://www.datacompliancecentre.com/logoImages/9.png"
+            },
+            "areaServed": {
+              "@type": "Country",
+        "name": "Denmark"
+            },
+            "description": "Our Interim Data Protection and GDPR Services provide immediate compliance support, policy development, DPIAs, DPO services, and breach response.",
+            "url": "https://www.datacompliancecentre.com/interim-services"
+          })
+        }}
+      />
+
+    <main className='flex flex-cols justify-center gap-6'>
+    
+        <VideoBackground
         videoUrl='./videos/video2.mp4'
         height='80vh'
         headers={headers}
       />
-      {/* <VideoBackground videoUrl="./videos/data-transmission.mp4" height="80vh" headers={headers} /> */}
+      {/* <MemoizedVideoBackground
+          videoUrl="./videos/data-transmission.mp4"
+          height="80vh"
+          headers={headers}
+        /> */}
+      
       <div className='mt-[90vh]'>
         <TextImage
           reverse
@@ -108,9 +156,9 @@ const InterimServices = () => {
           {/* Title */}
 
           {/* Main Paragraph */}
-          <h3 className='text-2xl font-semibold '>
+          <h1 className='text-2xl font-semibold '>
             How Can We Add Value to Your Company?
-          </h3>
+          </h1>
           <div className='mt-10'>
             <ul className='grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 text-primary'>
               <li className='flex items-center text-neutral-600 dark:text-white border-b py-2'>
@@ -163,7 +211,7 @@ const InterimServices = () => {
               Here’s how our interim data compliance consultants can make a
               difference
             </h3>
-            <motion.ul
+            <motion.div
               className='grid gap-10 lg:grid-cols-3'
               variants={containerVariants}
               initial='hidden'
@@ -174,7 +222,7 @@ const InterimServices = () => {
               }}
             >
               {items.map((item, index) => (
-                <motion.li
+                <motion.div
                   key={index}
                   className='relative flex flex-col space-y-2 text-accent p-4 rounded-lg shadow-lg bg-background dark:bg-accent overflow-hidden group'
                   custom={index}
@@ -201,9 +249,9 @@ const InterimServices = () => {
                   <p className='leading-relaxed text-neutral-600 dark:text-white text-justify'>
                     {item.description}
                   </p>
-                </motion.li>
+                </motion.div>
               ))}
-            </motion.ul>
+            </motion.div>
           </div>
           <Divider />
           <ItServices />
@@ -217,13 +265,13 @@ const InterimServices = () => {
               </span>
             </button>
 
-            {/* <Button className="text-center mx-auto font-extrabold text-lg"  size="lg" variant='destructive' asChild>
-              <Link href="/contact">Book a consultation</Link>
-            </Button> */}
+          
           </div>
         </div>
       </div>
-    </div>
+    </main>
+    </>
+    
   );
 };
 

@@ -1,24 +1,75 @@
 'use client';
 
 import Link from 'next/link';
-import React from 'react';
+import React, { memo } from 'react';
 import { RightArrow } from '@/components/RightArrow';
 import VideoBackground from '@/components/VideoBackground';
 import TextImage from '@/components/TextImage';
 import { specializedProjects, aiActProjects } from '@/utils/projects';
 import Divider from '@/components/Divider';
+import Head from "next/head";
+import Script from 'next/script';
 
 const headers = ['Specialized Projects'];
 
+const MemoizedVideoBackground = memo(VideoBackground);
+
 const SpecializedProjects = () => {
   return (
+<>
+    <Head>
+  <title>Specialized Compliance Projects | GDPR, AI Act, ISO, NIS2 & More</title>
+  <meta
+    name="description"
+    content="We deliver specialized data compliance projects including GDPR, AI Act, ISO 27001, NIS2, and DORA. Get hands-on consulting and practical solutions tailored to your industry."
+  />
+  <meta
+    name="keywords"
+    content="GDPR, AI Act, ISO 27001, NIS2, DORA, compliance consulting, data protection, data compliance projects, specialized compliance services"
+  />
+  <meta name="robots" content="index, follow" />
+  <link
+    rel="canonical"
+    href="https://www.datacompliancecentre.com/specialized-projects"
+  />
+</Head>
+<Script
+  id="structured-data"
+  type="application/ld+json"
+  strategy="afterInteractive"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Nordic Data Compliance Center",
+      "url": "https://www.datacompliancecentre.com/specialized-projects",
+      "logo": "https://www.datacompliancecentre.com/logoImages/9.png",
+      "description": "Specialized GDPR, DORA, ISO27001, NIS2, and AI-Act/ISO 42001 compliance consulting and project support.",
+      "address": {
+        "@type": "PostalAddress",
+       "addressCountry": "DK"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/nordic-data-compliance-center",
+        "https://www.datacompliancecentre.com/"
+      ]
+    }),
+  }}
+/>
+
+
     <div className='flex flex-cols justify-center gap-6'>
       <VideoBackground
         videoUrl='./videos/video3.mp4'
         height='80vh'
         headers={headers}
       />
-      {/* <VideoBackground videoUrl="./videos/infographic.mp4" height="80vh" headers={headers} /> */}
+      {/* <MemoizedVideoBackground
+          videoUrl="./videos/infographic.mp4"
+          height="80vh"
+          headers={headers}
+        /> */}
+      
       <div className='mt-[90vh]'>
         <TextImage
           reverse
@@ -124,6 +175,12 @@ const SpecializedProjects = () => {
               </span>
               Pragmatic, transparent and trustworthy solutions.
             </li>
+             <li className='flex items-center text-neutral-600 dark:text-white border-b border-gradient-to-r from-destructive to-accent py-2 pl-20'>
+              <span className='flex-shrink-0'>
+                <RightArrow height={24} width={24} />
+              </span>
+              Strengthen operational resilience and establish robust governance structures. 
+            </li>
           </ul>
 
           {/* Call to Action */}
@@ -143,6 +200,7 @@ const SpecializedProjects = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

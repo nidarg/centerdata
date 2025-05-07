@@ -49,7 +49,7 @@ const CartModal: React.FC<CartModalProps> = ({ onClose }) => {
                   {/* Larger animation with proper scaling */}
                   <span className='absolute  inset-[-1000%] animate-[spin_1.5s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#d9b08c_0%,#e64833_50%,#d9b08c_100%)] ' />
                   <span className='inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-destructive  text-md font-medium text-white backdrop-blur-3xl px-2 py-3 '>
-                    Checkout
+                    Fill out contact form
                   </span>
                 </button>
               </Link>

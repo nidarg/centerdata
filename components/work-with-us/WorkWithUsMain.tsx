@@ -9,12 +9,12 @@ function WorkWithUsMain() {
     <div className='flex flex-col justify-center'>
       <div>
         <div className='flex flex-col flex-wrap 2xl:flex-nowrap w-full justify-center gap-4 lg:gap-6  mx-auto  '>
-          <h1 className='text-xl font-bold text-destructive text-center '>
+          <h2 className='text-xl font-bold text-destructive text-center '>
             WHY WORK WITH US?
-          </h1>
-          <h1 className='text-4xl font-bold dark:text-white text-center '>
+          </h2>
+          <h2 className='text-4xl font-bold dark:text-white text-center '>
             Get Expert Solutions Here
-          </h1>
+          </h2>
         </div>
         <div className='flex flex-col flex-wrap sm:flex-row lg:flex-nowrap w-full justify-between gap-4 lg:gap-8 mb-6 mx-auto p-6 mt-10'>
           {workWithUs.map((why, index) => {

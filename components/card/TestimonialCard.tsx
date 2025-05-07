@@ -20,7 +20,7 @@ function TestimonialCard() {
   //       })}
   //     </div>
   //   );
-  return <h1>Testimonials</h1>;
+  return <h2>Testimonials</h2>;
 }
 
 export default TestimonialCard;

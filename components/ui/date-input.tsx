@@ -4,6 +4,7 @@ import { cn } from '@/lib/utils';
 import { useMotionTemplate, useMotionValue, motion } from 'framer-motion';
 import DateTime from '../date-time-picker/DateTime';
 
+
 export type InputProps = React.InputHTMLAttributes<HTMLInputElement>;
 
 const DateInput = React.forwardRef<HTMLInputElement, InputProps>(
@@ -23,10 +24,13 @@ const DateInput = React.forwardRef<HTMLInputElement, InputProps>(
         minute: '2-digit',
       });
       setInputValue(formattedDate);
-      onChange?.({ target: { value: formattedDate } } as React.ChangeEvent<HTMLInputElement>);
+      onChange?.({
+        target: { name: props.name, value: formattedDate },
+      } as React.ChangeEvent<HTMLInputElement>);
       // setShowDatePicker(false); // Close the modal after selecting a date
     };
 
+     
     function handleMouseMove({ currentTarget, clientX, clientY }: React.MouseEvent) {
       const { left, top } = currentTarget.getBoundingClientRect();
       mouseX.set(clientX - left);

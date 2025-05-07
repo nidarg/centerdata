@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.datacompliancecentre.com
+
+# Sitemaps
+Sitemap: https://www.datacompliancecentre.com/sitemap.xml

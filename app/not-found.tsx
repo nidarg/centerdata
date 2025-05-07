@@ -31,9 +31,9 @@ export default function NotFound ()  {
 
       {/* Content */}
       <div className="relative z-10 text-center">
-        <h1 className="text-white text-5xl md:text-7xl font-bold mb-6">
+        <h2 className="text-white text-5xl md:text-7xl font-bold mb-6">
           Page Not Found
-        </h1>
+        </h2>
         <Button 
   className="mr-2 lg:min-w-[150px] sm:min-w-[100px] min-w-[60px] text-white"  // Adjust width as needed
   

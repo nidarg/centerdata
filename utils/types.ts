@@ -32,6 +32,9 @@ export interface IntShopContext {
   shopType: IntProductType;
   cart: IntProductPayload[];
   cartCount: number;
+  selectCounter: number;
+  totalModules:number;
+  setSelectCounter: (count: number) => void;
   setType: (type: IntProductType) => void;
   addToCart: (productId: number) => void;
   removeFromCart: (productId: number) => void;

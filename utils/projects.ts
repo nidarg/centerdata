@@ -10,20 +10,38 @@ export const specializedProjects = {
   imageUrl: '/images/evatopictures/motion-fast.jpg',
 };
 
+
+ 
 export const aiActProjects = {
   title: `AI ACT Projects `,
-  text: 'Specialized projects focused on the AI Act often revolve around implementing compliance strategies, creating robust AI governance structures, and enhancing transparency and accountability in AI development. These projects facilitate compliance while fostering innovation and trust in AI systems.',
+  text: ['Specialized projects focused on the AI Act often revolve around implementing compliance strategies, creating robust AI governance structures, and enhancing transparency and accountability in AI development. These projects facilitate compliance while fostering innovation and trust in AI systems.',
+    `Your project remains fully compliant throughout all phases, from concept development to the go-live stage.`,
+    `Our framework also includes an ethical approach to building trustworthy AI systems, that contribute to benefits for people, organizations and ecosystems.`
+  ],
   imageUrl: '/images/evatopictures/light-circles.jpg',
 };
 
 export const interimServices = {
   title: `DATA COMPLIANCE INTERIM SERVICES`,
   text: 'Our interim data compliance consultants provide an adaptable, high-impact solution for managing compliance, improving data security practices, and mitigating risks associated with data compliance. We offer immediate expertise and flexibility, ideal for both short-term and long-term strategic data compliance needs. We are highly knowledgeable in data compliance laws, best practices and industry-specific requirements.',
-  imageUrl: '/images/evatopictures/green-infinity.jpg',
+  imageUrl: '/images/evatopictures/interim.jpg',
 };
 
 export const itServices = {
   title: `NEARSHORE IT INTERIM SERVICES`,
   text: 'Nearshore IT interim services such as e.g. developers, testers, and supporters for temporary solutions.We provide high-level IT expertise to businesses in need of immediate support to fill short-term gaps, manage projects, or steer IT strategy during transitions.',
-  imageUrl: '/images/evatopictures/light-circles.jpg',
+  imageUrl: '/images/evatopictures/it.jpg',
+};
+
+
+export const mixAndMatch = {
+  title: `GDPR mix and match`,
+  text: [
+    `This solution is designed for Start-up, Micro, and SME businesses, offering tailored solutions that enable these companies to build their own data compliance framework at their own pace. It is aligned with their unique needs and flexible enough to grow alongside their business.`,
+    "",
+    "",
+    `When you choose this solution, we work as an integrated part of your team.`,
+   
+  ],
+  imageUrl: '/images/evatopictures/tailormade.jpg',
 };

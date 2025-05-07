@@ -3,6 +3,7 @@ import { validateWithZodSchema } from '@/utils/validateZodSchema';
 import { rateLimitMiddleware } from '@/utils/rateLimiter';
 import { z } from 'zod';
 import nodemailer from 'nodemailer';
+import { Transporter } from 'nodemailer';
 import dotenv from 'dotenv';
 import escapeHtml from 'escape-html';
 
@@ -38,7 +39,8 @@ const formParamsSchema = z.object({
     .max(20)
     .trim()
     .regex(/^\d+$/, 'Phone must contain only numbers'),
-  message: z.string().min(1).max(1000).trim(),
+  message: z.string().min(1).max(1000).trim().optional(),
+  vat: z.string().min(1).max(1000).trim().optional(),
   period: z.string().optional(),
   checked: z.boolean().refine((val) => val === true, {
     message: 'You must accept the terms and conditions',
@@ -60,22 +62,24 @@ const sendEmail = async ({
   email,
   phone,
   company,
+  vat,
   message,
   period,
   services,
 }: FormParams) => {
-  const transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-      user: process.env.GMAIL_USER,
-      pass: process.env.GMAIL_PASS,
-    },
-    secure: true, // Use TLS for secure connection
-  });
+  const transporter:Transporter = nodemailer.createTransport({
+  host: process.env.NEXT_PUBLIC_SMTP_SERVER as string,
+  port: parseInt(process.env.NEXT_PUBLIC_SMTP_PORT as string, 10),
+  secure: false, // true for 465, false for other ports
+  auth: {
+    user: process.env.NEXT_PUBLIC_EMAIL as string,
+    pass: process.env.NEXT_PUBLIC_EMAIL_PASSWORD as string,
+  },
+});
 
   const mailConfig = {
-    from: process.env.GMAIL_USER,
-    to: process.env.GMAIL_USER,
+    from: process.env.NEXT_PUBLIC_EMAIL,
+    to: process.env.NEXT_PUBLIC_EMAIL,
     subject: 'New form submission from NDCC',
     html: `
        <h3>New message received!</h3>
@@ -83,8 +87,9 @@ const sendEmail = async ({
       <p><strong>Email:</strong> ${safe(email)}</p>
       <p><strong>Phone:</strong> ${safe(phone)}</p>
       <p><strong>Company:</strong> ${safe(company)}</p>
+      <p><strong>VAT:</strong> ${vat && safe(vat)}</p>
       <p><strong>Period:</strong> ${period && safe(period)}</p>
-      <p><strong>Message:</strong><br>${safe(message)}</p>
+      <p><strong>Message:</strong><br>${message && safe(message)}</p>
       ${
         services && services.length > 0
           ? `<p><strong>Services Ordered:</strong></p>
@@ -103,7 +108,7 @@ const sendEmail = async ({
 
   // Confirmation email to the client
   const clientMailConfig = {
-    from: process.env.GMAIL_USER,
+    from: process.env.NEXT_PUBLIC_EMAIL,
     to: email,
     subject: 'Thank you for your request',
     html: `
@@ -134,9 +139,9 @@ const sendEmail = async ({
       <p><a href="mailto:hello@datacompliancecentre.com">hello@datacompliancecentre.com</a></p>
       <p>
         <a href="${
-          process.env.TERMS_URL || '/terms-and-conditions'
-        }">Terms and Conditions</a> | 
-        <a href="${process.env.PRIVACY_URL || '/privacy'}">Privacy Policy</a>
+          process.env.TERMS_URL || 'https://www.datacompliancecentre.com/terms-and-conditions'
+        }">Terms of Use</a> | 
+        <a href="${process.env.PRIVACY_URL || 'https://www.datacompliancecentre.com/privacy'}">Privacy Statement</a>
       </p>
     `,
   };

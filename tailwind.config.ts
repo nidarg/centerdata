@@ -17,6 +17,8 @@ const config: Config = {
     extend: {
       colors: {
         background: 'hsl(var(--background))',
+        bgLight:'hsl(var(--bg-light))',
+        bgDark:'hsl(var(--bg-dark))',
         foreground: 'hsl(var(--foreground))',
         light: 'hsl(var(--background-light))',
         cyan: 'hsl(var(--cyan))',

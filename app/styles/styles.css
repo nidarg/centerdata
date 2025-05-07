@@ -1,0 +1,285 @@
+
+
+.divider {
+  width: 100%;
+  background-color: var(--goldish); /* Adjust color as needed */
+  margin-top: 20px;
+  margin-bottom: 20px;
+  height: var(--divider-height, 2px); /* Default height is 2px */
+}
+
+/* styles.css */
+.video-container {
+  position: absolute;
+  inset: 0;
+  z-index: -10;
+  width: 100%;
+}
+
+.video-container-default {
+  top: 128px;
+}
+
+.video-height {
+  height: var(--video-height, 400px); /* Default height */
+}
+
+.basket-icon-size {
+  width: 1.7rem;
+  height: 1.7rem;
+}
+
+/* Define the class for the icon size */
+.icon-size {
+  width: 1.7rem;
+  height: 1.7rem;
+}
+
+/* Perspective style */
+.card-container-perspective {
+  perspective: 1000px;
+}
+
+/* 3D transform style for the rotating container */
+.card-item-transform {
+  transform-style: preserve-3d;
+}
+
+/* Base transform for rotating the container on mouse move */
+.card-item-transform-move {
+  transition: all 200ms ease-linear;
+}
+
+/* Base transform for animations of items */
+.card-item-animation {
+  transition: all 200ms ease-linear;
+}
+
+/* The transform used for animations (mouse enter) */
+.card-item-entered {
+  transform: translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+}
+
+/* Container styles */
+.container-perspective {
+  perspective: 1000px;
+}
+
+/* Header translate styles */
+.header-translate {
+  transition: transform 0.2s ease;
+}
+
+/* Card animation and transformations */
+.card-transform {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Box shadow effect */
+.card-shadow {
+  box-shadow: 
+    0 0 #0000004d, 
+    0 9px 20px #0000004a, 
+    0 37px 37px #00000042, 
+    0 84px 50px #00000026, 
+    0 149px 60px #0000000a, 
+    0 233px 65px #00000003;
+}
+
+/* Additional styles for cards */
+.card-inner {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 30px;
+  background-color: #222222;
+  padding: 2rem;
+}
+
+.card-hover {
+  background-color: teal;
+}
+
+.card-hover-md {
+  background-color: cyan;
+}
+
+/* Input wrapper for the motion effect */
+.input-wrapper {
+  position: relative;
+  padding: 2px;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+/* CSS class to set the background gradient dynamically */
+.input-wrapper-animated {
+  background: var(--input-background, radial-gradient(0px circle at 0px 0px, var(--zinc-200), transparent 80%));
+}
+
+/* Input field styles */
+.input-field {
+  display: flex;
+  height: 2.5rem;
+  width: 100%;
+  border: none;
+  background-color: #27272a; /* Equivalent to bg-zinc-800 */
+  color: white;
+  box-shadow: var(--shadow-input);
+  border-radius: 0.375rem; /* Equivalent to rounded-md */
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  transition: all 0.4s ease;
+}
+
+/* Focus visible style using outline */
+.input-field:focus-visible {
+  outline: 2px solid #4b5563; /* Equivalent to ring-neutral-600 */
+  outline-offset: 2px; /* Optional to give some spacing between the outline and input */
+}
+
+.input-field:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.input-field-placeholder {
+  color: #d1d5db; /* Equivalent to placeholder:text-neutral-400 */
+}
+
+/* New CSS classes for the ContainerScroll component */
+
+/* Custom container perspective class */
+.container-scroll-perspective {
+  perspective: 1000px;
+}
+
+/* Header translate animation for ContainerScroll */
+.container-scroll-header-translate {
+  transition: transform 0.2s ease;
+}
+
+/* Card animation and transformations for ContainerScroll */
+.container-scroll-card-transform {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Box shadow effect for ContainerScroll */
+.container-scroll-card-shadow {
+  box-shadow: 
+    0 0 #0000004d, 
+    0 9px 20px #0000004a, 
+    0 37px 37px #00000042, 
+    0 84px 50px #00000026, 
+    0 149px 60px #0000000a, 
+    0 233px 65px #00000003;
+}
+
+/* Card inner content styles for ContainerScroll */
+.container-scroll-card-inner {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 30px;
+  background-color: #222222;
+  padding: 2rem;
+}
+
+/* Hover effect for ContainerScroll */
+.container-scroll-card-hover {
+  background-color: teal;
+}
+
+/* Hover effect for medium screens in ContainerScroll */
+.container-scroll-card-hover-md {
+  background-color: cyan;
+}
+
+/* Animation styles for header translate */
+.container-scroll-header {
+  transition: transform 0.2s ease;
+  transform: translateY(var(--translate-y, 0)); /* Default to 0 */
+}
+/* Define the base class for the date input wrapper with the dynamic background */
+.date-input-wrapper {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  transition: background 0.4s ease;
+  background: var(--motion-background, transparent); /* Default transparent background */
+}
+
+.date-input-field {
+  /* Keep the existing styles for the input */
+  display: flex;
+  height: 2.5rem;
+  width: 100%;
+  border: none;
+  background-color: #27272a;
+  color: white;
+  border-radius: 0.375rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  transition: all 0.4s ease;
+  box-shadow: var(--shadow-input);
+}
+
+/* Focus visible style */
+.date-input-field:focus-visible {
+  outline: 2px solid #4b5563;
+  outline-offset: 2px;
+}
+
+/* Date picker modal styles */
+.date-picker-modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.date-picker-content {
+  background: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+}
+
+.date-picker-close-button {
+  padding: 10px;
+  background-color: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.date-input-wrapper:hover .date-input-field {
+  box-shadow: none; /* Remove shadow on hover */
+}
+/* Define the text effect container */
+.text-generate-wrapper {
+  display: inline-block;
+  font-weight: bold;
+}
+
+/* Define the class for each word with dynamic styles */
+.text-generate-word {
+  display: inline-block;
+  opacity: 0;
+  transition: opacity 0.5s ease, filter 0.5s ease;
+  filter: blur(10px);
+  padding-left: var(--word-padding-left, 0px); /* Default padding-left */
+}
+
+/* Animation for the opacity and filter effect */
+.text-generate-word-visible {
+  opacity: 1;
+  filter: blur(0px);
+}
+
+
+

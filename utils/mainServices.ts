@@ -20,11 +20,11 @@ export const mainServices = [
     imageUrl: '/images/dataProtection.jpg',
   },
   {
-    title: 'Tailormade solutions for Start-ups,Micro, and SMEs',
+    title: 'GDPR mix and match for Start-ups,Micro, and SMEs',
     description: [
       'This solution is for Start-ups, Micro and SMEs, customized solutions that empower these companies to develop their own data compliance framework at their own pace, aligned with their specific needs, and adaptable as their business grows.',
     ],
     href: '/tailormade-solutions',
-    imageUrl: '/images/business.jpg',
+    imageUrl: '/images/evatopictures/tailoredSolutions.jpg',
   },
 ];

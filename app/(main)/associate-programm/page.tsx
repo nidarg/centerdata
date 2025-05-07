@@ -1,7 +1,52 @@
 import React from 'react';
+import Head from "next/head";
 
 const AssociateProgram = () => {
   return (
+<>
+
+    <Head>
+   {/* SEO Meta Tags */}
+        <title>Associate Program with Nordic Data Compliance Centre</title>
+        <meta
+          name="description"
+          content="Join our Associate Program at the Nordic Data Compliance Centre. We offer flexible opportunities, diverse projects, and a collaborative network for data compliance experts."
+        />
+        <link rel="canonical" href="https://www.datacompliancecentre.com/associate-program" />
+        
+        {/* Open Graph Meta Tags */}
+        <meta property="og:title" content="Associate Program with Nordic Data Compliance Centre" />
+        <meta
+          property="og:description"
+          content="Become part of a collaborative network advancing data compliance services. Join our Associate Program for flexibility, diverse projects, and professional growth."
+        />
+        <meta property="og:url" content="https://www.datacompliancecentre.com/associate-program" />
+        
+        <meta property="og:type" content="website" />
+        
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Associate Program with Nordic Data Compliance Centre" />
+        <meta
+          name="twitter:description"
+          content="Join the Associate Program at Nordic Data Compliance Centre for flexible opportunities, collaboration, and growth in data compliance services."
+        />
+        <meta name="twitter:image" content="https://www.datacompliancecentre.com/images/associate-program-image.jpg" />
+
+        {/* Structured Data - Schema.org */}
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "WebPage",
+              "headline": "Associate Program with Nordic Data Compliance Centre",
+              "description": "Join our Associate Program at the Nordic Data Compliance Centre, offering flexible work options, collaborative opportunities, and professional development in data compliance.",
+              "url": "https://www.datacompliancecentre.com/associate-program"
+            }
+          `}
+        </script>
+      </Head>
+
     <div className='mt-[200px] max-w-4xl min-w-full'>
       {/* Title */}
       <h1 className='text-primary text-3xl font-bold shadow-md shadow-destructive rounded-md'>
@@ -115,6 +160,7 @@ const AssociateProgram = () => {
         .
       </p>
     </div>
+    </>
   );
 };
 

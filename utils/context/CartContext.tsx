@@ -22,6 +22,9 @@ const CartContext = createContext<IntShopContext>({
   cart: [],
   shopType: 'startup',
   cartCount: 0,
+  selectCounter: 0, 
+  setSelectCounter: () => undefined,
+  totalModules:0,
   setType: () => undefined,
   addToCart: () => undefined,
   removeFromCart: () => undefined,
@@ -31,7 +34,8 @@ const CartContext = createContext<IntShopContext>({
 export const ShopProvider = ({ children }: PropsWithChildren) => {
   const allProducts = [...products, ...onetimeproduct, ...subscriptions];
   const { toast } = useToast(); // Initialize the toast
-
+  const totalModules = products.length + subscriptions.length;
+  const [selectCounter, setSelectCounter] = useState<number>(0);
   // Initialize state
   const [cart, setCart] = useState<IntProductPayload[]>(() => {
     const storedCart = Cookies.get(STORAGE_CART);
@@ -115,6 +119,9 @@ export const ShopProvider = ({ children }: PropsWithChildren) => {
     shopType,
     setType,
     cartCount,
+    selectCounter,
+    setSelectCounter,
+    totalModules,
     addToCart,
     removeFromCart,
     removeAllFromCart,
