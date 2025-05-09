@@ -1,0 +1,113 @@
+{
+  "navigation": {
+    "home": "Hjem",
+    "about": "Om oss",
+    "contact": "Kontakt"
+  },
+  "language": {
+    "select": "Velg språk",
+    "en": "Engelsk",
+    "da": "Dansk",
+    "sv": "Svensk",
+    "no": "Norsk",
+    "fi": "Finsk"
+  },
+  "footer": {
+    "company": {
+      "name": "Nordic Data Compliance Centre ApS",
+      "address": {
+        "street": "Maglebjergvej 6",
+        "city": "2800 Kongens Lyngby",
+        "country": "Danmark",
+        "vat": "CVR DK 44251434"
+      }
+    },
+    "services": {
+      "title": "Våre Tjenester",
+      "items": {
+        "specialized": "Spesialiserte Prosjekter",
+        "interim": "Midlertidige Tjenester",
+        "tailormade": "GDPR Mix og Match for Start-ups, Mikro og SMB"
+      }
+    },
+    "associate": {
+      "title": "Associate Program",
+      "description": "Å bli en del av vårt associate-program betyr å bli en del av et samarbeidsnettverk dedikert til å fremme datacompliance-tjenester."
+    },
+    "insurance": {
+      "title": "Forsikring",
+      "description": "Alle våre konsulenter er dekket av profesjonell ansvarsforsikring som beskytter konsulenttjenestene."
+    },
+    "legal": {
+      "title": "Juridisk",
+      "items": {
+        "privacy": "Personvernregler",
+        "terms": "Bruksvilkår"
+      }
+    },
+    "ceo": {
+      "title": "Møt vår CEO",
+      "website": "olganielsen.com"
+    }
+  },
+  "navigation": {
+    "home": "Hjem",
+    "about": "Om oss",
+    "contact": "Kontakt",
+    "services": "Tjenester",
+    "workWithUs": "Jobb med oss",
+    "services": {
+      "specialized": "Spesialiserte Prosjekter",
+      "interim": "Midlertidige Tjenester",
+      "tailormade": "GDPR Mix og Match"
+    }
+  },
+  "testimonials": {
+    "title": "Kundesuksesshistorier",
+    "readMore": "Les Flere Anmeldelser"
+  },
+
+  "services": {
+    "title": "Våre Tjenester",
+    "description": "Utforsk vårt omfattende utvalg av tjenester",
+    "viewAll": "Se Alle Tjenester",
+    "allModules": "Du kan legge til alle moduler.",
+    "modules": {
+      "management": "MIX OG MATCH MODULER STYRESYSTEM",
+      "implement": "MIX OG MATCH MODULER IMPLEMENTERING"
+    },
+    "additional": {
+      "title": "TILLEGGSJENESTER OG SUPPORT UTEN EKSTRA KOSTNAD",
+      "maturityAssessment": "Datacompliance Modenhetsvurdering",
+      "onlineOnboarding": "Online onboarding",
+      "support": "Support - e-post og telefon",
+      "statusReport": "Virtuell Datacompliance status til ledelsen hver 3. måned"
+    }
+  },
+  "consultation": {
+    "title": "vil du ha en gratis konsultasjon?",
+    "description": "Fyll ut skjemaet nedenfor for å planlegge",
+    "highlight": "en gratis konsultasjon",
+    "error": "Feil",
+    "errorMessage": "Noe gikk galt.",
+    "successMessage": "Din melding ble sendt vellykket.",
+    "form": {
+      "fullname": "Fullt navn",
+      "email": "E-post",
+      "company": "Firma",
+      "submit": "Kontakt oss"
+    },
+    "privacy": {
+      "text": "De ovenstående personlige opplysningene behandles i henhold til vår",
+      "link": " Personvernpolicy"
+    }
+  },
+  "hero": {
+    "headers": {
+      "ahead": "VÆR FORAN.",
+      "secure": "VÆR SIKKER.",
+      "compliant": "VÆR COMPLIANT."
+    },
+    "description": "Med en praktisk tilnærming tar vi for oss selv de mest utfordrende datacompliance-problemene ved å kombinere strategisk planlegging med konkrete, praktiske løsninger."
+  }
+}

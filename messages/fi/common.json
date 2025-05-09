@@ -1,0 +1,112 @@
+{
+  "navigation": {
+    "home": "Koti",
+    "about": "Tietoa meistä",
+    "contact": "Yhteystiedot"
+  },
+  "language": {
+    "select": "Valitse kieli",
+    "en": "Englanti",
+    "da": "Tanska",
+    "sv": "Ruotsi",
+    "no": "Norja",
+    "fi": "Suomi"
+  },
+  "footer": {
+    "company": {
+      "name": "Nordic Data Compliance Centre ApS",
+      "address": {
+        "street": "Maglebjergvej 6",
+        "city": "2800 Kongens Lyngby",
+        "country": "Tanska",
+        "vat": "CVR DK 44251434"
+      }
+    },
+    "services": {
+      "title": "Palvelumme",
+      "items": {
+        "specialized": "Erikoistuneet Projektit",
+        "interim": "Väliaikaiset Palvelut",
+        "tailormade": "GDPR Mix ja Match Start-upeille, Mikro- ja PK-yrityksille"
+      }
+    },
+    "associate": {
+      "title": "Associate Program",
+      "description": "Liittymällä associate-ohjelmaamme pääset osaksi yhteistyöverkostoa, joka on omistautunut edistämään tietojen yhteensopivuuspalveluja."
+    },
+    "insurance": {
+      "title": "Vakuutus",
+      "description": "Kaikki konsulttimme ovat ammattivastuuvakuutuksen piirissä, joka suojaa konsultointipalveluja."
+    },
+    "legal": {
+      "title": "Oikeudellinen",
+      "items": {
+        "privacy": "Tietosuojakäytäntö",
+        "terms": "Käyttöehdot"
+      }
+    },
+    "ceo": {
+      "title": "Tutustu toimitusjohtajaamme",
+      "website": "olganielsen.com"
+    }
+  },
+  "navigation": {
+    "home": "Koti",
+    "about": "Tietoa meistä",
+    "contact": "Yhteystiedot",
+    "services": "Palvelut",
+    "workWithUs": "Työskentele kanssamme",
+    "services": {
+      "specialized": "Erikoistuneet Projektit",
+      "interim": "Väliaikaiset Palvelut",
+      "tailormade": "GDPR Mix ja Match"
+    }
+  },
+  "testimonials": {
+    "title": "Asiakastarinoita",
+    "readMore": "Lue Lisää Arvosteluja"
+  },
+  "services": {
+    "title": "Palvelumme",
+    "description": "Tutustu kattavaan palveluvalikoimaamme",
+    "viewAll": "Katso Kaikki Palvelut",
+    "allModules": "Voit lisätä kaikki moduulit.",
+    "modules": {
+      "management": "MIX JA MATCH MODUULIT HALLINTA",
+      "implement": "MIX JA MATCH MODUULIT TOTEUTUS"
+    },
+    "additional": {
+      "title": "LISÄPALVELUT JA TUKI ILMAN LISÄKUSTANNUKSIA",
+      "maturityAssessment": "Tietojen Yhteensopivuuden Kypsyysarviointi",
+      "onlineOnboarding": "Online onboarding",
+      "support": "Tuki - sähköposti ja puhelin",
+      "statusReport": "Virtuaalinen Tietojen yhteensopivuuden tila johtajistolle 3 kuukauden välein"
+    }
+  },
+  "consultation": {
+    "title": "haluatko ilmaisen konsultaation?",
+    "description": "Täytä alla oleva lomake ajanvaraukseen",
+    "highlight": "ilmainen konsultaatio",
+    "error": "Virhe",
+    "errorMessage": "Jotain meni pieleen.",
+    "successMessage": "Viestisi lähetettiin onnistuneesti.",
+    "form": {
+      "fullname": "Koko nimi",
+      "email": "Sähköposti",
+      "company": "Yritys",
+      "submit": "Ota yhteyttä"
+    },
+    "privacy": {
+      "text": "Yllä olevat henkilötiedot käsitellään vastaavasti",
+      "link": " Tietosuojakäytäntö"
+    }
+  },
+  "hero": {
+    "headers": {
+      "ahead": "OLE EDESSÄ.",
+      "secure": "OLE TURVASSA.",
+      "compliant": "OLE COMPLIANT."
+    },
+    "description": "Käytännönläheisellä asenteella ratkaisemme jopa haastavimmat tietojen yhteensopivuusongelmat yhdistämällä strategisen suunnittelun konkreettisiin, käytännön ratkaisuihin."
+  }
+}

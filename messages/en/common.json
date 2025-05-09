@@ -1,0 +1,113 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "language": {
+    "select": "Select Language",
+    "en": "English",
+    "da": "Danish",
+    "sv": "Swedish",
+    "no": "Norwegian",
+    "fi": "Finnish"
+  },
+
+  "footer": {
+    "company": {
+      "name": "Nordic Data Compliance Centre ApS",
+      "address": {
+        "street": "Maglebjergvej 6",
+        "city": "2800 Kongens Lyngby",
+        "country": "Denmark",
+        "vat": "VAT DK 44251434"
+      }
+    },
+    "services": {
+      "title": "Our Services",
+      "items": {
+        "specialized": "Specialized Projects",
+        "interim": "Interim Services",
+        "tailormade": "GDPR Mix and Match for Start-ups, Micro and SMEs"
+      }
+    },
+    "associate": {
+      "title": "Associate Program",
+      "description": "Joining our associate program means becoming part of a collaborative network dedicated to advancing data compliance services."
+    },
+    "insurance": {
+      "title": "Insurance",
+      "description": "All our Consultants are covered by professional indemnity insurance that protects the consultancy services."
+    },
+    "legal": {
+      "title": "Legal",
+      "items": {
+        "privacy": "Privacy Statement",
+        "terms": "Terms of Use"
+      }
+    },
+    "ceo": {
+      "title": "Meet our CEO",
+      "website": "olganielsen.com"
+    }
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact",
+    "services": "Services",
+    "workWithUs": "Work with Us",
+    "services": {
+      "specialized": "Specialized Projects",
+      "interim": "Interim Services",
+      "tailormade": "GDPR Mix and Match"
+    }
+  },
+  "testimonials": {
+    "title": "Client Success Stories",
+    "readMore": "Read More Reviews"
+  },
+  "services": {
+    "title": "Our Services",
+    "description": "Explore our comprehensive range of services",
+    "viewAll": "View All Services",
+    "allModules": "You can add all modules.",
+    "modules": {
+      "management": "MIX AND MATCH MODULES MANAGEMENT",
+      "implement": "MIX AND MATCH MODULES IMPLEMENT"
+    },
+    "additional": {
+      "title": "ADDITIONAL SERVICES AND SUPPORT WITH NO EXTRA COST",
+      "maturityAssessment": "Data Compliance Maturity Assessment",
+      "onlineOnboarding": "Online onboarding",
+      "support": "Support - email and phone",
+      "statusReport": "Virtual Data compliance status to management every 3 months"
+    }
+  },
+  "consultation": {
+    "title": "want a free consultation?",
+    "description": "Fill out the form bellow to schedule",
+    "highlight": "a free consultation",
+    "error": "Error",
+    "errorMessage": "Something went wrong.",
+    "successMessage": "Your message was sent successfully.",
+    "form": {
+      "fullname": "Full Name",
+      "email": "Email",
+      "company": "Company",
+      "submit": "Contact us"
+    },
+    "privacy": {
+      "text": "The above personal data are processed according to our",
+      "link": " Privacy Statement"
+    }
+  },
+  "hero": {
+    "headers": {
+      "ahead": "BE AHEAD.",
+      "secure": "BE SECURE.",
+      "compliant": "BE COMPLIANT."
+    },
+    "description": "With a practical mindset, we address even the most challenging data compliance issues by combining strategic planning with actionable, hands-on solutions."
+  }
+}

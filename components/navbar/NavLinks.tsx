@@ -1,8 +1,6 @@
-
-
 'use client';
 
-import { links, servicesLinks } from '@/utils/links';
+import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
@@ -16,14 +14,33 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { Button } from '@/components/ui/button';
 
-function NavLinks({ setServicesClicked, dropdownRef, closeMenu }: { 
-  setServicesClicked: React.Dispatch<React.SetStateAction<boolean>>, 
-  dropdownRef: React.RefObject<HTMLDivElement>,
-  closeMenu: () => void 
+function NavLinks({
+  setServicesClicked,
+  dropdownRef,
+  closeMenu,
+}: {
+  setServicesClicked: React.Dispatch<React.SetStateAction<boolean>>;
+  dropdownRef: React.RefObject<HTMLDivElement>;
+  closeMenu: () => void;
 }) {
+  const t = useTranslations('navigation');
   const pathname = usePathname();
   const [openDropdown, setOpenDropdown] = useState(false);
   const [sideOffset, setSideOffset] = useState(50);
+
+  const links = [
+    { href: '/', label: t('home') },
+    { href: '/services', label: t('services') },
+    { href: '/about', label: t('about') },
+    { href: '/contact', label: t('contact') },
+    { href: '/work-with-us', label: t('workWithUs') },
+  ];
+
+  const servicesLinks = [
+    '/specialized-projects',
+    '/interim-services',
+    '/tailormade-solutions',
+  ];
 
   useEffect(() => {
     const handleResize = () => {
@@ -53,7 +70,11 @@ function NavLinks({ setServicesClicked, dropdownRef, closeMenu }: {
             >
               <DropdownMenuTrigger asChild>
                 <Button
-                  className={`relative mr-2 lg:min-w-[150px] sm:min-w-[100px] min-w-[60px] ${isServiceActive ? 'text-destructive border border-destructive font-bold' : ''}`}
+                  className={`relative mr-2 lg:min-w-[150px] sm:min-w-[100px] min-w-[60px] ${
+                    isServiceActive
+                      ? 'text-destructive border border-destructive font-bold'
+                      : ''
+                  }`}
                   variant='outline'
                   size='lg'
                   asChild
@@ -65,22 +86,33 @@ function NavLinks({ setServicesClicked, dropdownRef, closeMenu }: {
                 </Button>
               </DropdownMenuTrigger>
 
-              <DropdownMenuContent ref={dropdownRef} className='lg:w-96 md:w-72 w-[250px] p-2' align='start' sideOffset={sideOffset}>
+              <DropdownMenuContent
+                ref={dropdownRef}
+                className='lg:w-96 md:w-72 w-[250px] p-2'
+                align='start'
+                sideOffset={sideOffset}
+              >
                 <DropdownMenuItem asChild onSelect={closeMenu}>
                   <Button variant='outline' asChild>
-                    <Link href='/specialized-projects'>Specialized projects</Link>
+                    <Link href='/specialized-projects'>
+                      {t('services.specialized')}
+                    </Link>
                   </Button>
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem asChild onSelect={closeMenu}>
                   <Button variant='outline' asChild>
-                    <Link href='/interim-services'>Interim services</Link>
+                    <Link href='/interim-services'>
+                      {t('services.interim')}
+                    </Link>
                   </Button>
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem asChild onSelect={closeMenu}>
                   <Button variant='outline' asChild>
-                    <Link href='/tailormade-solutions'>GDPR mix and match</Link>
+                    <Link href='/tailormade-solutions'>
+                      {t('services.tailormade')}
+                    </Link>
                   </Button>
                 </DropdownMenuItem>
               </DropdownMenuContent>
@@ -94,8 +126,12 @@ function NavLinks({ setServicesClicked, dropdownRef, closeMenu }: {
             asChild
             variant='outline'
             size='lg'
-            className={`relative mr-2 lg:min-w-[150px] sm:min-w-[100px] min-w-[60px] ${isActive ? 'text-destructive border border-destructive font-bold' : ''}`}
-            onClick={closeMenu} // Close menu when clicking normal links
+            className={`relative mr-2 lg:min-w-[150px] sm:min-w-[100px] min-w-[60px] ${
+              isActive
+                ? 'text-destructive border border-destructive font-bold'
+                : ''
+            }`}
+            onClick={closeMenu}
           >
             <Link href={link.href}>
               <span className='text-lg md:text-xl'>{link.label}</span>
@@ -108,6 +144,3 @@ function NavLinks({ setServicesClicked, dropdownRef, closeMenu }: {
 }
 
 export default NavLinks;
-
-
-
