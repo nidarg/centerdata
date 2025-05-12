@@ -1,14 +1,14 @@
 import { useLocale } from 'next-intl';
-import { usePathname, useRouter } from 'next-intl/client';
+import { usePathname, useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Button } from "@/components/ui/button";
-import { Globe } from "lucide-react";
+} from '@/components/ui/dropdown-menu';
+import { Button } from '@/components/ui/button';
+import { Globe } from 'lucide-react';
 
 export default function LanguageSelector() {
   const t = useTranslations('language');
@@ -25,17 +25,18 @@ export default function LanguageSelector() {
   ];
 
   const handleLanguageChange = (newLocale: string) => {
-    router.replace(pathname, { locale: newLocale });
+    // Update this to use the new router.push method
+    router.push(`/${newLocale}${pathname}`);
   };
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="icon">
-          <Globe className="h-5 w-5" />
+        <Button variant='ghost' size='icon'>
+          <Globe className='h-5 w-5' />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
+      <DropdownMenuContent align='end'>
         {languages.map((lang) => (
           <DropdownMenuItem
             key={lang.code}
@@ -48,4 +49,4 @@ export default function LanguageSelector() {
       </DropdownMenuContent>
     </DropdownMenu>
   );
-} 
+}

@@ -63,7 +63,9 @@ function NavLinks({
             <DropdownMenu
               key={link.href}
               open={openDropdown}
-              onOpenChange={(open) => {
+              onOpenChange={(
+                open: boolean | ((prevState: boolean) => boolean)
+              ) => {
                 setOpenDropdown(open);
                 setServicesClicked(open);
               }}
