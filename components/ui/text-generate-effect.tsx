@@ -17,7 +17,6 @@ export const TextGenerateEffect = ({
   paddingLeft?: string; // Accept paddingLeft as a string
 }) => {
   const [scope, animate] = useAnimate();
-  console.log('words ', words);
 
   useEffect(() => {
     // Reset the animation state

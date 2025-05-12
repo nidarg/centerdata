@@ -28,9 +28,7 @@ const VideoBackground: React.FC<VideoBackgroundProps> = ({
   }, [headers, locale]);
 
   const isMainHero = useMemo(
-    () =>
-      currentHeaders.length === 3 &&
-      currentHeaders[0].toLowerCase().includes('ahead'),
+    () => currentHeaders.length === 3,
     [currentHeaders]
   );
 
