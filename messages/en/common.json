@@ -1,9 +1,4 @@
 {
-  "navigation": {
-    "home": "Home",
-    "about": "About",
-    "contact": "Contact"
-  },
   "language": {
     "select": "Select Language",
     "en": "English",

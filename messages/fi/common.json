@@ -1,9 +1,4 @@
 {
-  "navigation": {
-    "home": "Koti",
-    "about": "Tietoa meistä",
-    "contact": "Yhteystiedot"
-  },
   "language": {
     "select": "Valitse kieli",
     "en": "Englanti",

@@ -1,9 +1,4 @@
 {
-  "navigation": {
-    "home": "Hjem",
-    "about": "Om oss",
-    "contact": "Kontakt"
-  },
   "language": {
     "select": "Velg språk",
     "en": "Engelsk",
