@@ -49,7 +49,7 @@
     "home": "Hem",
     "about": "Om oss",
     "contact": "Kontakt",
-    "services": "Tjänster",
+    "servicesLabel": "Tjänster",
     "workWithUs": "Arbeta med oss",
     "services": {
       "specialized": "Specialiserade Projekt",
@@ -103,5 +103,45 @@
       "compliant": "VAR COMPLIANT."
     },
     "description": "Med en praktisk inställning tar vi itu med även de mest utmanande datacompliance-frågorna genom att kombinera strategisk planering med konkreta, praktiska lösningar."
+  },
+  "cart": {
+    "title": "Din Kundvagn",
+    "empty": "Din kundvagn är tom",
+    "item": {
+      "type": "Typ",
+      "price": "Pris",
+      "remove": "Ta bort",
+      "level": "Nivå",
+      "option": "Alternativ"
+    },
+    "actions": {
+      "checkout": "Fyll i kontaktformulär",
+      "close": "Stäng",
+      "details": "Detaljer",
+      "addToCart": "Lägg i varukorg",
+      "requestQuotation": "Begär offert"
+    },
+    "modals": {
+      "moreDetails": "Fler detaljer",
+      "showLess": "Visa mindre...",
+      "productDetails": "Produktdetaljer"
+    },
+    "messages": {
+      "alreadyInCart": "{title} finns redan i varukorgen.",
+      "addedToCart": "Lagd i varukorg",
+      "removedFromCart": "Borttagen från varukorg",
+      "choosePlan": "Välj en plan först",
+      "upgradePlan": "För fler tjänster, uppgradera din plan"
+    },
+    "counter": {
+      "youCanAdd": "Du kan lägga till",
+      "moreModules": "fler moduler",
+      "getQuotation": "Få en offert"
+    },
+    "subscriptions": {
+      "price": "Per månad",
+      "type": "Prenumeration",
+      "service": "Tjänst"
+    }
   }
 }

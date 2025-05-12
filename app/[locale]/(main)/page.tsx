@@ -1,3 +1,5 @@
+'use client';
+
 import TextImage from '@/components/TextImage';
 
 import { innovation, consulting } from '@/utils/about';

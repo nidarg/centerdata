@@ -17,8 +17,22 @@ export const TextGenerateEffect = ({
   paddingLeft?: string; // Accept paddingLeft as a string
 }) => {
   const [scope, animate] = useAnimate();
+  console.log('words ', words);
 
   useEffect(() => {
+    // Reset the animation state
+    animate(
+      'span',
+      {
+        opacity: 0,
+        filter: filter ? 'blur(10px)' : 'none',
+      },
+      {
+        duration: 0,
+      }
+    );
+
+    // Run the animation
     animate(
       'span',
       {
@@ -30,7 +44,7 @@ export const TextGenerateEffect = ({
         delay: stagger(0.2),
       }
     );
-  }, [scope.current]);
+  }, [words, scope.current, animate, duration, filter]); // Add words to dependencies
 
   return (
     <motion.div ref={scope} className={cn(`font-bold`, className)}>

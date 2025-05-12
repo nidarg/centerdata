@@ -49,7 +49,7 @@
     "home": "Koti",
     "about": "Tietoa meistä",
     "contact": "Yhteystiedot",
-    "services": "Palvelut",
+    "servicesLabel": "Palvelut",
     "workWithUs": "Työskentele kanssamme",
     "services": {
       "specialized": "Erikoistuneet Projektit",
@@ -103,5 +103,45 @@
       "compliant": "OLE COMPLIANT."
     },
     "description": "Käytännönläheisellä asenteella ratkaisemme jopa haastavimmat tietojen yhteensopivuusongelmat yhdistämällä strategisen suunnittelun konkreettisiin, käytännön ratkaisuihin."
+  },
+  "cart": {
+    "title": "Ostoskori",
+    "empty": "Ostoskorisi on tyhjä",
+    "item": {
+      "type": "Tyyppi",
+      "price": "Hinta",
+      "remove": "Poista",
+      "level": "Taso",
+      "option": "Vaihtoehto"
+    },
+    "actions": {
+      "checkout": "Täytä yhteystietolomake",
+      "close": "Sulje",
+      "details": "Tiedot",
+      "addToCart": "Lisää koriin",
+      "requestQuotation": "Pyydä tarjous"
+    },
+    "modals": {
+      "moreDetails": "Lisätiedot",
+      "showLess": "Näytä vähemmän...",
+      "productDetails": "Tuotetiedot"
+    },
+    "messages": {
+      "alreadyInCart": "{title} on jo korissa.",
+      "addedToCart": "Lisätty koriin",
+      "removedFromCart": "Poistettu korista",
+      "choosePlan": "Valitse ensin suunnitelma",
+      "upgradePlan": "Lisätietoja palveluista, päivitä suunnitelmasi"
+    },
+    "counter": {
+      "youCanAdd": "Voit lisätä",
+      "moreModules": "moduulia lisää",
+      "getQuotation": "Hanki tarjous"
+    },
+    "subscriptions": {
+      "price": "Kuukaudessa",
+      "type": "Tilaus",
+      "service": "Palvelu"
+    }
   }
 }

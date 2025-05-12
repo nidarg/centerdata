@@ -3,7 +3,7 @@
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 import {
   DropdownMenu,
@@ -14,43 +14,25 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { Button } from '@/components/ui/button';
 
-function NavLinks({
-  setServicesClicked,
-  dropdownRef,
-  closeMenu,
-}: {
-  setServicesClicked: React.Dispatch<React.SetStateAction<boolean>>;
-  dropdownRef: React.RefObject<HTMLDivElement>;
-  closeMenu: () => void;
-}) {
+function NavLinks() {
   const t = useTranslations('navigation');
   const pathname = usePathname();
   const [openDropdown, setOpenDropdown] = useState(false);
-  const [sideOffset, setSideOffset] = useState(50);
 
+  // Define navigation links with translations
   const links = [
     { href: '/', label: t('home') },
-    { href: '/services', label: t('services') },
-    { href: '/about', label: t('about') },
+    { href: '/#about-us', label: t('about') },
+    { href: '/services', label: t('servicesLabel') },
     { href: '/contact', label: t('contact') },
-    { href: '/work-with-us', label: t('workWithUs') },
   ];
 
+  // Define service links with translations
   const servicesLinks = [
     '/specialized-projects',
     '/interim-services',
     '/tailormade-solutions',
   ];
-
-  useEffect(() => {
-    const handleResize = () => {
-      setSideOffset(window.innerWidth >= 768 ? 10 : 50);
-    };
-
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
 
   return (
     <div className='flex flex-col md:flex-row gap-2 mt-2 md:mt-0'>
@@ -63,12 +45,7 @@ function NavLinks({
             <DropdownMenu
               key={link.href}
               open={openDropdown}
-              onOpenChange={(
-                open: boolean | ((prevState: boolean) => boolean)
-              ) => {
-                setOpenDropdown(open);
-                setServicesClicked(open);
-              }}
+              onOpenChange={setOpenDropdown}
             >
               <DropdownMenuTrigger asChild>
                 <Button
@@ -89,29 +66,60 @@ function NavLinks({
               </DropdownMenuTrigger>
 
               <DropdownMenuContent
-                ref={dropdownRef}
-                className='lg:w-96 md:w-72 w-[250px] p-2'
+                className='lg:w-96 md:w-72 w-full p-2'
                 align='start'
-                sideOffset={sideOffset}
+                sideOffset={10}
+                onPointerLeave={() => setOpenDropdown(false)}
               >
-                <DropdownMenuItem asChild onSelect={closeMenu}>
-                  <Button variant='outline' asChild>
+                <DropdownMenuItem
+                  asChild
+                  onSelect={() => setOpenDropdown(false)}
+                  className='hover:cursor-pointer w-full text-primary'
+                >
+                  <Button
+                    className='w-full text-left lg:text-center lg:inline-block block whitespace-normal break-words'
+                    variant='outline'
+                    asChild
+                    onClick={() => setOpenDropdown(!openDropdown)}
+                  >
                     <Link href='/specialized-projects'>
                       {t('services.specialized')}
                     </Link>
                   </Button>
                 </DropdownMenuItem>
+
                 <DropdownMenuSeparator />
-                <DropdownMenuItem asChild onSelect={closeMenu}>
-                  <Button variant='outline' asChild>
+
+                <DropdownMenuItem
+                  asChild
+                  onSelect={() => setOpenDropdown(false)}
+                  className='hover:cursor-pointer w-full'
+                >
+                  <Button
+                    className='w-full text-left lg:text-center lg:inline-block block whitespace-normal break-words'
+                    variant='outline'
+                    asChild
+                    onClick={() => setOpenDropdown(!openDropdown)}
+                  >
                     <Link href='/interim-services'>
                       {t('services.interim')}
                     </Link>
                   </Button>
                 </DropdownMenuItem>
+
                 <DropdownMenuSeparator />
-                <DropdownMenuItem asChild onSelect={closeMenu}>
-                  <Button variant='outline' asChild>
+
+                <DropdownMenuItem
+                  asChild
+                  onSelect={() => setOpenDropdown(false)}
+                  className='hover:cursor-pointer w-full'
+                >
+                  <Button
+                    className='w-full text-left lg:text-center lg:inline-block block whitespace-normal break-words'
+                    variant='outline'
+                    asChild
+                    onClick={() => setOpenDropdown(!openDropdown)}
+                  >
                     <Link href='/tailormade-solutions'>
                       {t('services.tailormade')}
                     </Link>
@@ -124,16 +132,15 @@ function NavLinks({
 
         return (
           <Button
-            key={link.href}
-            asChild
-            variant='outline'
-            size='lg'
             className={`relative mr-2 lg:min-w-[150px] sm:min-w-[100px] min-w-[60px] ${
               isActive
                 ? 'text-destructive border border-destructive font-bold'
                 : ''
             }`}
-            onClick={closeMenu}
+            key={link.href}
+            asChild
+            variant='outline'
+            size='lg'
           >
             <Link href={link.href}>
               <span className='text-lg md:text-xl'>{link.label}</span>

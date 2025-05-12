@@ -50,7 +50,7 @@
     "home": "Home",
     "about": "About",
     "contact": "Contact",
-    "services": "Services",
+    "servicesLabel": "Services",
     "workWithUs": "Work with Us",
     "services": {
       "specialized": "Specialized Projects",
@@ -104,5 +104,45 @@
       "compliant": "BE COMPLIANT."
     },
     "description": "With a practical mindset, we address even the most challenging data compliance issues by combining strategic planning with actionable, hands-on solutions."
+  },
+  "cart": {
+    "title": "Your Cart",
+    "empty": "Your cart is empty",
+    "item": {
+      "type": "Type",
+      "price": "Price",
+      "remove": "Remove",
+      "level": "Level",
+      "option": "Option"
+    },
+    "actions": {
+      "checkout": "Fill out contact form",
+      "close": "Close",
+      "details": "Details",
+      "addToCart": "Add to cart",
+      "requestQuotation": "Request a quotation"
+    },
+    "modals": {
+      "moreDetails": "More Details",
+      "showLess": "Show less...",
+      "productDetails": "Product Details"
+    },
+    "messages": {
+      "alreadyInCart": "{title} is already in the cart.",
+      "addedToCart": "Added to cart",
+      "removedFromCart": "Removed from cart",
+      "choosePlan": "Please choose a plan first",
+      "upgradePlan": "For more services, please upgrade your plan"
+    },
+    "counter": {
+      "youCanAdd": "You can add",
+      "moreModules": "more modules",
+      "getQuotation": "Get a quotation"
+    },
+    "subscriptions": {
+      "price": "Per month",
+      "type": "Subscription",
+      "service": "Service"
+    }
   }
 }

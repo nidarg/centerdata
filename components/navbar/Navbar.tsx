@@ -90,15 +90,15 @@ function Navbar() {
         >
           <div className='py-[64px] mb-10 sm:mb-0'>
             <NavLinks
-              setServicesClicked={setServicesClicked}
-              dropdownRef={dropdownRef}
-              closeMenu={closeMenu}
+            // setServicesClicked={setServicesClicked}
+            // dropdownRef={dropdownRef}
+            // closeMenu={closeMenu}
             />
           </div>
           <LanguageSelector />
           <div className='flex flex-row gap-4 items-center justify-between'>
             <DarkMode />
-            {pathname === '/tailormade-solutions' && <Basket />}
+            {pathname.includes('/tailormade-solutions') && <Basket />}
           </div>
         </div>
       </div>

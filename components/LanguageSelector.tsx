@@ -1,3 +1,5 @@
+'use client';
+
 import { useLocale } from 'next-intl';
 import { usePathname, useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
@@ -25,8 +27,12 @@ export default function LanguageSelector() {
   ];
 
   const handleLanguageChange = (newLocale: string) => {
-    // Update this to use the new router.push method
-    router.push(`/${newLocale}${pathname}`);
+    // Remove the current locale from the pathname
+    const pathnameWithoutLocale = pathname.replace(`/${locale}`, '');
+    // Construct the new path with the new locale
+    const newPath = `/${newLocale}${pathnameWithoutLocale}`;
+    // Use router.push for client-side navigation
+    router.push(newPath);
   };
 
   return (

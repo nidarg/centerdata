@@ -1,4 +1,5 @@
-import type { NextConfig } from "next";
+// next.config.ts
+import type { NextConfig } from 'next';
 import createNextIntlPlugin from 'next-intl/plugin';
 
 const withNextIntl = createNextIntlPlugin();
@@ -14,15 +15,11 @@ const nextConfig: NextConfig = {
     }
 
     // Add any custom webpack configurations here if needed
-
-    return config; // Always return the modified config
+    return config;
   },
 
-  i18n: {
-    locales: ['en', 'da', 'sv', 'no', 'fi'],
-    defaultLocale: 'en',
-  },
+  // Remove the i18n config as it's not needed with App Router
+  // The i18n configuration is now handled by next-intl middleware
 };
 
 export default withNextIntl(nextConfig);
-

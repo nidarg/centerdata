@@ -11,6 +11,7 @@ import {
 import { onetimeproduct, products, subscriptions } from '../products';
 import { IntShopContext, IntProductPayload } from '../types';
 import { useToast } from '@/hooks/use-toast';
+import { useTranslations } from 'next-intl';
 
 const STORAGE_CART = 'app_cart';
 const STORAGE_TYPE = 'app_type';
@@ -22,9 +23,9 @@ const CartContext = createContext<IntShopContext>({
   cart: [],
   shopType: 'startup',
   cartCount: 0,
-  selectCounter: 0, 
+  selectCounter: 0,
   setSelectCounter: () => undefined,
-  totalModules:0,
+  totalModules: 0,
   setType: () => undefined,
   addToCart: () => undefined,
   removeFromCart: () => undefined,
@@ -32,6 +33,7 @@ const CartContext = createContext<IntShopContext>({
 });
 
 export const ShopProvider = ({ children }: PropsWithChildren) => {
+  const t = useTranslations('cart.messages');
   const allProducts = [...products, ...onetimeproduct, ...subscriptions];
   const { toast } = useToast(); // Initialize the toast
   const totalModules = products.length + subscriptions.length;
@@ -68,7 +70,7 @@ export const ShopProvider = ({ children }: PropsWithChildren) => {
       // Show a toast message if the product is already in the cart
       const product = allProducts.find((item) => item.id === productId);
       toast({
-        description: `${product?.title} is already in the cart.`,
+        description: t('alreadyInCart', { title: product?.title! }),
       });
       return; // Exit the function to prevent adding the duplicate
     }

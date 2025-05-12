@@ -1,7 +1,7 @@
 // utils/getLanguageFromGeo.ts
 import axios from 'axios';
 
-const IPGEOLOCATION_API_KEY = 'your-api-key-here'; // Replace with your actual API key
+const IPGEOLOCATION_API_KEY = '803b037465f048b6a329b3e020e407b1'; // Replace with your actual API key
 
 export const getLanguageFromGeo = async (): Promise<string> => {
   try {

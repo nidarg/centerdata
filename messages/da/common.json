@@ -50,7 +50,7 @@
     "home": "Hjem",
     "about": "Om os",
     "contact": "Kontakt",
-    "services": "Tjenester",
+    "servicesLabel": "Tjenester",
     "workWithUs": "Arbejd med os",
     "services": {
       "specialized": "Specialiserede Projekter",
@@ -104,5 +104,45 @@
       "compliant": "VÆR COMPLIANT."
     },
     "description": "Med en praktisk tilgang adresserer vi selv de mest udfordrende datacompliance-problemer ved at kombinere strategisk planlægning med konkrete, praktiske løsninger."
+  },
+  "cart": {
+    "title": "Din Indkøbskurv",
+    "empty": "Din indkøbskurv er tom",
+    "item": {
+      "type": "Type",
+      "price": "Pris",
+      "remove": "Fjern",
+      "level": "Niveau",
+      "option": "Mulighed"
+    },
+    "actions": {
+      "checkout": "Udfyld kontaktformular",
+      "close": "Luk",
+      "details": "Detaljer",
+      "addToCart": "Tilføj til kurv",
+      "requestQuotation": "Anmod om tilbud"
+    },
+    "modals": {
+      "moreDetails": "Flere detaljer",
+      "showLess": "Vis mindre...",
+      "productDetails": "Produktdetaljer"
+    },
+    "messages": {
+      "alreadyInCart": "{title} er allerede i kurven.",
+      "addedToCart": "Tilføjet til kurv",
+      "removedFromCart": "Fjernet fra kurv",
+      "choosePlan": "Vælg venligst en plan først",
+      "upgradePlan": "For flere tjenester, opgrader venligst din plan"
+    },
+    "counter": {
+      "youCanAdd": "Du kan tilføje",
+      "moreModules": "flere moduler",
+      "getQuotation": "Få et tilbud"
+    },
+    "subscriptions": {
+      "price": "Per måned",
+      "type": "Abonnement",
+      "service": "Service"
+    }
   }
 }
