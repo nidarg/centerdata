@@ -16,7 +16,7 @@ const VideoBackground: React.FC<VideoBackgroundProps> = ({
   height,
   headers,
 }) => {
-  const t = useTranslations('hero');
+  const t = useTranslations('common.hero');
   const locale = useLocale();
   const [videoLoaded, setVideoLoaded] = useState(false);
   const [currentHeaders, setCurrentHeaders] = useState(headers);

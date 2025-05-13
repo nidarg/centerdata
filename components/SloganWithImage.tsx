@@ -3,8 +3,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 export const SloganWithImage = () => {
+  const t = useTranslations('slogan');
+
   return (
     <div className='flex w-full items-center justify-between  p-10'>
       {/* Slogan Container */}
@@ -15,7 +18,7 @@ export const SloganWithImage = () => {
           transition={{ delay: 0.2, duration: 0.8, ease: 'easeOut' }}
           className='text-3xl font-bold tracking-tight '
         >
-          Be ahead
+          {t('ahead')}
         </motion.h1>
         <motion.h2
           initial={{ opacity: 0, y: 50 }}
@@ -23,7 +26,7 @@ export const SloganWithImage = () => {
           transition={{ delay: 0.4, duration: 0.8, ease: 'easeOut' }}
           className='text-3xl font-bold tracking-tight '
         >
-          Be secure
+          {t('secure')}
         </motion.h2>
         <motion.h3
           initial={{ opacity: 0, y: 50 }}
@@ -31,7 +34,7 @@ export const SloganWithImage = () => {
           transition={{ delay: 0.6, duration: 0.8, ease: 'easeOut' }}
           className='text-3xl font-bold tracking-tight '
         >
-          Be compliant
+          {t('compliant')}
         </motion.h3>
       </div>
 
@@ -40,7 +43,7 @@ export const SloganWithImage = () => {
         <div className='absolute inset-0 bg-gradient-to-br from-cyan-400 to-blue-500 blur-xl opacity-50'></div>
         <Image
           src='/images/lighting.jpg'
-          alt='Be ahead, be secure, be compliant slogan image'
+          alt={t('imageAlt')}
           className='absolute inset-0 object-cover w-full h-full rounded-lg opacity-80 '
           fill
         />

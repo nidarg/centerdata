@@ -32,7 +32,7 @@ const formSchema = z.object({
 type FormSchemaType = z.infer<typeof formSchema>;
 
 const ConsultationModal = () => {
-  const t = useTranslations('consultation');
+  const t = useTranslations('common.consultation');
   const [isOpen, setIsOpen] = useState(false);
   const { toast } = useToast();
 

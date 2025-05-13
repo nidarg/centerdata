@@ -33,7 +33,7 @@ const CartContext = createContext<IntShopContext>({
 });
 
 export const ShopProvider = ({ children }: PropsWithChildren) => {
-  const t = useTranslations('cart.messages');
+  const t = useTranslations('common.cart.messages');
   const allProducts = [...products, ...onetimeproduct, ...subscriptions];
   const { toast } = useToast(); // Initialize the toast
   const totalModules = products.length + subscriptions.length;

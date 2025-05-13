@@ -15,7 +15,7 @@ import {
 import { Button } from '@/components/ui/button';
 
 function NavLinks() {
-  const t = useTranslations('navigation');
+  const t = useTranslations('common.navigation');
   const pathname = usePathname();
   const [openDropdown, setOpenDropdown] = useState(false);
 

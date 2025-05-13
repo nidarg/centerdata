@@ -3,25 +3,29 @@
 import React, { useEffect, useRef } from 'react';
 import { motion, useAnimation, useInView } from 'framer-motion';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 interface ResponsiveTextImageProps {
-  title: string;
-  subtitle?: string;
-  text: string | string[];
+  titleKey: string;
+  subtitleKey?: string;
+  textKeys: string | string[];
   imageUrl: string;
-  reverse?: boolean; // if true, text will appear on the left, image on the right
+  reverse?: boolean;
+  namespace?: string;
 }
 
 export const TextImage: React.FC<ResponsiveTextImageProps> = ({
-  title,
-  text,
-  subtitle,
+  titleKey,
+  textKeys,
+  subtitleKey,
   imageUrl,
   reverse = false,
+  namespace = 'common.textImage',
 }) => {
+  const t = useTranslations(namespace);
   const containerRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(containerRef, { once: false, amount: 0.5 }); // Trigger animation
-  const controls = useAnimation(); // Animation controls
+  const isInView = useInView(containerRef, { once: false, amount: 0.5 });
+  const controls = useAnimation();
 
   useEffect(() => {
     if (isInView) {
@@ -58,8 +62,8 @@ export const TextImage: React.FC<ResponsiveTextImageProps> = ({
       >
         <Image
           src={imageUrl}
-          title={title}
-          alt={Array.isArray(text) ? text.join(', ') : text}
+          title={titleKey}
+          alt={Array.isArray(textKeys) ? textKeys.join(', ') : textKeys}
           fill
           className={`${
             reverse
@@ -85,17 +89,19 @@ export const TextImage: React.FC<ResponsiveTextImageProps> = ({
         transition={{ duration: 0.5, delay: 0.4 }}
       >
         <h2 className='text-xl md:text-2xl pb-2 pt-4 text-goldish font-bold'>
-          {title}
+          {t(titleKey)}
         </h2>
-        <h2 className='text-lg md:text-xl pb-2'>{subtitle}</h2>
-        {Array.isArray(text) ? (
-          text.map((paragraph, index) => (
+        {subtitleKey && (
+          <h2 className='text-lg md:text-xl pb-2'>{t(subtitleKey)}</h2>
+        )}
+        {Array.isArray(textKeys) ? (
+          textKeys.map((key, index) => (
             <p key={index} className='text-md mb-2'>
-              {paragraph}
+              {t(key)}
             </p>
           ))
         ) : (
-          <p className='text-md'>{text}</p>
+          <p className='text-md'>{t(textKeys)}</p>
         )}
       </motion.div>
     </motion.div>

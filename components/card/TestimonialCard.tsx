@@ -1,7 +1,12 @@
+'use client';
+
 // import Link from 'next/link';
 import React from 'react';
+import { useTranslations } from 'next-intl';
 
 function TestimonialCard() {
+  const t = useTranslations('common.testimonials');
+  
   //   title,
   //   description,
   // }: {
@@ -20,7 +25,7 @@ function TestimonialCard() {
   //       })}
   //     </div>
   //   );
-  return <h2>Testimonials</h2>;
+  return <h2>{t('title')}</h2>;
 }
 
 export default TestimonialCard;

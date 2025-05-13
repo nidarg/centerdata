@@ -1,5 +1,3 @@
-
-
 'use client';
 import React, { useState, useRef, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
@@ -16,6 +14,7 @@ import Link from 'next/link';
 import { IconBrandLinkedin } from '@tabler/icons-react';
 import { Check } from 'lucide-react';
 import Head from "next/head";
+import { useTranslations } from 'next-intl';
 
 // Zod schema for form data validation
 const formSchema = z.object({
@@ -52,6 +51,7 @@ const formSchema = z.object({
 type FormSchemaType = z.infer<typeof formSchema>;
 
 export default function Checkout() {
+  const t = useTranslations('common.checkout');
   const { toast } = useToast();
   const { cart, removeAllFromCart } = useCartContext();
   const [selectedServices, setSelectedServices] = useState<IntProductPayload[]>(
@@ -137,7 +137,7 @@ export default function Checkout() {
     <Head>
          <meta
           name="description"
-          content="Request a quotation for your data compliance services. Reach out to us for customized service solutions."
+          content={t('meta.description')}
         />
         <meta
           name="robots"
@@ -145,9 +145,9 @@ export default function Checkout() {
         />
         <meta
           name="keywords"
-          content="data compliance, quotation, contact us, business inquiry, services"
+          content={t('meta.keywords')}
         />
-        <title>Request a Quotation | Nordic Data Compliance Centre</title>
+        <title>{t('meta.title')}</title>
         <link
           rel="canonical"
           href="https://www.datacompliancecentre.com/checkout"
@@ -162,13 +162,13 @@ export default function Checkout() {
               "contactType": "Customer Support",
               "name": "Nordic Data Compliance Centre",
               "telephone": "+45 44251434",
-              "email": "hello@datacompliancecentre.com",
+              "email": t('address.email'),
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "Maglebjergvej 6",
-                "addressLocality": "Kongens Lyngby",
+                "streetAddress": t('address.street'),
+                "addressLocality": t('address.city'),
                 "postalCode": "2800",
-                "addressCountry": "Denmark",
+                "addressCountry": t('address.country'),
               },
             }),
           }}
@@ -178,26 +178,24 @@ export default function Checkout() {
     <div className='max-w-screen-lg w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-gray-800 grid grid-cols-1 md:grid-cols-2 gap-4 mt-20'>
       <div className='bg-teal flex flex-col items-center justify-center text-neutral-200'>
         <h2 className='font-bold text-xl lg:text-2xl pt-10 lg:pt-0 leading-tight'>
-          Want to get in touch?
+          {t('contact.title')}
         </h2>
         <p className='text-base lg:text-lg mt-4 max-w-md text-center leading-relaxed'>
-          Feel free to reach out to us with any inquiries, concerns, or
-          assistance you may require. Our team is here to help and eager to hear
-          from you!
+          {t('contact.description')}
         </p>
         <ul className='text-neutral-200 mt-6 text-sm lg:text-base space-y-2'>
-          <li>Maglebjergvej 6</li>
-          <li>2800 Kongens Lyngby</li>
-          <li>Danmark</li>
-          <li>VAT DK 44251434</li>
-          <li>hello@datacompliancecentre.com </li>
+          <li>{t('address.street')}</li>
+          <li>{t('address.city')}</li>
+          <li>{t('address.country')}</li>
+          <li>{t('address.vat')}</li>
+          <li>{t('address.email')}</li>
         </ul>
       </div>
 
       <form className='my-8' onSubmit={handleSubmit(onSubmit)}>
         {/* Full Name */}
         <LabelInputContainer className='mb-4'>
-          <Label htmlFor='fullname'>Full name</Label>
+          <Label htmlFor='fullname'>{t('form.fullname')}</Label>
           <Input id='fullname' type='text' {...register('fullname')} />
           {errors.fullname && isSubmitted && (
             <span className='text-destructive text-sm'>
@@ -207,7 +205,7 @@ export default function Checkout() {
         </LabelInputContainer>
         {/* Email */}
         <LabelInputContainer className='mb-4'>
-          <Label htmlFor='email'>Business email</Label>
+          <Label htmlFor='email'>{t('form.email')}</Label>
           <Input id='email' type='email' {...register('email')} />
           {errors.email && isSubmitted && (
             <span className='text-destructive text-sm'>
@@ -217,7 +215,7 @@ export default function Checkout() {
         </LabelInputContainer>
         {/* Phone */}
         <LabelInputContainer className='mb-4'>
-          <Label htmlFor='phone'>Phone number</Label>
+          <Label htmlFor='phone'>{t('form.phone')}</Label>
           <Input id='phone' type='tel' {...register('phone')} />
           {errors.phone && isSubmitted && (
             <span className='text-destructive text-sm'>
@@ -228,7 +226,7 @@ export default function Checkout() {
         {/* Company Name */}
         <LabelInputContainer className='mb-4'>
           <Label htmlFor='company' className='flex flex-col gap-y-2'>
-            <span>Company name</span>
+            <span>{t('form.company')}</span>
             
           </Label>
           <Input id='company' type='text' {...register('company')} />
@@ -242,7 +240,7 @@ export default function Checkout() {
          {/* Company VAT */}
         <LabelInputContainer className='mb-8'>
           <Label htmlFor='vat' className='flex flex-col gap-y-2'>
-            <span>VAT</span>
+            <span>{t('form.vat')}</span>
             
           </Label>
           <Input id='vat' type='text' {...register('vat')} />
@@ -272,20 +270,19 @@ export default function Checkout() {
         <div className='flex gap-3'>
           <Check />{' '}
           <span className='text-sm text-neutral-200 mb-4'>
-            Requesting a quotation is free of charge and does not obligate you
-            in any way.{' '}
-          </span>{' '}
+            {t('form.freeNote')}
+          </span>
         </div>
         {/* Message */}
-        {/* <LabelInputContainer className='mb-8'>
-          <Label htmlFor='message'>How can we help you?</Label>
+        <LabelInputContainer className='mb-8'>
+          <Label htmlFor='message'>{t('form.message')}</Label>
           <Input id='message' type='text' {...register('message')} />
           {errors.message && isSubmitted && (
             <span className='text-destructive text-sm'>
               {errors.message.message}
             </span>
           )}
-        </LabelInputContainer> */}
+        </LabelInputContainer>
         {/* Terms and Conditions */}
         <LabelInputContainer className='mb-8'>
           <div className='items-top flex space-x-2'>
@@ -305,7 +302,7 @@ export default function Checkout() {
                 htmlFor='checked'
                 className='text-sm text-neutral-200 font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
               >
-                I’ve read Terms of Use and Privacy Statement. 
+                I've read Terms of Use and Privacy Statement. 
               </label>
               <p className='text-sm text-neutral-200'>
                
@@ -340,11 +337,11 @@ export default function Checkout() {
         </div>
         {/* Submit Button */}
         <button
-          className='bg-gradient-to-br relative group/btn from-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium'
+          className='bg-gradient-to-br relative group/btn from-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]'
           type='submit'
           disabled={isSubmitting || !isVerified}
         >
-          Request a quotation &rarr;
+          {t('form.submit')}
         </button>
         <div className='bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-8 h-[1px] w-full' />
         {/* LinkedIn Link */}

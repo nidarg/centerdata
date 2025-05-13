@@ -2,8 +2,6 @@
 
 import TextImage from '@/components/TextImage';
 
-import { innovation, consulting } from '@/utils/about';
-
 import ServiceCardMain from '@/components/card/ServiceCardMain';
 import WorkWithUsMain from '@/components/work-with-us/WorkWithUsMain';
 
@@ -17,7 +15,7 @@ import { useTranslations } from 'next-intl';
 // const headers = ['BE AHEAD.', 'BE SECURE.', 'BE COMPLIANT.'];
 
 export default function Home() {
-  const t = useTranslations('hero');
+  const t = useTranslations('common.hero');
   const headers = [
     t('headers.ahead'),
     t('headers.secure'),
@@ -95,16 +93,17 @@ export default function Home() {
           <Divider />
           <div id='about-us' className='flex flex-col scroll-mt-40'>
             <TextImage
-              title={consulting.title.toUpperCase()}
-              text={consulting.text}
-              imageUrl={consulting.imageUrl}
+              titleKey="about.title"
+              subtitleKey="about.subtitle"
+              textKeys={["about.text.0", "about.text.1", "about.text.2"]}
+              imageUrl="/images/evatopictures/empowering.jpg"
             />
             <div className='mb-10 mt-10'></div>
             <TextImage
-              title={innovation.title.toUpperCase()}
-              text={innovation.text}
-              subtitle={innovation.subtitle}
-              imageUrl={innovation.imageUrl}
+              titleKey="services.title"
+              subtitleKey="services.subtitle"
+              textKeys={["services.text.0", "services.text.1", "services.text.2"]}
+              imageUrl="/images/evatopictures/lighting.jpg"
               reverse={true}
             />
           </div>

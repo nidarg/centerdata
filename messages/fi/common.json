@@ -1,147 +1,687 @@
 {
-  "language": {
-    "select": "Valitse kieli",
-    "en": "Englanti",
-    "da": "Tanska",
-    "sv": "Ruotsi",
-    "no": "Norja",
-    "fi": "Suomi"
-  },
-  "footer": {
-    "company": {
-      "name": "Nordic Data Compliance Centre ApS",
+  "common": {
+    "language": {
+      "select": "Valitse kieli",
+      "en": "Englanti",
+      "da": "Tanska",
+      "sv": "Ruotsi",
+      "no": "Norja",
+      "fi": "Suomi"
+    },
+    "footer": {
+      "company": {
+        "name": "Nordic Data Compliance Centre ApS",
+        "address": {
+          "street": "Maglebjergvej 6",
+          "city": "2800 Kongens Lyngby",
+          "country": "Tanska",
+          "vat": "CVR DK 44251434"
+        }
+      },
+      "services": {
+        "title": "Palvelumme",
+        "items": {
+          "specialized": "Erikoistuneet Projektit",
+          "interim": "Väliaikaiset Palvelut",
+          "tailormade": "GDPR Mix ja Match Start-upeille, Mikro- ja PK-yrityksille"
+        }
+      },
+      "associate": {
+        "title": "Associate Program",
+        "description": "Liittymällä associate-ohjelmaamme pääset osaksi yhteistyöverkostoa, joka on omistautunut edistämään tietojen yhteensopivuuspalveluja."
+      },
+      "insurance": {
+        "title": "Vakuutus",
+        "description": "Kaikki konsulttimme ovat ammattivastuuvakuutuksen piirissä, joka suojaa konsultointipalveluja."
+      },
+      "legal": {
+        "title": "Oikeudellinen",
+        "items": {
+          "privacy": "Tietosuojakäytäntö",
+          "terms": "Käyttöehdot"
+        }
+      },
+      "ceo": {
+        "title": "Tutustu toimitusjohtajaamme",
+        "website": "olganielsen.com"
+      }
+    },
+    "navigation": {
+      "home": "Koti",
+      "about": "Tietoa meistä",
+      "contact": "Yhteystiedot",
+      "servicesLabel": "Palvelut",
+      "workWithUs": "Työskentele kanssamme",
+      "services": {
+        "specialized": "Erikoistuneet Projektit",
+        "interim": "Väliaikaiset Palvelut",
+        "tailormade": "GDPR Mix ja Match"
+      }
+    },
+    "testimonials": {
+      "title": "Asiakastarinoita",
+      "readMore": "Lue Lisää Arvosteluja"
+    },
+    "services": {
+      "title": "Palvelumme",
+      "description": "Tutustu kattavaan palveluvalikoimaamme",
+      "viewAll": "Katso Kaikki Palvelut",
+      "allModules": "Voit lisätä kaikki moduulit.",
+      "modules": {
+        "management": "MIX JA MATCH MODUULIT HALLINTA",
+        "implement": "MIX JA MATCH MODUULIT TOTEUTUS"
+      },
+      "additional": {
+        "title": "LISÄPALVELUT JA TUKI ILMAN LISÄKUSTANNUKSIA",
+        "maturityAssessment": "Tietojen Yhteensopivuuden Kypsyysarviointi",
+        "onlineOnboarding": "Online onboarding",
+        "support": "Tuki - sähköposti ja puhelin",
+        "statusReport": "Virtuaalinen Tietojen yhteensopivuuden tila johtajistolle 3 kuukauden välein"
+      },
+      "itServicesList": {
+        "title": "Saatavilla olevat IT Palvelut",
+        "services": [
+          "Python Backend Expert IT Analyst",
+          ".NET/ C# Developer",
+          "Java Developer vahvoilla AWS- ja DevOps-taidolla",
+          "Software Engineer",
+          "Power Apps Developer",
+          "Senior C++/Python Developer Software Engineer",
+          "Senior QA GxP-, GLP- ja GCP-osaamisella",
+          "KYC IT Developer Finanssialalla",
+          "Clojure Developer",
+          "Network Technician Palomuurin vastuualueella",
+          "Java/Spring Boot Developers",
+          "Solution Architect (Finanssialan)",
+          "Network Security Engineer",
+          "Expert IT Tester"
+        ]
+      },
+      "products": {
+        "gdpr": {
+          "title": "GDPR-palvelut",
+          "description": "Kattavat GDPR-yhteensopivuuspalvelut"
+        },
+        "iso": {
+          "title": "ISO 27001 -palvelut",
+          "description": "ISO 27001 -sertifiointi ja toteutus"
+        },
+        "nis2": {
+          "title": "NIS2-palvelut",
+          "description": "NIS2-yhteensopivuus ja toteutus"
+        },
+        "dora": {
+          "title": "DORA-palvelut",
+          "description": "DORA-yhteensopivuus ja toteutus"
+        },
+        "aiAct": {
+          "title": "AI Act -palvelut",
+          "description": "AI Act -yhteensopivuus ja toteutus"
+        },
+        "conductRiskAssessments": {
+          "title": "Suorita Riskinarvioinnit",
+          "description": "Suoritamme tarvittavat jatkuvat riskinarvioinnit nykyisille ja uusille toiminnoille"
+        },
+        "basicInformationSecurity": {
+          "title": "Perustietoturva",
+          "description": "Toteutamme ja ylläpidämme perustietoturvatoimia tietojesi suojaamiseksi"
+        },
+        "embedCompliance": {
+          "title": "Integroi Datacompliance Nykyisiin ja Uusiin Toimintoihin",
+          "description": [
+            "Hallinnoimme puolestasi tarvittavat sisäiset käytännöt, prosessit ja menettelyt (esim. työntekijöiden tietosuojakäytäntö, ennen-alla-työsuhteen jälkeen, CCTV jne.)",
+            "Hallitse tietosuojaa ja turvallisuutta suunnittelun kautta uusissa toiminnoissa (esim. varmista, että uudet hankkeet ja käsittelytoiminnot noudattavat datacompliance-periaatteita)",
+            "Suorita säännöllistä testausta ja raportoi tehokkuudesta",
+            "Seuraa ja toteuta uusia compliance-vaatimuksia ja parhaita käytäntöjä",
+            "Suoritamme yhdessä kanssasi arvioinnin löytääksemme korkean riskin compliance-alueet, jotka vaativat täyden huomiosi",
+            "Suunnittelemme online-onboardingin aloittamiseksi",
+            "Olemme saatavilla 24/7 ja otamme sinuun yhteyttä mahdollisimman pian. Arvioimme tarpeesi ja otamme yhteyttä nopeammin tietomurron tapauksessa kuin yleisessä kysymyksessä",
+            "Pidämme erittäin tärkeänä, että pysyt ajan tasalla compliance-työstä. Arvioimme aina nykyisen tilanteen emmekä odota 3 kuukautta ilmoittaaksemme sinulle ongelmista, jotka vaativat huomiosi"
+          ]
+        },
+        "externalPolicies": {
+          "title": "Ulkoiset Käytännöt ja Ilmoitukset Henkilöille",
+          "description": [
+            "Hallinnoimme puolestasi tarvittavat ulkoiset käytännöt ja ilmoitukset henkilöille datacompliance-sääntöjen ja toiminnallisen riskinsietokyvyn mukaisesti, mukaan lukien suoramarkkinointi- ja sähköiset viestintäalueet (esim. verkkosivusto, uutiskirje, sosiaalisen median kampanjat jne.)",
+            "Seuraa ja toteuta uusia compliance-vaatimuksia ja parhaita käytäntöjä",
+            "Suorita säännöllistä testausta ja raportoi tehokkuudesta",
+            "Suoritamme yhdessä kanssasi arvioinnin löytääksemme korkean riskin compliance-alueet, jotka vaativat täyden huomiosi",
+            "Suunnittelemme online-onboardingin aloittamiseksi",
+            "Olemme saatavilla 24/7 ja otamme sinuun yhteyttä mahdollisimman pian. Arvioimme tarpeesi ja otamme yhteyttä nopeammin tietomurron tapauksessa kuin yleisessä kysymyksessä",
+            "Pidämme erittäin tärkeänä, että pysyt ajan tasalla compliance-työstä. Arvioimme aina nykyisen tilanteen emmekä odota 3 kuukautta ilmoittaaksemme sinulle ongelmista, jotka vaativat huomiosi"
+          ]
+        },
+        "incidentManagement": {
+          "title": "Tapahtumien Hallinta",
+          "description": "Toteutamme ja ylläpidämme tehokkaita prosesseja tietoturvatapahtumien ja tietomurtojen hallintaan"
+        },
+        "trainingAndAwareness": {
+          "title": "Koulutus ja Tietoisuus",
+          "description": "Kehitämme ja toteutamme räätälöityjä koulutusohjelmia varmistaaksemme, että työntekijät ymmärtävät ja noudattavat datacompliance-sääntöjä"
+        },
+        "pointOfContact": {
+          "title": "Yhteyshenkilö",
+          "description": "Toimimme ensisijaisena yhteyshenkilönä kaikissa datacompliance-liittyvissä kyselyissä ja pyynnöissä"
+        },
+        "respondToRequests": {
+          "title": "Vastaa Pyyntöihin",
+          "description": "Käsittelemme ja vastaamme kaikkiin asiaankuuluviin pyyntöihin henkilötietojen käyttöön ja korjaamiseen"
+        },
+        "vendorManagement": {
+          "title": "Toimittajien Hallinta",
+          "description": "Autamme toteuttamaan ja ylläpitämään tehokkaita toimittajien hallintaprosesseja varmistaaksemme compliance-tason koko toimitusketjussa"
+        },
+        "governanceStructure": {
+          "title": "Hallintorakenne",
+          "description": [
+            "Hallinnoimme puolestasi hallintorakennetta yrityksessä, mukaan lukien jatkuvan tuen datacompliance-vastuullisille työntekijöille",
+            "Suoritamme yhdessä kanssasi arvioinnin löytääksemme korkean riskin compliance-alueet, jotka vaativat täyden huomiosi",
+            "Suunnittelemme online-onboardingin aloittamiseksi",
+            "Olemme saatavilla 24/7 ja otamme sinuun yhteyttä mahdollisimman pian. Arvioimme tarpeesi ja otamme yhteyttä nopeammin tietomurron tapauksessa kuin yleisessä kysymyksessä",
+            "Pidämme erittäin tärkeänä, että pysyt ajan tasalla compliance-työstä. Arvioimme aina nykyisen tilanteen emmekä odota 3 kuukautta ilmoittaaksemme sinulle ongelmista, jotka vaativat huomiosi"
+          ]
+        },
+        "personalDataInventory": {
+          "title": "Henkilötietojen Inventointi ja Tietojen Siirron Mekanismit",
+          "description": [
+            "Hallinnoimme puolestasi RoPA:n (Käsittelytoimintojen Rekisteri, GDPR Art.30), mukaan lukien tietojen siirron mekanismit",
+            "Seuraamme ja toteutamme uusia compliance-vaatimuksia ja parhaita käytäntöjä",
+            "Suoritamme yhdessä kanssasi arvioinnin löytääksemme korkean riskin compliance-alueet, jotka vaativat täyden huomiosi",
+            "Suunnittelemme online-onboardingin aloittamiseksi",
+            "Olemme saatavilla 24/7 ja otamme sinuun yhteyttä mahdollisimman pian. Arvioimme tarpeesi ja otamme yhteyttä nopeammin tietomurron tapauksessa kuin yleisessä kysymyksessä",
+            "Pidämme erittäin tärkeänä, että pysyt ajan tasalla compliance-työstä. Arvioimme aina nykyisen tilanteen emmekä odota 3 kuukautta ilmoittaaksemme sinulle ongelmista, jotka vaativat huomiosi"
+          ]
+        }
+      },
+      "subscriptions": {
+        "gdprLightImplementation": {
+          "title": "GDPR Kevyt Toteutus",
+          "description": "Tarjoamme kevyen toteutuksen asiakkaille, jotka ovat jo tehneet joitain toteutuksia."
+        },
+        "gdprTotalImplementation": {
+          "title": "GDPR Kokonaistoteutus",
+          "description": "Tarjoamme kokonaistoteutuksen asiakkaille, jotka tarvitsevat kaiken toteutuksen."
+        },
+        "createAndImplementProcess": {
+          "title": "Luo ja Toteuta Prosessi",
+          "description": "Luomme ja toteutamme kaikki tarvittavat prosessit yrityksellesi."
+        },
+        "createAndImplementVendorManagement": {
+          "title": "Luo ja Toteuta Toimittajien Hallinta",
+          "description": "Luomme ja toteutamme kokonaisen toimittajien hallintajärjestelmän."
+        },
+        "createAndImplementBasicInformationSecurity": {
+          "title": "Luo ja Toteuta Perustietoturva",
+          "description": "Luomme ja toteutamme perustietoturvatoimenpiteet."
+        },
+        "createAndImplementRopa": {
+          "title": "Luo ja Toteuta RoPA",
+          "description": "Luomme ja toteutamme Käsittelytoimintojen Rekisterin."
+        },
+        "createAndImplementGovernanceStructure": {
+          "title": "Luo ja Toteuta Hallintorakenne",
+          "description": "Luomme ja toteutamme hallintorakenteen organisaatiolle."
+        },
+        "createAndImplementIncidentManagement": {
+          "title": "Luo ja Toteuta Tapahtumien Hallinta",
+          "description": "Luomme ja toteutamme tapahtumien hallintajärjestelmän."
+        }
+      }
+    },
+    "consultation": {
+      "title": "haluatko ilmaisen konsultaation?",
+      "description": "Täytä alla oleva lomake ajanvaraukseen",
+      "highlight": "ilmainen konsultaatio",
+      "error": "Virhe",
+      "errorMessage": "Jotain meni pieleen.",
+      "successMessage": "Viestisi lähetettiin onnistuneesti.",
+      "form": {
+        "fullname": "Koko nimi",
+        "email": "Sähköposti",
+        "company": "Yritys",
+        "submit": "Ota yhteyttä"
+      },
+      "privacy": {
+        "text": "Yllä olevat henkilötiedot käsitellään vastaavasti",
+        "link": " Tietosuojakäytäntö"
+      }
+    },
+    "hero": {
+      "headers": {
+        "ahead": "OLE EDESSÄ.",
+        "secure": "OLE TURVASSA.",
+        "compliant": "OLE COMPLIANT."
+      },
+      "description": "Käytännönläheisellä asenteella ratkaisemme jopa haastavimmat tietojen yhteensopivuusongelmat yhdistämällä strategisen suunnittelun konkreettisiin, käytännön ratkaisuihin."
+    },
+    "cart": {
+      "title": "Ostoskori",
+      "empty": "Ostoskorisi on tyhjä",
+      "item": {
+        "type": "Tyyppi",
+        "price": "Hinta",
+        "remove": "Poista",
+        "level": "Taso",
+        "option": "Vaihtoehto"
+      },
+      "actions": {
+        "checkout": "Täytä yhteystietolomake",
+        "close": "Sulje",
+        "details": "Tiedot",
+        "addToCart": "Lisää koriin",
+        "requestQuotation": "Pyydä tarjous"
+      },
+      "modals": {
+        "moreDetails": "Lisätiedot",
+        "showLess": "Näytä vähemmän...",
+        "productDetails": "Tuotetiedot"
+      },
+      "messages": {
+        "alreadyInCart": "{title} on jo korissa.",
+        "addedToCart": "Lisätty koriin",
+        "removedFromCart": "Poistettu korista",
+        "choosePlan": "Valitse ensin suunnitelma",
+        "upgradePlan": "Lisätietoja palveluista, päivitä suunnitelmasi"
+      },
+      "counter": {
+        "youCanAdd": "Voit lisätä",
+        "moreModules": "moduulia lisää",
+        "getQuotation": "Hanki tarjous"
+      },
+      "subscriptions": {
+        "price": "Kuukaudessa",
+        "type": "Tilaus",
+        "service": "Palvelu"
+      }
+    },
+    "textImage": {
+      "about": {
+        "title": "Meistä",
+        "subtitle": "Luotettava Data Compliance -kumppanisi",
+        "text": [
+          "Olemme kokeneiden data compliance -ammattilaisten tiimi, joka on omistautunut auttamaan yrityksiä navigoimaan monimutkaisessa datansuojan ja yksityisyyden säännösten maailmassa.",
+          "Tehtävämme on tarjota käytännöllisiä, tehokkaita ratkaisuja, jotka varmistavat yrityksesi pysyvän compliantina samalla ylläpitäen toiminnallista tehokkuutta.",
+          "Kattavalla lähestymistavallamme ja syvällä asiantuntemuksellamme autamme kaikenkokoisia organisaatioita rakentamaan ja ylläpitämään vankkoja data compliance -ohjelmia."
+        ]
+      },
+      "services": {
+        "title": "Palvelumme",
+        "subtitle": "Kattavat Data Compliance -ratkaisut",
+        "text": [
+          "Tarjoamme laajan valikoiman data compliance -palveluja, jotka on räätälöity erityistarpeisiisi.",
+          "GDPR-toteutuksesta jatkuvaan compliance-hallintaan ratkaisumme on suunniteltu käytännöllisiksi ja tehokkaiksi.",
+          "Asiantuntijatiimimme työskentelee läheisesti kanssasi ymmärtääksemme ainutlaatuiset haasteesi ja kehittääksemme räätälöidyt strategiat."
+        ]
+      },
+      "contact": {
+        "title": "Ota Yhteyttä",
+        "subtitle": "Keskustellaan Tarpeistasi",
+        "text": [
+          "Valmis viemään data compliance -tasoasi seuraavalle tasolle?",
+          "Ota yhteyttä tänään varaamaan ilmainen konsultaatio ja oppiaksesi, miten voimme auttaa yritystäsi saavuttamaan ja ylläpitämään compliance-tasoa.",
+          "Tiimimme on valmis vastaamaan kysymyksiisi ja tarjoamaan tarvitsemaasi ohjausta."
+        ]
+      },
+      "specializedProjects": {
+        "title": "Navigoimme yhdessä datacompliance-kompleksisuuden läpi",
+        "runProject": "Voimme hoitaa projektin puolestasi tai tehdä yhteistyötä kanssasi:",
+        "addValue": "Miten voimme lisätä arvoa yrityksellesi?",
+        "text": [
+          "Tarjoamme konsultointia ja käytännönläheisiä ratkaisuja erikoistuneissa projekteissa, jotka liittyvät esim. GDPR:ään, DORA:han, NIS2:een, ISO27001:een, AI-Act/ISO 42001:een. Erikoistuneet projektit keskittyvät usein compliance-toimenpiteiden toteutukseen, parantamiseen tai arviointiin vastauksena kehittyvään datacompliance-ympäristöön.",
+          "Nämä projektit voivat vaihdella edistyneistä teknisistä ratkaisuista monimutkaisiin organisatorisiin käytäntöjen muutoksiin ja sisältävät usein toimintojen välistä yhteistyötä.",
+          "Noudatamme kansainvälisiä standardeja sekä EU:n, paikallisia ja toimialakohtaisia lakeja ja parhaita käytäntöjä, jotka ovat relevantteja maassa, jossa yrityksesi toimii.",
+          "Soveltuvat kehystemme voidaan räätälöidä vastaamaan eri toimialojen ainutlaatuisia vaatimuksia."
+        ],
+        "list": {
+          "strengthen": "Proaktiivisesti vahvistaa kokonaisvaltaista lähestymistapaa datacomplianceen",
+          "reduceRisks": "Vähentää riskejä",
+          "buildTrust": "Rakentaa luottamusta käyttäjien ja sidosryhmien kanssa",
+          "achieveCertification": "Saavuttaa sertifiointi",
+          "developPractices": "Kehittää vankkoja ja kestäviä tietoturvakäytäntöjä",
+          "createCulture": "Luoda jatkuvan kehityksen kulttuuri ja varmistaa vastustuskyky uusille uhille",
+          "accessProfessionals": "Pääsy korkeasti päteviin ammattilaisiin projektisi avuksi joko projektipäälliköinä tai integroituina tiimin jäseninä",
+          "customizedFramework": "Räätälöity kehys, joka on suunniteltu erityisesti yrityksellesi ja toimialallesi",
+          "pragmaticApproach": "Pragmaattinen lähestymistapa riskeihin ja aukkoihin missä tahansa organisaatiossa missä tahansa toimialalla",
+          "handsOnSolutions": "Käytännönläheisiä ratkaisuja, jotka varmistavat jatkuvan compliance-tason ja liiketoiminnan jatkuvuuden",
+          "pragmaticSolutions": "Pragmaattisia, läpinäkyviä ja luotettavia ratkaisuja",
+          "strengthenResilience": "Vahvistaa toiminnallista vastustuskykyä ja luoda vankkoja hallintorakenteita"
+        }
+      },
+      "aiActProjects": {
+        "title": "AI ACT Projektit",
+        "text": [
+          "Erikoistuneet AI-lakiin keskittyvät projektit keskittyvät usein compliance-strategioiden toteutukseen, vankkojen AI-hallintarakenteiden luomiseen sekä läpinäkyvyyden ja vastuullisuuden parantamiseen tekoälyn kehityksessä. Nämä projektit helpottavat compliancea samalla edistämällä innovaatiota ja luottamusta tekoälyjärjestelmiin.",
+          "Projektisi pysyy täysin compliantina kaikissa vaiheissa, konseptin kehityksestä käyttöönottoon.",
+          "Kehystemme sisältää myös eettisen lähestymistavan luotettavien tekoälyjärjestelmien rakentamiseen, jotka tuovat hyötyä ihmisille, organisaatioille ja ekosysteemeille."
+        ]
+      },
+      "mixAndMatch": {
+        "title": "GDPR Mix ja Match",
+        "text": [
+          "Tämä ratkaisu on suunniteltu Start-up-, Mikro- ja PK-yrityksille ja tarjoaa räätälöityjä ratkaisuja, jotka mahdollistavat näiden yritysten rakentaa oman datacompliance-kehystä omassa tahdissaan. Se on mukautettu heidän ainutlaatuisiin tarpeisiinsa ja riittävän joustava kasvamaan yrityksen mukana.",
+          "Kun valitset tämän ratkaisun, toimimme osana tiimiäsi."
+        ]
+      },
+      "interimServices": {
+        "title": "DATA COMPLIANCE INTERIM PALVELUT",
+        "text": [
+          "Interim data compliance -konsulttimme tarjoavat joustavan, korkeatehoisen ratkaisun compliance-hallintaan, tietoturvakäytäntöjen parantamiseen ja data compliance -riskiin liittyvien riskien vähentämiseen.",
+          "Tarjoamme välittömää asiantuntemusta ja joustavuutta, ihanteellista sekä lyhyen että pitkän aikavälin strategisiin data compliance -tarpeisiin.",
+          "Meillä on kattava tietämys data compliance -laista, parhaista käytännöistä ja toimialakohtaisista vaatimuksista."
+        ]
+      },
+      "itServices": {
+        "title": "NEARSHORE IT INTERIM PALVELUT",
+        "text": [
+          "Nearshore IT interim-palvelut kuten esim. kehittäjät, testaajat ja tuki väliaikaisiin ratkaisuihin.",
+          "Tarjoamme korkeatasoista IT-asiantuntemusta yrityksille, jotka tarvitsevat välitöntä tukea lyhytaikaisten tarpeiden täyttämiseen, projektien hallintaan tai IT-strategian ohjaamiseen siirtymävaiheissa."
+        ]
+      },
+      "tailormadeSolutions": {
+        "videoHeader": "GDPR MIX JA MATCH",
+        "title": "Räätälöidyt GDPR-ratkaisut | Data Compliance Centre",
+        "description": "Räätälöidyt GDPR-yhteensopivuusratkaisut yrityksesi tarpeisiin. Yhdistä ja valitse moduuleja luodaksesi täydellisen yhteensopivuuskehyksen.",
+        "ogTitle": "Räätälöidyt GDPR-ratkaisut | Data Compliance Centre",
+        "ogDescription": "Räätälöidyt GDPR-yhteensopivuusratkaisut yrityksesi tarpeisiin. Yhdistä ja valitse moduuleja luodaksesi täydellisen yhteensopivuuskehyksen.",
+        "twitterTitle": "Räätälöidyt GDPR-ratkaisut | Data Compliance Centre",
+        "twitterDescription": "Räätälöidyt GDPR-yhteensopivuusratkaisut yrityksesi tarpeisiin. Yhdistä ja valitse moduuleja luodaksesi täydellisen yhteensopivuuskehyksen.",
+        "schemaHeadline": "Räätälöidyt GDPR-ratkaisut",
+        "schemaDescription": "Räätälöidyt GDPR-yhteensopivuusratkaisut yrityksesi tarpeisiin. Yhdistä ja valitse moduuleja luodaksesi täydellisen yhteensopivuuskehyksen.",
+        "buildFramework": "Rakenna Compliance-kehyksesi",
+        "step1": "Vaihe 1: Valitse Yritystyyppisi",
+        "step2": "Vaihe 2: Valitse Palvelusi",
+        "step3": "Vaihe 3: Katso Räätälöity Ratkaisusi",
+        "whyChoose": "Miksi Valita Räätälöidyt Ratkaisumme?",
+        "benefits": {
+          "effectiveSolution": "Tehokas ja tehokas ratkaisu",
+          "evolvingSolution": "Ratkaisu, joka kehittyy yrityksesi mukana",
+          "skilledProfessionals": "Pääsy ammattitaitoisiin ammattilaisiin",
+          "businessContinuity": "Varmistaa liiketoiminnan jatkuvuuden",
+          "rapidResponse": "Nopea vastaus compliance-tarpeisiin",
+          "easyCompliance": "Helppo ylläpitää compliancea"
+        }
+      }
+    },
+    "slogan": {
+      "ahead": "Ole edellä",
+      "secure": "Ole turvallinen",
+      "compliant": "Ole compliant",
+      "imageAlt": "Ole edellä, ole turvallinen, ole compliant slogan kuva"
+    },
+    "mainServices": {
+      "title": "Palvelumme",
+      "tryNow": "Kokeile nyt",
+      "services": {
+        "specialized": {
+          "title": "Erikoistuneet Projektit",
+          "description": [
+            "Erikoistuneet projektit keskittyvät usein compliance-toimenpiteiden toteutukseen, parantamiseen tai arviointiin vastauksena kehittyvään datacompliance-ympäristöön.",
+            "Nämä projektit voivat vaihdella edistyneistä teknisistä ratkaisuista monimutkaisiin organisatorisiin käytäntöjen muutoksiin ja sisältävät usein toimintojen välistä yhteistyötä."
+          ]
+        },
+        "interim": {
+          "title": "Väliaikaiset Palvelut",
+          "description": [
+            "Tarjoaa tehokkaan ratkaisun osaamisaukkojen täyttämiseen.",
+            "Varmistaa toiminnan jatkuvuuden.",
+            "Tukee strategisia tavoitteita väliaikaisesti.",
+            "On joustava ja arvokas resurssi useilla toimialoilla."
+          ]
+        },
+        "tailormade": {
+          "title": "GDPR Mix ja Match Start-upeille, Mikro- ja PK-yrityksille",
+          "description": [
+            "Tämä ratkaisu on Start-up-, Mikro- ja PK-yrityksille, räätälöityjä ratkaisuja, jotka mahdollistavat näiden yritysten kehittää oman datacompliance-kehystä omassa tahdissaan, mukautettuna heidän erityistarpeisiinsa ja mukautuvana yrityksen kasvaessa."
+          ]
+        }
+      }
+    },
+    "workWithUs": {
+      "title": "MIKSI TEHDÄ YHTEISTYÖTÄ MEIDÄN KANSSA?",
+      "subtitle": "Saa Asiantuntevia Ratkaisuja Täältä",
+      "bookConsultation": "Varaa konsultaatio",
+      "items": {
+        "provenResults": {
+          "title": "Todistetut Tulokset",
+          "description": "Toimitamme konkreettisia tuloksia todistettujen strategioidemme ja alan kokemuksemme avulla."
+        },
+        "tailoredApproach": {
+          "title": "Räätälöity Lähestymistapa",
+          "description": "Mukautetut ratkaisut, jotka on suunniteltu vastaamaan ainutlaatuisia tarpeitasi ja ajamaan liiketoimintaasi tehokkaasti eteenpäin."
+        },
+        "dedicatedTeam": {
+          "title": "Omistautunut Tiimi",
+          "description": "Omistautuneet ammattilaisemme työskentelevät uutterasti tavoitteidesi saavuttamiseksi ja ylittävät odotukset jokaisessa projektissa."
+        }
+      }
+    },
+    "plans": {
+      "light": {
+        "title": "LIGHT",
+        "description": "VALITSE ENINTÄÄN {modules} MODUULIA"
+      },
+      "pro": {
+        "title": "PRO",
+        "description": "VALITSE ENINTÄÄN {modules} MODUULIA"
+      },
+      "premium": {
+        "title": "PREMIUM",
+        "description": "KAIKKI MODUULIT MUKANA"
+      }
+    },
+    "meta": {
+      "tailormadeSolutions": {
+        "title": "Räätälöidyt GDPR-ratkaisut | Data Compliance Centre",
+        "description": "Räätälöidyt GDPR-yhteensopivuusratkaisut yrityksesi tarpeisiin. Yhdistä ja valitse moduuleja luodaksesi täydellisen yhteensopivuuskehyksen.",
+        "ogTitle": "Räätälöidyt GDPR-ratkaisut | Data Compliance Centre",
+        "ogDescription": "Räätälöidyt GDPR-yhteensopivuusratkaisut yrityksesi tarpeisiin. Yhdistä ja valitse moduuleja luodaksesi täydellisen yhteensopivuuskehyksen.",
+        "twitterTitle": "Räätälöidyt GDPR-ratkaisut | Data Compliance Centre",
+        "twitterDescription": "Räätälöidyt GDPR-yhteensopivuusratkaisut yrityksesi tarpeisiin. Yhdistä ja valitse moduuleja luodaksesi täydellisen yhteensopivuuskehyksen.",
+        "schemaHeadline": "Räätälöidyt GDPR-ratkaisut",
+        "schemaDescription": "Räätälöidyt GDPR-yhteensopivuusratkaisut yrityksesi tarpeisiin. Yhdistä ja valitse moduuleja luodaksesi täydellisen yhteensopivuuskehyksen."
+      }
+    },
+    "companyTypes": {
+      "startup": {
+        "title": "Start-up",
+        "details": [
+          "0-5 työntekijää",
+          "0-10 tietojen käsittelijää",
+          "0-10 käsittelytoimintoa",
+          "0-10 yksittäistä pyyntöä ja valitusta",
+          "0-10 henkilötietojen tietomurtoa",
+          "0-2,5m DKK liikevaihto"
+        ]
+      },
+      "micro": {
+        "title": "Mikro",
+        "details": [
+          "0-20 työntekijää",
+          "0-25 tietojen käsittelijää",
+          "0-25 käsittelytoimintoa",
+          "0-25 yksittäistä pyyntöä ja valitusta",
+          "0-25 henkilötietojen tietomurtoa",
+          "0-5m DKK liikevaihto"
+        ]
+      },
+      "sme": {
+        "title": "PK-yritys",
+        "details": [
+          "0-50 työntekijää",
+          "0-40 tietojen käsittelijää",
+          "0-40 käsittelytoimintoa",
+          "0-40 yksittäistä pyyntöä ja valitusta",
+          "0-40 henkilötietojen tietomurtoa",
+          "0-10m DKK liikevaihto"
+        ]
+      }
+    },
+    "contact": {
+      "title": "Haluatko ottaa yhteyttä?",
+      "description": "Ota meihin yhteyttä millä tahansa kysymyksillä, huolenaiheilla tai avun tarpeella. Tiimimme on täällä auttaakseen ja odottaa innolla yhteydenottoasi!",
       "address": {
         "street": "Maglebjergvej 6",
         "city": "2800 Kongens Lyngby",
         "country": "Tanska",
-        "vat": "CVR DK 44251434"
+        "vat": "ALV DK 44251434",
+        "email": "hello@datacompliancecentre.com"
+      },
+      "form": {
+        "fullname": "Koko nimi",
+        "email": "Yrityksen sähköposti",
+        "phone": "Puhelinnumero",
+        "company": "Yrityksen nimi",
+        "vat": "ALV",
+        "message": "Viesti",
+        "submit": "Lähetä viesti",
+        "terms": "Hyväksyn käyttöehdot",
+        "errors": {
+          "nameRequired": "Nimi vaaditaan",
+          "nameFormat": "Nimi voi sisältää vain kirjaimia ja välilyöntejä",
+          "emailInvalid": "Virheellinen sähköpostiosoite",
+          "companyRequired": "Yrityksen nimi vaaditaan",
+          "companyLength": "Yrityksen nimi ei voi olla pidempi kuin 100 merkkiä",
+          "phoneRequired": "Puhelinnumero vaaditaan",
+          "phoneFormat": "Puhelinnumero saa sisältää vain numeroita",
+          "phoneLength": "Puhelinnumero ei voi olla pidempi kuin 20 merkkiä",
+          "messageLength": "Viesti ei voi olla pidempi kuin 1000 merkkiä",
+          "termsRequired": "Sinun täytyy hyväksyä käyttöehdot"
+        },
+        "success": "Viestisi lähetettiin onnistuneesti",
+        "error": "Valitettavasti! Jotain meni pieleen."
+      },
+      "meta": {
+        "title": "Ota Yhteyttä | Data Compliance Centre",
+        "description": "Haluatko ottaa yhteyttä? Ota meihin yhteyttä millä tahansa kysymyksillä, huolenaiheilla tai avun tarpeella.",
+        "keywords": "yhteystiedot, ota yhteyttä, kysely, tuki, yritys, apu, liiketoimintayhteydet",
+        "ogTitle": "Ota Yhteyttä | Data Compliance Centre",
+        "ogDescription": "Ota meihin yhteyttä millä tahansa kysymyksillä, avun tarpeella tai palautteella. Tiimimme on valmis auttamaan sinua.",
+        "twitterTitle": "Ota Yhteyttä | Data Compliance Centre",
+        "twitterDescription": "Ota meihin yhteyttä tänään liiketoimintakysymyksissä tai avun tarpeessa. Olemme täällä auttaaksemme!"
       }
     },
-    "services": {
-      "title": "Palvelumme",
-      "items": {
-        "specialized": "Erikoistuneet Projektit",
-        "interim": "Väliaikaiset Palvelut",
-        "tailormade": "GDPR Mix ja Match Start-upeille, Mikro- ja PK-yrityksille"
+    "checkout": {
+      "title": "Täytä yhteystietolomake",
+      "description": "Täytä lomake alla olevalla lomakkeella viimeistelläksesi tilauksesi",
+      "contact": {
+        "title": "Haluatko ottaa yhteyttä?",
+        "description": "Voit vapaasti ottaa meihin yhteyttä kaikissa kysymyksissä, huolenaiheissa tai tarvitsemassasi avussa. Tiimimme on täällä auttaakseen ja odottaa innolla yhteydenottoasi!"
+      },
+      "address": {
+        "street": "Maglebjergvej 6",
+        "city": "2800 Kongens Lyngby",
+        "country": "Tanska",
+        "vat": "ALV DK 44251434",
+        "email": "hello@datacompliancecentre.com"
+      },
+      "form": {
+        "fullname": "Koko nimi",
+        "email": "Yrityksen sähköposti",
+        "phone": "Puhelinnumero",
+        "company": "Yrityksen nimi",
+        "vat": "ALV",
+        "message": "Viesti",
+        "terms": "Olen lukenut Käyttöehdot ja Tietosuojakäytännön.",
+        "termsLink": "Käyttöehdot",
+        "privacyLink": "Tietosuojakäytäntö",
+        "submit": "Pyydä tarjous",
+        "freeNote": "Tarjouksen pyytäminen on ilmaista eikä sido sinua millään tavalla.",
+        "requestedServices": "Pyydetyt Palvelut",
+        "required": "Pakollinen",
+        "optional": "Valinnainen"
+      },
+      "cart": {
+        "title": "Ostoskori",
+        "empty": "Ostoskorisi on tyhjä",
+        "total": "Yhteensä",
+        "remove": "Poista",
+        "continueShopping": "Jatka ostoksia"
+      },
+      "success": {
+        "title": "Tilaus vastaanotettu",
+        "message": "Kiitos tilauksestasi. Olemme yhteydessä pian.",
+        "returnHome": "Takaisin etusivulle"
+      },
+      "error": {
+        "title": "Virhe",
+        "message": "Tilauksen käsittelyssä tapahtui virhe. Yritä uudelleen.",
+        "tryAgain": "Yritä uudelleen"
+      },
+      "privacy": {
+        "text": "Lähettämällä tämän lomakkeen hyväksyt",
+        "link": "tietosuojakäytännön"
+      },
+      "meta": {
+        "title": "Pyydä Tarjous | Nordic Data Compliance Centre",
+        "description": "Pyydä tarjous tietojen yhteensopivuuspalveluistasi. Ota yhteyttä räätälöityihin palveluratkaisuihin.",
+        "keywords": "tietojen yhteensopivuus, tarjous, ota yhteyttä, yrityskysely, palvelut"
       }
     },
-    "associate": {
-      "title": "Associate Program",
-      "description": "Liittymällä associate-ohjelmaamme pääset osaksi yhteistyöverkostoa, joka on omistautunut edistämään tietojen yhteensopivuuspalveluja."
-    },
-    "insurance": {
-      "title": "Vakuutus",
-      "description": "Kaikki konsulttimme ovat ammattivastuuvakuutuksen piirissä, joka suojaa konsultointipalveluja."
-    },
-    "legal": {
-      "title": "Oikeudellinen",
-      "items": {
-        "privacy": "Tietosuojakäytäntö",
-        "terms": "Käyttöehdot"
+    "associateProgram": {
+      "title": "Associate-ohjelma Nordic Data Compliance Centren kanssa",
+      "description": "Liittymällä associate-ohjelmaamme liityt osaksi yhteistyöverkostoa, joka on omistautunut datacompliance-palveluiden kehittämiselle. Arvostamme asiantuntijoita, jotka tuovat mukanaan osaamista, intohimoa ja sitoutumista huippuosaamiseen. Tässä mitä yhteistyö meidän kanssamme sisältää:",
+      "benefits": {
+        "title": "Associate-ohjelman edut:",
+        "items": {
+          "flexibility": {
+            "title": "Joustavuus:",
+            "description": "Työskentele etänä tai paikan päällä ja päätä, kuinka paljon haluat osallistua. Tämä järjestely antaa sinulle vapauden tasapainottaa työtä muiden ammatillisten tai henkilökohtaisten sitoumusten kanssa."
+          },
+          "diverseProjects": {
+            "title": "Monipuoliset Projektimahdollisuudet:",
+            "description": "Osallistu laajaan valikoimaan projekteja eri toimialoilla. Associate-ohjelmamme antaa konsulttien keskittyä osaamisalueisiinsa samalla kun he saavat kokemusta uusista haasteista."
+          },
+          "collaborativeCommunity": {
+            "title": "Yhteistyöyhteisö:",
+            "description": "Associate-jäsenenä liityt osaksi tietosuojan erikoistuneiden ammattilaisten verkostoa, jotka tukevat ja oppivat toisiltaan. Kannustamme parhaiden käytäntöjen ja oivallusten jakamiseen ammatillisen kasvun edistämiseksi ja palveluidemme jatkuvaan kehittämiseen."
+          },
+          "businessDevelopment": {
+            "title": "Liiketoiminnan Kehitystuki:",
+            "description": "Hoidamme hallinnolliset tehtävät ja asiakashankinnan, jotta voit keskittyä laadukkaiden palveluiden tarjoamiseen. Lisäksi tarjoamme resursseja tukemaan kasvua ja pitämään sinut ajan tasalla alan standardeista."
+          }
+        }
+      },
+      "requirements": {
+        "title": "Vaatimukset",
+        "description": "Saumattoman yhteistyön varmistamiseksi konsulttien tulisi:",
+        "items": [
+          "Olla rekisteröity freelancer tai omistaa yritys ALV-numerolla.",
+          "Olla osoitettu osaaminen datacompliance-alalla.",
+          "Näyttää sitoutumista säännösten ja compliance-trendien seuraamiseen."
+        ]
+      },
+      "joinUs": {
+        "title": "Liity joukkoomme",
+        "description": "Jos olet intohimoinen datacompliance-alalle ja etsit joustavaa, kasvukeskeistä associate-ohjelmaa, haluaisimme kuulla sinusta. Yhteistyö Nordic Data Compliance Centren kanssa tarkoittaa osaamisesi kehittämistä samalla kun osallistut merkityksellisiin projekteihin. Ota yhteyttä sähköpostitse osoitteeseen",
+        "email": "hello@datacompliancecentre.com"
+      },
+      "meta": {
+        "title": "Associate-ohjelma Nordic Data Compliance Centren kanssa",
+        "description": "Liity associate-ohjelmaamme Nordic Data Compliance Centressä. Tarjoamme joustavia mahdollisuuksia, monipuolisia projekteja ja yhteistyöverkoston datacompliance-asiantuntijoille.",
+        "keywords": "associate-ohjelma, datacompliance, yhteistyö, joustavuus, ammatillinen kasvu, konsultti, osaaminen",
+        "ogTitle": "Associate-ohjelma Nordic Data Compliance Centren kanssa",
+        "ogDescription": "Liity osaksi yhteistyöverkostoa, joka edistää datacompliance-palveluita. Liity associate-ohjelmaamme joustavuuden, monipuolisten projektien ja ammatillisen kasvun vuoksi.",
+        "twitterTitle": "Associate-ohjelma Nordic Data Compliance Centren kanssa",
+        "twitterDescription": "Liity associate-ohjelmaan Nordic Data Compliance Centressä joustavien mahdollisuuksien, yhteistyön ja kasvun vuoksi datacompliance-palveluissa."
       }
     },
-    "ceo": {
-      "title": "Tutustu toimitusjohtajaamme",
-      "website": "olganielsen.com"
-    }
-  },
-  "navigation": {
-    "home": "Koti",
-    "about": "Tietoa meistä",
-    "contact": "Yhteystiedot",
-    "servicesLabel": "Palvelut",
-    "workWithUs": "Työskentele kanssamme",
-    "services": {
-      "specialized": "Erikoistuneet Projektit",
-      "interim": "Väliaikaiset Palvelut",
-      "tailormade": "GDPR Mix ja Match"
-    }
-  },
-  "testimonials": {
-    "title": "Asiakastarinoita",
-    "readMore": "Lue Lisää Arvosteluja"
-  },
-  "services": {
-    "title": "Palvelumme",
-    "description": "Tutustu kattavaan palveluvalikoimaamme",
-    "viewAll": "Katso Kaikki Palvelut",
-    "allModules": "Voit lisätä kaikki moduulit.",
-    "modules": {
-      "management": "MIX JA MATCH MODUULIT HALLINTA",
-      "implement": "MIX JA MATCH MODUULIT TOTEUTUS"
-    },
-    "additional": {
-      "title": "LISÄPALVELUT JA TUKI ILMAN LISÄKUSTANNUKSIA",
-      "maturityAssessment": "Tietojen Yhteensopivuuden Kypsyysarviointi",
-      "onlineOnboarding": "Online onboarding",
-      "support": "Tuki - sähköposti ja puhelin",
-      "statusReport": "Virtuaalinen Tietojen yhteensopivuuden tila johtajistolle 3 kuukauden välein"
-    }
-  },
-  "consultation": {
-    "title": "haluatko ilmaisen konsultaation?",
-    "description": "Täytä alla oleva lomake ajanvaraukseen",
-    "highlight": "ilmainen konsultaatio",
-    "error": "Virhe",
-    "errorMessage": "Jotain meni pieleen.",
-    "successMessage": "Viestisi lähetettiin onnistuneesti.",
-    "form": {
-      "fullname": "Koko nimi",
-      "email": "Sähköposti",
-      "company": "Yritys",
-      "submit": "Ota yhteyttä"
-    },
-    "privacy": {
-      "text": "Yllä olevat henkilötiedot käsitellään vastaavasti",
-      "link": " Tietosuojakäytäntö"
-    }
-  },
-  "hero": {
-    "headers": {
-      "ahead": "OLE EDESSÄ.",
-      "secure": "OLE TURVASSA.",
-      "compliant": "OLE COMPLIANT."
-    },
-    "description": "Käytännönläheisellä asenteella ratkaisemme jopa haastavimmat tietojen yhteensopivuusongelmat yhdistämällä strategisen suunnittelun konkreettisiin, käytännön ratkaisuihin."
-  },
-  "cart": {
-    "title": "Ostoskori",
-    "empty": "Ostoskorisi on tyhjä",
-    "item": {
-      "type": "Tyyppi",
-      "price": "Hinta",
-      "remove": "Poista",
-      "level": "Taso",
-      "option": "Vaihtoehto"
-    },
-    "actions": {
-      "checkout": "Täytä yhteystietolomake",
-      "close": "Sulje",
-      "details": "Tiedot",
-      "addToCart": "Lisää koriin",
-      "requestQuotation": "Pyydä tarjous"
-    },
-    "modals": {
-      "moreDetails": "Lisätiedot",
-      "showLess": "Näytä vähemmän...",
-      "productDetails": "Tuotetiedot"
-    },
-    "messages": {
-      "alreadyInCart": "{title} on jo korissa.",
-      "addedToCart": "Lisätty koriin",
-      "removedFromCart": "Poistettu korista",
-      "choosePlan": "Valitse ensin suunnitelma",
-      "upgradePlan": "Lisätietoja palveluista, päivitä suunnitelmasi"
-    },
-    "counter": {
-      "youCanAdd": "Voit lisätä",
-      "moreModules": "moduulia lisää",
-      "getQuotation": "Hanki tarjous"
-    },
-    "subscriptions": {
-      "price": "Kuukaudessa",
-      "type": "Tilaus",
-      "service": "Palvelu"
+    "termsAndConditions": {
+      "title": "Käyttöehdot - Nordic Data Compliance Centre",
+      "description": "Nordic Data Compliance Centre ApS:n palveluiden ja sisällön käyttöehdot. Tutustu B2B-palveluidemme käytäntöihin.",
+      "meta": {
+        "ogTitle": "Käyttöehdot - Nordic Data Compliance Centre",
+        "ogDescription": "Nordic Data Compliance Centre ApS:n palveluiden ja sisällön käytöehdot. Tutustu B2B-palveluidemme käytäntöihin.",
+        "ogUrl": "https://www.datacompliancecentre.com/terms-and-conditions",
+        "ogType": "website",
+        "twitterCard": "summary_large_image",
+        "twitterTitle": "Käyttöehdot - Nordic Data Compliance Centre",
+        "twitterDescription": "Lue käyttöehdot Nordic Data Compliance Centre ApS:n B2B-palveluiden käyttöön.",
+        "canonicalUrl": "https://www.datacompliancecentre.com/terms-and-conditions",
+        "schemaName": "Käyttöehdot",
+        "schemaDescription": "Tämä sivu kuvaa Nordic Data Compliance Centre ApS:n palveluiden ja sisällön käytöehdot.",
+        "schemaPublisherName": "Nordic Data Compliance Centre ApS",
+        "schemaPublisherUrl": "https://www.datacompliancecentre.com"
+      }
     }
   }
 }

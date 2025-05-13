@@ -1,8 +1,9 @@
 import { IntProduct, IntSubscription } from '@/utils/types';
 
-export const products: IntSubscription[] = [
+export const products: IntProduct[] = [
   {
-    title: 'Governance structure',
+    titleKey: 'governanceStructure.title',
+    descriptionKey: 'governanceStructure.description',
     price: 399,
     priceApi: 'price_1PeOkIJrU3Or1CooWNiX5TOw',
     id: 1,
@@ -15,9 +16,11 @@ export const products: IntSubscription[] = [
       'We believe that is very important for you to stay informed on the compliance efforts. We always assess the current situation and do not wait 3 months to inform you on issues that needs your attention',
     ],
     option: 'subscription',
+    itemType: 'product'
   },
   {
-    title: 'Governance structure',
+    titleKey: 'governanceStructure.title',
+    descriptionKey: 'governanceStructure.description',
     price: 799,
     priceApi: 'price_1PeOkIJrU3Or1CooLk8zeTZr',
     id: 2,
@@ -30,9 +33,11 @@ export const products: IntSubscription[] = [
       'We believe that is very important for you to stay informed on the compliance efforts. We always assess the current situation and do not wait 3 months to inform you on issues that needs your attention',
     ],
     option: 'subscription',
+    itemType: 'product'
   },
   {
-    title: 'Governance structure',
+    titleKey: 'governanceStructure.title',
+    descriptionKey: 'governanceStructure.description',
     price: 1199,
     priceApi: 'price_1PeOkIJrU3Or1CoozjTMy0xA',
     id: 3,
@@ -45,9 +50,11 @@ export const products: IntSubscription[] = [
       'We believe that is very important for you to stay informed on the compliance efforts. We always assess the current situation and do not wait 3 months to inform you on issues that needs your attention',
     ],
     option: 'subscription',
+    itemType: 'product'
   },
   {
-    title: 'Personal data inventory and data transfer mechanisms',
+    titleKey: 'personalDataInventory.title',
+    descriptionKey: 'personalDataInventory.description',
     price: 499,
     priceApi: 'price_1PeOkOJrU3Or1CooeOiXCZTD',
     id: 4,
@@ -61,9 +68,11 @@ export const products: IntSubscription[] = [
       'We believe that is very important for you to stay informed on the compliance efforts. We always assess the current situation and do not wait 3 months to inform you on issues that needs your attention',
     ],
     option: 'subscription',
+    itemType: 'product'
   },
   {
-    title: 'Personal data inventory and data transfer mechanisms',
+    titleKey: 'personalDataInventory.title',
+    descriptionKey: 'personalDataInventory.description',
     price: 999,
     priceApi: 'price_1PeOkOJrU3Or1Coo1QRZ50Iu',
     id: 5,
@@ -77,9 +86,11 @@ export const products: IntSubscription[] = [
       'We believe that is very important for you to stay informed on the compliance efforts. We always assess the current situation and do not wait 3 months to inform you on issues that needs your attention',
     ],
     option: 'subscription',
+    itemType: 'product'
   },
   {
-    title: 'Personal data inventory and data transfer mechanisms',
+    titleKey: 'personalDataInventory.title',
+    descriptionKey: 'personalDataInventory.description',
     price: 1499,
     priceApi: 'price_1PeOkOJrU3Or1Cooo7zq9rlc',
     id: 6,
@@ -93,9 +104,11 @@ export const products: IntSubscription[] = [
       'We believe that is very important for you to stay informed on the compliance efforts. We always assess the current situation and do not wait 3 months to inform you on issues that needs your attention',
     ],
     option: 'subscription',
+    itemType: 'product'
   },
   {
-    title: 'Embed data compliance into current and new operations',
+    titleKey: 'embedCompliance.title',
+    descriptionKey: 'embedCompliance.description',
     price: 599,
     priceApi: 'price_1PeOkUJrU3Or1CooCHQuMRS9',
     id: 7,
@@ -111,9 +124,11 @@ export const products: IntSubscription[] = [
       'We believe that is very important for you to stay informed on the compliance efforts. We always assess the current situation and do not wait 3 months to inform you on issues that needs your attention',
     ],
     option: 'subscription',
+    itemType: 'product'
   },
   {
-    title: 'Embed data compliance into current and new operations',
+    titleKey: 'embedCompliance.title',
+    descriptionKey: 'embedCompliance.description',
     price: 1199,
     priceApi: 'price_1PeOkTJrU3Or1Coo4LB3U74J',
     id: 8,
@@ -129,9 +144,11 @@ export const products: IntSubscription[] = [
       'We believe that is very important for you to stay informed on the compliance efforts. We always assess the current situation and do not wait 3 months to inform you on issues that needs your attention',
     ],
     option: 'subscription',
+    itemType: 'product'
   },
   {
-    title: 'Embed data compliance into current and new operations',
+    titleKey: 'embedCompliance.title',
+    descriptionKey: 'embedCompliance.description',
     price: 1799,
     priceApi: 'price_1PeOkTJrU3Or1CooEB6CGdul',
     id: 9,
@@ -147,9 +164,11 @@ export const products: IntSubscription[] = [
       'We believe that is very important for you to stay informed on the compliance efforts. We always assess the current situation and do not wait 3 months to inform you on issues that needs your attention',
     ],
     option: 'subscription',
+    itemType: 'product'
   },
   {
-    title: 'External policies and notices to individuals',
+    titleKey: 'externalPolicies.title',
+    descriptionKey: 'externalPolicies.description',
     price: 599,
     priceApi: 'price_1PeOkWJrU3Or1Coo7KGXrxOG',
     id: 76,
@@ -164,9 +183,11 @@ export const products: IntSubscription[] = [
       'We believe that is very important for you to stay informed on the compliance efforts. We always assess the current situation and do not wait 3 months to inform you on issues that needs your attention',
     ],
     option: 'subscription',
+    itemType: 'product'
   },
   {
-    title: 'External policies and notices to individuals',
+    titleKey: 'externalPolicies.title',
+    descriptionKey: 'externalPolicies.description',
     price: 1199,
     priceApi: 'price_1PeOkWJrU3Or1Cooa5oSmFPP',
     id: 77,
@@ -181,9 +202,11 @@ export const products: IntSubscription[] = [
       'We believe that is very important for you to stay informed on the compliance efforts. We always assess the current situation and do not wait 3 months to inform you on issues that needs your attention',
     ],
     option: 'subscription',
+    itemType: 'product'
   },
   {
-    title: 'External policies and notices to individuals',
+    titleKey: 'externalPolicies.title',
+    descriptionKey: 'externalPolicies.description',
     price: 1799,
     priceApi: 'price_1PeOkWJrU3Or1CooEuzbQKvN',
     id: 78,
@@ -198,11 +221,11 @@ export const products: IntSubscription[] = [
       'We believe that is very important for you to stay informed on the compliance efforts. We always assess the current situation and do not wait 3 months to inform you on issues that needs your attention',
     ],
     option: 'subscription',
+    itemType: 'product'
   },
-
   {
-    title:
-      'Conduct the necessary ongoing risk assessments for current and new operations',
+    titleKey: 'conductRiskAssessments.title',
+    descriptionKey: 'conductRiskAssessments.description',
     price: 1599,
     priceApi: 'price_1PeOlYJrU3Or1CooEHwmaxvm',
     id: 28,
@@ -211,10 +234,11 @@ export const products: IntSubscription[] = [
       'We conduct the necessary ongoing risk assessments for current and new operations',
     ],
     option: 'subscription',
+    itemType: 'product'
   },
   {
-    title:
-      'Conduct the necessary ongoing risk assessments for current and new operations',
+    titleKey: 'conductRiskAssessments.title',
+    descriptionKey: 'conductRiskAssessments.description',
     price: 1599,
     priceApi: 'price_1PeOlYJrU3Or1CooEHwmaxvm',
     id: 29,
@@ -223,10 +247,11 @@ export const products: IntSubscription[] = [
       'We conduct the necessary ongoing risk assessments for current and new operations',
     ],
     option: 'subscription',
+    itemType: 'product'
   },
   {
-    title:
-      'Conduct the necessary ongoing risk assessments for current and new operations',
+    titleKey: 'conductRiskAssessments.title',
+    descriptionKey: 'conductRiskAssessments.description',
     price: 1599,
     priceApi: 'price_1PeOlYJrU3Or1CooEHwmaxvm',
     id: 30,
@@ -235,10 +260,11 @@ export const products: IntSubscription[] = [
       'We conduct the necessary ongoing risk assessments for current and new operations',
     ],
     option: 'subscription',
+    itemType: 'product'
   },
-
   {
-    title: 'Basic information security',
+    titleKey: 'basicInformationSecurity.title',
+    descriptionKey: 'basicInformationSecurity.description',
     price: 799,
     priceApi: 'price_1PeOkYJrU3Or1Cooe6MgNu5e',
     id: 10,
@@ -253,9 +279,11 @@ export const products: IntSubscription[] = [
       'We believe that is very important for you to stay informed on the compliance efforts. We always assess the current situation and do not wait 3 months to inform you on issues that needs your attention',
     ],
     option: 'subscription',
+    itemType: 'product'
   },
   {
-    title: 'Basic information security',
+    titleKey: 'basicInformationSecurity.title',
+    descriptionKey: 'basicInformationSecurity.description',
     price: 1599,
     priceApi: 'price_1PeOkYJrU3Or1Cool9T9VO6w',
     id: 11,
@@ -270,9 +298,11 @@ export const products: IntSubscription[] = [
       'We believe that is very important for you to stay informed on the compliance efforts. We always assess the current situation and do not wait 3 months to inform you on issues that needs your attention',
     ],
     option: 'subscription',
+    itemType: 'product'
   },
   {
-    title: 'Basic information security',
+    titleKey: 'basicInformationSecurity.title',
+    descriptionKey: 'basicInformationSecurity.description',
     price: 2399,
     priceApi: 'price_1PeOkYJrU3Or1CoosKv5KL3c',
     id: 12,
@@ -287,9 +317,11 @@ export const products: IntSubscription[] = [
       'We believe that is very important for you to stay informed on the compliance efforts. We always assess the current situation and do not wait 3 months to inform you on issues that needs your attention',
     ],
     option: 'subscription',
+    itemType: 'product'
   },
   {
-    title: 'Respond to requests and complaints from individuals',
+    titleKey: 'respondToRequests.title',
+    descriptionKey: 'respondToRequests.description',
     price: 449,
     priceApi: 'price_1PeOlKJrU3Or1Coo4fGuPRI5',
     id: 13,
@@ -305,9 +337,11 @@ export const products: IntSubscription[] = [
       'We believe that is very important for you to stay informed on the compliance efforts. We always assess the current situation and do not wait 3 months to inform you on issues that needs your attention',
     ],
     option: 'subscription',
+    itemType: 'product'
   },
   {
-    title: 'Respond to requests and complaints from individuals',
+    titleKey: 'respondToRequests.title',
+    descriptionKey: 'respondToRequests.description',
     price: 749,
     priceApi: 'price_1PeOlKJrU3Or1CoopIlWb1sP',
     id: 14,
@@ -323,9 +357,11 @@ export const products: IntSubscription[] = [
       'We believe that is very important for you to stay informed on the compliance efforts. We always assess the current situation and do not wait 3 months to inform you on issues that needs your attention',
     ],
     option: 'subscription',
+    itemType: 'product'
   },
   {
-    title: 'Respond to requests and complaints from individuals',
+    titleKey: 'respondToRequests.title',
+    descriptionKey: 'respondToRequests.description',
     price: 1249,
     priceApi: 'price_1PeOlKJrU3Or1CoosTELpQs3',
     id: 15,
@@ -341,9 +377,11 @@ export const products: IntSubscription[] = [
       'We believe that is very important for you to stay informed on the compliance efforts. We always assess the current situation and do not wait 3 months to inform you on issues that needs your attention',
     ],
     option: 'subscription',
+    itemType: 'product'
   },
   {
-    title: 'Vendor management',
+    titleKey: 'vendorManagement.title',
+    descriptionKey: 'vendorManagement.description',
     price: 2499,
     priceApi: 'price_1PeOlMJrU3Or1CooMcg2EUe2',
     id: 16,
@@ -361,9 +399,11 @@ export const products: IntSubscription[] = [
       'We believe that is very important for you to stay informed on the compliance efforts. We always assess the current situation and do not wait 3 months to inform you on issues that needs your attention',
     ],
     option: 'subscription',
+    itemType: 'product'
   },
   {
-    title: 'Vendor management',
+    titleKey: 'vendorManagement.title',
+    descriptionKey: 'vendorManagement.description',
     price: 3998,
     priceApi: 'price_1PeOlMJrU3Or1CooXj8cIYac',
     id: 17,
@@ -381,9 +421,11 @@ export const products: IntSubscription[] = [
       'We believe that is very important for you to stay informed on the compliance efforts. We always assess the current situation and do not wait 3 months to inform you on issues that needs your attention',
     ],
     option: 'subscription',
+    itemType: 'product'
   },
   {
-    title: 'Vendor management',
+    titleKey: 'vendorManagement.title',
+    descriptionKey: 'vendorManagement.description',
     price: 5499,
     priceApi: 'price_1PeOlMJrU3Or1CooiwEqETne',
     id: 18,
@@ -401,9 +443,11 @@ export const products: IntSubscription[] = [
       'We believe that is very important for you to stay informed on the compliance efforts. We always assess the current situation and do not wait 3 months to inform you on issues that needs your attention',
     ],
     option: 'subscription',
+    itemType: 'product'
   },
   {
-    title: 'Incident management',
+    titleKey: 'incidentManagement.title',
+    descriptionKey: 'incidentManagement.description',
     price: 749,
     priceApi: 'price_1PeOlRJrU3Or1CoodIHK4ySP',
     id: 19,
@@ -419,9 +463,11 @@ export const products: IntSubscription[] = [
       'We believe that is very important for you to stay informed on the compliance efforts. We always assess the current situation and do not wait 3 months to inform you on issues that needs your attention',
     ],
     option: 'subscription',
+    itemType: 'product'
   },
   {
-    title: 'Incident management',
+    titleKey: 'incidentManagement.title',
+    descriptionKey: 'incidentManagement.description',
     price: 949,
     priceApi: 'price_1PeOlRJrU3Or1CooQuHEzSUV',
     id: 20,
@@ -437,9 +483,11 @@ export const products: IntSubscription[] = [
       'We believe that is very important for you to stay informed on the compliance efforts. We always assess the current situation and do not wait 3 months to inform you on issues that needs your attention',
     ],
     option: 'subscription',
+    itemType: 'product'
   },
   {
-    title: 'Incident management',
+    titleKey: 'incidentManagement.title',
+    descriptionKey: 'incidentManagement.description',
     price: 1499,
     priceApi: 'price_1PeOlRJrU3Or1Coo1BKp5wbg',
     id: 21,
@@ -455,9 +503,11 @@ export const products: IntSubscription[] = [
       'We believe that is very important for you to stay informed on the compliance efforts. We always assess the current situation and do not wait 3 months to inform you on issues that needs your attention',
     ],
     option: 'subscription',
+    itemType: 'product'
   },
   {
-    title: 'Training and awareness program',
+    titleKey: 'trainingAndAwareness.title',
+    descriptionKey: 'trainingAndAwareness.description',
     price: 549,
     priceApi: 'price_1PeOlTJrU3Or1CoooxYGyr4w',
     id: 22,
@@ -470,9 +520,11 @@ export const products: IntSubscription[] = [
       'We believe that is very important for you to stay informed on the compliance efforts. We always assess the current situation and do not wait 3 months to inform you on issues that needs your attention',
     ],
     option: 'subscription',
+    itemType: 'product'
   },
   {
-    title: 'Training and awareness program',
+    titleKey: 'trainingAndAwareness.title',
+    descriptionKey: 'trainingAndAwareness.description',
     price: 849,
     priceApi: 'price_1PeOlTJrU3Or1CooJnLX5wYo',
     id: 23,
@@ -485,9 +537,11 @@ export const products: IntSubscription[] = [
       'We believe that is very important for you to stay informed on the compliance efforts. We always assess the current situation and do not wait 3 months to inform you on issues that needs your attention',
     ],
     option: 'subscription',
+    itemType: 'product'
   },
   {
-    title: 'Training and awareness program',
+    titleKey: 'trainingAndAwareness.title',
+    descriptionKey: 'trainingAndAwareness.description',
     price: 1499,
     priceApi: 'price_1PeOlTJrU3Or1Coo8N5QKfm3',
     id: 24,
@@ -500,10 +554,11 @@ export const products: IntSubscription[] = [
       'We believe that is very important for you to stay informed on the compliance efforts. We always assess the current situation and do not wait 3 months to inform you on issues that needs your attention',
     ],
     option: 'subscription',
+    itemType: 'product'
   },
   {
-    title:
-      'Point of contact for local Data Protection Agency and assisting in a potential audit from local Data Protection Agency',
+    titleKey: 'pointOfContact.title',
+    descriptionKey: 'pointOfContact.description',
     price: 399,
     priceApi: 'price_1PeOlWJrU3Or1CooiUk21NRB',
     id: 25,
@@ -512,10 +567,11 @@ export const products: IntSubscription[] = [
       'We are the point of contact for your local Data Protection Agency and we assist you in a potential audit from your local Data Protection Agency',
     ],
     option: 'subscription',
+    itemType: 'product'
   },
   {
-    title:
-      'Point of contact for local Data Protection Agency and assisting in a potential audit from local Data Protection Agency',
+    titleKey: 'pointOfContact.title',
+    descriptionKey: 'pointOfContact.description',
     price: 399,
     priceApi: 'price_1PeOlWJrU3Or1CooiUk21NRB',
     id: 26,
@@ -524,10 +580,11 @@ export const products: IntSubscription[] = [
       'We are the point of contact for your local Data Protection Agency and we assist you in a potential audit from your local Data Protection Agency',
     ],
     option: 'subscription',
+    itemType: 'product'
   },
   {
-    title:
-      'Point of contact for local Data Protection Agency and assisting in a potential audit from local Data Protection Agency',
+    titleKey: 'pointOfContact.title',
+    descriptionKey: 'pointOfContact.description',
     price: 399,
     priceApi: 'price_1PeOlWJrU3Or1CooiUk21NRB',
     id: 27,
@@ -536,12 +593,14 @@ export const products: IntSubscription[] = [
       'We are the point of contact for your local Data Protection Agency and we assist you in a potential audit from your local Data Protection Agency',
     ],
     option: 'subscription',
+    itemType: 'product'
   },
 ];
 
 export const subscriptions: IntSubscription[] = [
   {
-    title: 'GDPR Light implementation',
+    titleKey: 'gdprLightImplementation.title',
+    descriptionKey: 'gdprLightImplementation.description',
     price: 1500,
     priceApi: 'price_1PeOlaJrU3Or1CooA1cx14l9',
     id: 34,
@@ -550,9 +609,10 @@ export const subscriptions: IntSubscription[] = [
       'We provide a light implementation and is used by our clients that already have done some implementation.',
     ],
     option: 'addon',
+    itemType: 'subscription'
   },
   {
-    title: 'GDPR Light implementation',
+    titleKey: 'gdprLightImplementation.title',
     price: 2500,
     priceApi: 'price_1PeOlaJrU3Or1CoomsM605hG',
     id: 35,
@@ -561,9 +621,10 @@ export const subscriptions: IntSubscription[] = [
       'We provide a light implementation and is used by our clients that already have done some implementation.',
     ],
     option: 'addon',
+    itemType: 'subscription'
   },
   {
-    title: 'GDPR Light implementation',
+    titleKey: 'gdprLightImplementation.title',
     price: 3500,
     priceApi: 'price_1PeOlaJrU3Or1CooCxa5kXjm',
     id: 36,
@@ -572,20 +633,22 @@ export const subscriptions: IntSubscription[] = [
       'We provide a light implementation and is used by our clients that already have done some implementation. ',
     ],
     option: 'addon',
+    itemType: 'subscription'
   },
   {
-    title: 'GDPR Total implementation',
+    titleKey: 'gdprTotalImplementation.title',
     price: 2500,
     priceApi: 'price_1PeOlcJrU3Or1CooarILxscH',
     id: 37,
     type: 'startup',
     data: [
-      'We provide a total implementation and is used by our clients that need to implement everything. ',
+      'We provide a total implementation and is used by our clients that need to implement everything.',
     ],
     option: 'addon',
+    itemType: 'subscription'
   },
   {
-    title: 'GDPR Total implementation',
+    titleKey: 'gdprTotalImplementation.title',
     price: 3500,
     priceApi: 'price_1PeOlcJrU3Or1CoohgDMQxl7',
     id: 38,
@@ -594,9 +657,10 @@ export const subscriptions: IntSubscription[] = [
       'We provide a total implementation and is used by our clients that need to implement everything. ',
     ],
     option: 'addon',
+    itemType: 'subscription'
   },
   {
-    title: 'GDPR Total implementation',
+    titleKey: 'gdprTotalImplementation.title',
     price: 4500,
     priceApi: 'price_1PeOlcJrU3Or1CooQ43f1il3',
     id: 39,
@@ -605,11 +669,10 @@ export const subscriptions: IntSubscription[] = [
       'We provide a total implementation and is used by our clients that need to implement everything. ',
     ],
     option: 'addon',
+    itemType: 'subscription'
   },
-
   {
-    title:
-      'Create and implement process and procedure for individuals rights and complaints',
+    titleKey: 'createAndImplementProcess.title',
     price: 4995,
     priceApi: 'price_1PeOlzJrU3Or1CooOYHZXd6M',
     id: 58,
@@ -618,10 +681,10 @@ export const subscriptions: IntSubscription[] = [
       'Creating and implementing this process is crucial for your data compliance success',
     ],
     option: 'addon',
+    itemType: 'subscription'
   },
   {
-    title:
-      'Create and implement process and procedure for individuals rights and complaints',
+    titleKey: 'createAndImplementProcess.title',
     price: 9995,
     priceApi: 'price_1PeOlzJrU3Or1Coo2MoZeXHL',
     id: 59,
@@ -630,10 +693,10 @@ export const subscriptions: IntSubscription[] = [
       'Creating and implementing this process is crucial for your data compliance success',
     ],
     option: 'addon',
+    itemType: 'subscription'
   },
   {
-    title:
-      'Create and implement process and procedure for individuals rights and complaints',
+    titleKey: 'createAndImplementProcess.title',
     price: 14995,
     priceApi: 'price_1PeOlzJrU3Or1CootslAyt3Z',
     id: 60,
@@ -642,10 +705,10 @@ export const subscriptions: IntSubscription[] = [
       'Creating and implementing this process is crucial for your data compliance success',
     ],
     option: 'addon',
+    itemType: 'subscription'
   },
-
   {
-    title: 'Create and implement vendor management process',
+    titleKey: 'createAndImplementVendorManagement.title',
     price: 4995,
     priceApi: 'price_1PeOm0JrU3Or1CookZGlzbBd',
     id: 61,
@@ -654,9 +717,10 @@ export const subscriptions: IntSubscription[] = [
       'Creating and implementing a vendor management process is key in your data compliance success',
     ],
     option: 'addon',
+    itemType: 'subscription'
   },
   {
-    title: 'Create and implement vendor management process',
+    titleKey: 'createAndImplementVendorManagement.title',
     price: 9995,
     priceApi: 'price_1PeOm0JrU3Or1CootdzDlNVt',
     id: 62,
@@ -665,9 +729,10 @@ export const subscriptions: IntSubscription[] = [
       'Creating and implementing a vendor management process is key in your data compliance success',
     ],
     option: 'addon',
+    itemType: 'subscription'
   },
   {
-    title: 'Create and implement vendor management process',
+    titleKey: 'createAndImplementVendorManagement.title',
     price: 14995,
     priceApi: 'price_1PeOm0JrU3Or1CooHyfdynMK',
     id: 63,
@@ -676,9 +741,10 @@ export const subscriptions: IntSubscription[] = [
       'Creating and implementing a vendor management process is key in your data compliance success',
     ],
     option: 'addon',
+    itemType: 'subscription'
   },
   {
-    title: 'Create and implement a basic information security program',
+    titleKey: 'createAndImplementBasicInformationSecurity.title',
     price: 9995,
     priceApi: 'price_1PeOm2JrU3Or1CooguuLoeNd',
     id: 64,
@@ -687,9 +753,10 @@ export const subscriptions: IntSubscription[] = [
       'It is crucial to have at least basic information security implemented in your organisation',
     ],
     option: 'addon',
+    itemType: 'subscription'
   },
   {
-    title: 'Create and implement a basic information security program',
+    titleKey: 'createAndImplementBasicInformationSecurity.title',
     price: 19995,
     priceApi: 'price_1PeOm2JrU3Or1Coo6roxvXU3',
     id: 65,
@@ -698,9 +765,10 @@ export const subscriptions: IntSubscription[] = [
       'It is crucial to have at least basic information security implemented in your organisation',
     ],
     option: 'addon',
+    itemType: 'subscription'
   },
   {
-    title: 'Create and implement a basic information security program',
+    titleKey: 'createAndImplementBasicInformationSecurity.title',
     price: 29995,
     priceApi: 'price_1PeOm2JrU3Or1CoooBT0Nzek',
     id: 66,
@@ -709,10 +777,10 @@ export const subscriptions: IntSubscription[] = [
       'It is crucial to have at least basic information security implemented in your organisation',
     ],
     option: 'addon',
+    itemType: 'subscription'
   },
   {
-    title:
-      'Create and implement ROPA (record of processing activities, GDPR Art.30)',
+    titleKey: 'createAndImplementRopa.title',
     price: 4995,
     priceApi: 'price_1PeOm4JrU3Or1CoolfmsN5Vm',
     id: 67,
@@ -721,10 +789,10 @@ export const subscriptions: IntSubscription[] = [
       'Creating and implementing RoPA takes a lot of work and expertise to do it once and do it right',
     ],
     option: 'addon',
+    itemType: 'subscription'
   },
   {
-    title:
-      'Create and implement ROPA (record of processing activities, GDPR Art.30)',
+    titleKey: 'createAndImplementRopa.title',
     price: 14995,
     priceApi: 'price_1PeOm4JrU3Or1CooHz8KDnV4',
     id: 68,
@@ -733,10 +801,10 @@ export const subscriptions: IntSubscription[] = [
       'Creating and implementing RoPA takes a lot of work and expertise to do it once and do it right',
     ],
     option: 'addon',
+    itemType: 'subscription'
   },
   {
-    title:
-      'Create and implement ROPA (record of processing activities, GDPR Art.30)',
+    titleKey: 'createAndImplementRopa.title',
     price: 24995,
     priceApi: 'price_1PeOm4JrU3Or1CooWSFHznax',
     id: 69,
@@ -745,11 +813,10 @@ export const subscriptions: IntSubscription[] = [
       'Creating and implementing RoPA takes a lot of work and expertise to do it once and do it right',
     ],
     option: 'addon',
+    itemType: 'subscription'
   },
-
   {
-    title:
-      'Create and implement governance structure including basic data compliance training to the data compliance responsibles',
+    titleKey: 'createAndImplementGovernanceStructure.title',
     price: 4995,
     priceApi: 'price_1PeOm6JrU3Or1Coo6kjgmKlB',
     id: 70,
@@ -758,10 +825,10 @@ export const subscriptions: IntSubscription[] = [
       'Without a proper governance structure in your organization no data compliance initiative will stick',
     ],
     option: 'addon',
+    itemType: 'subscription'
   },
   {
-    title:
-      'Create and implement governance structure including basic data compliance training to the data compliance responsibles',
+    titleKey: 'createAndImplementGovernanceStructure.title',
     price: 14995,
     priceApi: 'price_1PeOm6JrU3Or1CooeYPwzgjp',
     id: 71,
@@ -770,10 +837,10 @@ export const subscriptions: IntSubscription[] = [
       'Without a proper governance structure in your organization no data compliance initiative will stick',
     ],
     option: 'addon',
+    itemType: 'subscription'
   },
   {
-    title:
-      'Create and implement governance structure including basic data compliance training to the data compliance responsibles',
+    titleKey: 'createAndImplementGovernanceStructure.title',
     price: 24995,
     priceApi: 'price_1PeOm6JrU3Or1CooUBfbg4W1',
     id: 72,
@@ -782,10 +849,10 @@ export const subscriptions: IntSubscription[] = [
       'Without a proper governance structure in your organization no data compliance initiative will stick',
     ],
     option: 'addon',
+    itemType: 'subscription'
   },
-
   {
-    title: 'Create and implement incident management process',
+    titleKey: 'createAndImplementIncidentManagement.title',
     price: 9995,
     priceApi: 'price_1PeOm9JrU3Or1CoolDJCDeoU',
     id: 73,
@@ -794,9 +861,10 @@ export const subscriptions: IntSubscription[] = [
       'When you have an incident you better have a data breach process that will guide what do to, how to assess your breach, who to get involved etc.',
     ],
     option: 'addon',
+    itemType: 'subscription'
   },
   {
-    title: 'Create and implement incident management process',
+    titleKey: 'createAndImplementIncidentManagement.title',
     price: 19995,
     priceApi: 'price_1PeOm9JrU3Or1Coo7JcBEjMB',
     id: 74,
@@ -805,9 +873,10 @@ export const subscriptions: IntSubscription[] = [
       'When you have an incident you better have a data breach process that will guide what do to, how to assess your breach, who to get involved etc.',
     ],
     option: 'addon',
+    itemType: 'subscription'
   },
   {
-    title: 'Create and implement incident management process',
+    titleKey: 'createAndImplementIncidentManagement.title',
     price: 29995,
     priceApi: 'price_1PeOm9JrU3Or1CoomBh3CZcX',
     id: 75,
@@ -816,7 +885,8 @@ export const subscriptions: IntSubscription[] = [
       'When you have an incident you better have a data breach process that will guide what do to, how to assess your breach, who to get involved etc.',
     ],
     option: 'addon',
-  },
+    itemType: 'subscription'
+  }
 ];
 
 export const onetimeproduct: IntProduct[] = [

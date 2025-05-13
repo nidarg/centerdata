@@ -7,7 +7,7 @@ import { testimonials } from '@/utils/testimonials';
 import { Quote } from 'lucide-react';
 
 export default function Testimonials() {
-  const t = useTranslations('testimonials');
+  const t = useTranslations('common.testimonials');
   const containerRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(containerRef, { once: false, amount: 0.5 });
   const controls = useAnimation();

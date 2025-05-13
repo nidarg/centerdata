@@ -63,16 +63,29 @@ export interface IntProductDescription {
 
 export type IntProductType = 'startup' | 'micro' | 'sme';
 export type IntProductOption = 'subscription' | 'addon' | 'product';
-export type IntSubscription = IntProduct;
 
-export interface IntProduct {
-  title: string;
+export type ProductType = 'startup' | 'micro' | 'sme';
+export type OptionType = 'subscription' | 'addon';
+
+interface BaseItem {
+  titleKey: string;
   price: number;
   priceApi: string;
   id: number;
-  type: IntProductType;
-  option: IntProductOption;
+  type: ProductType;
   data: string[];
+  option: OptionType;
+  itemType: 'product' | 'subscription';
+}
+
+export interface IntProduct extends BaseItem {
+  descriptionKey: string;
+  itemType: 'product';
+}
+
+export interface IntSubscription extends BaseItem {
+  descriptionKey?: string;
+  itemType: 'subscription';
 }
 
 export interface IntLogo {

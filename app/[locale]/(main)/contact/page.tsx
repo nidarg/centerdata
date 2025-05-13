@@ -6,73 +6,61 @@ import { DateInput } from '@/components/ui/date-input';
 import { cn } from '@/lib/utils';
 import { IconBrandLinkedin } from '@tabler/icons-react';
 import ReCAPTCHA from 'react-google-recaptcha';
-// import { translate } from '@/utils/translate';
-import { zodResolver } from '@hookform/resolvers/zod';
+import { useTranslations } from 'next-intl';
 import { useForm } from 'react-hook-form';
-import { z } from 'zod';
-
-import Link from 'next/link';
-// import { Checkbox } from "@/components/ui/checkbox"
-import { useToast } from '@/hooks/use-toast';
+import { zodResolver } from '@hookform/resolvers/zod';
+import * as z from 'zod';
+import { Button } from '@/components/ui/button';
+import { Textarea } from '@/components/ui/textarea';
+import { Checkbox } from '@/components/ui/checkbox';
+import { toast } from 'sonner';
+import { useRouter } from 'next/navigation';
+import { useCart } from '@/utils/context/CartContext';
+import { useToast } from '@/components/ui/use-toast';
 import Head from "next/head";
 
-// Zod schema for form data validation
-const formSchema = z.object({
-  fullname: z
-    .string()
-    .min(1, 'Name is required')
-    .max(100)
-    .regex(/^[a-zA-Z\s]+$/, 'Name can only contain letters and spaces')
-    .trim(),
-  email: z.string().email('Invalid email address'),
-  company: z
-    .string()
-    .min(1, 'Company is required')
-    .max(100, "Company name can't be long than 100 characters")
-    .trim(),
-  phone: z
-    .string()
-    .min(1, 'Phone number is required')
-    .max(20, "Phone Number can't be long than 20 characters")
-    .trim()
-    .regex(/^\d+$/, 'Phone number must contain only numbers'),
-  message: z
-    .string()
-    .min(1, 'Message is required')
-    .max(1000, "Message can't be long than 1000 characters")
-    .trim().optional(),
-    vat: z.string().min(1).max(1000).trim().optional(),
-  // period: z.string().min(1, 'Period is required').trim(),
-  period: z.string().optional(),
-  checked: z.boolean().refine((val) => val === true, {
-    message: 'You must accept the terms and conditions',
-  }),
-  // recaptchaToken: z.string(), // reCAPTCHA token validation
-});
-type FormSchemaType = z.infer<typeof formSchema>;
-
-export default function Contact() {
+export default function ContactPage() {
+  const t = useTranslations('common.contact');
+  const router = useRouter();
   const { toast } = useToast();
   const recaptchaRef = useRef<ReCAPTCHA>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const [isVerified, setIsVerified] = useState(false);
+  const formSchema = z.object({
+    fullname: z.string()
+      .min(1, { message: t('form.errors.nameRequired') })
+      .regex(/^[a-zA-ZæøåÆØÅ\s-]+$/, { message: t('form.errors.nameFormat') }),
+    email: z.string()
+      .email({ message: t('form.errors.emailInvalid') }),
+    phone: z.string()
+      .min(1, { message: t('form.errors.phoneRequired') })
+      .regex(/^\d+$/, { message: t('form.errors.phoneFormat') })
+      .max(20, { message: t('form.errors.phoneLength') }),
+    company: z.string()
+      .min(1, { message: t('form.errors.companyRequired') })
+      .max(100, { message: t('form.errors.companyLength') }),
+    vat: z.string().optional(),
+    message: z.string()
+      .max(1000, { message: t('form.errors.messageLength') }),
+    terms: z.boolean()
+      .refine((val) => val === true, { message: t('form.errors.termsRequired') })
+  });
 
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting, isSubmitted },
+    formState: { errors, isSubmitted },
     watch,
     reset,
     setValue,
     clearErrors,
-  } = useForm<FormSchemaType>({ resolver: zodResolver(formSchema) });
+  } = useForm<typeof formSchema>({ resolver: zodResolver(formSchema) });
 
   watch();
 
   async function handleCaptchaSubmission(token: string | null) {
     try {
       if (token) {
-        // console.log("reCAPTCHA token received:", token);
         const response = await fetch('/api/recaptcha', {
           method: 'POST',
           headers: {
@@ -82,7 +70,6 @@ export default function Contact() {
           body: JSON.stringify({ token }),
         });
         if (response.ok) {
-          // console.log("reCAPTCHA verified successfully.");
           setIsVerified(true);
         } else {
           console.error('reCAPTCHA verification failed.');
@@ -103,17 +90,15 @@ export default function Contact() {
     setIsVerified(false);
   }
 
-  const onSubmit = async (data: FormSchemaType) => {
+  const onSubmit = async (data: typeof formSchema) => {
     try {
       console.log('Data ',data);
       
-      // console.log(data);
       const response = await fetch('/api/email', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
       });
-      // console.log(await response.json());
       if (!response.ok) {
         toast({
           title: 'Uh oh! Something went wrong.',
@@ -131,12 +116,10 @@ export default function Contact() {
         vat:'',
         phone: '',
         message: '',
-        period: '', // Reset the period field
-        checked: false,
+        terms: false,
       });
-      setValue('period', ''); // Reset only 'period' field
+      setValue('terms', false);
     } catch (error) {
-      // toast.error(error instanceof Error ? error.message : 'Something went wrong');
       console.log(error);
     }
   };
@@ -183,12 +166,10 @@ export default function Contact() {
      <div className='max-w-screen-lg w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-gray-800 grid grid-cols-1 md:grid-cols-2  gap-4 mt-20'>
       <div className='bg-teal flex flex-col items-center justify-center text-neutral-200'>
         <h1 className='font-bold text-xl lg:text-2xl pt-10 lg:pt-0 leading-tight'>
-          Want to get in touch?
+          {t('title')}
         </h1>
         <p className='text-base lg:text-lg mt-4 max-w-md text-center leading-relaxed'>
-          Feel free to reach out to us with any inquiries, concerns, or
-          assistance you may require. Our team is here to help and eager to hear
-          from you!
+          {t('description')}
         </p>
         <ul className='text-neutral-200 mt-6 text-sm lg:text-base space-y-2'>
           <li>Maglebjergvej 6</li>
@@ -201,8 +182,7 @@ export default function Contact() {
 
       <form className='my-8' onSubmit={handleSubmit(onSubmit)}>
         <LabelInputContainer className='mb-4'>
-          <Label htmlFor='fullname'>Full name</Label>
-
+          <Label htmlFor='fullname'>{t('form.fullname')}</Label>
           <Input id='fullname' type='text' {...register('fullname')} />
           {errors.fullname && isSubmitted && (
             <span className='text-destructive text-sm'>
@@ -212,7 +192,7 @@ export default function Contact() {
         </LabelInputContainer>
 
         <LabelInputContainer className='mb-4'>
-          <Label htmlFor='email'>Business email</Label>
+          <Label htmlFor='email'>{t('form.email')}</Label>
           <Input id='email' type='email' {...register('email')} />
           {errors.email && isSubmitted && (
             <span className='text-destructive text-sm'>
@@ -221,7 +201,7 @@ export default function Contact() {
           )}
         </LabelInputContainer>
         <LabelInputContainer className='mb-4'>
-          <Label htmlFor='phone'>Phone number</Label>
+          <Label htmlFor='phone'>{t('form.phone')}</Label>
           <Input id='phone' type='tel' {...register('phone')} />
           {errors.phone && isSubmitted && (
             <span className='text-destructive text-sm'>
@@ -231,8 +211,7 @@ export default function Contact() {
         </LabelInputContainer>
         <LabelInputContainer className='mb-4'>
           <Label htmlFor='company' className='flex flex-col gap-y-2'>
-            <span>Company name</span>
-            
+            <span>{t('form.company')}</span>
           </Label>
           <Input id='company' type='text' {...register('company')} />
           {errors.company && isSubmitted && (
@@ -244,30 +223,14 @@ export default function Contact() {
          {/* Company VAT */}
                 <LabelInputContainer className='mb-4'>
                   <Label htmlFor='vat' className='flex flex-col gap-y-2'>
-                    <span>VAT</span>
-                    
+                    <span>{t('form.vat')}</span>
                   </Label>
                   <Input id='vat' type='text' {...register('vat')} />
-                  {errors.vat && isSubmitted && (
-                    <span className='text-destructive text-sm'>
-                      {errors.vat.message}
-                    </span>
-                  )}
                 </LabelInputContainer>
 
         <LabelInputContainer className='mb-8'>
-          <Label htmlFor='period'>Book an appointment</Label>
-          <DateInput id='period'  type='text' {...register('period')} />
-          {errors.period && isSubmitted && (
-            <span className='text-destructive text-sm'>
-              {errors.period.message}
-            </span>
-          )}
-        </LabelInputContainer>
-
-        <LabelInputContainer className='mb-8'>
-          <Label htmlFor='message'>How can we help you?</Label>
-          <Input id='message' type='text' {...register('message')} />
+          <Label htmlFor='message'>{t('form.message')}</Label>
+          <Textarea id='message' {...register('message')} rows={4} />
           {errors.message && isSubmitted && (
             <span className='text-destructive text-sm'>
               {errors.message.message}
@@ -277,44 +240,27 @@ export default function Contact() {
 
         <LabelInputContainer className='mb-8'>
           <div className='items-top flex space-x-2'>
-            <input
-              className={'text-primary'}
-              type='checkbox'
-              id='checked'
-              {...register('checked')}
+            <Checkbox
+              id='terms'
+              {...register('terms')}
               onChange={(e) => {
-                // setValue('checked', e.target.checked);
                 if (e.target.checked) {
-                  clearErrors('checked'); // Clear error if checkbox is checked
+                  clearErrors('terms');
                 }
               }}
             />
             <div className='grid gap-1.5 leading-none'>
               <label
-                htmlFor='checked'
+                htmlFor='terms'
                 className='text-sm text-neutral-200 font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
               >
-                I’ve read Terms of Use and Privacy Statement. 
+                {t('form.terms')}
               </label>
-              <p className='text-sm text-neutral-200'>
-                
-                <span>
-                  <Link className='text-primary' href='/terms-and-conditions'>
-                    Terms of Use
-                  </Link>
-                </span>{' '}
-                and{' '}
-                <span>
-                  <Link className='text-primary' href='/privacy'>
-                    Privacy Statement.
-                  </Link>
-                </span>
-              </p>
             </div>
           </div>
-          {errors.checked && isSubmitted && (
+          {errors.terms && isSubmitted && (
             <span className='text-destructive text-sm'>
-              {errors.checked.message}
+              {errors.terms.message}
             </span>
           )}
         </LabelInputContainer>
@@ -328,15 +274,14 @@ export default function Contact() {
           />
         </div>
 
-        {/* <button  disabled={!isVerified} */}
-        <button
-          className='bg-gradient-to-br relative group/btn from-zinc-900  to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]'
+        <Button
           type='submit'
           disabled={isSubmitting || !isVerified}
+          className='bg-gradient-to-br relative group/btn from-zinc-900  to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]'
         >
-          Contact us &rarr;
+          {t('form.submit')}
           <BottomGradient />
-        </button>
+        </Button>
 
         <div className='bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-8 h-[1px] w-full' />
 

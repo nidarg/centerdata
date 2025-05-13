@@ -1,148 +1,561 @@
 {
-  "language": {
-    "select": "Select Language",
-    "en": "English",
-    "da": "Danish",
-    "sv": "Swedish",
-    "no": "Norwegian",
-    "fi": "Finnish"
-  },
-
-  "footer": {
-    "company": {
-      "name": "Nordic Data Compliance Centre ApS",
-      "address": {
-        "street": "Maglebjergvej 6",
-        "city": "2800 Kongens Lyngby",
-        "country": "Denmark",
-        "vat": "VAT DK 44251434"
+  "common": {
+    "language": {
+      "select": "Select language",
+      "en": "English",
+      "da": "Danish",
+      "sv": "Swedish",
+      "no": "Norwegian",
+      "fi": "Finnish"
+    },
+    "companyTypes": {
+      "startup": {
+        "title": "Start-up",
+        "details": [
+          "0-5 employees",
+          "0-10 data processors",
+          "0-10 processing activities",
+          "0-10 individuals requests & complaints",
+          "0-10 personal data breach cases",
+          "0-2,5m DKK revenue"
+        ]
+      },
+      "micro": {
+        "title": "Micro",
+        "details": [
+          "0-20 employees",
+          "0-25 data processors",
+          "0-25 processing activities",
+          "0-25 individuals requests & complaints",
+          "0-25 personal data breach cases",
+          "0-5m DKK revenue"
+        ]
+      },
+      "sme": {
+        "title": "SME",
+        "details": [
+          "0-50 employees",
+          "0-40 data processors",
+          "0-40 processing activities",
+          "0-40 individuals requests & complaints",
+          "0-40 personal data breach cases",
+          "0-10m DKK revenue"
+        ]
       }
+    },
+    "footer": {
+      "company": {
+        "name": "Nordic Data Compliance Centre ApS",
+        "address": {
+          "street": "Maglebjergvej 6",
+          "city": "2800 Kongens Lyngby",
+          "country": "Denmark",
+          "vat": "VAT DK 44251434"
+        }
+      },
+      "services": {
+        "title": "Our Services",
+        "items": {
+          "specialized": "Specialized Projects",
+          "interim": "Interim Services",
+          "tailormade": "GDPR Mix and Match for Start-ups, Micro and SMEs"
+        }
+      },
+      "associate": {
+        "title": "Associate Program",
+        "description": "Joining our associate program means becoming part of a collaborative network dedicated to advancing data compliance services."
+      },
+      "insurance": {
+        "title": "Insurance",
+        "description": "All our Consultants are covered by professional indemnity insurance that protects the consultancy services."
+      },
+      "legal": {
+        "title": "Legal",
+        "items": {
+          "privacy": "Privacy Statement",
+          "terms": "Terms of Use"
+        }
+      },
+      "ceo": {
+        "title": "Meet our CEO",
+        "website": "olganielsen.com"
+      }
+    },
+    "navigation": {
+      "home": "Home",
+      "about": "About",
+      "contact": "Contact",
+      "servicesLabel": "Services",
+      "workWithUs": "Work with Us",
+      "services": {
+        "specialized": "Specialized Projects",
+        "interim": "Interim Services",
+        "tailormade": "GDPR Mix and Match"
+      }
+    },
+    "testimonials": {
+      "title": "Client Success Stories",
+      "readMore": "Read More Reviews"
     },
     "services": {
       "title": "Our Services",
-      "items": {
-        "specialized": "Specialized Projects",
-        "interim": "Interim Services",
-        "tailormade": "GDPR Mix and Match for Start-ups, Micro and SMEs"
+      "description": "Explore our comprehensive range of services",
+      "viewAll": "View All Services",
+      "allModules": "You can add all modules.",
+      "modules": {
+        "management": "MIX AND MATCH MODULES MANAGEMENT",
+        "implement": "MIX AND MATCH MODULES IMPLEMENT"
+      },
+      "additional": {
+        "title": "ADDITIONAL SERVICES AND SUPPORT WITH NO EXTRA COST",
+        "maturityAssessment": "Data Compliance Maturity Assessment",
+        "onlineOnboarding": "Online onboarding",
+        "support": "Support - email and phone",
+        "statusReport": "Virtual Data compliance status to management every 3 months"
+      },
+      "itServicesList": {
+        "title": "Available IT Services",
+        "services": [
+          "Python Backend Expert IT Analyst",
+          ".NET/ C# Developer",
+          "Java Developer with strong skills in AWS and DevOps",
+          "Software Engineer",
+          "Power Apps Developer",
+          "Senior C++/Python Developer Software Engineer",
+          "Senior QA with knowledge of GxP, GLP, and GCP",
+          "KYC IT Developer in the Financial Industry",
+          "Clojure Developer",
+          "Network Technician who is in charge on Firewall",
+          "Java/Spring Boot Developers",
+          "Solution Architect (Financial)",
+          "Network Security Engineer",
+          "Expert IT Tester"
+        ]
+      },
+      "products": {
+        "gdpr": {
+          "title": "GDPR Services",
+          "description": "Comprehensive GDPR compliance services"
+        },
+        "iso": {
+          "title": "ISO 27001 Services",
+          "description": "ISO 27001 certification and implementation"
+        },
+        "nis2": {
+          "title": "NIS2 Services",
+          "description": "NIS2 compliance and implementation"
+        },
+        "dora": {
+          "title": "DORA Services",
+          "description": "DORA compliance and implementation"
+        },
+        "aiAct": {
+          "title": "AI Act Services",
+          "description": "AI Act compliance and implementation"
+        },
+        "conductRiskAssessments": {
+          "title": "Conduct Risk Assessments",
+          "description": "We conduct the necessary ongoing risk assessments for current and new operations"
+        },
+        "basicInformationSecurity": {
+          "title": "Basic Information Security",
+          "description": "We implement and maintain basic information security measures to protect your data"
+        },
+        "governanceStructure": {
+          "title": "Governance structure",
+          "description": [
+            "We manage on your behalf the governance structure in the company, including ongoing support to the employees that are responsible for data compliance",
+            "We perform an assessment toghether with you in order to find the high risk compliance areas that needs your full attention",
+            "We schedule an online onboarding to get things started",
+            "We are available 24/7 and reach out to you as soon as possilble. We assess your needs and reach out faster for a data breach case than for a more general question",
+            "We believe that is very important for you to stay informed on the compliance efforts. We always assess the current situation and do not wait 3 months to inform you on issues that needs your attention"
+          ]
+        },
+        "personalDataInventory": {
+          "title": "Personal data inventory and data transfer mechanisms",
+          "description": [
+            "We manage on your behalf the RoPA (record of processing activities, GDPR Art.30), including data transfer mechanism",
+            "We monitor and implement new compliance requirements and best practices",
+            "We perform an assessment toghether with you in order to find the high risk compliance areas that needs your full attention",
+            "We schedule an online onboarding to get things started",
+            "We are available 24/7 and reach out to you as soon as possilble. We assess your needs and reach out faster for a data breach case than for a more general question",
+            "We believe that is very important for you to stay informed on the compliance efforts. We always assess the current situation and do not wait 3 months to inform you on issues that needs your attention"
+          ]
+        },
+        "embedCompliance": {
+          "title": "Embed data compliance into current and new operations",
+          "description": [
+            "We manage on your behalf the necessary internal policies, processes and procedures (e.g. employee privacy policy, before-during-after employment, CCTV etc.)",
+            "Manage privacy and security by design into new operations (e.g. ensure that new projects and processing activities follow data compliance principles)",
+            "Conduct periodic testing and report the effectiveness",
+            "Monitor and implement new compliance requirements and best practices",
+            "We perform an assessment toghether with you in order to find the high risk compliance areas that needs your full attention",
+            "We schedule an online onboarding to get things started",
+            "We are available 24/7 and reach out to you as soon as possilble. We assess your needs and reach out faster for a data breach case than for a more general question",
+            "We believe that is very important for you to stay informed on the compliance efforts. We always assess the current situation and do not wait 3 months to inform you on issues that needs your attention"
+          ]
+        },
+        "externalPolicies": {
+          "title": "External policies and notices to individuals",
+          "description": [
+            "We manage on your behalf the necessary external policies and notices to individuals consistent with data compliance regulations and operational risk tolerance, including the direct marketing and electronic communications areas (e.g. website, newsletter, social media campaigns etc.)",
+            "Monitor and implement new compliance requirements and best practices",
+            "Conduct periodic testing and report the effectiveness",
+            "We perform an assessment toghether with you in order to find the high risk compliance areas that needs your full attention",
+            "We schedule an online onboarding to get things started",
+            "We are available 24/7 and reach out to you as soon as possilble. We assess your needs and reach out faster for a data breach case than for a more general question",
+            "We believe that is very important for you to stay informed on the compliance efforts. We always assess the current situation and do not wait 3 months to inform you on issues that needs your attention"
+          ]
+        },
+        "respondToRequests": {
+          "title": "Respond to Requests",
+          "description": "We handle and respond to all relevant requests for access to and rectification of personal data"
+        },
+        "vendorManagement": {
+          "title": "Vendor Management",
+          "description": "We help implement and maintain effective vendor management processes to ensure compliance across the supply chain"
+        },
+        "incidentManagement": {
+          "title": "Incident Management",
+          "description": "We implement and maintain effective processes for managing data security incidents and breaches"
+        },
+        "trainingAndAwareness": {
+          "title": "Training and Awareness",
+          "description": "We develop and deliver tailored training programs to ensure employees understand and comply with data compliance rules"
+        },
+        "pointOfContact": {
+          "title": "Point of Contact",
+          "description": "We serve as your primary point of contact for all data compliance-related inquiries and requests"
+        }
+      },
+      "subscriptions": {
+        "gdprLightImplementation": {
+          "title": "GDPR Light Implementation",
+          "description": "We provide a light implementation for clients that have already done some implementation."
+        },
+        "gdprTotalImplementation": {
+          "title": "GDPR Total Implementation",
+          "description": "We provide a total implementation for clients that need to implement everything."
+        },
+        "createAndImplementProcess": {
+          "title": "Create and Implement Process",
+          "description": "We create and implement all necessary processes for your business."
+        },
+        "createAndImplementVendorManagement": {
+          "title": "Create and Implement Vendor Management",
+          "description": "We create and implement a complete vendor management system."
+        },
+        "createAndImplementBasicInformationSecurity": {
+          "title": "Create and Implement Basic Information Security",
+          "description": "We create and implement basic information security measures."
+        },
+        "createAndImplementRopa": {
+          "title": "Create and Implement RoPA",
+          "description": "We create and implement Record of Processing Activities."
+        },
+        "createAndImplementGovernanceStructure": {
+          "title": "Create and Implement Governance Structure",
+          "description": "We create and implement a governance structure for your organization."
+        },
+        "createAndImplementIncidentManagement": {
+          "title": "Create and Implement Incident Management",
+          "description": "We create and implement an incident management system."
+        }
       }
     },
-    "associate": {
-      "title": "Associate Program",
-      "description": "Joining our associate program means becoming part of a collaborative network dedicated to advancing data compliance services."
-    },
-    "insurance": {
-      "title": "Insurance",
-      "description": "All our Consultants are covered by professional indemnity insurance that protects the consultancy services."
-    },
-    "legal": {
-      "title": "Legal",
-      "items": {
-        "privacy": "Privacy Statement",
-        "terms": "Terms of Use"
+    "consultation": {
+      "title": "want a free consultation?",
+      "description": "Fill out the form bellow to schedule",
+      "highlight": "a free consultation",
+      "error": "Error",
+      "errorMessage": "Something went wrong.",
+      "successMessage": "Your message was sent successfully.",
+      "form": {
+        "fullname": "Full Name",
+        "email": "Email",
+        "company": "Company",
+        "submit": "Contact us"
+      },
+      "privacy": {
+        "text": "The above personal data are processed according to our",
+        "link": " Privacy Statement"
       }
     },
-    "ceo": {
-      "title": "Meet our CEO",
-      "website": "olganielsen.com"
-    }
-  },
-  "navigation": {
-    "home": "Home",
-    "about": "About",
-    "contact": "Contact",
-    "servicesLabel": "Services",
-    "workWithUs": "Work with Us",
-    "services": {
-      "specialized": "Specialized Projects",
-      "interim": "Interim Services",
-      "tailormade": "GDPR Mix and Match"
-    }
-  },
-  "testimonials": {
-    "title": "Client Success Stories",
-    "readMore": "Read More Reviews"
-  },
-  "services": {
-    "title": "Our Services",
-    "description": "Explore our comprehensive range of services",
-    "viewAll": "View All Services",
-    "allModules": "You can add all modules.",
-    "modules": {
-      "management": "MIX AND MATCH MODULES MANAGEMENT",
-      "implement": "MIX AND MATCH MODULES IMPLEMENT"
+    "hero": {
+      "headers": {
+        "ahead": "BE AHEAD.",
+        "secure": "BE SECURE.",
+        "compliant": "BE COMPLIANT."
+      },
+      "description": "With a practical mindset, we address even the most challenging data compliance issues by combining strategic planning with actionable, hands-on solutions."
     },
-    "additional": {
-      "title": "ADDITIONAL SERVICES AND SUPPORT WITH NO EXTRA COST",
-      "maturityAssessment": "Data Compliance Maturity Assessment",
-      "onlineOnboarding": "Online onboarding",
-      "support": "Support - email and phone",
-      "statusReport": "Virtual Data compliance status to management every 3 months"
-    }
-  },
-  "consultation": {
-    "title": "want a free consultation?",
-    "description": "Fill out the form bellow to schedule",
-    "highlight": "a free consultation",
-    "error": "Error",
-    "errorMessage": "Something went wrong.",
-    "successMessage": "Your message was sent successfully.",
-    "form": {
-      "fullname": "Full Name",
-      "email": "Email",
-      "company": "Company",
-      "submit": "Contact us"
+    "cart": {
+      "title": "Your Cart",
+      "empty": "Your cart is empty",
+      "item": {
+        "type": "Type",
+        "price": "Price",
+        "remove": "Remove",
+        "level": "Level",
+        "option": "Option"
+      },
+      "actions": {
+        "checkout": "Fill out contact form",
+        "close": "Close",
+        "details": "Details",
+        "addToCart": "Add to cart",
+        "requestQuotation": "Request a quotation"
+      },
+      "modals": {
+        "moreDetails": "More Details",
+        "showLess": "Show less...",
+        "productDetails": "Product Details"
+      },
+      "messages": {
+        "alreadyInCart": "{title} is already in the cart.",
+        "addedToCart": "Added to cart",
+        "removedFromCart": "Removed from cart",
+        "choosePlan": "Please choose a plan first",
+        "upgradePlan": "For more services, please upgrade your plan"
+      },
+      "counter": {
+        "youCanAdd": "You can add",
+        "moreModules": "more modules",
+        "getQuotation": "Get a quotation"
+      },
+      "subscriptions": {
+        "price": "Per month",
+        "type": "Subscription",
+        "service": "Service"
+      }
     },
-    "privacy": {
-      "text": "The above personal data are processed according to our",
-      "link": " Privacy Statement"
-    }
-  },
-  "hero": {
-    "headers": {
-      "ahead": "BE AHEAD.",
-      "secure": "BE SECURE.",
-      "compliant": "BE COMPLIANT."
+    "checkout": {
+      "title": "Request a Quotation",
+      "description": "Request a quotation for your data compliance services. Reach out to us for customized service solutions.",
+      "contact": {
+        "title": "Want to get in touch?",
+        "description": "Feel free to reach out to us with any inquiries, concerns, or assistance you may require. Our team is here to help and eager to hear from you!",
+        "address": {
+          "street": "Maglebjergvej 6",
+          "city": "2800 Kongens Lyngby",
+          "country": "Danmark",
+          "vat": "VAT DK 44251434",
+          "email": "hello@datacompliancecentre.com"
+        }
+      },
+      "form": {
+        "fullname": "Full name",
+        "email": "Business email",
+        "phone": "Phone number",
+        "company": "Company name",
+        "vat": "VAT",
+        "message": "Message",
+        "terms": "I've read Terms of Use and Privacy Statement.",
+        "termsLink": "Terms of Use",
+        "privacyLink": "Privacy Statement",
+        "submit": "Request a quotation",
+        "freeNote": "Requesting a quotation is free of charge and does not obligate you in any way.",
+        "requestedServices": "Requested Services"
+      },
+      "meta": {
+        "title": "Request a Quotation | Nordic Data Compliance Centre",
+        "description": "Request a quotation for your data compliance services. Reach out to us for customized service solutions.",
+        "keywords": "data compliance, quotation, contact us, business inquiry, services"
+      },
+      "address": {
+        "street": "Maglebjergvej 6",
+        "city": "2800 Kongens Lyngby",
+        "country": "Danmark",
+        "vat": "VAT DK 44251434",
+        "email": "hello@datacompliancecentre.com"
+      }
     },
-    "description": "With a practical mindset, we address even the most challenging data compliance issues by combining strategic planning with actionable, hands-on solutions."
-  },
-  "cart": {
-    "title": "Your Cart",
-    "empty": "Your cart is empty",
-    "item": {
-      "type": "Type",
-      "price": "Price",
-      "remove": "Remove",
-      "level": "Level",
-      "option": "Option"
+    "textImage": {
+      "about": {
+        "title": "About Us",
+        "subtitle": "Your Trusted Data Compliance Partner",
+        "text": [
+          "We are a team of experienced data compliance professionals dedicated to helping businesses navigate the complex world of data protection and privacy regulations.",
+          "Our mission is to provide practical, effective solutions that ensure your business remains compliant while maintaining operational efficiency.",
+          "With our comprehensive approach and deep expertise, we help organizations of all sizes build and maintain robust data compliance programs."
+        ]
+      },
+      "services": {
+        "title": "Our Services",
+        "subtitle": "Comprehensive Data Compliance Solutions",
+        "text": [
+          "We offer a wide range of data compliance services tailored to your specific needs.",
+          "From GDPR implementation to ongoing compliance management, our solutions are designed to be practical and effective.",
+          "Our team of experts works closely with you to understand your unique challenges and develop customized strategies."
+        ]
+      },
+      "contact": {
+        "title": "Get in Touch",
+        "subtitle": "Let's Discuss Your Needs",
+        "text": [
+          "Ready to take your data compliance to the next level?",
+          "Contact us today to schedule a free consultation and learn how we can help your business achieve and maintain compliance.",
+          "Our team is ready to answer your questions and provide the guidance you need."
+        ]
+      },
+      "specializedProjects": {
+        "title": "We'll navigate the complexities of data compliance together",
+        "runProject": "We can run the project for you or team up with you to:",
+        "addValue": "How Can We Add Value to Your Company?",
+        "text": [
+          "We provide consultancy and hands-on practical solutions in specialized projects related to the e.g GDPR, DORA, NIS2, ISO27001, AI-Act/ISO 42001. The specialized projects often focus on implementing, improving, or evaluating compliance measures, in response to the evolving data compliance landscape.",
+          "These projects may range from advanced technical solutions to complex organizational policy adjustments and often include cross-functional collaboration.",
+          "We adhere to international standards, as well as EU, local, and sector-specific laws and best practices relevant to the country where your business operates.",
+          "Our adaptable frameworks can be customized to meet the unique requirements of various industries."
+        ],
+        "list": {
+          "strengthen": "Proactively strengthen the overall approach to data compliance",
+          "reduceRisks": "Reduce risks",
+          "buildTrust": "Build trust with users and stakeholders",
+          "achieveCertification": "Achieve certification",
+          "developPractices": "Develop robust and sustainable information security practices",
+          "createCulture": "Create a culture of continuous improvement and ensure resilience against emerging threats",
+          "accessProfessionals": "Access to highly qualified professionals to assist with your project either as project managers or integrated team members",
+          "customizedFramework": "A customized framework designed specifically for your business and industry",
+          "pragmaticApproach": "A pragmatic approach to address the risks and gaps of any organization in any sector",
+          "handsOnSolutions": "Hands-on solutions that ensure ongoing compliance and business continuity",
+          "pragmaticSolutions": "Pragmatic, transparent and trustworthy solutions",
+          "strengthenResilience": "Strengthen operational resilience and establish robust governance structures"
+        }
+      },
+      "aiActProjects": {
+        "title": "AI ACT Projects",
+        "text": [
+          "Specialized projects focused on the AI Act often revolve around implementing compliance strategies, creating robust AI governance structures, and enhancing transparency and accountability in AI development. These projects facilitate compliance while fostering innovation and trust in AI systems.",
+          "Your project remains fully compliant throughout all phases, from concept development to the go-live stage.",
+          "Our framework also includes an ethical approach to building trustworthy AI systems, that contribute to benefits for people, organizations and ecosystems."
+        ]
+      },
+      "mixAndMatch": {
+        "title": "GDPR Mix and Match",
+        "text": [
+          "This solution is designed for Start-up, Micro, and SME businesses, offering tailored solutions that enable these companies to build their own data compliance framework at their own pace. It is aligned with their unique needs and flexible enough to grow alongside their business.",
+          "When you choose this solution, we work as an integrated part of your team."
+        ]
+      },
+      "interimServices": {
+        "title": "DATA COMPLIANCE INTERIM SERVICES",
+        "text": [
+          "Our interim data compliance consultants provide an adaptable, high-impact solution for managing compliance, improving data security practices, and mitigating risks associated with data compliance.",
+          "We offer immediate expertise and flexibility, ideal for both short-term and long-term strategic data compliance needs.",
+          "We are highly knowledgeable in data compliance laws, best practices and industry-specific requirements."
+        ]
+      },
+      "itServices": {
+        "title": "NEARSHORE IT INTERIM SERVICES",
+        "text": [
+          "Nearshore IT interim services such as e.g. developers, testers, and supporters for temporary solutions.",
+          "We provide high-level IT expertise to businesses in need of immediate support to fill short-term gaps, manage projects, or steer IT strategy during transitions."
+        ]
+      },
+      "tailormadeSolutions": {
+        "videoHeader": "GDPR MIX AND MATCH",
+        "title": "Tailormade GDPR Solutions | Data Compliance Centre",
+        "description": "Custom GDPR compliance solutions tailored to your business needs. Mix and match modules to create your perfect compliance framework.",
+        "ogTitle": "Tailormade GDPR Solutions | Data Compliance Centre",
+        "ogDescription": "Custom GDPR compliance solutions tailored to your business needs. Mix and match modules to create your perfect compliance framework.",
+        "twitterTitle": "Tailormade GDPR Solutions | Data Compliance Centre",
+        "twitterDescription": "Custom GDPR compliance solutions tailored to your business needs. Mix and match modules to create your perfect compliance framework.",
+        "schemaHeadline": "Tailormade GDPR Solutions",
+        "schemaDescription": "Custom GDPR compliance solutions tailored to your business needs. Mix and match modules to create your perfect compliance framework.",
+        "buildFramework": "Build Your Compliance Framework",
+        "step1": "Step 1: Select Your Company Type",
+        "step2": "Step 2: Choose Your Services",
+        "step3": "Step 3: View Your Tailored Solution",
+        "whyChoose": "Why Choose Our Tailormade Solutions?",
+        "benefits": {
+          "effectiveSolution": "Effective and efficient solution",
+          "evolvingSolution": "Solution that evolves with your business",
+          "skilledProfessionals": "Access to skilled professionals",
+          "businessContinuity": "Ensures business continuity",
+          "rapidResponse": "Rapid response to compliance needs",
+          "easyCompliance": "Easy to maintain compliance"
+        }
+      }
     },
-    "actions": {
-      "checkout": "Fill out contact form",
-      "close": "Close",
-      "details": "Details",
-      "addToCart": "Add to cart",
-      "requestQuotation": "Request a quotation"
+    "slogan": {
+      "ahead": "Be ahead",
+      "secure": "Be secure",
+      "compliant": "Be compliant",
+      "imageAlt": "Be ahead, be secure, be compliant slogan image"
     },
-    "modals": {
-      "moreDetails": "More Details",
-      "showLess": "Show less...",
-      "productDetails": "Product Details"
+    "mainServices": {
+      "title": "Our Services",
+      "tryNow": "Try now",
+      "services": {
+        "specialized": {
+          "title": "Specialized Projects",
+          "description": [
+            "The specialized projects often focus on implementing, improving, or evaluating compliance measures, in response to the evolving data compliance landscape.",
+            "These projects may range from advanced technical solutions to complex organizational policy adjustments and often include cross-functional collaboration."
+          ]
+        },
+        "interim": {
+          "title": "Interim Services",
+          "description": [
+            "Offer an effective solution to address expertise gaps.",
+            "Ensure operational continuity.",
+            "Support strategic goals on a temporary basis.",
+            "Are a flexible and valuable asset across multiple sectors."
+          ]
+        },
+        "tailormade": {
+          "title": "GDPR mix and match for Start-ups, Micro, and SMEs",
+          "description": [
+            "This solution is for Start-ups, Micro and SMEs, customized solutions that empower these companies to develop their own data compliance framework at their own pace, aligned with their specific needs, and adaptable as their business grows."
+          ]
+        }
+      }
     },
-    "messages": {
-      "alreadyInCart": "{title} is already in the cart.",
-      "addedToCart": "Added to cart",
-      "removedFromCart": "Removed from cart",
-      "choosePlan": "Please choose a plan first",
-      "upgradePlan": "For more services, please upgrade your plan"
+    "workWithUs": {
+      "title": "WHY WORK WITH US?",
+      "subtitle": "Get Expert Solutions Here",
+      "bookConsultation": "Book a consultation",
+      "items": {
+        "provenResults": {
+          "title": "Proven Results",
+          "description": "We deliver tangible outcomes through our proven strategies and industry experience."
+        },
+        "tailoredApproach": {
+          "title": "Tailored Approach",
+          "description": "Customized solutions designed to meet your unique needs and drive your business forward efficiently."
+        },
+        "dedicatedTeam": {
+          "title": "Dedicated Team",
+          "description": "Our committed professionals work tirelessly to achieve your goals and exceed expectations with every project."
+        }
+      }
     },
-    "counter": {
-      "youCanAdd": "You can add",
-      "moreModules": "more modules",
-      "getQuotation": "Get a quotation"
+    "plans": {
+      "light": {
+        "title": "LIGHT",
+        "description": "MIX AND MATCH UP TO {modules} MODULES"
+      },
+      "pro": {
+        "title": "PRO",
+        "description": "MIX AND MATCH UP TO {modules} MODULES"
+      },
+      "premium": {
+        "title": "PREMIUM",
+        "description": "ALL MODULES INCLUDED"
+      }
     },
-    "subscriptions": {
-      "price": "Per month",
-      "type": "Subscription",
-      "service": "Service"
+    "meta": {
+      "tailormadeSolutions": {
+        "title": "Tailormade GDPR Solutions | Data Compliance Centre",
+        "description": "Custom GDPR compliance solutions tailored to your business needs. Mix and match modules to create your perfect compliance framework.",
+        "ogTitle": "Tailormade GDPR Solutions | Data Compliance Centre",
+        "ogDescription": "Custom GDPR compliance solutions tailored to your business needs. Mix and match modules to create your perfect compliance framework.",
+        "twitterTitle": "Tailormade GDPR Solutions | Data Compliance Centre",
+        "twitterDescription": "Custom GDPR compliance solutions tailored to your business needs. Mix and match modules to create your perfect compliance framework.",
+        "schemaHeadline": "Tailormade GDPR Solutions",
+        "schemaDescription": "Custom GDPR compliance solutions tailored to your business needs. Mix and match modules to create your perfect compliance framework."
+      }
     }
   }
 }

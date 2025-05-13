@@ -4,6 +4,7 @@ import Image from 'next/image';
 import React from 'react';
 import { CardBody, CardContainer, CardItem } from '../ui/3d-card';
 import { Check } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 export function ServiceCard({
   title,
@@ -14,6 +15,17 @@ export function ServiceCard({
   description: string[];
   imageUrl: string;
 }) {
+  const t = useTranslations('common.mainServices');
+
+  // Add error handling for translation
+  let tryNowText;
+  try {
+    tryNowText = t('tryNow');
+  } catch (error) {
+    console.error('Error loading translation for tryNow:', error);
+    tryNowText = 'Try now'; // Fallback text
+  }
+
   return (
     <CardContainer className='inter-var'>
       <CardBody className='shadow-slate-600 shadow-md hover:shadow-xl hover:shadow-slate-900 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-300/[0.1]  dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border'>
@@ -60,9 +72,9 @@ export function ServiceCard({
           <CardItem
             translateZ={20}
             as='p'
-            className='px-4 py-2 rounded-xl text-xs font-semibold text-destructive cursor-pointer' // Added cursor-pointer for the clickable item
+            className='px-4 py-2 rounded-xl text-xs font-semibold text-destructive cursor-pointer'
           >
-            Try now →
+            {tryNowText} →
           </CardItem>
         </div>
       </CardBody>

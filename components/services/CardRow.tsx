@@ -2,32 +2,43 @@
 
 import React, { useState } from 'react';
 import { useCartContext } from '@/utils/context/CartContext';
-import { useTranslations } from 'next-intl'; // ONLY ADDED THIS IMPORT
+import { useTranslations } from 'next-intl';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import { IntProduct, IntSubscription, IntProductOption } from '@/utils/types';
 
-interface Product {
-  id: number;
+type TranslatedItem = (IntProduct | IntSubscription) & {
   title: string;
-  data: string[];
-  price: number;
-}
+  description?: string;
+  titleKey?: string;
+  itemType: string;
+};
 
 interface CardRowProps {
-  products: Product[];
+  items: TranslatedItem[];
   header: string;
 }
 
-const CardRow: React.FC<CardRowProps> = ({ products, header }) => {
-  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+const CardRow: React.FC<CardRowProps> = ({ items, header }) => {
+  const [selectedProduct, setSelectedProduct] = useState<TranslatedItem | null>(null);
   const [showPlanModal, setShowPlanModal] = useState(false);
   const [showUpgradeModal, setShowUpgradeModal] = useState(false);
   const [showAll, setShowAll] = useState(false);
-  const t = useTranslations('cart'); // ONLY ADDED THIS LINE
+  const t = useTranslations('common.services');
+  const cartT = useTranslations('common.cart');
 
-  const { addToCart, selectCounter, cartCount } = useCartContext();
+  const { addToCart, selectCounter, cartCount, cart } = useCartContext();
 
-  const openModal = (product: Product) => {
+  // Helper function to get translated description
+  const getTranslatedDescription = (item: TranslatedItem) => {
+    if (!item.titleKey) return item.data;
+    const key = item.titleKey.split('.')[0];
+    const namespace = item.itemType === 'subscription' ? 'subscriptions' : 'products';
+    const desc = t.raw(`${namespace}.${key}.description`);
+    return Array.isArray(desc) ? desc : [desc];
+  };
+
+  const openModal = (item: TranslatedItem) => {
     if (selectCounter === 0) {
       setShowPlanModal(true);
       return;
@@ -38,16 +49,36 @@ const CardRow: React.FC<CardRowProps> = ({ products, header }) => {
       return;
     }
 
-    setSelectedProduct(product);
+    setSelectedProduct(item);
     setShowAll(false);
   };
 
   const closeModal = () => {
     setSelectedProduct(null);
     setShowAll(false);
+    setShowPlanModal(false);
+    setShowUpgradeModal(false);
   };
-  const closePlanModal = () => setShowPlanModal(false);
-  const closeUpgradeModal = () => setShowUpgradeModal(false);
+
+  const handleSelect = (item: TranslatedItem) => {
+    const existingItem = cart.find(
+      (cartItem) => cartItem.id === item.id && cartItem.type === item.type
+    );
+
+    if (existingItem) {
+      const existingOption = existingItem.option as IntProductOption;
+      const itemOption = item.option as IntProductOption;
+      if (existingOption === 'subscription' && itemOption === 'product') {
+        setShowUpgradeModal(true);
+      } else {
+        addToCart(item.id);
+        closeModal();
+      }
+    } else {
+      addToCart(item.id);
+      closeModal();
+    }
+  };
 
   return (
     <section className='mb-10 mt-20'>
@@ -58,14 +89,14 @@ const CardRow: React.FC<CardRowProps> = ({ products, header }) => {
 
       {/* Product List */}
       <div className='space-y-4'>
-        {products.map((product) => (
+        {items.map((item) => (
           <div
-            key={product.id}
-            onClick={() => openModal(product)}
+            key={item.id}
+            onClick={() => openModal(item)}
             className='cursor-pointer bg-gray-800 p-4 rounded-lg shadow hover:shadow-lg transition duration-200 min-h-40 flex items-center justify-between'
           >
             <h3 className='text-lg font-semibold text-gray-200'>
-              {product.title}
+              {item.title}
             </h3>
           </div>
         ))}
@@ -75,19 +106,21 @@ const CardRow: React.FC<CardRowProps> = ({ products, header }) => {
         <div className='fixed inset-0 bg-black/50 z-50 flex justify-end'>
           <div className='bg-gray-900 shadow-lg w-full max-w-md p-6 text-gray-100 relative max-h-screen overflow-y-auto'>
             <button onClick={closeModal} className='absolute top-4 right-4'>
-              {t('actions.close')}
+              {cartT('actions.close')}
             </button>
             <h3 className='text-2xl font-bold mb-4 mt-8'>
               {selectedProduct.title}
             </h3>
-            <p className='text-xl font-bold mb-4 mt-4'>
-              {t('modals.productDetails')}
-            </p>
+            {selectedProduct.description && (
+              <p className='text-xl font-bold mb-4 mt-4'>
+                {cartT('modals.productDetails')}
+              </p>
+            )}
 
             {/* Display only first 3 items unless expanded */}
             <ul className='list-disc space-y-1'>
-              {selectedProduct.data
-                .slice(0, showAll ? selectedProduct.data.length : 3)
+              {getTranslatedDescription(selectedProduct)
+                .slice(0, showAll ? undefined : 3)
                 .map((detail, index) => (
                   <li key={index} className='text-left p-2'>
                     {detail}
@@ -96,21 +129,21 @@ const CardRow: React.FC<CardRowProps> = ({ products, header }) => {
             </ul>
 
             {/* More Details / Show Less Buttons */}
-            {selectedProduct.data.length > 3 && (
+            {getTranslatedDescription(selectedProduct).length > 3 && (
               <div className='mt-4'>
                 {!showAll ? (
                   <button
                     className='text-primary underline'
                     onClick={() => setShowAll(true)}
                   >
-                    {t('modals.moreDetails')}
+                    {cartT('modals.moreDetails')}
                   </button>
                 ) : (
                   <button
                     className='text-primary underline mt-2'
                     onClick={() => setShowAll(false)}
                   >
-                    {t('modals.showLess')}
+                    {cartT('modals.showLess')}
                   </button>
                 )}
               </div>
@@ -119,12 +152,12 @@ const CardRow: React.FC<CardRowProps> = ({ products, header }) => {
             {/* Request Quotation Button */}
             <button
               className='mt-6 px-4 py-2 bg-primary text-white rounded-lg w-full'
-              onClick={() => {
-                addToCart(selectedProduct.id);
-                closeModal();
+              onClick={(e) => {
+                e.stopPropagation();
+                handleSelect(selectedProduct);
               }}
             >
-              {t('actions.requestQuotation')}
+              {cartT('actions.requestQuotation')}
             </button>
           </div>
         </div>
@@ -135,14 +168,14 @@ const CardRow: React.FC<CardRowProps> = ({ products, header }) => {
         <div className='fixed inset-0 bg-black/50 z-50 flex justify-center items-center'>
           <div className='bg-gray-900 shadow-lg w-full max-w-md p-6 text-gray-100 text-center'>
             <h3 className='text-xl font-bold mb-4'>
-              {t('messages.choosePlan')}
+              {cartT('messages.choosePlan')}
             </h3>
             <p className='text-sm'>{t('messages.planTypes')}</p>
             <button
-              onClick={closePlanModal}
+              onClick={closeModal}
               className='mt-4 px-4 py-2 bg-red-500 text-white rounded-lg'
             >
-              {t('actions.close')}
+              {cartT('actions.close')}
             </button>
           </div>
         </div>
@@ -153,13 +186,13 @@ const CardRow: React.FC<CardRowProps> = ({ products, header }) => {
         <div className='fixed inset-0 bg-black/50 z-50 flex justify-center items-center'>
           <div className='bg-gray-900 shadow-lg w-full max-w-md p-6 text-gray-100 text-center'>
             <h3 className='text-xl font-bold mb-4'>
-              {t('messages.upgradePlan')}
+              {cartT('messages.upgradePlan')}
             </h3>
             <button
-              onClick={closeUpgradeModal}
+              onClick={closeModal}
               className='mt-4 px-4 py-2 bg-red-500 text-white rounded-lg'
             >
-              {t('actions.close')}
+              {cartT('actions.close')}
             </button>
           </div>
         </div>

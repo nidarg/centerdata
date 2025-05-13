@@ -13,7 +13,7 @@ import { Button } from '@/components/ui/button';
 import { Globe } from 'lucide-react';
 
 export default function LanguageSelector() {
-  const t = useTranslations('language');
+  const t = useTranslations('common.language');
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();

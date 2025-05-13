@@ -3,8 +3,12 @@
 import { useTranslations } from 'next-intl';
 import React from 'react';
 
-const AdditionalServices: React.FC = () => {
-  const t = useTranslations('services.additional');
+interface AdditionalServicesProps {
+  type: string;
+}
+
+const AdditionalServices: React.FC<AdditionalServicesProps> = ({ type }) => {
+  const t = useTranslations('common.services.additional');
 
   const additionalServices = [
     t('maturityAssessment'),

@@ -1,277 +1,162 @@
 'use client';
 
-import Divider from '@/components/Divider';
-import { RightArrow } from '@/components/RightArrow';
-import ItServices from '@/components/services/ItServices';
-import TextImage from '@/components/TextImage';
-import VideoBackground from '@/components/VideoBackground';
-import { interimServices } from '@/utils/projects';
-import { motion } from 'framer-motion';
-import Link from 'next/link';
-// import Link from 'next/link';`
 import React, { memo } from 'react';
-import Head from "next/head";
+import { RightArrow } from '@/components/RightArrow';
+import VideoBackground from '@/components/VideoBackground';
+import TextImage from '@/components/TextImage';
+import { interimServices, itServices } from '@/utils/projects';
+import Divider from '@/components/Divider';
+import Head from 'next/head';
 import Script from 'next/script';
-
-const headers = ['Interim Services'];
-
-const items = [
-  {
-    title: 'Immediate compliance Support',
-    description:
-      'We help companies reduce compliance risks quickly, addressing urgent needs such as data breach responses, risk assessments, and audits.',
-  },
-  {
-    title: 'Policy Development and Documentation',
-    description:
-      'We assist with creating and refining privacy policies, data handling procedures, and security documentation to align with regulatory standards.',
-  },
-  {
-    title: 'Risk Assessment and Mitigation',
-    description:
-      'Our Interim consultants perform data protection impact assessments (DPIAs), risk assessments, and gap analyses.',
-  },
-  {
-    title: 'Training and Awareness Programs',
-    description:
-      'Data protection consultants often design and deliver training for employees on topics like data protection and breach prevention.',
-  },
-  {
-    title: 'Data Breach Response and Incident Management',
-    description:
-      'Our consultants can lead or advise on data breach responses, ensuring swift and compliant handling of incidents.',
-  },
-  {
-    title: 'Support or hands-on for Data Protection and Security by Design',
-    description:
-      'Interim consultants advise on integrating data protection principles from the ground up in new products, processes, and systems.',
-  },
-  {
-    title: 'Audit Preparation and Documentation',
-    description:
-      'Interim consultants help with creating or refining privacy policies and ensuring alignment with regulatory standards.',
-  },
-  {
-    title: 'Third-Party and Vendor Compliance Management',
-    description:
-      'Our consultants evaluate third-party data practices, conduct vendor risk assessments, and ensure data protection clauses are integrated into contracts.',
-  },
-  {
-    title: 'DPO (Data Protection Officer) Services',
-    description:
-      'For organizations that require a DPO but lack an internal candidate, interim consultants can step in as a temporary DPO.',
-  },
-];
+import { useTranslations } from 'next-intl';
+import Link from 'next/link';
 
 const MemoizedVideoBackground = memo(VideoBackground);
 
 const InterimServices = () => {
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.2, // Controls the delay between each item's animation
-      },
-    },
-  };
+  const t = useTranslations('common.textImage');
+  const commonT = useTranslations('common');
 
-  const itemVariants = {
-    hidden: (custom: number) => ({
-      opacity: 0,
-      y: custom % 2 === 0 ? 50 : -50, // Randomize initial direction (up or down)
-      x: (custom % 2 === 0 ? 30 : -30), // Randomize initial direction (left or right)
-    }),
-    visible: {
-      opacity: 1,
-      y: 0,
-      x: 0,
-      transition: {
-        duration: 0.8,
-        ease: 'easeOut',
-      },
-    },
-  };
+  const headers = [commonT('navigation.services.interim')];
+
   return (
     <>
-<Head>
-  <meta
-    name="description"
-    content="Discover our Interim Data Compliance Services. We offer immediate support for compliance, risk assessments, policy development, DPO services, and more."
-  />
-   <meta
-          name="keywords"
-          content="GDPR interim services, temporary DPO, data protection support, compliance consulting, privacy consultant"
+      <Head>
+        <title>
+          {commonT('navigation.services.interim')} | GDPR & Data Security
+        </title>
+        <meta
+          name='description'
+          content='Get expert interim data compliance services including GDPR, DORA, NIS2, and ISO27001 support. Flexible, professional solutions for your compliance needs.'
         />
-        <link rel="canonical" href="https://www.datacompliancecentre.com/interim-services" />
+        <meta
+          name='keywords'
+          content='Interim Services, GDPR, DORA, NIS2, ISO27001, compliance consulting, data protection, interim compliance services'
+        />
+        <meta name='robots' content='index, follow' />
+        <link
+          rel='canonical'
+          href='https://www.datacompliancecentre.com/interim-services'
+        />
       </Head>
-
- <Script
-        id="interim-schema"
-        type="application/ld+json"
-        strategy="afterInteractive"
+      <Script
+        id='structured-data'
+        type='application/ld+json'
+        strategy='afterInteractive'
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Service",
-            "serviceType": "Interim Data Protection Consulting",
-            "provider": {
-              "@type": "Organization",
-              "name": "Nordic Data Compliance Centre",
-              "url": "https://www.datacompliancecentre.com",
-              "logo": "https://www.datacompliancecentre.com/logoImages/9.png"
+            '@context': 'https://schema.org',
+            '@type': 'ProfessionalService',
+            name: 'Nordic Data Compliance Center',
+            url: 'https://www.datacompliancecentre.com/interim-services',
+            logo: 'https://www.datacompliancecentre.com/logoImages/9.png',
+            description:
+              'Interim GDPR, DORA, ISO27001, NIS2, and AI-Act/ISO 42001 compliance consulting and project support.',
+            address: {
+              '@type': 'PostalAddress',
+              addressCountry: 'DK',
             },
-            "areaServed": {
-              "@type": "Country",
-        "name": "Denmark"
-            },
-            "description": "Our Interim Data Protection and GDPR Services provide immediate compliance support, policy development, DPIAs, DPO services, and breach response.",
-            "url": "https://www.datacompliancecentre.com/interim-services"
-          })
+            sameAs: [
+              'https://www.linkedin.com/company/nordic-data-compliance-center',
+              'https://www.datacompliancecentre.com/',
+            ],
+          }),
         }}
       />
 
-    <main className='flex flex-cols justify-center gap-6'>
-    
-        <VideoBackground
-        videoUrl='./videos/video2.mp4'
-        height='80vh'
-        headers={headers}
-      />
-      {/* <MemoizedVideoBackground
-          videoUrl="./videos/data-transmission.mp4"
-          height="80vh"
+      <div className='flex flex-cols justify-center gap-6'>
+        <MemoizedVideoBackground
+          videoUrl='./videos/video2.mp4'
+          height='80vh'
           headers={headers}
-        /> */}
-      
-      <div className='mt-[90vh]'>
-        <TextImage
-          reverse
-          title={interimServices.title}
-          text={interimServices.text}
-          imageUrl={interimServices.imageUrl}
         />
-        <Divider />
 
-        <div className=' bg-transparent text-primary  mt-20'>
-          {/* Title */}
+        <div className='mt-[90vh]'>
+          <TextImage
+            reverse
+            titleKey='interimServices.title'
+            textKeys={[
+              'interimServices.text.0',
+              'interimServices.text.1',
+              'interimServices.text.2',
+            ]}
+            imageUrl={interimServices.imageUrl}
+          />
 
-          {/* Main Paragraph */}
-          <h1 className='text-2xl font-semibold '>
-            How Can We Add Value to Your Company?
-          </h1>
-          <div className='mt-10'>
-            <ul className='grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 text-primary'>
-              <li className='flex items-center text-neutral-600 dark:text-white border-b py-2'>
-                <span className='flex-shrink-0'>
-                  <RightArrow />
-                </span>
-                Offer an effective solution to address expertise gaps
-              </li>
-              <li className='flex items-center text-neutral-600 dark:text-white border-b py-2'>
-                <span className='flex-shrink-0'>
-                  <RightArrow />
-                </span>
-                Ensure operational continuity
-              </li>
-              <li className='flex items-center text-neutral-600 dark:text-white border-b py-2 pl-10'>
-                <span className='flex-shrink-0'>
-                  <RightArrow />
-                </span>
-                Support strategic goals on a temporary basis
-              </li>
-              <li className='flex items-center text-neutral-600 dark:text-white border-b py-2 pl-10'>
-                <span className='flex-shrink-0'>
-                  <RightArrow />
-                </span>
-                Are a flexible and valuable asset across multiple sectors
-              </li>
-
-              <li className='flex items-center text-neutral-600 dark:text-white border-b py-2 pl-20'>
-                <span className='flex-shrink-0'>
-                  <RightArrow />
-                </span>
-                Highly experienced professionals with expertise from various
-                sectors, assigned to work as an integrated part of your team
-              </li>
-
-              <li className='flex items-center text-neutral-600 dark:text-white border-b py-2 pl-20'>
-                <span className='flex-shrink-0'>
-                  <RightArrow />
-                </span>
-                Quick onboarding and a very smooth hand-over back to you, upon
-                the completion of the term
-              </li>
-            </ul>
-          </div>
           <Divider />
 
-          {/* Subsection: Data Protection Interim Services */}
           <div className='bg-transparent text-primary mt-20'>
-            <h3 className='text-2xl font-semibold text-destructive mb-10'>
-              Here’s how our interim data compliance consultants can make a
-              difference
-            </h3>
-            <motion.div
-              className='grid gap-10 lg:grid-cols-3'
-              variants={containerVariants}
-              initial='hidden'
-              whileInView='visible'
-              viewport={{
-                once: false,
-                amount: 0.2,
-              }}
-            >
-              {items.map((item, index) => (
-                <motion.div
-                  key={index}
-                  className='relative flex flex-col space-y-2 text-accent p-4 rounded-lg shadow-lg bg-background dark:bg-accent overflow-hidden group'
-                  custom={index}
-                  variants={itemVariants}
-                >
-                  {/* Hover Animated Border */}
-                  <div className='absolute inset-0 pointer-events-none'>
-                    {/* Top border */}
-                    <motion.div className='absolute h-[2px] bg-goldish top-0 left-0 w-full scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 ease-in-out' />
-                    {/* Bottom border */}
-                    <motion.div className='absolute h-[2px] bg-goldish bottom-0 left-0 w-full scale-x-0 group-hover:scale-x-100 origin-right transition-transform duration-500 ease-in-out' />
-                    {/* Left border */}
-                    <motion.div className='absolute w-[2px] bg-goldish top-0 left-0 h-full scale-y-0 group-hover:scale-y-100 origin-top transition-transform duration-500 ease-in-out' />
-                    {/* Right border */}
-                    <motion.div className='absolute w-[2px] bg-goldish top-0 right-0 h-full scale-y-0 group-hover:scale-y-100 origin-bottom transition-transform duration-500 ease-in-out' />
-                  </div>
-
-                  {/* Title */}
-                  <div className='flex items-start text-lg text-goldish font-bold'>
-                    <span>{item.title}</span>
-                  </div>
-
-                  {/* Description */}
-                  <p className='leading-relaxed text-neutral-600 dark:text-white text-justify'>
-                    {item.description}
-                  </p>
-                </motion.div>
-              ))}
-            </motion.div>
+            <h1 className='text-2xl font-semibold'>
+              {t('interimServices.howCanWeAddValue')}
+            </h1>
+            <div className='mt-10'>
+              <ul className='grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 text-primary'>
+                <li className='flex items-center text-neutral-600 dark:text-white border-b py-2'>
+                  <span className='flex-shrink-0'>
+                    <RightArrow />
+                  </span>
+                  {t('interimServices.valuePoints.expertiseGaps')}
+                </li>
+                <li className='flex items-center text-neutral-600 dark:text-white border-b py-2'>
+                  <span className='flex-shrink-0'>
+                    <RightArrow />
+                  </span>
+                  {t('interimServices.valuePoints.operationalContinuity')}
+                </li>
+                <li className='flex items-center text-neutral-600 dark:text-white border-b py-2 pl-10'>
+                  <span className='flex-shrink-0'>
+                    <RightArrow />
+                  </span>
+                  {t('interimServices.valuePoints.strategicGoals')}
+                </li>
+                <li className='flex items-center text-neutral-600 dark:text-white border-b py-2 pl-10'>
+                  <span className='flex-shrink-0'>
+                    <RightArrow />
+                  </span>
+                  {t('interimServices.valuePoints.flexibleAsset')}
+                </li>
+                <li className='flex items-center text-neutral-600 dark:text-white border-b py-2 pl-20'>
+                  <span className='flex-shrink-0'>
+                    <RightArrow />
+                  </span>
+                  {t('interimServices.valuePoints.experiencedProfessionals')}
+                </li>
+                <li className='flex items-center text-neutral-600 dark:text-white border-b py-2 pl-20'>
+                  <span className='flex-shrink-0'>
+                    <RightArrow />
+                  </span>
+                  {t('interimServices.valuePoints.quickOnboarding')}
+                </li>
+              </ul>
+            </div>
           </div>
+
           <Divider />
-          <ItServices />
-          {/* Call to Action */}
+
+          <TextImage
+            titleKey='itServices.title'
+            textKeys={[
+              'itServices.text.0',
+              'itServices.text.1',
+            ]}
+            imageUrl={itServices.imageUrl}
+          />
+
+          <Divider />
+
           <div className='flex justify-center w-full mt-10'>
-            <button className='relative inline-flex h-12 overflow-hidden rounded-full p-[4px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 '>
-              {/* Larger animation with proper scaling */}
-              <span className='absolute  inset-[-150%] animate-[spin_1.5s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#d9b08c_0%,#e64833_50%,#d9b08c_100%)] ' />
-              <span className='inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-destructive  text-md font-medium text-white backdrop-blur-3xl px-2 py-3 '>
-                <Link href='/contact'>Book a consultation</Link>
+            <button className='relative inline-flex h-12 overflow-hidden rounded-full p-[4px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50'>
+              <span className='absolute inset-[-150%] animate-[spin_1.5s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#d9b08c_0%,#e64833_50%,#d9b08c_100%)]' />
+              <span className='inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-destructive text-md font-medium text-white backdrop-blur-3xl px-2 py-3'>
+                <Link href='/contact'>
+                  {commonT('workWithUs.bookConsultation')}
+                </Link>
               </span>
             </button>
-
-          
           </div>
         </div>
       </div>
-    </main>
     </>
-    
   );
 };
 

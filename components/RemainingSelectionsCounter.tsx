@@ -15,7 +15,7 @@ const RemainingSelectionsCounter: React.FC<RemainingSelectionsCounterProps> = ({
   const [currentRemaining, setCurrentRemaining] = useState(remainingSelections);
   const [prevRemaining, setPrevRemaining] = useState(remainingSelections);
   const router = useRouter();
-  const t = useTranslations('cart.counter'); // ONLY ADDED THIS LINE
+  const t = useTranslations('common.cart.counter'); // ONLY ADDED THIS LINE
 
   useEffect(() => {
     if (remainingSelections === 0) {
