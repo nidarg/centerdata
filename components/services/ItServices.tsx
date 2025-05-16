@@ -1,18 +1,26 @@
-'use client';
-
 import { itServices } from '@/utils/projects';
 import React from 'react';
 import TextImage from '../TextImage';
 import { useTranslations } from 'next-intl';
 
 const ItServices: React.FC = () => {
-  const t = useTranslations('textImage');
-  const servicesT = useTranslations('services.itServicesList');
-
-  // Get services from translations
-  const services = Array.from({ length: 14 }, (_, i) => 
-    servicesT(`services.${i}`)
-  );
+  const t = useTranslations('common.textImage');
+  const services = [
+    'Python Backend Expert IT Analyst',
+    '.NET/ C# Developer',
+    'Java Developer with strong skills in AWS and DevOps',
+    'Software Engineer',
+    'Power Apps Developer',
+    'Senior C++/Python Developer Software Engineer',
+    'Senior QA with knowledge of GxP, GLP, and GCP',
+    'KYC IT Developer in the Financial Industry',
+    'Clojure Developer',
+    'Network Technician who is in charge on Firewall',
+    'Java/Spring Boot Developers',
+    'Solution Architect (Financial)',
+    'Network Security Engineer',
+    'Expert IT Tester',
+  ];
 
   // Function to split the services into chunks of four
   const chunkArray = (arr: string[], chunkSize: number) => {
@@ -32,8 +40,8 @@ const ItServices: React.FC = () => {
       <div className='mt-10'>
         <TextImage
           reverse
-          titleKey="itServices.title"
-          textKeys={["itServices.text.0", "itServices.text.1"]}
+          title={t('itServices.title')}
+          text={t.raw('itServices.text')}
           imageUrl={itServices.imageUrl}
         />
       </div>

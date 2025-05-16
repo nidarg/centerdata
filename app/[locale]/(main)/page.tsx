@@ -16,6 +16,7 @@ import { useTranslations } from 'next-intl';
 
 export default function Home() {
   const t = useTranslations('common.hero');
+  const textImageT = useTranslations('common.textImage');
   const headers = [
     t('headers.ahead'),
     t('headers.secure'),
@@ -93,18 +94,23 @@ export default function Home() {
           <Divider />
           <div id='about-us' className='flex flex-col scroll-mt-40'>
             <TextImage
-              titleKey="about.title"
-              subtitleKey="about.subtitle"
-              textKeys={["about.text.0", "about.text.1", "about.text.2"]}
-              imageUrl="/images/evatopictures/empowering.jpg"
+              title={textImageT('about.title')}
+              text={[textImageT('about.text.0')]}
+              imageUrl='/images/evatopictures/empowering.jpg'
+              imageAlt={textImageT('about.title')}
             />
             <div className='mb-10 mt-10'></div>
             <TextImage
-              titleKey="services.title"
-              subtitleKey="services.subtitle"
-              textKeys={["services.text.0", "services.text.1", "services.text.2"]}
-              imageUrl="/images/evatopictures/lighting.jpg"
+              title={textImageT('approach.title')}
+              subtitle={textImageT('approach.subtitle')}
+              text={[
+                textImageT('approach.text.0'),
+                textImageT('approach.text.1'),
+                textImageT('approach.text.2'),
+              ]}
+              imageUrl='/images/evatopictures/lighting.jpg'
               reverse={true}
+              imageAlt={textImageT('approach.title')}
             />
           </div>
           <Divider />

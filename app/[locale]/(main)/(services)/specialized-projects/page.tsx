@@ -82,14 +82,15 @@ const SpecializedProjects = () => {
         <div className='mt-[90vh]'>
           <TextImage
             reverse
-            titleKey='specializedProjects.title'
-            textKeys={[
-              'specializedProjects.text.0',
-              'specializedProjects.text.1',
-              'specializedProjects.text.2',
-              'specializedProjects.text.3',
+            title={t('specializedProjects.title')}
+            text={[
+              t('specializedProjects.text.0'),
+              t('specializedProjects.text.1'),
+              t('specializedProjects.text.2'),
+              t('specializedProjects.text.3'),
             ]}
             imageUrl={specializedProjects.imageUrl}
+            imageAlt={t('specializedProjects.title')}
           />
 
           <Divider />
@@ -139,13 +140,14 @@ const SpecializedProjects = () => {
             <Divider />
 
             <TextImage
-              titleKey='aiActProjects.title'
-              textKeys={[
-                'aiActProjects.text.0',
-                'aiActProjects.text.1',
-                'aiActProjects.text.2',
+              title={t('aiActProjects.title')}
+              text={[
+                t('aiActProjects.text.0'),
+                t('aiActProjects.text.1'),
+                t('aiActProjects.text.2'),
               ]}
               imageUrl={aiActProjects.imageUrl}
+              imageAlt={t('aiActProjects.title')}
             />
 
             <Divider />

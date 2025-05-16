@@ -83,7 +83,7 @@
     },
     "navigation": {
       "home": "Home",
-      "about": "About",
+      "about": "About us",
       "contact": "Contact",
       "servicesLabel": "Services",
       "workWithUs": "Work with Us",
@@ -95,7 +95,18 @@
     },
     "testimonials": {
       "title": "Client Success Stories",
-      "readMore": "Read More Reviews"
+      "readMore": "Read More Success Stories",
+      "items": {
+        "emily": {
+          "description": "We had an amazing experience with Nordic Data Compliance Centre. They provided invaluable insights into our data compliance strategy."
+        },
+        "david": {
+          "description": "Working with Nordic Data Compliance Centre exceeded our expectations. Their consulting services were professional, timely, and efficient."
+        },
+        "sarah": {
+          "description": "Nordic Data Compliance Centre's expertise helped streamline our processes. Their team was responsive and dedicated to our success."
+        }
+      }
     },
     "services": {
       "title": "Our Services",
@@ -154,12 +165,12 @@
           "description": "AI Act compliance and implementation"
         },
         "conductRiskAssessments": {
-          "title": "Conduct Risk Assessments",
+          "title": "Conduct the necessary ongoing risk assessments for current and new operations",
           "description": "We conduct the necessary ongoing risk assessments for current and new operations"
         },
         "basicInformationSecurity": {
-          "title": "Basic Information Security",
-          "description": "We implement and maintain basic information security measures to protect your data"
+          "title": "Basic information security",
+          "description": "Maintain a basic information security program based on legal requirements, international standards and ongoing risk assessments and risk tolerance (e.g. security policy, security measures, contingency plan etc.)"
         },
         "governanceStructure": {
           "title": "Governance structure",
@@ -208,65 +219,121 @@
           ]
         },
         "respondToRequests": {
-          "title": "Respond to Requests",
-          "description": "We handle and respond to all relevant requests for access to and rectification of personal data"
+          "title": "Respond to requests and complaints from individuals",
+          "description": "Respond to individuals requests (e.g. deletion, access)"
         },
         "vendorManagement": {
-          "title": "Vendor Management",
-          "description": "We help implement and maintain effective vendor management processes to ensure compliance across the supply chain"
+          "title": "Vendor management",
+          "description": "Manage the record of all data processors, sub-processors and joint controllers"
         },
         "incidentManagement": {
-          "title": "Incident Management",
-          "description": "We implement and maintain effective processes for managing data security incidents and breaches"
+          "title": "Incident management",
+          "description": "Management of personal data breach cases including notification to the Data Protection Agency and communication to individuals, if necessary"
         },
         "trainingAndAwareness": {
-          "title": "Training and Awareness",
-          "description": "We develop and deliver tailored training programs to ensure employees understand and comply with data compliance rules"
+          "title": "Training and awareness program",
+          "description": "Providing ongoing online training for employees to promote data compliance and to mitigate operational risks"
         },
         "pointOfContact": {
-          "title": "Point of Contact",
-          "description": "We serve as your primary point of contact for all data compliance-related inquiries and requests"
+          "title": "Point of contact for local Data Protection Agency and assisting in a potential audit from local Data Protection Agency",
+          "description": "We are the point of contact for your local Data Protection Agency and we assist you in a potential audit from your local Data Protection Agency"
         }
       },
       "subscriptions": {
         "gdprLightImplementation": {
-          "title": "GDPR Light Implementation",
-          "description": "We provide a light implementation for clients that have already done some implementation."
+          "title": "GDPR Light implementation",
+          "description": "We provide a light implementation and is used by our clients that already have done some implementation."
         },
         "gdprTotalImplementation": {
-          "title": "GDPR Total Implementation",
-          "description": "We provide a total implementation for clients that need to implement everything."
+          "title": "GDPR Total implementation",
+          "description": "We provide a total implementation and is used by our clients that need to implement everything."
         },
         "createAndImplementProcess": {
-          "title": "Create and Implement Process",
-          "description": "We create and implement all necessary processes for your business."
+          "title": "Create and implement process and procedure for individuals rights and complaints",
+          "description": "Creating and implementing this process is crucial for your data compliance success"
         },
         "createAndImplementVendorManagement": {
-          "title": "Create and Implement Vendor Management",
-          "description": "We create and implement a complete vendor management system."
+          "title": "Create and implement vendor management process",
+          "description": "Creating and implementing a vendor management process is key in your data compliance success"
         },
         "createAndImplementBasicInformationSecurity": {
-          "title": "Create and Implement Basic Information Security",
-          "description": "We create and implement basic information security measures."
+          "title": "Create and implement a basic information security program",
+          "description": "It is crucial to have at least basic information security implemented in your organisation"
         },
         "createAndImplementRopa": {
-          "title": "Create and Implement RoPA",
-          "description": "We create and implement Record of Processing Activities."
+          "title": "Create and implement ROPA (record of processing activities, GDPR Art.30)",
+          "description": "Creating and implementing RoPA takes a lot of work and expertise to do it once and do it right"
         },
         "createAndImplementGovernanceStructure": {
-          "title": "Create and Implement Governance Structure",
-          "description": "We create and implement a governance structure for your organization."
+          "title": "Create and implement governance structure including basic data compliance training to the data compliance responsibles",
+          "description": "Without a proper governance structure in your organization no data compliance initiative will stick"
         },
         "createAndImplementIncidentManagement": {
-          "title": "Create and Implement Incident Management",
-          "description": "We create and implement an incident management system."
+          "title": "Create and implement incident management process",
+          "description": "When you have an incident you better have a data breach process that will guide what do to, how to assess your breach, who to get involved etc."
         }
+      },
+      "interimServices": {
+        "title": "DATA COMPLIANCE INTERIM SERVICES",
+        "text": [
+          "Our interim data compliance consultants offer a flexible, high-performing solution for managing compliance, improving data security practices, and reducing risks associated with data compliance.",
+          "We provide immediate expertise and flexibility, ideal for both short-term and long-term strategic data compliance needs.",
+          "We have extensive knowledge of data compliance laws, best practices, and industry-specific requirements."
+        ],
+        "items": {
+          "immediateSupport": {
+            "title": "Immediate compliance Support",
+            "description": "We help companies reduce compliance risks quickly, addressing urgent needs such as data breach responses, risk assessments, and audits."
+          },
+          "policyDevelopment": {
+            "title": "Policy Development and Documentation",
+            "description": "We assist with creating and refining privacy policies, data handling procedures, and security documentation to align with regulatory standards."
+          },
+          "riskAssessment": {
+            "title": "Risk Assessment and Mitigation",
+            "description": "Our Interim consultants perform data protection impact assessments (DPIAs), risk assessments, and gap analyses."
+          },
+          "training": {
+            "title": "Training and Awareness Programs",
+            "description": "Data protection consultants often design and deliver training for employees on topics like data protection and breach prevention."
+          },
+          "dataBreach": {
+            "title": "Data Breach Response and Incident Management",
+            "description": "Our consultants can lead or advise on data breach responses, ensuring swift and compliant handling of incidents."
+          },
+          "securityByDesign": {
+            "title": "Support or hands-on for Data Protection and Security by Design",
+            "description": "Interim consultants advise on integrating data protection principles from the ground up in new products, processes, and systems."
+          },
+          "auditPreparation": {
+            "title": "Audit Preparation and Documentation",
+            "description": "Interim consultants help with creating or refining privacy policies and ensuring alignment with regulatory standards."
+          },
+          "vendorCompliance": {
+            "title": "Third-Party and Vendor Compliance Management",
+            "description": "Our consultants evaluate third-party data practices, conduct vendor risk assessments, and ensure data protection clauses are integrated into contracts."
+          },
+          "dpoServices": {
+            "title": "DPO (Data Protection Officer) Services",
+            "description": "For organizations that require a DPO but lack an internal candidate, interim consultants can step in as a temporary DPO."
+          }
+        },
+        "valuePoints": {
+          "expertiseGaps": "Offer an effective solution to address expertise gaps",
+          "operationalContinuity": "Ensure operational continuity",
+          "strategicGoals": "Support strategic goals on a temporary basis",
+          "flexibleAsset": "Are a flexible and valuable asset across multiple sectors",
+          "experiencedProfessionals": "Highly experienced professionals with expertise from various sectors, assigned to work as an integrated part of your team",
+          "quickOnboarding": "Quick onboarding and a very smooth hand-over back to you, upon the completion of the term"
+        },
+        "howCanWeAddValue": "How Can We Add Value to Your Company?",
+        "makeDifference": "Here's how our interim data compliance consultants can make a difference",
+        "bookConsultation": "Book a consultation"
       }
     },
     "consultation": {
       "title": "want a free consultation?",
-      "description": "Fill out the form bellow to schedule",
-      "highlight": "a free consultation",
+      "description": "Fill out the form bellow to schedule a free consultation with our data protection specialists",
       "error": "Error",
       "errorMessage": "Something went wrong.",
       "successMessage": "Your message was sent successfully.",
@@ -304,7 +371,8 @@
         "close": "Close",
         "details": "Details",
         "addToCart": "Add to cart",
-        "requestQuotation": "Request a quotation"
+        "requestQuotation": "Request a quotation",
+        "remove": "Remove"
       },
       "modals": {
         "moreDetails": "More Details",
@@ -327,6 +395,30 @@
         "price": "Per month",
         "type": "Subscription",
         "service": "Service"
+      },
+      "1": {
+        "title": "GDPR Services",
+        "type": "Compliance"
+      },
+      "2": {
+        "title": "ISO 27001 Services",
+        "type": "Certification"
+      },
+      "3": {
+        "title": "NIS2 Services",
+        "type": "Compliance"
+      },
+      "4": {
+        "title": "DORA Services",
+        "type": "Compliance"
+      },
+      "5": {
+        "title": "AI Act Services",
+        "type": "Compliance"
+      },
+      "34": {
+        "title": "GDPR Light Implementation",
+        "type": "Subscription"
       }
     },
     "checkout": {
@@ -350,6 +442,7 @@
         "company": "Company name",
         "vat": "VAT",
         "message": "Message",
+        "period": "Book an appointment",
         "terms": "I've read Terms of Use and Privacy Statement.",
         "termsLink": "Terms of Use",
         "privacyLink": "Privacy Statement",
@@ -371,13 +464,19 @@
       }
     },
     "textImage": {
+      "first": {
+        "title": "EMPOWERING SUCCESS TROUGH STRATEGIC CONSULTING AND HANDS-ON SOLUTIONS",
+        "text": "At Nordic Data Compliance Centre, we excel at making legal and information security challenges more manageable for businesses. Our dedicated, forward-thinking team is committed to enhancing data compliance standards, supporting each company's unique needs along the way. By fostering strong partnerships with stakeholders and embracing a proactive, accountable approach, we aim to deliver meaningful value and reliable support."
+      },
+      "second": {
+        "title": "UNIQUE APPROACH",
+        "subtitle": "Simplicity and Transparency",
+        "text": "We pride ourselves on providing innovative strategies and solutions to meet your business needs effectively. Our team thinks outside the box to deliver fresh and unique consulting and hands-on services. With our innovative approach, we aim to bring a new perspective to your business challenges, helping you achieve outstanding results and stay ahead of the competition."
+      },
       "about": {
-        "title": "About Us",
-        "subtitle": "Your Trusted Data Compliance Partner",
+        "title": "EMPOWERING SUCCESS TROUGH STRATEGIC CONSULTING AND HANDS-ON SOLUTIONS",
         "text": [
-          "We are a team of experienced data compliance professionals dedicated to helping businesses navigate the complex world of data protection and privacy regulations.",
-          "Our mission is to provide practical, effective solutions that ensure your business remains compliant while maintaining operational efficiency.",
-          "With our comprehensive approach and deep expertise, we help organizations of all sizes build and maintain robust data compliance programs."
+          "At Nordic Data Compliance Centre, we excel at making legal and information security challenges more manageable for businesses. Our dedicated, forward-thinking team is committed to enhancing data compliance standards, supporting each company's unique needs along the way. By fostering strong partnerships with stakeholders and embracing a proactive, accountable approach, we aim to deliver meaningful value and reliable support."
         ]
       },
       "services": {
@@ -387,6 +486,15 @@
           "We offer a wide range of data compliance services tailored to your specific needs.",
           "From GDPR implementation to ongoing compliance management, our solutions are designed to be practical and effective.",
           "Our team of experts works closely with you to understand your unique challenges and develop customized strategies."
+        ]
+      },
+      "approach": {
+        "title": "UNIQUE APPROACH",
+        "subtitle": "Simplicity and Transparency",
+        "text": [
+          "We pride ourselves on providing innovative strategies and solutions to meet your business needs effectively.",
+          "Our team thinks outside the box to deliver fresh and unique consulting and hands-on services.",
+          "With our innovative approach, we aim to bring a new perspective to your business challenges, helping you achieve outstanding results and stay ahead of the competition."
         ]
       },
       "contact": {
@@ -436,14 +544,6 @@
         "text": [
           "This solution is designed for Start-up, Micro, and SME businesses, offering tailored solutions that enable these companies to build their own data compliance framework at their own pace. It is aligned with their unique needs and flexible enough to grow alongside their business.",
           "When you choose this solution, we work as an integrated part of your team."
-        ]
-      },
-      "interimServices": {
-        "title": "DATA COMPLIANCE INTERIM SERVICES",
-        "text": [
-          "Our interim data compliance consultants provide an adaptable, high-impact solution for managing compliance, improving data security practices, and mitigating risks associated with data compliance.",
-          "We offer immediate expertise and flexibility, ideal for both short-term and long-term strategic data compliance needs.",
-          "We are highly knowledgeable in data compliance laws, best practices and industry-specific requirements."
         ]
       },
       "itServices": {
@@ -555,6 +655,54 @@
         "twitterDescription": "Custom GDPR compliance solutions tailored to your business needs. Mix and match modules to create your perfect compliance framework.",
         "schemaHeadline": "Tailormade GDPR Solutions",
         "schemaDescription": "Custom GDPR compliance solutions tailored to your business needs. Mix and match modules to create your perfect compliance framework."
+      }
+    },
+    "contact": {
+      "title": "Want to get in touch?",
+      "description": "Feel free to reach out to us with any inquiries, concerns, or assistance you may require. Our team is here to help and eager to hear from you!",
+      "address": {
+        "street": "Maglebjergvej 6",
+        "city": "2800 Kongens Lyngby",
+        "country": "Denmark",
+        "vat": "VAT DK 44251434",
+        "email": "hello@datacompliancecentre.com"
+      },
+      "form": {
+        "fullname": "Full Name",
+        "email": "Email",
+        "phone": "Phone Number",
+        "company": "Company Name",
+        "vat": "VAT",
+        "message": "Message",
+        "period": "Book an Appointment",
+        "terms": "I've read Terms of Use and Privacy Statement.",
+        "termsLink": "Terms of Use",
+        "privacyLink": "Privacy Statement",
+        "submit": "Send Message",
+        "errors": {
+          "nameRequired": "Name is required",
+          "nameFormat": "Name can only contain letters and spaces",
+          "emailInvalid": "Invalid email address",
+          "companyRequired": "Company name is required",
+          "companyLength": "Company name cannot be longer than 100 characters",
+          "phoneRequired": "Phone number is required",
+          "phoneFormat": "Phone number must contain only numbers",
+          "phoneLength": "Phone number cannot be longer than 20 characters",
+          "messageLength": "Message cannot be longer than 1000 characters",
+          "termsRequired": "You must accept the terms and conditions",
+          "submissionError": "There was a problem with your request"
+        },
+        "success": "Your message was sent successfully",
+        "error": "Oops! Something went wrong"
+      },
+      "meta": {
+        "title": "Contact | Data Compliance Centre",
+        "description": "Want to get in touch? Feel free to reach out to us with any inquiries, concerns, or assistance you may require.",
+        "keywords": "contact, inquiry, support, company, help, business contact",
+        "ogTitle": "Contact | Data Compliance Centre",
+        "ogDescription": "Contact us with questions, help, or feedback. Our team is ready to assist you.",
+        "twitterTitle": "Contact | Data Compliance Centre",
+        "twitterDescription": "Contact us today for business inquiries or assistance. We're here to help!"
       }
     }
   }

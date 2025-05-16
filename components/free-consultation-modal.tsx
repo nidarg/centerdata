@@ -79,12 +79,11 @@ const ConsultationModal = () => {
       transition={{ duration: 0.5, ease: 'easeOut' }}
       className='fixed bottom-5 sm:left-1/2 sm:-translate-x-1/2 md:right-4 md:left-auto w-80 bg-teal p-4 rounded-lg shadow-lg border border-gray-200'
     >
-      <h2 className='text-lg font-bold text-primary mb-4 mt-2 uppercase text-center'>
+      <h2 className='text-lg font-bold text-primary mb-4 mt-4 uppercase text-center'>
         {t('title')}
       </h2>
       <p className='text-white text-sm mb-4'>
-        {t('description')}{' '}
-        <span className='text-primary font-bold'>{t('highlight')}</span>
+        {t('description')}
       </p>
 
       <form onSubmit={handleSubmit(onSubmit)} className='space-y-3'>

@@ -38,8 +38,11 @@ export default function LanguageSelector() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant='ghost' size='icon'>
-          <Globe className='h-5 w-5' />
+        <Button variant='destructive' size='icon'>
+          <Globe
+            style={{ width: '1.7rem', height: '1.7rem' }}
+            className='text-white  absolute '
+          />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align='end'>

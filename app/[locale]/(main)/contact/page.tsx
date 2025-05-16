@@ -1,23 +1,23 @@
 'use client';
 import React, { useState, useRef } from 'react';
-import { Label } from '@/components/ui/label';
-import { Input } from '@/components/ui/input';
-import { DateInput } from '@/components/ui/date-input';
-import { cn } from '@/lib/utils';
-import { IconBrandLinkedin } from '@tabler/icons-react';
-import ReCAPTCHA from 'react-google-recaptcha';
-import { useTranslations } from 'next-intl';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import * as z from 'zod';
+import { z } from 'zod';
+import ReCAPTCHA from 'react-google-recaptcha';
+import { useRouter } from 'next/navigation';
+import { useToast } from '@/hooks/use-toast';
+import { useTranslations } from 'next-intl';
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import Link from 'next/link';
 import { Textarea } from '@/components/ui/textarea';
 import { Checkbox } from '@/components/ui/checkbox';
-import { toast } from 'sonner';
-import { useRouter } from 'next/navigation';
-import { useCart } from '@/utils/context/CartContext';
-import { useToast } from '@/components/ui/use-toast';
 import Head from "next/head";
+import { IconBrandLinkedin } from '@tabler/icons-react';
+import { DateInput } from '@/components/ui/date-input';
+import { cn } from '@/lib/utils';
+import { Check } from 'lucide-react';
 
 export default function ContactPage() {
   const t = useTranslations('common.contact');
@@ -25,38 +25,50 @@ export default function ContactPage() {
   const { toast } = useToast();
   const recaptchaRef = useRef<ReCAPTCHA>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isVerified, setIsVerified] = useState(false);
 
   const formSchema = z.object({
-    fullname: z.string()
-      .min(1, { message: t('form.errors.nameRequired') })
-      .regex(/^[a-zA-ZæøåÆØÅ\s-]+$/, { message: t('form.errors.nameFormat') }),
-    email: z.string()
-      .email({ message: t('form.errors.emailInvalid') }),
-    phone: z.string()
-      .min(1, { message: t('form.errors.phoneRequired') })
-      .regex(/^\d+$/, { message: t('form.errors.phoneFormat') })
-      .max(20, { message: t('form.errors.phoneLength') }),
-    company: z.string()
-      .min(1, { message: t('form.errors.companyRequired') })
-      .max(100, { message: t('form.errors.companyLength') }),
-    vat: z.string().optional(),
-    message: z.string()
-      .max(1000, { message: t('form.errors.messageLength') }),
-    terms: z.boolean()
-      .refine((val) => val === true, { message: t('form.errors.termsRequired') })
+    fullName: z
+      .string()
+      .min(1, 'Name is required')
+      .max(100)
+      .regex(/^[a-zA-Z\s]+$/, 'Name can only contain letters and spaces')
+      .trim(),
+    email: z.string().email('Invalid email address'),
+    company: z
+      .string()
+      .min(1, 'Company is required')
+      .max(100, "Company name can't be longer than 100 characters")
+      .trim(),
+    phone: z
+      .string()
+      .min(1, 'Phone number is required')
+      .max(20, "Phone number can't be longer than 20 characters")
+      .trim()
+      .regex(/^\d+$/, 'Phone number must contain only numbers'),
+    message: z
+      .string()
+      .min(1, 'Message is required')
+      .max(1000, "Message can't be longer than 1000 characters")
+      .trim(),
+    vat: z.string().min(1).max(1000).trim().optional(),
+    period: z.string().optional(),
+    terms: z.boolean().refine((val) => val === true, {
+      message: 'You must accept the terms and conditions',
+    }),
   });
+
+  type FormSchemaType = z.infer<typeof formSchema>;
 
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitted },
-    watch,
     reset,
-    setValue,
     clearErrors,
-  } = useForm<typeof formSchema>({ resolver: zodResolver(formSchema) });
-
-  watch();
+  } = useForm<FormSchemaType>({
+    resolver: zodResolver(formSchema),
+  });
 
   async function handleCaptchaSubmission(token: string | null) {
     try {
@@ -72,55 +84,46 @@ export default function ContactPage() {
         if (response.ok) {
           setIsVerified(true);
         } else {
-          console.error('reCAPTCHA verification failed.');
           setIsVerified(false);
         }
       }
     } catch (e) {
-      console.error('Error during reCAPTCHA submission:', e);
       setIsVerified(false);
     }
   }
 
-  const handleChange = (token: string | null) => {
-    handleCaptchaSubmission(token);
-  };
-
-  function handleExpired() {
-    setIsVerified(false);
-  }
-
-  const onSubmit = async (data: typeof formSchema) => {
+  const onSubmit = async (data: FormSchemaType) => {
     try {
-      console.log('Data ',data);
-      
+      setIsSubmitting(true);
       const response = await fetch('/api/email', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
       });
+
       if (!response.ok) {
         toast({
-          title: 'Uh oh! Something went wrong.',
-          description: 'There was a problem with your request.',
+          title: t('form.error'),
+          description: t('form.errors.submissionError'),
         });
+        return;
       }
 
       toast({
-        description: 'Your message was sent successfully.',
+        description: t('form.success'),
       });
-      reset({
-        fullname: '',
-        email: '',
-        company: '',
-        vat:'',
-        phone: '',
-        message: '',
-        terms: false,
-      });
-      setValue('terms', false);
+      reset();
+      setIsVerified(false);
+      if (recaptchaRef.current) {
+        recaptchaRef.current.reset();
+      }
     } catch (error) {
-      console.log(error);
+      toast({
+        title: t('form.error'),
+        description: t('form.errors.submissionError'),
+      });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -181,18 +184,24 @@ export default function ContactPage() {
       </div>
 
       <form className='my-8' onSubmit={handleSubmit(onSubmit)}>
+        {/* Full Name */}
         <LabelInputContainer className='mb-4'>
-          <Label htmlFor='fullname'>{t('form.fullname')}</Label>
-          <Input id='fullname' type='text' {...register('fullname')} />
-          {errors.fullname && isSubmitted && (
+          <Label htmlFor='fullName' className='flex flex-col gap-y-2'>
+            <span>{t('form.fullname')}</span>
+          </Label>
+          <Input id='fullName' type='text' {...register('fullName')} />
+          {errors.fullName && isSubmitted && (
             <span className='text-destructive text-sm'>
-              {errors.fullname.message}
+              {errors.fullName.message}
             </span>
           )}
         </LabelInputContainer>
 
+        {/* Email */}
         <LabelInputContainer className='mb-4'>
-          <Label htmlFor='email'>{t('form.email')}</Label>
+          <Label htmlFor='email' className='flex flex-col gap-y-2'>
+            <span>{t('form.email')}</span>
+          </Label>
           <Input id='email' type='email' {...register('email')} />
           {errors.email && isSubmitted && (
             <span className='text-destructive text-sm'>
@@ -200,8 +209,12 @@ export default function ContactPage() {
             </span>
           )}
         </LabelInputContainer>
+
+        {/* Phone */}
         <LabelInputContainer className='mb-4'>
-          <Label htmlFor='phone'>{t('form.phone')}</Label>
+          <Label htmlFor='phone' className='flex flex-col gap-y-2'>
+            <span>{t('form.phone')}</span>
+          </Label>
           <Input id='phone' type='tel' {...register('phone')} />
           {errors.phone && isSubmitted && (
             <span className='text-destructive text-sm'>
@@ -209,6 +222,8 @@ export default function ContactPage() {
             </span>
           )}
         </LabelInputContainer>
+
+        {/* Company Name */}
         <LabelInputContainer className='mb-4'>
           <Label htmlFor='company' className='flex flex-col gap-y-2'>
             <span>{t('form.company')}</span>
@@ -220,16 +235,38 @@ export default function ContactPage() {
             </span>
           )}
         </LabelInputContainer>
-         {/* Company VAT */}
-                <LabelInputContainer className='mb-4'>
-                  <Label htmlFor='vat' className='flex flex-col gap-y-2'>
-                    <span>{t('form.vat')}</span>
-                  </Label>
-                  <Input id='vat' type='text' {...register('vat')} />
-                </LabelInputContainer>
 
-        <LabelInputContainer className='mb-8'>
-          <Label htmlFor='message'>{t('form.message')}</Label>
+        {/* Company VAT */}
+        <LabelInputContainer className='mb-4'>
+          <Label htmlFor='vat' className='flex flex-col gap-y-2'>
+            <span>{t('form.vat')}</span>
+          </Label>
+          <Input id='vat' type='text' {...register('vat')} />
+          {errors.vat && isSubmitted && (
+            <span className='text-destructive text-sm'>
+              {errors.vat.message}
+            </span>
+          )}
+        </LabelInputContainer>
+
+        {/* Period */}
+        <LabelInputContainer className='mb-4'>
+          <Label htmlFor='period' className='flex flex-col gap-y-2'>
+            <span>{t('form.period')}</span>
+          </Label>
+          <DateInput id='period' type='text' {...register('period')} />
+          {errors.period && isSubmitted && (
+            <span className='text-destructive text-sm'>
+              {errors.period.message}
+            </span>
+          )}
+        </LabelInputContainer>
+
+        {/* Message */}
+        <LabelInputContainer className='mb-4'>
+          <Label htmlFor='message' className='flex flex-col gap-y-2'>
+            <span>{t('form.message')}</span>
+          </Label>
           <Textarea id='message' {...register('message')} rows={4} />
           {errors.message && isSubmitted && (
             <span className='text-destructive text-sm'>
@@ -238,9 +275,12 @@ export default function ContactPage() {
           )}
         </LabelInputContainer>
 
+        {/* Terms and Conditions */}
         <LabelInputContainer className='mb-8'>
           <div className='items-top flex space-x-2'>
-            <Checkbox
+            <input
+              className={'text-primary'}
+              type='checkbox'
               id='terms'
               {...register('terms')}
               onChange={(e) => {
@@ -256,6 +296,19 @@ export default function ContactPage() {
               >
                 {t('form.terms')}
               </label>
+              <p className='text-sm text-neutral-200'>
+                <span>
+                  <Link className='text-primary' href='/terms-and-conditions'>
+                    {t('form.termsLink')}
+                  </Link>
+                </span>{' '}
+                and{' '}
+                <span>
+                  <Link className='text-primary' href='/privacy'>
+                    {t('form.privacyLink')}
+                  </Link>
+                </span>
+              </p>
             </div>
           </div>
           {errors.terms && isSubmitted && (
@@ -265,34 +318,35 @@ export default function ContactPage() {
           )}
         </LabelInputContainer>
 
-        <div className=' mb-10'>
+        {/* reCAPTCHA */}
+        <div className='mb-10'>
           <ReCAPTCHA
             sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''}
             ref={recaptchaRef}
-            onChange={handleChange}
-            onExpired={handleExpired}
+            onChange={(token) => handleCaptchaSubmission(token)}
+            onExpired={() => setIsVerified(false)}
           />
         </div>
 
-        <Button
+        {/* Submit Button */}
+        <button
+          className='bg-gradient-to-br relative group/btn from-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium'
           type='submit'
           disabled={isSubmitting || !isVerified}
-          className='bg-gradient-to-br relative group/btn from-zinc-900  to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]'
         >
-          {t('form.submit')}
-          <BottomGradient />
-        </Button>
+          {t('form.submit')} &rarr;
+        </button>
 
         <div className='bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-8 h-[1px] w-full' />
 
+        {/* LinkedIn Link */}
         <div className='flex flex-col space-y-4'>
           <Link
-            className=' relative group/btn flex space-x-2 items-center justify-start px-4 w-full text-black rounded-md h-10 font-medium shadow-input bg-zinc-800 dark:shadow-[0px_0px_1px_1px_var(--neutral-800)]'
+            className='relative group/btn flex space-x-2 items-center justify-start px-4 w-full text-black rounded-md h-10 font-medium'
             href='https://linkedin.com/company/nordic-data-compliance-centre'
           >
-            <IconBrandLinkedin className='h-4 w-4  text-neutral-300' />
-            <span className='text-neutral-300 text-sm'>Linkedin</span>
-            <BottomGradient />
+            <IconBrandLinkedin className='h-4 w-4 text-neutral-300' />
+            <span className='text-neutral-300 text-sm'>LinkedIn</span>
           </Link>
         </div>
       </form>
@@ -317,10 +371,8 @@ const LabelInputContainer = ({
 }: {
   children: React.ReactNode;
   className?: string;
-}) => {
-  return (
-    <div className={cn('flex flex-col space-y-2 w-full', className)}>
-      {children}
-    </div>
-  );
-};
+}) => (
+  <div className={cn('flex flex-col space-y-2 w-full', className)}>
+    {children}
+  </div>
+);

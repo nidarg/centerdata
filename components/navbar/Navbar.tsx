@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
 import { FaBars, FaTimes } from 'react-icons/fa';
-import NavLinks from './NavLinks';
+import NavLinks from '../NavLinks';
 import DarkMode from './DarkMode';
 import Logo from './Logo';
 import Basket from './Basket';
@@ -90,9 +90,9 @@ function Navbar() {
         >
           <div className='py-[64px] mb-10 sm:mb-0'>
             <NavLinks
-            // setServicesClicked={setServicesClicked}
-            // dropdownRef={dropdownRef}
-            // closeMenu={closeMenu}
+              setServicesClicked={setServicesClicked}
+              dropdownRef={dropdownRef}
+              closeMenu={closeMenu}
             />
           </div>
           <LanguageSelector />

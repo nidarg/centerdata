@@ -3,7 +3,6 @@
 import { useTranslations } from 'next-intl';
 import React, { useRef, useEffect } from 'react';
 import { motion, useAnimation, useInView } from 'framer-motion';
-import { testimonials } from '@/utils/testimonials';
 import { Quote } from 'lucide-react';
 
 export default function Testimonials() {
@@ -19,6 +18,21 @@ export default function Testimonials() {
       controls.start('hidden');
     }
   }, [isInView, controls]);
+
+  const testimonials = [
+    {
+      id: 'emily',
+      description: t('items.emily.description')
+    },
+    {
+      id: 'david',
+      description: t('items.david.description')
+    },
+    {
+      id: 'sarah',
+      description: t('items.sarah.description')
+    }
+  ];
 
   return (
     <div ref={containerRef} className='w-full overflow-hidden'>
@@ -47,7 +61,7 @@ export default function Testimonials() {
       >
         {testimonials.map((testimonial, index) => (
           <motion.div
-            key={index}
+            key={testimonial.id}
             className='p-6 rounded-lg shadow-md border border-primary flex flex-col justify-between'
             initial='hidden'
             animate={controls}
@@ -60,14 +74,6 @@ export default function Testimonials() {
             <div className='flex items-center text-neutral-700 dark:text-neutral-300 pt-10 pb-10'>
               <Quote className='w-10 h-10 mr-2 text-goldish' />
               <p className='text-md italic'>{testimonial.description}</p>
-            </div>
-            <div className='mt-4'>
-              <p className='text-neutral-800 dark:text-neutral-100 font-semibold'>
-                {testimonial.name}
-              </p>
-              <p className='text-primary font-semibold text-sm'>
-                {testimonial.company}
-              </p>
             </div>
           </motion.div>
         ))}

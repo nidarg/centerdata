@@ -5,15 +5,15 @@ import ServicesByType from '@/components/services/ServicesByType';
 import TailoredServicesHeader from '@/components/services/TailoredServicesHeader';
 import VideoBackground from '@/components/VideoBackground';
 // import { TextGenerateEffect } from '@/components/ui/text-generate-effect';
-import Link from 'next/link';
+// import Link from 'next/link';
 import Divider from '@/components/Divider';
 import CompanyType from '@/components/CompanyType';
 import { RightArrow } from '@/components/RightArrow';
 import { mixAndMatch } from '@/utils/projects';
 import TextImage from '@/components/TextImage';
-import Head from "next/head";
+import Head from 'next/head';
 import { useTranslations } from 'next-intl';
-import Script from 'next/script';
+// import Script from 'next/script';
 
 const TailormadeSolutions = () => {
   const t = useTranslations('common');
@@ -46,26 +46,44 @@ const TailormadeSolutions = () => {
       <Head>
         <title>{metaT('tailormadeSolutions.title')}</title>
         <meta
-          name="description"
+          name='description'
           content={metaT('tailormadeSolutions.description')}
         />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://www.datacompliancecentre.com/tailormade-solutions" />
+        <meta name='robots' content='index, follow' />
+        <link
+          rel='canonical'
+          href='https://www.datacompliancecentre.com/tailormade-solutions'
+        />
 
         {/* Open Graph Tags for Social Media Sharing */}
-        <meta property="og:title" content={metaT('tailormadeSolutions.ogTitle')} />
-        <meta property="og:description" content={metaT('tailormadeSolutions.ogDescription')} />
-        <meta property="og:image" content="/path/to/og-image.jpg" />
-        <meta property="og:url" content="https://www.datacompliancecentre.com/tailormade-solutions" />
-        <meta property="og:type" content="website" />
+        <meta
+          property='og:title'
+          content={metaT('tailormadeSolutions.ogTitle')}
+        />
+        <meta
+          property='og:description'
+          content={metaT('tailormadeSolutions.ogDescription')}
+        />
+        <meta property='og:image' content='/path/to/og-image.jpg' />
+        <meta
+          property='og:url'
+          content='https://www.datacompliancecentre.com/tailormade-solutions'
+        />
+        <meta property='og:type' content='website' />
 
         {/* Twitter Card Meta Tags */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={metaT('tailormadeSolutions.twitterTitle')} />
-        <meta name="twitter:description" content={metaT('tailormadeSolutions.twitterDescription')} />
-        
+        <meta name='twitter:card' content='summary_large_image' />
+        <meta
+          name='twitter:title'
+          content={metaT('tailormadeSolutions.twitterTitle')}
+        />
+        <meta
+          name='twitter:description'
+          content={metaT('tailormadeSolutions.twitterDescription')}
+        />
+
         {/* Schema Markup for SEO */}
-        <script type="application/ld+json">
+        <script type='application/ld+json'>
           {`
           {
             "@context": "https://schema.org",
@@ -98,9 +116,13 @@ const TailormadeSolutions = () => {
             <div className='mb-20'>
               <TextImage
                 reverse
-                titleKey="mixAndMatch.title"
-                textKeys={["mixAndMatch.text.0", "mixAndMatch.text.1"]}
+                title={t('textImage.mixAndMatch.title')}
+                text={[
+                  t('textImage.mixAndMatch.text.0'),
+                  t('textImage.mixAndMatch.text.1'),
+                ]}
                 imageUrl={mixAndMatch.imageUrl}
+                imageAlt={t('textImage.mixAndMatch.title')}
               />
             </div>
             <Divider />
@@ -127,9 +149,7 @@ const TailormadeSolutions = () => {
             </div>
 
             {/* Dynamic Service Section */}
-            <div>
-              {type ? <ServicesByType type={type} /> : null}
-            </div>
+            <div>{type ? <ServicesByType type={type} /> : null}</div>
             <Divider />
 
             {/* Why Choose Section */}
@@ -145,9 +165,9 @@ const TailormadeSolutions = () => {
                 'skilledProfessionals',
                 'businessContinuity',
                 'rapidResponse',
-                'easyCompliance'
+                'easyCompliance',
               ].map((key, index) => (
-                <li 
+                <li
                   key={key}
                   className={`flex items-center text-neutral-600 dark:text-white border-b border-gradient-to-r from-destructive to-accent py-2 ${
                     index >= 2 ? 'pl-10' : ''

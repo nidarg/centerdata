@@ -60,7 +60,18 @@
     },
     "testimonials": {
       "title": "Kundframgångshistorier",
-      "readMore": "Läs Fler Omdömen"
+      "readMore": "Läs Fler Framgångshistorier",
+      "items": {
+        "emily": {
+          "description": "Vi hade en fantastisk upplevelse med Nordic Data Compliance Centre. De gav ovärderlig insikt i vår datacompliance-strategi."
+        },
+        "david": {
+          "description": "Att arbeta med Nordic Data Compliance Centre överträffade våra förväntningar. Deras konsulttjänster var professionella, punktliga och effektiva."
+        },
+        "sarah": {
+          "description": "Nordic Data Compliance Centres expertis hjälpte till att effektivisera våra processer. Deras team var responsiva och dedikerade till vår framgång."
+        }
+      }
     },
     "services": {
       "title": "Våra Tjänster",
@@ -73,10 +84,10 @@
       },
       "additional": {
         "title": "Ytterligare TJÄNSTER OCH SUPPORT UTAN EXTRA KOSTNAD",
-        "maturityAssessment": "Datacompliance Mognadsbedömning",
+        "maturityAssessment": "Bedömning av datacompliance-mognad",
         "onlineOnboarding": "Online onboarding",
         "support": "Support - e-post och telefon",
-        "statusReport": "Virtuell Datacompliance status till ledningen var 3:e månad"
+        "statusReport": "Virtuell datacompliance-status till ledningen var tredje månad"
       },
       "itServicesList": {
         "title": "Tillgängliga IT Tjänster",
@@ -118,120 +129,223 @@
           "title": "AI Act-tjänster",
           "description": "AI Act-efterlevnad och implementering"
         },
-        "conductRiskAssessments": {
-          "title": "Utför Riskbedömningar",
-          "description": "Vi utför nödvändiga löpande riskbedömningar för nuvarande och nya verksamheter"
-        },
-        "basicInformationSecurity": {
-          "title": "Grundläggande Informationssäkerhet",
-          "description": "Vi implementerar och upprätthåller grundläggande informationssäkerhetsåtgärder för att skydda dina data"
-        },
-        "respondToRequests": {
-          "title": "Besvara Förfrågningar",
-          "description": "Vi hanterar och besvarar alla relevanta förfrågningar om tillgång till och rättelse av personuppgifter"
-        },
-        "vendorManagement": {
-          "title": "Leverantörsstyrning",
-          "description": "Vi hjälper till att implementera och upprätthålla effektiva leverantörsstyrningsprocesser för att säkerställa compliance i hela leveranskedjan"
-        },
-        "personalDataInventory": {
-          "title": "Personuppgiftsinventering och dataöverföringsmekanismer",
+        "governanceStructure": {
+          "title": "Styrstruktur",
           "description": [
-            "Vi administrerar på dina vägnar RoPA (register över behandlingsaktiviteter, GDPR Art.30), inklusive dataöverföringsmekanismer",
-            "Vi övervakar och implementerar nya compliance-krav och bästa praxis",
-            "Vi utför en bedömning tillsammans med dig för att hitta de högrisk compliance-områden som kräver din fulla uppmärksamhet",
-            "Vi planerar en online onboarding för att komma igång",
-            "Vi är tillgängliga dygnet runt och återkommer till dig så snart som möjligt. Vi bedömer dina behov och återkommer snabbare vid ett dataintrång än vid en mer generell fråga",
-            "Vi anser att det är mycket viktigt för dig att hålla dig informerad om compliance-arbetet. Vi bedömer alltid den aktuella situationen och väntar inte 3 månader med att informera dig om problem som kräver din uppmärksamhet"
+            "Vi hanterar styrstrukturen i företaget på dina vägnar, inklusive löpande stöd till de anställda som ansvarar för datacompliance",
+            "Vi utför en bedömning tillsammans med dig för att hitta de högriskområden som kräver din fulla uppmärksamhet",
+            "Vi schemalägger en online-onboarding för att komma igång",
+            "Vi är tillgängliga 24/7 och kontaktar dig så snart som möjligt. Vi bedömer dina behov och kontaktar dig snabbare vid ett dataintrång än vid en mer allmän fråga",
+            "Vi anser att det är mycket viktigt för dig att hålla dig informerad om compliance-arbetet. Vi bedömer alltid den aktuella situationen och väntar inte 3 månader med att informera dig om frågor som kräver din uppmärksamhet"
           ]
         },
-        "governanceStructure": {
-          "title": "Styrningsstruktur",
+        "personalDataInventory": {
+          "title": "Personuppgiftsinventering",
           "description": [
-            "Vi hanterar på dina vägnar styrningsstrukturen i företaget, inklusive löpande stöd till de anställda som är ansvariga för datacompliance",
-            "Vi utför en bedömning tillsammans med dig för att hitta de högrisk compliance-områden som behöver din fulla uppmärksamhet",
-            "Vi schemalägger en online onboarding för att komma igång",
-            "Vi är tillgängliga dygnet runt och återkommer till dig så snart som möjligt. Vi bedömer dina behov och återkommer snabbare vid ett dataintrång än vid en mer allmän fråga",
-            "Vi anser att det är mycket viktigt för dig att hållas informerad om compliance-insatsen. Vi bedömer alltid den aktuella situationen och väntar inte 3 månader med att informera dig om problem som behöver din uppmärksamhet"
+            "Vi hanterar RoPA (register över behandlingsaktiviteter, GDPR Art.30) på dina vägnar, inklusive datatransfermekanismer",
+            "Vi övervakar och implementerar nya compliance-krav och bästa praxis",
+            "Vi utför en bedömning tillsammans med dig för att hitta de högriskområden som kräver din fulla uppmärksamhet",
+            "Vi schemalägger en online-onboarding för att komma igång",
+            "Vi är tillgängliga 24/7 och kontaktar dig så snart som möjligt. Vi bedömer dina behov och kontaktar dig snabbare vid ett dataintrång än vid en mer allmän fråga",
+            "Vi anser att det är mycket viktigt för dig att hålla dig informerad om compliance-arbetet. Vi bedömer alltid den aktuella situationen och väntar inte 3 månader med att informera dig om frågor som kräver din uppmärksamhet"
           ]
         },
         "embedCompliance": {
           "title": "Integrera datacompliance i nuvarande och nya verksamheter",
           "description": [
-            "Vi administrerar på dina vägnar de nödvändiga interna policyerna, processerna och procedurerna (t.ex. anställdas integritetspolicy, före-under-efter anställning, CCTV etc.)",
-            "Hantera integritet och säkerhet genom design i nya verksamheter (t.ex. säkerställa att nya projekt och behandlingsaktiviteter följer datacompliance-principer)",
-            "Utför periodisk testning och rapportera effektiviteten",
+            "Vi hanterar de nödvändiga interna policyerna, processerna och rutinerna på dina vägnar (t.ex. anställdas integritetspolicy, före-under-efter anställning, CCTV etc.)",
+            "Integrera integritet och säkerhet by design i nya verksamheter (t.ex. säkerställa att nya projekt och behandlingsaktiviteter följer datacompliance-principer)",
+            "Genomföra periodiska tester och rapportera effektiviteten",
             "Övervaka och implementera nya compliance-krav och bästa praxis",
-            "Vi utför en bedömning tillsammans med dig för att hitta de högrisk compliance-områden som kräver din fulla uppmärksamhet",
-            "Vi planerar en online onboarding för att komma igång",
-            "Vi är tillgängliga dygnet runt och återkommer till dig så snart som möjligt. Vi bedömer dina behov och återkommer snabbare vid ett dataintrång än vid en mer generell fråga",
-            "Vi anser att det är mycket viktigt för dig att hålla dig informerad om compliance-arbetet. Vi bedömer alltid den aktuella situationen och väntar inte 3 månader med att informera dig om problem som kräver din uppmärksamhet"
+            "Vi utför en bedömning tillsammans med dig för att hitta de högriskområden som kräver din fulla uppmärksamhet",
+            "Vi schemalägger en online-onboarding för att komma igång",
+            "Vi är tillgängliga 24/7 och kontaktar dig så snart som möjligt. Vi bedömer dina behov och kontaktar dig snabbare vid ett dataintrång än vid en mer allmän fråga",
+            "Vi anser att det är mycket viktigt för dig att hålla dig informerad om compliance-arbetet. Vi bedömer alltid den aktuella situationen och väntar inte 3 månader med att informera dig om frågor som kräver din uppmärksamhet"
           ]
         },
         "externalPolicies": {
-          "title": "Externa policyer och meddelanden till enskilda personer",
+          "title": "Externa policyer och meddelanden till enskilda",
           "description": [
-            "Vi administrerar på dina vägnar de nödvändiga externa policyerna och meddelandena till enskilda personer i enlighet med datacompliance-regler och operativ risktolerans, inklusive direkta marknadsförings- och elektroniska kommunikationsområden (t.ex. webbplats, nyhetsbrev, sociala medier kampanjer etc.)",
+            "Vi hanterar de nödvändiga externa policyerna och meddelandena till enskilda i enlighet med datacompliance-förordningar och operativ risktolerans, inklusive direktmarknadsföring och elektronisk kommunikation (t.ex. webbplats, nyhetsbrev, sociala mediekampanjer etc.)",
             "Övervaka och implementera nya compliance-krav och bästa praxis",
-            "Utför periodisk testning och rapportera effektiviteten",
-            "Vi utför en bedömning tillsammans med dig för att hitta de högrisk compliance-områden som kräver din fulla uppmärksamhet",
-            "Vi planerar en online onboarding för att komma igång",
-            "Vi är tillgängliga dygnet runt och återkommer till dig så snart som möjligt. Vi bedömer dina behov och återkommer snabbare vid ett dataintrång än vid en mer generell fråga",
-            "Vi anser att det är mycket viktigt för dig att hålla dig informerad om compliance-arbetet. Vi bedömer alltid den aktuella situationen och väntar inte 3 månader med att informera dig om problem som kräver din uppmärksamhet"
+            "Genomföra periodiska tester och rapportera effektiviteten",
+            "Vi utför en bedömning tillsammans med dig för att hitta de högriskområden som kräver din fulla uppmärksamhet",
+            "Vi schemalägger en online-onboarding för att komma igång",
+            "Vi är tillgängliga 24/7 och kontaktar dig så snart som möjligt. Vi bedömer dina behov och kontaktar dig snabbare vid ett dataintrång än vid en mer allmän fråga",
+            "Vi anser att det är mycket viktigt för dig att hålla dig informerad om compliance-arbetet. Vi bedömer alltid den aktuella situationen och väntar inte 3 månader med att informera dig om frågor som kräver din uppmärksamhet"
+          ]
+        },
+        "conductRiskAssessments": {
+          "title": "Genomföra nödvändiga löpande riskbedömningar",
+          "description": [
+            "Vi genomför de nödvändiga löpande riskbedömningarna för nuvarande och nya verksamheter"
+          ]
+        },
+        "basicInformationSecurity": {
+          "title": "Grundläggande informationssäkerhet",
+          "description": [
+            "Vi implementerar och underhåller ett grundläggande informationssäkerhetsprogram baserat på lagkrav, internationella standarder och löpande riskbedömningar och risktolerans (t.ex. säkerhetspolicy, säkerhetsåtgärder, beredskapsplan etc.)",
+            "Genomföra periodiska tester av informationssäkerhetsprogrammet och rapportera effektiviteten",
+            "Övervaka och implementera nya compliance-krav och bästa praxis",
+            "Vi utför en bedömning tillsammans med dig för att hitta de högriskområden som kräver din fulla uppmärksamhet",
+            "Vi schemalägger en online-onboarding för att komma igång",
+            "Vi är tillgängliga 24/7 och kontaktar dig så snart som möjligt. Vi bedömer dina behov och kontaktar dig snabbare vid ett dataintrång än vid en mer allmän fråga",
+            "Vi anser att det är mycket viktigt för dig att hålla dig informerad om compliance-arbetet. Vi bedömer alltid den aktuella situationen och väntar inte 3 månader med att informera dig om frågor som kräver din uppmärksamhet"
+          ]
+        },
+        "respondToRequests": {
+          "title": "Hantera förfrågningar och klagomål från enskilda",
+          "description": [
+            "Vi hanterar förfrågningar från enskilda (t.ex. radering, åtkomst)",
+            "Vi hanterar klagomål från enskilda",
+            "Genomföra periodiska tester av processerna och rutinerna för att hantera förfrågningar och klagomål från enskilda, och rapportera effektiviteten av processen",
+            "Övervaka och implementera nya compliance-krav och bästa praxis",
+            "Vi utför en bedömning tillsammans med dig för att hitta de högriskområden som kräver din fulla uppmärksamhet",
+            "Vi schemalägger en online-onboarding för att komma igång",
+            "Vi är tillgängliga 24/7 och kontaktar dig så snart som möjligt. Vi bedömer dina behov och kontaktar dig snabbare vid ett dataintrång än vid en mer allmän fråga",
+            "Vi anser att det är mycket viktigt för dig att hålla dig informerad om compliance-arbetet. Vi bedömer alltid den aktuella situationen och väntar inte 3 månader med att informera dig om frågor som kräver din uppmärksamhet"
+          ]
+        },
+        "vendorManagement": {
+          "title": "Leverantörshantering",
+          "description": [
+            "Vi hanterar registret över alla databehandlare, underbehandlare och gemensamma ansvariga, inklusive due diligence och avtalshantering",
+            "Vi hanterar due diligence av databehandlare innan en ny leverantör tas in, inklusive bedömning och säkerhetsfrågeformulär",
+            "Vi hanterar utarbetande och förhandling av databehandlingsavtal",
+            "Vi hanterar revision av databehandlare",
+            "Genomföra periodiska tester av leverantörshanteringsprocessen och rapportera effektiviteten av processen",
+            "Övervaka och implementera nya compliance-krav och bästa praxis",
+            "Vi utför en bedömning tillsammans med dig för att hitta de högriskområden som kräver din fulla uppmärksamhet",
+            "Vi schemalägger en online-onboarding för att komma igång",
+            "Vi är tillgängliga 24/7 och kontaktar dig så snart som möjligt. Vi bedömer dina behov och kontaktar dig snabbare vid ett dataintrång än vid en mer allmän fråga",
+            "Vi anser att det är mycket viktigt för dig att hålla dig informerad om compliance-arbetet. Vi bedömer alltid den aktuella situationen och väntar inte 3 månader med att informera dig om frågor som kräver din uppmärksamhet"
           ]
         },
         "incidentManagement": {
           "title": "Incidenthantering",
-          "description": "Vi implementerar och upprätthåller effektiva processer för hantering av datasäkerhetsincidenter och dataintrång"
+          "description": [
+            "Hantering av personuppgiftsincidenter inklusive anmälan till Datainspektionen och kommunikation till berörda personer vid behov",
+            "Hålla personuppgiftsincidentregistret uppdaterat",
+            "Genomföra periodiska tester av incidenthanteringsprocessen och rapportera effektiviteten av processen",
+            "Övervaka och implementera nya compliance-krav och bästa praxis",
+            "Vi utför en bedömning tillsammans med dig för att hitta de högriskområden som kräver din fulla uppmärksamhet",
+            "Vi schemalägger en online-onboarding för att komma igång",
+            "Vi är tillgängliga 24/7 och kontaktar dig så snart som möjligt. Vi bedömer dina behov och kontaktar dig snabbare vid ett dataintrång än vid en mer allmän fråga",
+            "Vi anser att det är mycket viktigt för dig att hålla dig informerad om compliance-arbetet. Vi bedömer alltid den aktuella situationen och väntar inte 3 månader med att informera dig om frågor som kräver din uppmärksamhet"
+          ]
         },
         "trainingAndAwareness": {
-          "title": "Utbildning och Medvetenhet",
-          "description": "Vi utvecklar och levererar skräddarsydda utbildningsprogram för att säkerställa att medarbetare förstår och följer datacompliance-regler"
+          "title": "Utbildning och medvetenhetsprogram",
+          "description": [
+            "Vi erbjuder löpande online-utbildning för anställda för att främja datacompliance och minska operativa risker",
+            "Vi utför en bedömning tillsammans med dig för att hitta de högriskområden som kräver din fulla uppmärksamhet",
+            "Vi schemalägger en online-onboarding för att komma igång",
+            "Vi är tillgängliga 24/7 och kontaktar dig så snart som möjligt. Vi bedömer dina behov och kontaktar dig snabbare vid ett dataintrång än vid en mer allmän fråga",
+            "Vi anser att det är mycket viktigt för dig att hålla dig informerad om compliance-arbetet. Vi bedömer alltid den aktuella situationen och väntar inte 3 månader med att informera dig om frågor som kräver din uppmärksamhet"
+          ]
         },
         "pointOfContact": {
-          "title": "Kontaktpunkt",
-          "description": "Vi fungerar som din primära kontaktpunkt för alla datacompliance-relaterade frågor och förfrågningar"
+          "title": "Kontaktperson för lokal Datainspektion",
+          "description": [
+            "Vi är kontaktperson för din lokala Datainspektion och hjälper dig vid eventuella revisioner"
+          ]
         }
       },
       "subscriptions": {
         "gdprLightImplementation": {
-          "title": "GDPR Lätt Implementering",
-          "description": "Vi erbjuder en lätt implementering för kunder som redan har genomfört vissa implementeringar."
+          "title": "GDPR Light implementation",
+          "description": "Vi tillhandahåller en lätt implementation och används av våra kunder som redan har gjort viss implementation."
         },
         "gdprTotalImplementation": {
-          "title": "GDPR Total Implementering",
-          "description": "Vi erbjuder en total implementering för kunder som behöver implementera allt."
+          "title": "GDPR Total implementation",
+          "description": "Vi tillhandahåller en total implementation och används av våra kunder som behöver implementera allt."
         },
         "createAndImplementProcess": {
-          "title": "Skapa och Implementera Process",
-          "description": "Vi skapar och implementerar alla nödvändiga processer för ditt företag."
+          "title": "Skapa och implementera process och procedur för enskildas rättigheter och klagomål",
+          "description": "Att skapa och implementera denna process är avgörande för din datacompliance-framgång"
         },
         "createAndImplementVendorManagement": {
-          "title": "Skapa och Implementera Leverantörsstyrning",
-          "description": "Vi skapar och implementerar ett komplett leverantörsstyrningssystem."
+          "title": "Skapa och implementera leverantörshanteringsprocess",
+          "description": "Att skapa och implementera en leverantörshanteringsprocess är nyckeln till din datacompliance-framgång"
         },
         "createAndImplementBasicInformationSecurity": {
-          "title": "Skapa och Implementera Grundläggande Informationssäkerhet",
-          "description": "Vi skapar och implementerar grundläggande informationssäkerhetsåtgärder."
+          "title": "Skapa och implementera ett grundläggande informationssäkerhetsprogram",
+          "description": "Det är avgörande att ha minst grundläggande informationssäkerhet implementerad i din organisation"
         },
         "createAndImplementRopa": {
-          "title": "Skapa och Implementera RoPA",
-          "description": "Vi skapar och implementerar Register över Behandlingsaktiviteter."
+          "title": "Skapa och implementera RoPA (register över behandlingsaktiviteter, GDPR Art.30)",
+          "description": "Att skapa och implementera RoPA kräver mycket arbete och expertis för att göra det en gång och göra det rätt"
         },
         "createAndImplementGovernanceStructure": {
-          "title": "Skapa och Implementera Styrandestruktur",
-          "description": "Vi skapar och implementerar en styrandestruktur för din organisation."
+          "title": "Skapa och implementera styrstruktur inklusive grundläggande datacompliance-utbildning till de ansvariga för datacompliance",
+          "description": "Utan en korrekt styrstruktur i din organisation kommer inget datacompliance-initiativ att fastna"
         },
         "createAndImplementIncidentManagement": {
-          "title": "Skapa och Implementera Incidenthantering",
-          "description": "Vi skapar och implementerar ett incidenthanteringssystem."
+          "title": "Skapa och implementera incidenthanteringsprocess",
+          "description": "När du har en incident är det bättre att ha en dataintrångsprocess som vägleder vad som ska göras, hur man bedömer ditt intrång, vem som ska involveras etc."
         }
+      },
+      "interimServices": {
+        "title": "DATA COMPLIANCE INTERIM TJÄNSTER",
+        "text": [
+          "Våra interim data compliance konsulter erbjuder en flexibel, högpresterande lösning för att hantera compliance, förbättra datasäkerhetspraxis och minska risker förknippade med data compliance.",
+          "Vi tillhandahåller omedelbar expertis och flexibilitet, idealiskt för både kortsiktiga och långsiktiga strategiska data compliance-behov.",
+          "Vi har omfattande kunskap om data compliance-lagar, bästa praxis och branschspecifika krav."
+        ],
+        "items": {
+          "immediateSupport": {
+            "title": "Omedelbar compliance-stöd",
+            "description": "Vi hjälper företag att snabbt minska compliance-risker genom att hantera brådskande behov som dataintrångssvar, riskbedömningar och revisioner."
+          },
+          "policyDevelopment": {
+            "title": "Policyutveckling och dokumentation",
+            "description": "Vi hjälper till med att skapa och förfina integritetspolicyer, datahanteringsprocedurer och säkerhetsdokumentation för att anpassa sig till regelverk."
+          },
+          "riskAssessment": {
+            "title": "Riskbedömning och minskning",
+            "description": "Våra interim konsulter utför dataskyddsanalyser (DPIAs), riskbedömningar och gap-analyser."
+          },
+          "training": {
+            "title": "Utbildning och medvetenhetsprogram",
+            "description": "Dataskyddskonsulter utformar och genomför ofta utbildning för anställda om ämnen som dataskydd och förebyggande av intrång."
+          },
+          "dataBreach": {
+            "title": "Hantering av dataintrång och incidenter",
+            "description": "Våra konsulter kan leda eller rådge om dataintrångssvar, vilket säkerställer snabb och compliant hantering av incidenter."
+          },
+          "securityByDesign": {
+            "title": "Stöd eller praktisk hjälp för dataskydd och säkerhet by design",
+            "description": "Interim konsulter rådger om att integrera dataskyddsprinciper från grunden i nya produkter, processer och system."
+          },
+          "auditPreparation": {
+            "title": "Förberedelse för revision och dokumentation",
+            "description": "Interim konsulter hjälper till med att skapa eller förfina integritetspolicyer och säkerställa anpassning till regelverk."
+          },
+          "vendorCompliance": {
+            "title": "Hantering av tredjeparts- och leverantörscompliance",
+            "description": "Våra konsulter utvärderar tredjeparts datapraxis, genomför leverantörsriskbedömningar och säkerställer att dataskyddsklausuler är integrerade i kontrakt."
+          },
+          "dpoServices": {
+            "title": "DPO (Data Protection Officer) Tjänster",
+            "description": "För organisationer som kräver en DPO men saknar en intern kandidat kan interim konsulter fungera som tillfällig DPO."
+          }
+        },
+        "valuePoints": {
+          "expertiseGaps": "Erbjuder en effektiv lösning för att hantera kompetensluckor",
+          "operationalContinuity": "Säkerställer operativ kontinuitet",
+          "strategicGoals": "Stödjer strategiska mål på tillfällig basis",
+          "flexibleAsset": "Är en flexibel och värdefull tillgång över flera sektorer",
+          "experiencedProfessionals": "Högkvalificerade yrkesverksamma med expertis från olika sektorer, tilldelade för att arbeta som en integrerad del av ditt team",
+          "quickOnboarding": "Snabb onboarding och en mycket smidig överlämning tillbaka till dig vid slutet av perioden"
+        },
+        "howCanWeAddValue": "Hur kan vi lägga till värde för ditt företag?",
+        "makeDifference": "Så här kan våra interim data compliance konsulter göra skillnad",
+        "bookConsultation": "Boka en konsultation"
       }
     },
     "consultation": {
       "title": "vill du ha en gratis konsultation?",
-      "description": "Fyll i formuläret nedan för att boka",
-      "highlight": "en gratis konsultation",
+      "description": "Fyll i formuläret nedan för att boka en gratis konsultation med våra dataspecialister",
       "error": "Fel",
       "errorMessage": "Något gick fel.",
       "successMessage": "Ditt meddelande skickades framgångsrikt.",
@@ -269,7 +383,8 @@
         "close": "Stäng",
         "details": "Detaljer",
         "addToCart": "Lägg i varukorg",
-        "requestQuotation": "Begär offert"
+        "requestQuotation": "Begär offert",
+        "remove": "Ta bort"
       },
       "modals": {
         "moreDetails": "Fler detaljer",
@@ -292,25 +407,64 @@
         "price": "Per månad",
         "type": "Prenumeration",
         "service": "Tjänst"
+      },
+      "1": {
+        "title": "GDPR Tjänster",
+        "type": "Efterlevnad"
+      },
+      "2": {
+        "title": "ISO 27001 Tjänster",
+        "type": "Certifiering"
+      },
+      "3": {
+        "title": "NIS2 Tjänster",
+        "type": "Efterlevnad"
+      },
+      "4": {
+        "title": "DORA Tjänster",
+        "type": "Efterlevnad"
+      },
+      "5": {
+        "title": "AI Act Tjänster",
+        "type": "Efterlevnad"
+      },
+      "34": {
+        "title": "GDPR Lätt Implementering",
+        "type": "Prenumeration"
       }
     },
     "textImage": {
+      "first": {
+        "title": "FRÄMJAR FRAMGÅNG GENNOM STRATEGISK KONSULTVIRKSAMHET OCH PRAKTISKA LÖSNINGAR",
+        "text": "På Nordic Data Compliance Centre utmärker vi oss genom att göra juridiska och informationssäkerhetsutmaningar mer hanterbara för företag. Vårt dedikerade, framåtblickande team är engagerat i att förbättra datacompliance-standarder och stödjer varje företags unika behov på vägen. Genom att främja starka partnerskap med intressenter och omfamna ett proaktivt, ansvarsfullt förhållningssätt strävar vi efter att leverera meningsfullt värde och pålitligt stöd."
+      },
+      "second": {
+        "title": "UNIKT FÖRHÅLLNINGSSÄTT",
+        "subtitle": "Enkelhet och Transparens",
+        "text": "Vi är stolta över att leverera innovativa strategier och lösningar som effektivt möter dina affärsbehov. Vårt team tänker utanför boxen för att leverera färska och unika konsult- och praktiska tjänster. Med vårt innovativa förhållningssätt strävar vi efter att ge ett nytt perspektiv på dina affärsutmaningar och hjälpa dig att uppnå enastående resultat och hålla dig före konkurrensen."
+      },
       "about": {
-        "title": "Om Oss",
-        "subtitle": "Din Pålitliga Data Compliance Partner",
+        "title": "FRÄMJAR FRAMGÅNG GENOM STRATEGISK RÅDGIVNING OCH PRAKTISKA LÖSNINGAR",
         "text": [
-          "Vi är ett team av erfarna data compliance-professionella dedikerade till att hjälpa företag att navigera i den komplexa världen av dataskydd och integritetsregler.",
-          "Vårt uppdrag är att leverera praktiska, effektiva lösningar som säkerställer att ditt företag förblir compliant samtidigt som det upprätthåller operativ effektivitet.",
-          "Med vår omfattande approach och djupa expertis hjälper vi organisationer av alla storlekar att bygga och upprätthålla robusta data compliance-program."
+          "På Nordic Data Compliance Centre gör vi juridiska och informationssäkerhetsrelaterade utmaningar mer hanterbara för företag. Vårt dedikerade, framåtblickande team arbetar för att höja dataskyddsstandarder och stödja varje företags unika behov. Genom starka partnerskap och ett proaktivt, ansvarsfullt arbetssätt levererar vi verkligt värde och pålitligt stöd."
         ]
       },
       "services": {
         "title": "Våra Tjänster",
-        "subtitle": "Omfattande Data Compliance Lösningar",
+        "subtitle": "Omfattande Dataskyddslösningar",
         "text": [
-          "Vi erbjuder ett brett utbud av data compliance-tjänster skräddarsydda för dina specifika behov.",
-          "Från GDPR-implementering till löpande compliance-hantering är våra lösningar utformade för att vara praktiska och effektiva.",
-          "Vårt team av experter arbetar nära tillsammans med dig för att förstå dina unika utmaningar och utveckla skräddarsydda strategier."
+          "Vi erbjuder ett brett utbud av dataskyddstjänster anpassade efter dina specifika behov.",
+          "Från GDPR-implementering till löpande compliance-hantering – våra lösningar är praktiska och effektiva.",
+          "Vårt expertteam arbetar nära dig för att förstå dina unika utmaningar och utveckla skräddarsydda strategier."
+        ]
+      },
+      "approach": {
+        "title": "UNIKT ARBETSSÄTT",
+        "subtitle": "Enkelhet och Transparens",
+        "text": [
+          "Vi är stolta över att erbjuda innovativa strategier och lösningar som effektivt möter ditt företags behov.",
+          "Vårt team tänker utanför boxen för att leverera nya och unika konsult- och praktiska tjänster.",
+          "Med vårt innovativa arbetssätt vill vi ge nya perspektiv på dina affärsutmaningar, hjälpa dig att nå utmärkta resultat och ligga steget före konkurrenterna."
         ]
       },
       "contact": {
@@ -358,16 +512,8 @@
       "mixAndMatch": {
         "title": "GDPR Mix och Match",
         "text": [
-          "Denna lösning är utformad för Start-ups, Mikro- och små och medelstora företag och erbjuder skräddarsydda lösningar som gör det möjligt för dessa företag att bygga sitt eget datacompliance-ramverk i sin egen takt. Den är anpassad efter deras unika behov och tillräckligt flexibel för att växa tillsammans med deras verksamhet.",
+          "Denna lösning är utformad för Start-up, Mikro- och små och medelstora företag och erbjuder skräddarsydda lösningar som gör det möjligt för dessa företag att bygga sitt eget datacompliance-ramverk i sin egen takt. Den är anpassad efter deras unika behov och tillräckligt flexibel för att växa tillsammans med deras verksamhet.",
           "När du väljer denna lösning arbetar vi som en integrerad del av ditt team."
-        ]
-      },
-      "interimServices": {
-        "title": "DATA COMPLIANCE INTERIM TJÄNSTER",
-        "text": [
-          "Våra interim data compliance-konsulter erbjuder en anpassningsbar, högpresterande lösning för att hantera compliance, förbättra datasäkerhetspraxis och minska risker förknippade med data compliance.",
-          "Vi erbjuder omedelbar expertis och flexibilitet, idealisk för både kortsiktiga och långsiktiga strategiska data compliance-behov.",
-          "Vi har omfattande kunskap om data compliance-lagar, bästa praxis och branschspecifika krav."
         ]
       },
       "itServices": {
@@ -387,11 +533,11 @@
         "twitterDescription": "Skräddarsydda GDPR-compliance lösningar anpassade efter dina affärsbehov. Blanda och matcha moduler för att skapa ditt perfekta compliance-ramverk.",
         "schemaHeadline": "Skräddarsydda GDPR-lösningar",
         "schemaDescription": "Skräddarsydda GDPR-compliance lösningar anpassade efter dina affärsbehov. Blanda och matcha moduler för att skapa ditt perfekta compliance-ramverk.",
-        "buildFramework": "Bygg Ditt Compliance-ramverk",
-        "step1": "Steg 1: Välj Din Företagstyp",
-        "step2": "Steg 2: Välj Dina Tjänster",
-        "step3": "Steg 3: Se Din Skräddarsydda Lösning",
-        "whyChoose": "Varför Välja Våra Skräddarsydda Lösningar?",
+        "buildFramework": "Bygg ditt compliance-ramverk",
+        "step1": "Steg 1: Välj din företagstyp",
+        "step2": "Steg 2: Välj dina tjänster",
+        "step3": "Steg 3: Se din skräddarsydda lösning",
+        "whyChoose": "Varför välja våra skräddarsydda lösningar?",
         "benefits": {
           "effectiveSolution": "Effektiv och effektiv lösning",
           "evolvingSolution": "Lösning som utvecklas med ditt företag",
@@ -582,13 +728,9 @@
         "twitterDescription": "Delta i Associate-programmet på Nordic Data Compliance Centre för flexibla möjligheter, samarbete och tillväxt i datacompliance-tjänster."
       }
     },
-    "checkout": {
-      "title": "Fyll i kontaktformulär",
-      "description": "Fyll i formuläret nedan för att slutföra din beställning",
-      "contact": {
-        "title": "Vill du komma i kontakt?",
-        "description": "Du är välkommen att kontakta oss med frågor, funderingar eller den hjälp du kan behöva. Vårt team finns här för att hjälpa till och ser fram emot att höra från dig!"
-      },
+    "contact": {
+      "title": "Vill du komma i kontakt?",
+      "description": "Tveka inte att kontakta oss med frågor, funderingar eller hjälp du kan behöva. Vårt team finns här för att hjälpa dig och ser fram emot att höra från dig!",
       "address": {
         "street": "Maglebjergvej 6",
         "city": "2800 Kongens Lyngby",
@@ -598,17 +740,55 @@
       },
       "form": {
         "fullname": "Fullständigt namn",
+        "email": "E-post",
+        "phone": "Telefonnummer",
+        "company": "Företagsnamn",
+        "vat": "Moms",
+        "message": "Meddelande",
+        "period": "Boka ett möte",
+        "terms": "Jag har läst Användarvillkor och Integritetspolicy.",
+        "termsLink": "Användarvillkor",
+        "privacyLink": "Integritetspolicy",
+        "submit": "Skicka meddelande"
+      },
+      "meta": {
+        "title": "Kontakt | Data Compliance Centre",
+        "description": "Vill du komma i kontakt? Tveka inte att kontakta oss med frågor, funderingar eller om du behöver hjälp.",
+        "keywords": "kontakt, förfrågan, support, företag, hjälp, företagskontakt",
+        "ogTitle": "Kontakt | Data Compliance Centre",
+        "ogDescription": "Kontakta oss med frågor, hjälp eller feedback. Vårt team är redo att assistera dig.",
+        "twitterTitle": "Kontakt | Data Compliance Centre",
+        "twitterDescription": "Kontakta oss idag för företagsförfrågningar eller hjälp. Vi finns här för att hjälpa dig!"
+      }
+    },
+    "checkout": {
+      "title": "Fyll i kontaktformulär",
+      "description": "Fyll i formuläret nedan för att slutföra din beställning",
+      "contact": {
+        "title": "Vill du komma i kontakt?",
+        "description": "Tveka inte att kontakta oss med frågor, funderingar eller hjälp du kan behöva. Vårt team finns här för att hjälpa dig och ser fram emot att höra från dig!"
+      },
+      "form": {
+        "fullname": "Fullständigt namn",
         "email": "Företags-e-post",
         "phone": "Telefonnummer",
         "company": "Företagsnamn",
         "vat": "Moms",
         "message": "Meddelande",
+        "period": "Boka ett möte",
         "terms": "Jag har läst Användarvillkor och Integritetspolicy.",
         "termsLink": "Användarvillkor",
         "privacyLink": "Integritetspolicy",
         "submit": "Begär offert",
-        "freeNote": "Att begära en offert är kostnadsfritt och förbinder dig inte på något sätt.",
-        "requestedServices": "Efterfrågade Tjänster"
+        "requestedServices": "Efterfrågade Tjänster",
+        "freeNote": "Att begära en offert är kostnadsfritt och förbinder dig inte på något sätt."
+      },
+      "address": {
+        "street": "Maglebjergvej 6",
+        "city": "2800 Kongens Lyngby",
+        "country": "Danmark",
+        "vat": "VAT DK 44251434",
+        "email": "hello@datacompliancecentre.com"
       },
       "cart": {
         "title": "Din kundvagn",

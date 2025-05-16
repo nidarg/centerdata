@@ -4,6 +4,7 @@ import { links, servicesLinks } from '@/utils/links';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
+import { useTranslations } from 'next-intl';
 
 import {
   DropdownMenu,
@@ -26,6 +27,7 @@ function NavLinks({
   const pathname = usePathname();
   const [openDropdown, setOpenDropdown] = useState(false);
   const [sideOffset, setSideOffset] = useState(50);
+  const t = useTranslations('common.navigation');
 
   useEffect(() => {
     const handleResize = () => {
@@ -41,9 +43,16 @@ function NavLinks({
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  const translatedLinks = [
+    { href: '/', label: t('home') },
+    { href: '/#about-us', label: t('about') },
+    { href: '/services', label: t('servicesLabel') },
+    { href: '/contact', label: t('contact') },
+  ];
+
   return (
     <div className='flex flex-col md:flex-row gap-2 mt-2 md:mt-0'>
-      {links.map((link) => {
+      {translatedLinks.map((link) => {
         const isActive = pathname === link.href;
         const isServiceActive = servicesLinks.includes(pathname);
 
@@ -84,20 +93,24 @@ function NavLinks({
                 <DropdownMenuItem asChild onSelect={closeMenu}>
                   <Button variant='outline' asChild>
                     <Link href='/specialized-projects'>
-                      Specialized projects
+                      {t('services.specialized')}
                     </Link>
                   </Button>
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem asChild onSelect={closeMenu}>
                   <Button variant='outline' asChild>
-                    <Link href='/interim-services'>Interim services</Link>
+                    <Link href='/interim-services'>
+                      {t('services.interim')}
+                    </Link>
                   </Button>
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem asChild onSelect={closeMenu}>
                   <Button variant='outline' asChild>
-                    <Link href='/tailormade-solutions'>GDPR mix and match</Link>
+                    <Link href='/tailormade-solutions'>
+                      {t('services.tailormade')}
+                    </Link>
                   </Button>
                 </DropdownMenuItem>
               </DropdownMenuContent>

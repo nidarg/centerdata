@@ -2,7 +2,7 @@
 
 import { products, subscriptions } from '@/utils/products';
 import { useCartContext } from '@/utils/context/CartContext';
-import { IntProduct, IntSubscription } from '@/utils/types';
+// import { IntProduct, IntSubscription } from '@/utils/types';
 import CardRow from './CardRow';
 import AdditionalServices from './AdditionalServices';
 import RemainingSelectionsCounter from '../RemainingSelectionsCounter';
@@ -19,8 +19,8 @@ export default function ServicesByType({ type }: ServicesByTypeProps) {
   const remainingSelections = selectCounter - cartCount;
 
   // Filter products and subscriptions by type
-  const filteredProducts = products.filter(p => p.type === type);
-  const filteredSubscriptions = subscriptions.filter(s => s.type === type);
+  const filteredProducts = products.filter((p) => p.type === type);
+  const filteredSubscriptions = subscriptions.filter((s) => s.type === type);
 
   // Helper function to handle array descriptions
   const getDescription = (key: string, isSubscription: boolean = false) => {
@@ -30,16 +30,18 @@ export default function ServicesByType({ type }: ServicesByTypeProps) {
   };
 
   // Translate products and subscriptions
-  const translatedProducts = filteredProducts.map(product => ({
+  const translatedProducts = filteredProducts.map((product) => ({
     ...product,
     title: t(`products.${product.titleKey.split('.')[0]}.title`),
-    description: getDescription(product.titleKey)
+    description: getDescription(product.titleKey),
   }));
 
-  const translatedSubscriptions = filteredSubscriptions.map(subscription => ({
+  const translatedSubscriptions = filteredSubscriptions.map((subscription) => ({
     ...subscription,
     title: t(`subscriptions.${subscription.titleKey.split('.')[0]}.title`),
-    description: subscription.descriptionKey ? getDescription(subscription.titleKey, true) : undefined
+    description: subscription.descriptionKey
+      ? getDescription(subscription.titleKey, true)
+      : undefined,
   }));
 
   return (
@@ -57,7 +59,10 @@ export default function ServicesByType({ type }: ServicesByTypeProps) {
       )}
 
       <CardRow items={translatedProducts} header={t('modules.management')} />
-      <CardRow items={translatedSubscriptions} header={t('modules.implement')} />
+      <CardRow
+        items={translatedSubscriptions}
+        header={t('modules.implement')}
+      />
       <AdditionalServices type={type} />
     </div>
   );

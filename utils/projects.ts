@@ -1,5 +1,5 @@
 export const specializedProjects = {
-  title: `We’ll navigate the complexities of data compliance together `,
+  title: `We'll navigate the complexities of data compliance together `,
   text: [
     `We provide consultancy and hands-on practical solutions in specialized projects related to the e.g GDPR, DORA, NIS2, ISO27001, AI-Act/ISO 42001.
         The specialized projects often focus on implementing, improving, or evaluating compliance measures, in response to the evolving data compliance landscape.`,
@@ -22,14 +22,14 @@ export const aiActProjects = {
 };
 
 export const interimServices = {
-  title: `DATA COMPLIANCE INTERIM SERVICES`,
-  text: 'Our interim data compliance consultants provide an adaptable, high-impact solution for managing compliance, improving data security practices, and mitigating risks associated with data compliance. We offer immediate expertise and flexibility, ideal for both short-term and long-term strategic data compliance needs. We are highly knowledgeable in data compliance laws, best practices and industry-specific requirements.',
+  title: 'title',
+  text: 'text',
   imageUrl: '/images/evatopictures/interim.jpg',
 };
 
 export const itServices = {
-  title: `NEARSHORE IT INTERIM SERVICES`,
-  text: 'Nearshore IT interim services such as e.g. developers, testers, and supporters for temporary solutions.We provide high-level IT expertise to businesses in need of immediate support to fill short-term gaps, manage projects, or steer IT strategy during transitions.',
+  title: 'title',
+  text: 'text',
   imageUrl: '/images/evatopictures/it.jpg',
 };
 
