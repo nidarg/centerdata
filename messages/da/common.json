@@ -145,125 +145,125 @@
       },
       "products": {
         "governanceStructure": {
-          "title": "Governance structure",
+          "title": "Styringsstruktur",
           "description": [
-            "We manage on your behalf the governance structure in the company, including ongoing support to the employees that are responsible for data compliance",
-            "We perform an assessment together with you in order to find the high risk compliance areas that need your full attention",
-            "We schedule an online onboarding to get things started",
-            "We are available 24/7 and reach out to you as soon as possible. We assess your needs and reach out faster for a data breach case than for a more general question",
-            "We believe that it is very important for you to stay informed on the compliance efforts. We always assess the current situation and do not wait 3 months to inform you on issues that need your attention"
+            "Vi håndterer styringsstrukturen i virksomheden på dine vegne, herunder løbende support til de medarbejdere, der er ansvarlige for datacompliance",
+            "Vi udfører en vurdering sammen med dig for at finde de højrisiko-compliance-områder, der kræver din fulde opmærksomhed",
+            "Vi planlægger en online onboarding for at komme i gang",
+            "Vi er tilgængelige døgnet rundt og vender tilbage til dig så hurtigt som muligt. Vi vurderer dine behov og vender tilbage hurtigere ved et databrud end ved et mere generelt spørgsmål",
+            "Vi mener, at det er meget vigtigt for dig at holde dig informeret om compliance-indsatsen. Vi vurderer altid den aktuelle situation og venter ikke 3 måneder med at informere dig om problemer, der kræver din opmærksomhed"
           ]
         },
         "personalDataInventory": {
-          "title": "Personal Data Inventory (RoPA)",
+          "title": "Persondatainventar (RoPA)",
           "description": [
-            "We manage on your behalf the RoPA (record of processing activities, GDPR Art.30), including data transfer mechanism",
-            "We monitor and implement new compliance requirements and best practices",
-            "We perform an assessment together with you in order to find the high risk compliance areas that need your full attention",
-            "We schedule an online onboarding to get things started",
-            "We are available 24/7 and reach out to you as soon as possible. We assess your needs and reach out faster for a data breach case than for a more general question",
-            "We believe that it is very important for you to stay informed on the compliance efforts. We always assess the current situation and do not wait 3 months to inform you on issues that need your attention"
+            "Vi håndterer RoPA (register over behandlingsaktiviteter, GDPR Art.30) på dine vegne, herunder datatransfermekanismer",
+            "Vi overvåger og implementerer nye compliance-krav og bedste praksis",
+            "Vi udfører en vurdering sammen med dig for at finde de højrisiko-compliance-områder, der kræver din fulde opmærksomhed",
+            "Vi planlægger en online onboarding for at komme i gang",
+            "Vi er tilgængelige døgnet rundt og vender tilbage til dig så hurtigt som muligt. Vi vurderer dine behov og vender tilbage hurtigere ved et databrud end ved et mere generelt spørgsmål",
+            "Vi mener, at det er meget vigtigt for dig at holde dig informeret om compliance-indsatsen. Vi vurderer altid den aktuelle situation og venter ikke 3 måneder med at informere dig om problemer, der kræver din opmærksomhed"
           ]
         },
         "embedCompliance": {
-          "title": "Embed Compliance",
+          "title": "Integreret Compliance",
           "description": [
-            "We manage on your behalf the necessary internal policies, processes and procedures (e.g. employee privacy policy, before-during-after employment, CCTV etc.)",
-            "Manage privacy and security by design into new operations (e.g. ensure that new projects and processing activities follow data compliance principles)",
-            "Conduct periodic testing and report the effectiveness",
-            "Monitor and implement new compliance requirements and best practices",
-            "We perform an assessment together with you in order to find the high risk compliance areas that need your full attention",
-            "We schedule an online onboarding to get things started",
-            "We are available 24/7 and reach out to you as soon as possible. We assess your needs and reach out faster for a data breach case than for a more general question",
-            "We believe that it is very important for you to stay informed on the compliance efforts. We always assess the current situation and do not wait 3 months to inform you on issues that need your attention"
+            "Vi håndterer de nødvendige interne politikker, processer og procedurer på dine vegne (f.eks. medarbejder-privatlivspolitik, før-under-efter ansættelse, CCTV osv.)",
+            "Håndter privatliv og sikkerhed ved design i nye operationer (f.eks. sikre at nye projekter og behandlingsaktiviteter følger datacompliance-principper)",
+            "Udfør periodisk testning og rapporter effektiviteten",
+            "Overvåg og implementer nye compliance-krav og bedste praksis",
+            "Vi udfører en vurdering sammen med dig for at finde de højrisiko-compliance-områder, der kræver din fulde opmærksomhed",
+            "Vi planlægger en online onboarding for at komme i gang",
+            "Vi er tilgængelige døgnet rundt og vender tilbage til dig så hurtigt som muligt. Vi vurderer dine behov og vender tilbage hurtigere ved et databrud end ved et mere generelt spørgsmål",
+            "Vi mener, at det er meget vigtigt for dig at holde dig informeret om compliance-indsatsen. Vi vurderer altid den aktuelle situation og venter ikke 3 måneder med at informere dig om problemer, der kræver din opmærksomhed"
           ]
         },
         "externalPolicies": {
-          "title": "External Policies",
+          "title": "Eksterne Politikker",
           "description": [
-            "We manage on your behalf the necessary external policies and notices to individuals consistent with data compliance regulations and operational risk tolerance, including the direct marketing and electronic communications areas (e.g. website, newsletter, social media campaigns etc.)",
-            "Monitor and implement new compliance requirements and best practices",
-            "Conduct periodic testing and report the effectiveness",
-            "We perform an assessment together with you in order to find the high risk compliance areas that need your full attention",
-            "We schedule an online onboarding to get things started",
-            "We are available 24/7 and reach out to you as soon as possible. We assess your needs and reach out faster for a data breach case than for a more general question",
-            "We believe that it is very important for you to stay informed on the compliance efforts. We always assess the current situation and do not wait 3 months to inform you on issues that need your attention"
+            "Vi håndterer de nødvendige eksterne politikker og meddelelser til enkeltpersoner i overensstemmelse med datacompliance-regler og operationel risikotolerance, herunder direkte markedsføring og elektronisk kommunikation (f.eks. hjemmeside, nyhedsbrev, sociale medier kampagner osv.)",
+            "Overvåg og implementer nye compliance-krav og bedste praksis",
+            "Udfør periodisk testning og rapporter effektiviteten",
+            "Vi udfører en vurdering sammen med dig for at finde de højrisiko-compliance-områder, der kræver din fulde opmærksomhed",
+            "Vi planlægger en online onboarding for at komme i gang",
+            "Vi er tilgængelige døgnet rundt og vender tilbage til dig så hurtigt som muligt. Vi vurderer dine behov og vender tilbage hurtigere ved et databrud end ved et mere generelt spørgsmål",
+            "Vi mener, at det er meget vigtigt for dig at holde dig informeret om compliance-indsatsen. Vi vurderer altid den aktuelle situation og venter ikke 3 måneder med at informere dig om problemer, der kræver din opmærksomhed"
           ]
         },
         "conductRiskAssessments": {
-          "title": "Conduct Risk Assessments",
+          "title": "Udførelse af Risikovurderinger",
           "description": [
-            "We conduct the necessary ongoing risk assessments for current and new operations"
+            "Vi udfører de nødvendige løbende risikovurderinger for nuværende og nye operationer"
           ]
         },
         "basicInformationSecurity": {
-          "title": "Basic Information Security",
+          "title": "Grundlæggende Informationssikkerhed",
           "description": [
-            "We implement and maintain basic information security measures to protect your data",
-            "Maintain a basic information security program based on legal requirements, international standards and ongoing risk assessments and risk tolerance (e.g. security policy, security measures, contingency plan etc.)",
-            "Conduct periodic testing of the information security program and report the effectiveness of the program",
-            "Monitor and implement new compliance requirements and best practices",
-            "We perform an assessment together with you in order to find the high risk compliance areas that need your full attention",
-            "We schedule an online onboarding to get things started",
-            "We are available 24/7 and reach out to you as soon as possible. We assess your needs and reach out faster for a data breach case than for a more general question",
-            "We believe that it is very important for you to stay informed on the compliance efforts. We always assess the current situation and do not wait 3 months to inform you on issues that need your attention"
+            "Vi implementerer og vedligeholder grundlæggende informationssikkerhedsforanstaltninger for at beskytte dine data",
+            "Vedligehold et grundlæggende informationssikkerhedsprogram baseret på lovkrav, internationale standarder og løbende risikovurderinger og risikotolerance (f.eks. sikkerhedspolitik, sikkerhedsforanstaltninger, beredskabsplan osv.)",
+            "Udfør periodisk testning af informationssikkerhedsprogrammet og rapporter programmets effektivitet",
+            "Overvåg og implementer nye compliance-krav og bedste praksis",
+            "Vi udfører en vurdering sammen med dig for at finde de højrisiko-compliance-områder, der kræver din fulde opmærksomhed",
+            "Vi planlægger en online onboarding for at komme i gang",
+            "Vi er tilgængelige døgnet rundt og vender tilbage til dig så hurtigt som muligt. Vi vurderer dine behov og vender tilbage hurtigere ved et databrud end ved et mere generelt spørgsmål",
+            "Vi mener, at det er meget vigtigt for dig at holde dig informeret om compliance-indsatsen. Vi vurderer altid den aktuelle situation og venter ikke 3 måneder med at informere dig om problemer, der kræver din opmærksomhed"
           ]
         },
         "respondToRequests": {
-          "title": "Respond to requests and complaints from individuals",
+          "title": "Håndtering af Anmodninger og Klager",
           "description": [
-            "Respond to individuals requests (e.g. deletion, access)",
-            "Respond to individuals complaints",
-            "Conduct periodic testing of the processes and procedures to address requests and complaints from individuals, and report the effectiveness of the process",
-            "Monitor and implement new compliance requirements and best practices",
-            "We perform an assessment toghether with you in order to find the high risk compliance areas that needs your full attention",
-            "We schedule an online onboarding to get things started",
-            "We are available 24/7 and reach out to you as soon as possilble. We assess your needs and reach out faster for a data breach case than for a more general question",
-            "We believe that is very important for you to stay informed on the compliance efforts. We always assess the current situation and do not wait 3 months to inform you on issues that needs your attention"
+            "Besvar anmodninger fra enkeltpersoner (f.eks. sletning, adgang)",
+            "Besvar klager fra enkeltpersoner",
+            "Udfør periodisk testning af processer og procedurer til håndtering af anmodninger og klager fra enkeltpersoner, og rapporter processens effektivitet",
+            "Overvåg og implementer nye compliance-krav og bedste praksis",
+            "Vi udfører en vurdering sammen med dig for at finde de højrisiko-compliance-områder, der kræver din fulde opmærksomhed",
+            "Vi planlægger en online onboarding for at komme i gang",
+            "Vi er tilgængelige døgnet rundt og vender tilbage til dig så hurtigt som muligt. Vi vurderer dine behov og vender tilbage hurtigere ved et databrud end ved et mere generelt spørgsmål",
+            "Vi mener, at det er meget vigtigt for dig at holde dig informeret om compliance-indsatsen. Vi vurderer altid den aktuelle situation og venter ikke 3 måneder med at informere dig om problemer, der kræver din opmærksomhed"
           ]
         },
         "vendorManagement": {
-          "title": "Vendor Management",
+          "title": "Leverandørstyring",
           "description": [
-            "Manage the record of all data processors, sub-processors and joint controllers",
-            "Manage the data processors due diligence before onboarding a new vendor, including assessment and security questionnaire",
-            "Manage data processing agreements drafting and negotiations",
-            "Manage data processors audit",
-            "Conduct periodic testing of the vendor management process and report the effectiveness of the process",
-            "Monitor and implement new compliance requirements and best practices",
-            "We perform an assessment together with you in order to find the high risk compliance areas that need your full attention",
-            "We schedule an online onboarding to get things started",
-            "We are available 24/7 and reach out to you as soon as possible. We assess your needs and reach out faster for a data breach case than for a more general question",
-            "We believe that it is very important for you to stay informed on the compliance efforts. We always assess the current situation and do not wait 3 months to inform you on issues that need your attention"
+            "Håndter registret over alle databehandlere, underbehandlere og fælles databehandlere",
+            "Håndter due diligence af databehandlere før onboarding af en ny leverandør, herunder vurdering og sikkerhedsspørgeskema",
+            "Håndter udarbejdelse og forhandling af databehandleraftaler",
+            "Håndter revision af databehandlere",
+            "Udfør periodisk testning af leverandørstyringsprocessen og rapporter processens effektivitet",
+            "Overvåg og implementer nye compliance-krav og bedste praksis",
+            "Vi udfører en vurdering sammen med dig for at finde de højrisiko-compliance-områder, der kræver din fulde opmærksomhed",
+            "Vi planlægger en online onboarding for at komme i gang",
+            "Vi er tilgængelige døgnet rundt og vender tilbage til dig så hurtigt som muligt. Vi vurderer dine behov og vender tilbage hurtigere ved et databrud end ved et mere generelt spørgsmål",
+            "Vi mener, at det er meget vigtigt for dig at holde dig informeret om compliance-indsatsen. Vi vurderer altid den aktuelle situation og venter ikke 3 måneder med at informere dig om problemer, der kræver din opmærksomhed"
           ]
         },
         "incidentManagement": {
-          "title": "Incident Management",
+          "title": "Håndtering af Hændelser",
           "description": [
-            "Management of personal data breach cases including notification to the Data Protection Agency and communication to individuals, if necessary",
-            "Keep the personal data breach record updated",
-            "Conduct periodic testing of the data breach process and report the effectiveness of the process",
-            "Monitor and implement new compliance requirements and best practices",
-            "We perform an assessment together with you in order to find the high risk compliance areas that need your full attention",
-            "We schedule an online onboarding to get things started",
-            "We are available 24/7 and reach out to you as soon as possible. We assess your needs and reach out faster for a data breach case than for a more general question",
-            "We believe that it is very important for you to stay informed on the compliance efforts. We always assess the current situation and do not wait 3 months to inform you on issues that need your attention"
+            "Håndtering af persondatabrud, herunder meddelelse til Datatilsynet og kommunikation til berørte personer, hvis nødvendigt",
+            "Hold registret over persondatabrud opdateret",
+            "Udfør periodisk testning af databrudsprocessen og rapporter processens effektivitet",
+            "Overvåg og implementer nye compliance-krav og bedste praksis",
+            "Vi udfører en vurdering sammen med dig for at finde de højrisiko-compliance-områder, der kræver din fulde opmærksomhed",
+            "Vi planlægger en online onboarding for at komme i gang",
+            "Vi er tilgængelige døgnet rundt og vender tilbage til dig så hurtigt som muligt. Vi vurderer dine behov og vender tilbage hurtigere ved et databrud end ved et mere generelt spørgsmål",
+            "Vi mener, at det er meget vigtigt for dig at holde dig informeret om compliance-indsatsen. Vi vurderer altid den aktuelle situation og venter ikke 3 måneder med at informere dig om problemer, der kræver din opmærksomhed"
           ]
         },
         "trainingAndAwareness": {
-          "title": "Training and Awareness",
+          "title": "Træning og Bevidsthed",
           "description": [
-            "Providing ongoing online training for employees to promote data compliance and to mitigate operational risks",
-            "We perform an assessment together with you in order to find the high risk compliance areas that need your full attention",
-            "We schedule an online onboarding to get things started",
-            "We are available 24/7 and reach out to you as soon as possible. We assess your needs and reach out faster for a data breach case than for a more general question",
-            "We believe that it is very important for you to stay informed on the compliance efforts. We always assess the current situation and do not wait 3 months to inform you on issues that need your attention"
+            "Giver løbende online træning til medarbejdere for at fremme datacompliance og mindske operationelle risici",
+            "Vi udfører en vurdering sammen med dig for at finde de højrisiko-compliance-områder, der kræver din fulde opmærksomhed",
+            "Vi planlægger en online onboarding for at komme i gang",
+            "Vi er tilgængelige døgnet rundt og vender tilbage til dig så hurtigt som muligt. Vi vurderer dine behov og vender tilbage hurtigere ved et databrud end ved et mere generelt spørgsmål",
+            "Vi mener, at det er meget vigtigt for dig at holde dig informeret om compliance-indsatsen. Vi vurderer altid den aktuelle situation og venter ikke 3 måneder med at informere dig om problemer, der kræver din opmærksomhed"
           ]
         },
         "pointOfContact": {
-          "title": "Point of Contact",
+          "title": "Kontaktpunkt",
           "description": [
-            "We are the point of contact for your local Data Protection Agency and we assist you in a potential audit from your local Data Protection Agency"
+            "Vi er kontaktpunkt for dit lokale Datatilsyn og bistår dig ved en potentiel revision fra dit lokale Datatilsyn"
           ]
         }
       },
@@ -285,8 +285,8 @@
           "description": "At oprette og implementere en leverandørstyringsproces er nøglen til din datacompliance-succes"
         },
         "createAndImplementBasicInformationSecurity": {
-          "title": "Opret og implementer et grundlæggende informationssikkerhedsprogram",
-          "description": "Det er afgørende at have mindst grundlæggende informationssikkerhed implementeret i din organisation"
+          "title": "Opret og implementer grundlæggende informationssikkerhedsprogram",
+          "description": "At oprette og implementere et grundlæggende informationssikkerhedsprogram er afgørende for din datacompliance-succes"
         },
         "createAndImplementRopa": {
           "title": "Opret og implementer RoPA (register over behandlingsaktiviteter, GDPR Art.30)",
@@ -297,8 +297,16 @@
           "description": "Uden en korrekt styringsstruktur i din organisation vil intet datacompliance-initiativ fæstne"
         },
         "createAndImplementIncidentManagement": {
-          "title": "Opret og implementer incidenthåndteringsproces",
-          "description": "Når du har en incident er det bedre at have en databrudsproces, der vil guide hvad der skal gøres, hvordan man vurderer dit brud, hvem der skal involveres osv."
+          "title": "Opret og implementer håndtering af persondatabrud",
+          "description": "At oprette og implementere en proces til håndtering af persondatabrud er afgørende for din datacompliance-succes"
+        },
+        "createAndImplementTrainingAndAwareness": {
+          "title": "Opret og implementer træning og bevidsthed",
+          "description": "At oprette og implementere en trænings- og bevidsthedsproces er afgørende for din datacompliance-succes"
+        },
+        "createAndImplementPointOfContact": {
+          "title": "Opret og implementer kontaktpunkt",
+          "description": "At oprette og implementere et kontaktpunkt er afgørende for din datacompliance-succes"
         }
       },
       "interimServices": {
@@ -558,6 +566,13 @@
           "Specialiserede projekter fokuseret på AI-loven drejer sig ofte om implementering af compliance-strategier, opbygning af robuste AI-styrstrukturer og forbedring af åbenhed og ansvarlighed i AI-udvikling. Disse projekter letter compliance samtidig med at de fremmer innovation og tillid til AI-systemer.",
           "Dit projekt forbliver fuldt compliant gennem alle faser, fra konceptudvikling til go-live stadiet.",
           "Vores rammeverk inkluderer også en etisk tilgang til at bygge pålidelige AI-systemer, der bidrager til fordele for mennesker, organisationer og økosystemer."
+        ]
+      },
+      "itServices": {
+        "title": "NEARSHORE IT INTERIM TJENESTER",
+        "text": [
+          "Nearshore IT interim tjenester såsom f.eks. udviklere, testpersonale og support til midlertidige løsninger.",
+          "Vi leverer IT-ekspertise på højt niveau til virksomheder, der har brug for øjeblikkelig support til at dække kortsigtede behov, styre projekter eller lede IT-strategi under overgange."
         ]
       }
     },
