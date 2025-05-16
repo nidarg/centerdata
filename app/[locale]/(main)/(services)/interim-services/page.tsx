@@ -25,53 +25,120 @@ const InterimServices = () => {
       return fallback;
     }
   };
+  const MemoizedVideoBackground = memo(VideoBackground);
 
   const items = [
     {
-      title: getT('items.immediateSupport.title', 'Immediate compliance Support'),
-      description: getT('items.immediateSupport.description', 'We help companies reduce compliance risks quickly, addressing urgent needs such as data breach responses, risk assessments, and audits.'),
+      title: getT(
+        'items.immediateSupport.title',
+        'Immediate compliance Support'
+      ),
+      description: getT(
+        'items.immediateSupport.description',
+        'We help companies reduce compliance risks quickly, addressing urgent needs such as data breach responses, risk assessments, and audits.'
+      ),
     },
     {
-      title: getT('items.policyDevelopment.title', 'Policy Development and Documentation'),
-      description: getT('items.policyDevelopment.description', 'We assist with creating and refining privacy policies, data handling procedures, and security documentation to align with regulatory standards.'),
+      title: getT(
+        'items.policyDevelopment.title',
+        'Policy Development and Documentation'
+      ),
+      description: getT(
+        'items.policyDevelopment.description',
+        'We assist with creating and refining privacy policies, data handling procedures, and security documentation to align with regulatory standards.'
+      ),
     },
     {
-      title: getT('items.riskAssessment.title', 'Risk Assessment and Mitigation'),
-      description: getT('items.riskAssessment.description', 'Our Interim consultants perform data protection impact assessments (DPIAs), risk assessments, and gap analyses.'),
+      title: getT(
+        'items.riskAssessment.title',
+        'Risk Assessment and Mitigation'
+      ),
+      description: getT(
+        'items.riskAssessment.description',
+        'Our Interim consultants perform data protection impact assessments (DPIAs), risk assessments, and gap analyses.'
+      ),
     },
     {
       title: getT('items.training.title', 'Training and Awareness Programs'),
-      description: getT('items.training.description', 'Data protection consultants often design and deliver training for employees on topics like data protection and breach prevention.'),
+      description: getT(
+        'items.training.description',
+        'Data protection consultants often design and deliver training for employees on topics like data protection and breach prevention.'
+      ),
     },
     {
-      title: getT('items.dataBreach.title', 'Data Breach Response and Incident Management'),
-      description: getT('items.dataBreach.description', 'Our consultants can lead or advise on data breach responses, ensuring swift and compliant handling of incidents.'),
+      title: getT(
+        'items.dataBreach.title',
+        'Data Breach Response and Incident Management'
+      ),
+      description: getT(
+        'items.dataBreach.description',
+        'Our consultants can lead or advise on data breach responses, ensuring swift and compliant handling of incidents.'
+      ),
     },
     {
-      title: getT('items.securityByDesign.title', 'Support or hands-on for Data Protection and Security by Design'),
-      description: getT('items.securityByDesign.description', 'Interim consultants advise on integrating data protection principles from the ground up in new products, processes, and systems.'),
+      title: getT(
+        'items.securityByDesign.title',
+        'Support or hands-on for Data Protection and Security by Design'
+      ),
+      description: getT(
+        'items.securityByDesign.description',
+        'Interim consultants advise on integrating data protection principles from the ground up in new products, processes, and systems.'
+      ),
     },
     {
-      title: getT('items.auditPreparation.title', 'Audit Preparation and Documentation'),
-      description: getT('items.auditPreparation.description', 'Interim consultants help with creating or refining privacy policies and ensuring alignment with regulatory standards.'),
+      title: getT(
+        'items.auditPreparation.title',
+        'Audit Preparation and Documentation'
+      ),
+      description: getT(
+        'items.auditPreparation.description',
+        'Interim consultants help with creating or refining privacy policies and ensuring alignment with regulatory standards.'
+      ),
     },
     {
-      title: getT('items.vendorCompliance.title', 'Third-Party and Vendor Compliance Management'),
-      description: getT('items.vendorCompliance.description', 'Our consultants evaluate third-party data practices, conduct vendor risk assessments, and ensure data protection clauses are integrated into contracts.'),
+      title: getT(
+        'items.vendorCompliance.title',
+        'Third-Party and Vendor Compliance Management'
+      ),
+      description: getT(
+        'items.vendorCompliance.description',
+        'Our consultants evaluate third-party data practices, conduct vendor risk assessments, and ensure data protection clauses are integrated into contracts.'
+      ),
     },
     {
-      title: getT('items.dpoServices.title', 'DPO (Data Protection Officer) Services'),
-      description: getT('items.dpoServices.description', 'For organizations that require a DPO but lack an internal candidate, interim consultants can step in as a temporary DPO.'),
+      title: getT(
+        'items.dpoServices.title',
+        'DPO (Data Protection Officer) Services'
+      ),
+      description: getT(
+        'items.dpoServices.description',
+        'For organizations that require a DPO but lack an internal candidate, interim consultants can step in as a temporary DPO.'
+      ),
     },
   ];
 
   const valuePoints = [
-    getT('valuePoints.expertiseGaps', 'Offer an effective solution to address expertise gaps'),
+    getT(
+      'valuePoints.expertiseGaps',
+      'Offer an effective solution to address expertise gaps'
+    ),
     getT('valuePoints.operationalContinuity', 'Ensure operational continuity'),
-    getT('valuePoints.strategicGoals', 'Support strategic goals on a temporary basis'),
-    getT('valuePoints.flexibleAsset', 'Are a flexible and valuable asset across multiple sectors'),
-    getT('valuePoints.experiencedProfessionals', 'Highly experienced professionals with expertise from various sectors, assigned to work as an integrated part of your team'),
-    getT('valuePoints.quickOnboarding', 'Quick onboarding and a very smooth hand-over back to you, upon the completion of the term'),
+    getT(
+      'valuePoints.strategicGoals',
+      'Support strategic goals on a temporary basis'
+    ),
+    getT(
+      'valuePoints.flexibleAsset',
+      'Are a flexible and valuable asset across multiple sectors'
+    ),
+    getT(
+      'valuePoints.experiencedProfessionals',
+      'Highly experienced professionals with expertise from various sectors, assigned to work as an integrated part of your team'
+    ),
+    getT(
+      'valuePoints.quickOnboarding',
+      'Quick onboarding and a very smooth hand-over back to you, upon the completion of the term'
+    ),
   ];
 
   const containerVariants = {
@@ -143,13 +210,13 @@ const InterimServices = () => {
       />
 
       <main className='flex flex-cols justify-center gap-6'>
-        {/* <VideoBackground
-        videoUrl='./videos/video2.mp4'
-        height='80vh'
-        headers={headers}
-      /> */}
-        <VideoBackground
+        {/* <MemoizedVideoBackground
           videoUrl='./videos/data-transmission.mp4'
+          height='80vh'
+          headers={headers}
+        /> */}
+        <MemoizedVideoBackground
+          videoUrl='./videos/video2.mp4'
           height='80vh'
           headers={headers}
         />
@@ -168,7 +235,10 @@ const InterimServices = () => {
 
             {/* Main Paragraph */}
             <h1 className='text-2xl font-semibold '>
-              {getT('howCanWeAddValue', 'How Can We Add Value to Your Company?')}
+              {getT(
+                'howCanWeAddValue',
+                'How Can We Add Value to Your Company?'
+              )}
             </h1>
             <div className='mt-10'>
               <ul className='grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 text-primary'>
@@ -217,7 +287,10 @@ const InterimServices = () => {
             {/* Subsection: Data Protection Interim Services */}
             <div className='bg-transparent text-primary mt-20'>
               <h3 className='text-2xl font-semibold text-destructive mb-10'>
-                {getT('makeDifference', "Here's how our interim data compliance consultants can make a difference")}
+                {getT(
+                  'makeDifference',
+                  "Here's how our interim data compliance consultants can make a difference"
+                )}
               </h3>
               <motion.div
                 className='grid gap-10 lg:grid-cols-3'
@@ -269,7 +342,9 @@ const InterimServices = () => {
                 {/* Larger animation with proper scaling */}
                 <span className='absolute  inset-[-150%] animate-[spin_1.5s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#d9b08c_0%,#e64833_50%,#d9b08c_100%)] ' />
                 <span className='inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-destructive  text-md font-medium text-white backdrop-blur-3xl px-2 py-3 '>
-                  <Link href='/contact'>{getT('bookConsultation', 'Book a consultation')}</Link>
+                  <Link href='/contact'>
+                    {getT('bookConsultation', 'Book a consultation')}
+                  </Link>
                 </span>
               </button>
             </div>
