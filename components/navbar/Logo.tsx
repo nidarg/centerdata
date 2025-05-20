@@ -17,6 +17,7 @@ const Logo: React.FC<LogoProps> = ({ imageUrl }) => {
           height={350}
           src={imageUrl}
           alt='Logo'
+          priority
           className=' object-contain'
         />
       </Link>

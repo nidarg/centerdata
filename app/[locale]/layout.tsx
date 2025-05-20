@@ -22,7 +22,8 @@ type Props = {
 };
 
 export default async function LocaleLayout({ children, params }: Props) {
-  const locale = params.locale;
+  // Ensure params is properly awaited
+  const { locale } = await Promise.resolve(params);
 
   // Validate locale
   if (!locale || !['en', 'da', 'sv', 'no', 'fi'].includes(locale)) {
