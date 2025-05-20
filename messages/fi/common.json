@@ -603,7 +603,12 @@
         "vat": "ALV",
         "message": "Viesti",
         "period": "Varaa aika",
-        "terms": "Olen lukenut Käyttöehdot ja Tietosuojakäytännön.",
+        "terms": {
+          "text": "Olen lukenut",
+          "terms": "Käyttöehdot",
+          "and": "ja",
+          "privacy": "Tietosuojakäytäntö"
+        },
         "termsLink": "Käyttöehdot",
         "privacyLink": "Tietosuojakäytäntö",
         "submit": "Lähetä viesti",
@@ -638,17 +643,20 @@
         "email": "Yrityksen sähköposti",
         "phone": "Puhelinnumero",
         "company": "Yrityksen nimi",
-        "vat": "ALV",
-        "message": "Viesti",
-        "period": "Varaa aika",
-        "terms": "Olen lukenut Käyttöehdot ja Tietosuojakäytännön.",
-        "termsLink": "Käyttöehdot",
-        "privacyLink": "Tietosuojakäytäntö",
-        "submit": "Pyydä tarjous",
-        "freeNote": "Tarjouksen pyytäminen on ilmaista eikä sido sinua millään tavalla.",
-        "requestedServices": "Pyydetyt Palvelut",
-        "required": "Pakollinen",
-        "optional": "Valinnainen"
+        "vat": "Yrityksen ALV",
+        "terms": {
+          "text": "Olen lukenut",
+          "terms": "Käyttöehdot",
+          "and": "ja",
+          "privacy": "Tietosuojakäytäntö"
+        },
+        "error": "Virhe",
+        "errors": {
+          "submissionError": "Lomakkeen lähetyksessä tapahtui virhe. Yritä uudelleen."
+        },
+        "success": "Lomake lähetettiin onnistuneesti!",
+        "submitting": "Lähetetään...",
+        "submit": "Lähetä"
       },
       "cart": {
         "title": "Ostoskori",

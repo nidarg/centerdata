@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { TextGenerateEffect } from './ui/text-generate-effect';
-import Cube from './cube/Cube';
+import Cube from '@/components/cube/Cube';
 
 interface VideoBackgroundProps {
   videoUrl: string;
@@ -20,12 +20,37 @@ const VideoBackground: React.FC<VideoBackgroundProps> = ({
   const locale = useLocale();
   const [videoLoaded, setVideoLoaded] = useState(false);
   const [currentHeaders, setCurrentHeaders] = useState(headers);
+  const [isVisible, setIsVisible] = useState(false);
 
   // Update headers when locale changes
   useEffect(() => {
     setCurrentHeaders(headers);
     setVideoLoaded(false);
   }, [headers, locale]);
+
+  // Intersection Observer for lazy loading
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      {
+        rootMargin: '50px',
+        threshold: 0.1,
+      }
+    );
+
+    const element = document.querySelector('.video-background-container');
+    if (element) {
+      observer.observe(element);
+    }
+
+    return () => {
+      if (element) {
+        observer.unobserve(element);
+      }
+    };
+  }, []);
 
   const isMainHero = useMemo(
     () => currentHeaders.length === 3,
@@ -34,7 +59,7 @@ const VideoBackground: React.FC<VideoBackgroundProps> = ({
 
   return (
     <div
-      className='absolute inset-0 -z-10 w-full'
+      className='video-background-container absolute inset-0 -z-10 w-full'
       style={{ height: `${height}`, top: '128px' }}
     >
       <div className='absolute inset-0 w-full h-full'>
@@ -43,18 +68,19 @@ const VideoBackground: React.FC<VideoBackgroundProps> = ({
             <Cube />
           </div>
         )}
-        <video
-          key={`${locale}-${videoUrl}`}
-          src={videoUrl}
-          autoPlay
-          muted
-          loop
-          controls={false}
-          className='absolute top-0 left-0 w-full h-full object-cover pointer-events-none'
-          onLoadedData={() => setVideoLoaded(true)}
-          preload='auto'
-          playsInline
-        />
+        {isVisible && (
+          <video
+            key={`${locale}-${videoUrl}`}
+            src={videoUrl}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            className='absolute top-0 left-0 w-full h-full object-cover pointer-events-none'
+            onLoadedData={() => setVideoLoaded(true)}
+          />
+        )}
       </div>
 
       <div className='absolute inset-0 pointer-events-none'>
@@ -111,4 +137,4 @@ const VideoBackground: React.FC<VideoBackgroundProps> = ({
   );
 };
 
-export default VideoBackground;
+export default React.memo(VideoBackground);

@@ -1,6 +1,10 @@
 // app/[locale]/layout.tsx
 import { NextIntlClientProvider } from 'next-intl';
 import { notFound } from 'next/navigation';
+import { ShopProvider } from '@/utils/context/CartContext';
+import Navbar from '@/components/navbar/Navbar';
+import Footer from '@/components/Footer';
+import ErrorBoundary from '@/components/ErrorBoundary';
 
 export function generateStaticParams() {
   return [
@@ -14,13 +18,11 @@ export function generateStaticParams() {
 
 type Props = {
   children: React.ReactNode;
-  params: Promise<{ locale: string }>;
+  params: { locale: string };
 };
 
 export default async function LocaleLayout({ children, params }: Props) {
-  // Wait for params to resolve
-  const resolvedParams = await params;
-  const locale = resolvedParams.locale;
+  const locale = params.locale;
 
   // Validate locale
   if (!locale || !['en', 'da', 'sv', 'no', 'fi'].includes(locale)) {
@@ -36,8 +38,16 @@ export default async function LocaleLayout({ children, params }: Props) {
   }
 
   return (
-    <NextIntlClientProvider locale={locale} messages={messages}>
-      {children}
-    </NextIntlClientProvider>
+    <ErrorBoundary>
+      <NextIntlClientProvider locale={locale} messages={messages}>
+        <ShopProvider>
+          <Navbar />
+          <main className='py-10 pt-32 min-h-screen'>
+            {children}
+          </main>
+          <Footer />
+        </ShopProvider>
+      </NextIntlClientProvider>
+    </ErrorBoundary>
   );
 }

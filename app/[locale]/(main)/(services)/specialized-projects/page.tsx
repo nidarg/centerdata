@@ -4,55 +4,43 @@ import Link from 'next/link';
 import React, { memo } from 'react';
 import { RightArrow } from '@/components/RightArrow';
 import VideoBackground from '@/components/VideoBackground';
-import TextImage from '@/components/TextImage';
+import { TextImage } from '@/components/TextImage';
 import { specializedProjects, aiActProjects } from '@/utils/projects';
 import Divider from '@/components/Divider';
-import Head from 'next/head';
-import Script from 'next/script';
 import { useTranslations } from 'next-intl';
+import Head from 'next/head';
 
-const SpecializedProjects = () => {
+// Client component
+function SpecializedProjectsContent() {
   const t = useTranslations('common.textImage');
   const commonT = useTranslations('common');
 
   const headers = [commonT('navigation.services.specialized')];
-
   const MemoizedVideoBackground = memo(VideoBackground);
 
   return (
     <>
       <Head>
-        <title>
-          {t('specializedProjects.title')} | GDPR, AI Act, ISO, NIS2 &
-          More
-        </title>
-        <meta
-          name='description'
-          content='We deliver specialized data compliance projects including GDPR, AI Act, ISO 27001, NIS2, and DORA. Get hands-on consulting and practical solutions tailored to your industry.'
-        />
-        <meta
-          name='keywords'
-          content='GDPR, AI Act, ISO 27001, NIS2, DORA, compliance consulting, data protection, data compliance projects, specialized compliance services'
-        />
-        <meta name='robots' content='index, follow' />
-        <link
-          rel='canonical'
-          href='https://www.datacompliancecentre.com/specialized-projects'
-        />
-      </Head>
-      <Script
-        id='structured-data'
-        type='application/ld+json'
-        strategy='afterInteractive'
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
+        <title>Specialized Data Compliance Projects | GDPR, AI Act, ISO, NIS2 & More</title>
+        <meta name="description" content="We deliver specialized data compliance projects including GDPR, AI Act, ISO 27001, NIS2, and DORA. Get hands-on consulting and practical solutions tailored to your industry." />
+        <meta name="keywords" content="GDPR, AI Act, ISO 27001, NIS2, DORA, compliance consulting, data protection, data compliance projects, specialized compliance services" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://www.datacompliancecentre.com/specialized-projects" />
+        <meta property="og:title" content="Specialized Data Compliance Projects | GDPR, AI Act, ISO, NIS2 & More" />
+        <meta property="og:description" content="We deliver specialized data compliance projects including GDPR, AI Act, ISO 27001, NIS2, and DORA. Get hands-on consulting and practical solutions tailored to your industry." />
+        <meta property="og:url" content="https://www.datacompliancecentre.com/specialized-projects" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Specialized Data Compliance Projects | GDPR, AI Act, ISO, NIS2 & More" />
+        <meta name="twitter:description" content="We deliver specialized data compliance projects including GDPR, AI Act, ISO 27001, NIS2, and DORA. Get hands-on consulting and practical solutions tailored to your industry." />
+        <script type="application/ld+json">
+          {JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'ProfessionalService',
             name: 'Nordic Data Compliance Center',
             url: 'https://www.datacompliancecentre.com/specialized-projects',
             logo: 'https://www.datacompliancecentre.com/logoImages/9.png',
-            description:
-              'Specialized GDPR, DORA, ISO27001, NIS2, and AI-Act/ISO 42001 compliance consulting and project support.',
+            description: 'Specialized GDPR, DORA, ISO27001, NIS2, and AI-Act/ISO 42001 compliance consulting and project support.',
             address: {
               '@type': 'PostalAddress',
               addressCountry: 'DK',
@@ -61,10 +49,9 @@ const SpecializedProjects = () => {
               'https://www.linkedin.com/company/nordic-data-compliance-center',
               'https://www.datacompliancecentre.com/',
             ],
-          }),
-        }}
-      />
-
+          })}
+        </script>
+      </Head>
       <div className='flex flex-cols justify-center gap-6'>
         <MemoizedVideoBackground
           videoUrl='./videos/video3.mp4'
@@ -210,6 +197,9 @@ const SpecializedProjects = () => {
       </div>
     </>
   );
-};
+}
 
-export default SpecializedProjects;
+// Server component
+export default function SpecializedProjectsPage() {
+  return <SpecializedProjectsContent />;
+}

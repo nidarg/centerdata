@@ -1,12 +1,14 @@
 // utils/getLanguageFromGeo.ts
 import axios from 'axios';
 
-const IPGEOLOCATION_API_KEY = '803b037465f048b6a329b3e020e407b1'; // Replace with your actual API key
+if (!process.env.IPGEOLOCATION_API_KEY) {
+  throw new Error('IPGEOLOCATION_API_KEY is not defined in environment variables');
+}
 
 export const getLanguageFromGeo = async (): Promise<string> => {
   try {
     const response = await axios.get(
-      `https://api.ipgeolocation.io/ipgeo?apiKey=${IPGEOLOCATION_API_KEY}`
+      `https://api.ipgeolocation.io/ipgeo?apiKey=${process.env.IPGEOLOCATION_API_KEY}`
     );
     const countryCode = response.data.country_code2.toLowerCase();
 

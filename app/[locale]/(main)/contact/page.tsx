@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import ReCAPTCHA from 'react-google-recaptcha';
-import { useRouter } from 'next/navigation';
+import { useRouter, useParams } from 'next/navigation';
 import { useToast } from '@/hooks/use-toast';
 import { useTranslations } from 'next-intl';
 import { Button } from '@/components/ui/button';
@@ -22,6 +22,8 @@ import { Check } from 'lucide-react';
 export default function ContactPage() {
   const t = useTranslations('common.contact');
   const router = useRouter();
+  const params = useParams();
+  const locale = params.locale as string;
   const { toast } = useToast();
   const recaptchaRef = useRef<ReCAPTCHA>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -277,39 +279,25 @@ export default function ContactPage() {
 
         {/* Terms and Conditions */}
         <LabelInputContainer className='mb-8'>
-          <div className='items-top flex space-x-2'>
-            <input
-              className={'text-primary'}
-              type='checkbox'
+          <div className='flex items-center space-x-2'>
+            <Checkbox
               id='terms'
               {...register('terms')}
-              onChange={(e) => {
-                if (e.target.checked) {
-                  clearErrors('terms');
-                }
-              }}
+              className='border-neutral-200'
             />
-            <div className='grid gap-1.5 leading-none'>
-              <label
-                htmlFor='terms'
-                className='text-sm text-neutral-200 font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
-              >
-                {t('form.terms')}
-              </label>
-              <p className='text-sm text-neutral-200'>
-                <span>
-                  <Link className='text-primary' href='/terms-and-conditions'>
-                    {t('form.termsLink')}
-                  </Link>
-                </span>{' '}
-                and{' '}
-                <span>
-                  <Link className='text-primary' href='/privacy'>
-                    {t('form.privacyLink')}
-                  </Link>
-                </span>
-              </p>
-            </div>
+            <label
+              htmlFor='terms'
+              className='text-sm text-neutral-200 leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
+            >
+              {t('form.terms.text')}{' '}
+              <Link href={`/${locale}/terms-and-conditions`} className="text-teal-500 hover:text-teal-400">
+                {t('form.terms.terms')}
+              </Link>{' '}
+              {t('form.terms.and')}{' '}
+              <Link href={`/${locale}/privacy`} className="text-teal-500 hover:text-teal-400">
+                {t('form.terms.privacy')}
+              </Link>
+            </label>
           </div>
           {errors.terms && isSubmitted && (
             <span className='text-destructive text-sm'>

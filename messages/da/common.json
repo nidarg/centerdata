@@ -742,7 +742,12 @@
           "vat": "CVR",
           "message": "Besked",
           "period": "Book et møde",
-          "terms": "Jeg har læst Brugsvilkår og Privatlivspolitik.",
+          "terms": {
+            "text": "Jeg har læst",
+            "terms": "Brugsvilkår",
+            "and": "og",
+            "privacy": "Privatlivspolitik"
+          },
           "termsLink": "Brugsvilkår",
           "privacyLink": "Privatlivspolitik",
           "submit": "Send besked",
@@ -781,18 +786,23 @@
       },
       "form": {
         "fullname": "Fulde navn",
-        "email": "Erhvervs-e-mail",
-        "phone": "Telefonnummer",
+        "email": "Email",
+        "phone": "Telefon",
         "company": "Firmanavn",
-        "vat": "CVR",
-        "message": "Besked",
-        "period": "Book et møde",
-        "terms": "Jeg har læst Brugsvilkår og Privatlivspolitik.",
-        "termsLink": "Brugsvilkår",
-        "privacyLink": "Privatlivspolitik",
-        "submit": "Anmod om tilbud",
-        "requestedServices": "Anmodede Tjenester",
-        "freeNote": "At anmode om et tilbud er gratis og forpligter dig ikke på nogen måde."
+        "vat": "Firma CVR",
+        "terms": {
+          "text": "Jeg har læst",
+          "terms": "Brugsvilkår",
+          "and": "og",
+          "privacy": "Privatlivspolitik"
+        },
+        "error": "Fejl",
+        "errors": {
+          "submissionError": "Der opstod en fejl ved indsendelse af formularen. Prøv venligst igen."
+        },
+        "success": "Formular sendt med succes!",
+        "submitting": "Sender...",
+        "submit": "Send"
       },
       "cart": {
         "title": "Din indkøbskurv",
@@ -839,9 +849,12 @@
         "vat": "CVR",
         "message": "Besked",
         "period": "Book et møde",
-        "terms": "Jeg har læst Brugsvilkår og Privatlivspolitik.",
-        "termsLink": "Brugsvilkår",
-        "privacyLink": "Privatlivspolitik",
+        "terms": {
+          "text": "Jeg har læst",
+          "terms": "Brugsvilkår",
+          "and": "og",
+          "privacy": "Privatlivspolitik"
+        },
         "submit": "Send besked",
         "errors": {
           "nameRequired": "Navn er påkrævet",

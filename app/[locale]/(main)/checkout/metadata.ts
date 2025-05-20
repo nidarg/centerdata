@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import CheckoutForm from './CheckoutForm';
 
 export const metadata: Metadata = {
   title: 'Contact Us | Data Compliance Centre',
@@ -37,32 +36,4 @@ export const metadata: Metadata = {
       sameAs: 'https://www.linkedin.com/company/nordic-data-compliance-centre',
     }),
   },
-};
-
-export default function CheckoutPage() {
-  return (
-    <div className='max-w-screen-lg w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-gray-800 grid grid-cols-1 md:grid-cols-2 gap-4 mt-20'>
-      {/* Contact Information */}
-      <div className='bg-teal flex flex-col items-center justify-center text-neutral-200 p-6'>
-        <h1 className='font-bold text-xl lg:text-2xl leading-tight'>
-          Want to get in touch?
-        </h1>
-        <p className='text-base lg:text-lg mt-4 max-w-md text-center leading-relaxed'>
-          Feel free to reach out to us with any inquiries, concerns, or assistance you may require. Our team is here to help and eager to hear from you!
-        </p>
-        <ul className='text-neutral-200 mt-6 text-sm lg:text-base space-y-2'>
-          <li>Maglebjergvej 6</li>
-          <li>2800 Kongens Lyngby</li>
-          <li>Danmark</li>
-          <li>VAT DK 44251434</li>
-          <li>hello@datacompliancecentre.com</li>
-        </ul>
-      </div>
-
-      {/* Form Section */}
-      <div className='p-6'>
-        <CheckoutForm />
-      </div>
-    </div>
-  );
-}
+}; 

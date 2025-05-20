@@ -436,19 +436,24 @@
         }
       },
       "form": {
-        "fullname": "Full name",
-        "email": "Business email",
-        "phone": "Phone number",
-        "company": "Company name",
-        "vat": "VAT",
-        "message": "Message",
-        "period": "Book an appointment",
-        "terms": "I've read Terms of Use and Privacy Statement.",
-        "termsLink": "Terms of Use",
-        "privacyLink": "Privacy Statement",
-        "submit": "Request a quotation",
-        "freeNote": "Requesting a quotation is free of charge and does not obligate you in any way.",
-        "requestedServices": "Requested Services"
+        "fullname": "Full Name",
+        "email": "Email",
+        "phone": "Phone",
+        "company": "Company Name",
+        "vat": "Company VAT",
+        "terms": {
+          "text": "I've read",
+          "terms": "Terms of Use",
+          "and": "and",
+          "privacy": "Privacy Statement"
+        },
+        "error": "Error",
+        "errors": {
+          "submissionError": "There was an error submitting the form. Please try again."
+        },
+        "success": "Form submitted successfully!",
+        "submitting": "Submitting...",
+        "submit": "Submit"
       },
       "meta": {
         "title": "Request a Quotation | Nordic Data Compliance Centre",
@@ -675,7 +680,12 @@
         "vat": "VAT",
         "message": "Message",
         "period": "Book an Appointment",
-        "terms": "I've read Terms of Use and Privacy Statement.",
+        "terms": {
+          "text": "I've read",
+          "terms": "Terms of Use",
+          "and": "and",
+          "privacy": "Privacy Statement"
+        },
         "termsLink": "Terms of Use",
         "privacyLink": "Privacy Statement",
         "submit": "Send Message",

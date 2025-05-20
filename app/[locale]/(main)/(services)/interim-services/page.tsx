@@ -3,20 +3,19 @@
 import Divider from '@/components/Divider';
 import { RightArrow } from '@/components/RightArrow';
 import ItServices from '@/components/services/ItServices';
-import TextImage from '@/components/TextImage';
+import { TextImage } from '@/components/TextImage';
 import VideoBackground from '@/components/VideoBackground';
 import { interimServices } from '@/utils/projects';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-// import Link from 'next/link';`
 import React, { memo } from 'react';
-import Head from 'next/head';
-import Script from 'next/script';
 import { useTranslations } from 'next-intl';
+import Head from 'next/head';
 
 const headers = ['Interim Services'];
 
-const InterimServices = () => {
+// Client component
+function InterimServicesContent() {
   const t = useTranslations('common.services.interimServices');
   const getT = (key: string, fallback: string) => {
     try {
@@ -169,26 +168,20 @@ const InterimServices = () => {
   return (
     <>
       <Head>
-        <meta
-          name='description'
-          content='Discover our Interim Data Compliance Services. We offer immediate support for compliance, risk assessments, policy development, DPO services, and more.'
-        />
-        <meta
-          name='keywords'
-          content='GDPR interim services, temporary DPO, data protection support, compliance consulting, privacy consultant'
-        />
-        <link
-          rel='canonical'
-          href='https://www.datacompliancecentre.com/interim-services'
-        />
-      </Head>
-
-      <Script
-        id='interim-schema'
-        type='application/ld+json'
-        strategy='afterInteractive'
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
+        <title>Interim Data Compliance Services | Nordic Data Compliance Centre</title>
+        <meta name="description" content="Discover our Interim Data Compliance Services. We offer immediate support for compliance, risk assessments, policy development, DPO services, and more." />
+        <meta name="keywords" content="GDPR interim services, temporary DPO, data protection support, compliance consulting, privacy consultant" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://www.datacompliancecentre.com/interim-services" />
+        <meta property="og:title" content="Interim Data Compliance Services | Nordic Data Compliance Centre" />
+        <meta property="og:description" content="Discover our Interim Data Compliance Services. We offer immediate support for compliance, risk assessments, policy development, DPO services, and more." />
+        <meta property="og:url" content="https://www.datacompliancecentre.com/interim-services" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Interim Data Compliance Services | Nordic Data Compliance Centre" />
+        <meta name="twitter:description" content="Discover our Interim Data Compliance Services. We offer immediate support for compliance, risk assessments, policy development, DPO services, and more." />
+        <script type="application/ld+json">
+          {JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'Service',
             serviceType: 'Interim Data Protection Consulting',
@@ -198,17 +191,9 @@ const InterimServices = () => {
               url: 'https://www.datacompliancecentre.com',
               logo: 'https://www.datacompliancecentre.com/logoImages/9.png',
             },
-            areaServed: {
-              '@type': 'Country',
-              name: 'Denmark',
-            },
-            description:
-              'Our Interim Data Protection and GDPR Services provide immediate compliance support, policy development, DPIAs, DPO services, and breach response.',
-            url: 'https://www.datacompliancecentre.com/interim-services',
-          }),
-        }}
-      />
-
+          })}
+        </script>
+      </Head>
       <main className='flex flex-cols justify-center gap-6'>
         {/* <MemoizedVideoBackground
           videoUrl='./videos/data-transmission.mp4'
@@ -353,6 +338,9 @@ const InterimServices = () => {
       </main>
     </>
   );
-};
+}
 
-export default InterimServices;
+// Server component
+export default function InterimServicesPage() {
+  return <InterimServicesContent />;
+}

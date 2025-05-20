@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { useRouter } from 'next/navigation';
+import { useRouter, useParams } from 'next/navigation';
 import { useTranslations } from 'next-intl'; // ONLY ADDED THIS IMPORT
 
 type RemainingSelectionsCounterProps = {
@@ -15,17 +15,19 @@ const RemainingSelectionsCounter: React.FC<RemainingSelectionsCounterProps> = ({
   const [currentRemaining, setCurrentRemaining] = useState(remainingSelections);
   const [prevRemaining, setPrevRemaining] = useState(remainingSelections);
   const router = useRouter();
+  const params = useParams();
+  const locale = params.locale as string;
   const t = useTranslations('common.cart.counter'); // ONLY ADDED THIS LINE
 
   useEffect(() => {
     if (remainingSelections === 0) {
       const timer = setTimeout(() => {
-        router.push('/checkout');
+        router.push(`/${locale}/checkout`);
       }, 2000); // 2 seconds
 
       return () => clearTimeout(timer); // cleanup
     }
-  }, [remainingSelections]);
+  }, [remainingSelections, locale, router]);
 
   // Detect when remainingSelections changes and update the current and previous remaining numbers
   useEffect(() => {

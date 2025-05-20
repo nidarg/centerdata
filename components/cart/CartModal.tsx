@@ -5,6 +5,7 @@ import { FaTimes } from 'react-icons/fa';
 import { CartItem } from './cart-item/CartItem';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
+import { useParams } from 'next/navigation';
 
 interface CartModalProps {
   onClose: () => void;
@@ -13,6 +14,8 @@ interface CartModalProps {
 const CartModal: React.FC<CartModalProps> = ({ onClose }) => {
   const { cart } = useCartContext();
   const t = useTranslations('common.cart');
+  const params = useParams();
+  const locale = params.locale as string;
 
   return (
     <div className='fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50'>
@@ -45,7 +48,7 @@ const CartModal: React.FC<CartModalProps> = ({ onClose }) => {
 
             {/* Checkout button */}
             <div className='flex justify-center mt-10'>
-              <Link href='/checkout' className='w-full'>
+              <Link href={`/${locale}/checkout`} className='w-full'>
                 <button
                   className='relative h-12 overflow-hidden rounded-full p-[4px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 block w-full'
                   onClick={onClose}

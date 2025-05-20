@@ -1,6 +1,6 @@
 import { itServices } from '@/utils/projects';
 import React from 'react';
-import TextImage from '../TextImage';
+import { TextImage } from '@/components/TextImage';
 import { useTranslations } from 'next-intl';
 
 const ItServices: React.FC = () => {

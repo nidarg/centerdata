@@ -65,12 +65,11 @@ export const TextImage: React.FC<ResponsiveTextImageProps> = ({
           title={title}
           alt={altText}
           fill
-          className={`object-cover ${
+          className={`${
             reverse
               ? 'sm:rounded-r-lg sm:rounded-l-none'
               : 'sm:rounded-l-lg sm:rounded-r-none'
           }`}
-          priority
         />
       </motion.div>
 
@@ -92,11 +91,7 @@ export const TextImage: React.FC<ResponsiveTextImageProps> = ({
         <h2 className='text-xl md:text-2xl pb-2 pt-4 text-goldish font-bold'>
           {title}
         </h2>
-        {subtitle && (
-          <h3 className='text-lg md:text-xl pb-2 text-neutral-400'>
-            {subtitle}
-          </h3>
-        )}
+        {subtitle && <h2 className='text-lg md:text-xl pb-2'>{subtitle}</h2>}
         {Array.isArray(text) ? (
           text.map((paragraph, index) => (
             <p key={index} className='text-md mb-2'>

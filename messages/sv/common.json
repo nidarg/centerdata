@@ -746,7 +746,12 @@
         "vat": "Moms",
         "message": "Meddelande",
         "period": "Boka ett möte",
-        "terms": "Jag har läst Användarvillkor och Integritetspolicy.",
+        "terms": {
+          "text": "Jag har läst",
+          "terms": "Användarvillkor",
+          "and": "och",
+          "privacy": "Integritetspolicy"
+        },
         "termsLink": "Användarvillkor",
         "privacyLink": "Integritetspolicy",
         "submit": "Skicka meddelande"
@@ -776,7 +781,12 @@
         "vat": "Moms",
         "message": "Meddelande",
         "period": "Boka ett möte",
-        "terms": "Jag har läst Användarvillkor och Integritetspolicy.",
+        "terms": {
+          "text": "Jag har läst",
+          "terms": "Användarvillkor",
+          "and": "och",
+          "privacy": "Integritetspolicy"
+        },
         "termsLink": "Användarvillkor",
         "privacyLink": "Integritetspolicy",
         "submit": "Begär offert",

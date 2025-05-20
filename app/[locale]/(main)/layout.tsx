@@ -6,7 +6,6 @@ import { Montserrat, Open_Sans } from 'next/font/google';
 import { ShopProvider } from '@/utils/context/CartContext';
 import Providers from './providers';
 import Navbar from '@/components/navbar/Navbar';
-import Footer from '@/components/Footer';
 
 
 const monserrat = Montserrat({
@@ -45,26 +44,17 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Layout({
+export default function MainLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <div
-      className={`${monserrat.className} ${openSans.className} antialiased `}
-    >
+    <ShopProvider>
       <Providers>
-        <ShopProvider>
-          {<Navbar />}
-
-          <main className=' py-10 pt-32 min-h-screen'>
-            {children}
-            {/* <SpeedInsights /> */}
-          </main>
-          <Footer />
-        </ShopProvider>
+        <Navbar />
+        {children}
       </Providers>
-    </div>
+    </ShopProvider>
   );
 }

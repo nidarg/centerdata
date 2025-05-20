@@ -603,9 +603,12 @@
         "message": "Hvordan kan vi hjelpe deg?",
         "period": "Book et møte",
         "submit": "Kontakt oss",
-        "terms": "Jeg har lest brukervilkårene og personvernreglene.",
-        "termsLink": "Brukervilkår",
-        "privacyLink": "Personvernregler",
+        "terms": {
+          "text": "Jeg har lest",
+          "terms": "Bruksvilkår",
+          "and": "og",
+          "privacy": "Personvernpolicy"
+        },
         "errors": {
           "nameRequired": "Navn er påkrevd",
           "nameFormat": "Navn kan bare inneholde bokstaver og mellomrom",
@@ -654,9 +657,12 @@
         "vat": "MVA",
         "message": "Melding",
         "period": "Book et møte",
-        "terms": "Jeg har lest Brukervilkår og Personvernregler.",
-        "termsLink": "Brukervilkår",
-        "privacyLink": "Personvernregler",
+        "terms": {
+          "text": "Jeg har lest",
+          "terms": "Bruksvilkår",
+          "and": "og",
+          "privacy": "Personvernpolicy"
+        },
         "submit": "Send bestilling",
         "required": "Påkrevd",
         "optional": "Valgfritt",
