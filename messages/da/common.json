@@ -117,6 +117,9 @@
         "management": "MIX OG MATCH MODULER STYRESYSTEM",
         "implement": "MIX OG MATCH MODULER IMPLEMENTERING"
       },
+      "messages": {
+        "planTypes": "Light, Pro eller Premium"
+      },
       "additional": {
         "title": "YDERLIGERE TJENESTER OG SUPPORT UDEN EKSTRA OMKOSTNINGER",
         "maturityAssessment": "Vurdering af datacompliance-modenhed",
@@ -742,6 +745,8 @@
           "vat": "CVR",
           "message": "Besked",
           "period": "Book et møde",
+          "freeNote": "At anmode om et tilbud er gratis og forpligter dig ikke på nogen måde",
+          "requestedServices": "Anmodede tjenester",
           "terms": {
             "text": "Jeg har læst",
             "terms": "Brugsvilkår",
@@ -775,7 +780,9 @@
           "ogDescription": "Kontakt os med spørgsmål, hjælp eller feedback. Vores team er klar til at hjælpe dig.",
           "twitterTitle": "Kontakt | Data Compliance Centre",
           "twitterDescription": "Kontakt os i dag med forretningsspørgsmål eller hjælp. Vi er her for at hjælpe!"
-        }
+        },
+        "quoteTitle": "Anmod om Tilbud",
+        "quoteDescription": "Kontakt os for at diskutere dine datacompliance-behov. Vores team er klar til at give dig en skræddersyet løsning."
       },
       "address": {
         "street": "Maglebjergvej 6",
@@ -790,6 +797,10 @@
         "phone": "Telefon",
         "company": "Firmanavn",
         "vat": "Firma CVR",
+        "message": "Besked",
+        "period": "Book et møde",
+        "freeNote": "At anmode om et tilbud er gratis og forpligter dig ikke på nogen måde",
+        "requestedServices": "Anmodede tjenester",
         "terms": {
           "text": "Jeg har læst",
           "terms": "Brugsvilkår",

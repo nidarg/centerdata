@@ -110,12 +110,15 @@
     },
     "services": {
       "title": "Our Services",
-      "description": "Explore our comprehensive range of services",
+      "description": "Explore our comprehensive range of data privacy and compliance solutions",
       "viewAll": "View All Services",
       "allModules": "You can add all modules.",
       "modules": {
         "management": "MIX AND MATCH MODULES MANAGEMENT",
-        "implement": "MIX AND MATCH MODULES IMPLEMENT"
+        "implement": "MIX AND MATCH MODULES IMPLEMENTATION"
+      },
+      "messages": {
+        "planTypes": "Light, Pro, or Premium"
       },
       "additional": {
         "title": "ADDITIONAL SERVICES AND SUPPORT WITH NO EXTRA COST",
@@ -425,6 +428,8 @@
       "title": "Request a Quotation",
       "description": "Request a quotation for your data compliance services. Reach out to us for customized service solutions.",
       "contact": {
+        "quoteTitle": "Request a Quote",
+        "quoteDescription": "Get in touch with us to discuss your data compliance needs. Our team is ready to provide you with a customized solution.",
         "title": "Want to get in touch?",
         "description": "Feel free to reach out to us with any inquiries, concerns, or assistance you may require. Our team is here to help and eager to hear from you!",
         "address": {
@@ -441,6 +446,9 @@
         "phone": "Phone",
         "company": "Company Name",
         "vat": "Company VAT",
+        "message": "Message",
+        "period": "Book a Meeting",
+        "freeNote": "Requesting a quotation is free of charge and does not obligate you in any way",
         "terms": {
           "text": "I've read",
           "terms": "Terms of Use",
@@ -453,7 +461,8 @@
         },
         "success": "Form submitted successfully!",
         "submitting": "Submitting...",
-        "submit": "Submit"
+        "submit": "Submit",
+        "requestedServices": "Requested Services"
       },
       "meta": {
         "title": "Request a Quotation | Nordic Data Compliance Centre",

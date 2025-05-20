@@ -82,6 +82,9 @@
         "management": "MIX JA MATCH MODUULIT HALLINTA",
         "implement": "MIX JA MATCH MODUULIT TOTEUTUS"
       },
+      "messages": {
+        "planTypes": "Light, Pro tai Premium"
+      },
       "additional": {
         "title": "LISÄPALVELUT JA TUKI ILMAN YLIMÄÄRÄISIÄ KUSTANNUKSIA",
         "maturityAssessment": "Tietojen yhteensopivuuden kypsyyden arviointi",
@@ -319,7 +322,8 @@
         "addedToCart": "Lisätty koriin",
         "removedFromCart": "Poistettu korista",
         "choosePlan": "Valitse ensin suunnitelma",
-        "upgradePlan": "Lisätietoja palveluista, päivitä suunnitelmasi"
+        "upgradePlan": "Lisätietoja palveluista, päivitä suunnitelmasi",
+        "planTypes": "Light, Pro tai Premium"
       },
       "counter": {
         "youCanAdd": "Voit lisätä",
@@ -612,7 +616,8 @@
         "termsLink": "Käyttöehdot",
         "privacyLink": "Tietosuojakäytäntö",
         "submit": "Lähetä viesti",
-        "freeNote": "Viestin lähettäminen on ilmaista eikä sido sinua millään tavalla"
+        "freeNote": "Viestin lähettäminen on ilmaista eikä sido sinua millään tavalla",
+        "requestedServices": "Pyydetyt palvelut"
       },
       "meta": {
         "title": "Ota Yhteyttä | Data Compliance Centre",
@@ -628,8 +633,17 @@
       "title": "Täytä yhteystietolomake",
       "description": "Täytä lomake alla olevalla lomakkeella viimeistelläksesi tilauksesi",
       "contact": {
+        "quoteTitle": "Pyydä Tarjous",
+        "quoteDescription": "Ota yhteyttä keskustellaksemme datacompliance-tarpeistasi. Tiimimme on valmis tarjoamaan sinulle räätälöidyn ratkaisun.",
         "title": "Haluatko ottaa yhteyttä?",
-        "description": "Voit vapaasti ottaa meihin yhteyttä kaikissa kysymyksissä, huolenaiheissa tai tarvitsemassasi avussa. Tiimimme on täällä auttaakseen ja odottaa innolla yhteydenottoasi!"
+        "description": "Ota rohkeasti yhteyttä kysymyksilläsi, huolesi tai tarvitsemallasi avulla. Tiimimme on täällä auttaaksemme ja odottaa innolla yhteydenottoasi!",
+        "address": {
+          "street": "Maglebjergvej 6",
+          "city": "2800 Kongens Lyngby",
+          "country": "Tanska",
+          "vat": "ALV DK 44251434",
+          "email": "hello@datacompliancecentre.com"
+        }
       },
       "address": {
         "street": "Maglebjergvej 6",
@@ -656,7 +670,9 @@
         },
         "success": "Lomake lähetettiin onnistuneesti!",
         "submitting": "Lähetetään...",
-        "submit": "Lähetä"
+        "submit": "Lähetä",
+        "freeNote": "Ilmainen konsultaatio ja tarjous",
+        "requestedServices": "Pyydetyt palvelut"
       },
       "cart": {
         "title": "Ostoskori",

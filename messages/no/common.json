@@ -82,6 +82,9 @@
         "management": "MIX OG MATCH MODULER STYRING",
         "implement": "MIX OG MATCH MODULER IMPLEMENTERING"
       },
+      "messages": {
+        "planTypes": "Light, Pro eller Premium"
+      },
       "additional": {
         "title": "TILLEGGS TJENESTER OG SUPPORT UTEN EKSTRA KOSTNAD",
         "maturityAssessment": "Vurdering av datacompliance-modning",
@@ -467,7 +470,8 @@
           "businessContinuity": "Sikrer forretningskontinuitet",
           "rapidResponse": "Rask respons på compliance-behov",
           "easyCompliance": "Enkelt å opprettholde compliance"
-        }
+        },
+        "freeNote": "Å be om et tilbud er gratis og forplikter deg ikke på noen måte"
       }
     },
     "slogan": {
@@ -639,8 +643,64 @@
       "title": "Fyll ut kontaktskjema",
       "description": "Fyll ut skjemaet nedenfor for å fullføre bestillingen din",
       "contact": {
+        "quoteTitle": "Be om Tilbud",
+        "quoteDescription": "Kontakt oss for å diskutere dine datacompliance-behov. Vårt team er klart til å gi deg en skreddersydd løsning.",
         "title": "Vil du komme i kontakt?",
-        "description": "Du er velkommen til å kontakte oss med spørsmål, bekymringer eller den assistansen du trenger. Vårt team er her for å hjelpe og gleder seg til å høre fra deg!"
+        "description": "Du er velkommen til å kontakte oss med spørsmål, bekymringer eller den assistansen du trenger. Vårt team er her for å hjelpe og gleder seg til å høre fra deg!",
+        "address": {
+          "street": "Maglebjergvej 6",
+          "city": "2800 Kongens Lyngby",
+          "country": "Danmark",
+          "vat": "VAT DK 44251434",
+          "email": "hello@datacompliancecentre.com"
+        },
+        "form": {
+          "fullname": "Fullstendig navn",
+          "email": "E-post",
+          "company": "Firma",
+          "phone": "Telefon",
+          "vat": "MVA",
+          "message": "Melding",
+          "period": "Book et møte",
+          "freeNote": "Å be om et tilbud er gratis og forplikter deg ikke på noen måte",
+          "requestedServices": "Etterspurte tjenester",
+          "terms": {
+            "text": "Jeg har lest",
+            "terms": "Bruksvilkår",
+            "and": "og",
+            "privacy": "Personvernpolicy"
+          },
+          "submit": "Send bestilling",
+          "required": "Påkrevd",
+          "optional": "Valgfritt",
+          "requestedServices": "Etterspurte Tjenester"
+        },
+        "cart": {
+          "title": "Din handlekurv",
+          "empty": "Din handlekurv er tom",
+          "total": "Totalt",
+          "remove": "Fjern",
+          "continueShopping": "Fortsett å handle"
+        },
+        "success": {
+          "title": "Bestilling mottatt",
+          "message": "Takk for bestillingen din. Vi vil kontakte deg snart.",
+          "returnHome": "Tilbake til forsiden"
+        },
+        "error": {
+          "title": "Feil",
+          "message": "Det oppstod en feil under behandlingen av bestillingen din. Vennligst prøv igjen.",
+          "tryAgain": "Prøv igjen"
+        },
+        "privacy": {
+          "text": "Ved å sende dette skjemaet godtar du vår",
+          "link": "personvernpolicy"
+        },
+        "meta": {
+          "title": "Be om Tilbud | Nordic Data Compliance Centre",
+          "description": "Be om et tilbud på dine datacompliance-tjenester. Kontakt oss for skreddersydde serviceløsninger.",
+          "keywords": "datacompliance, tilbud, kontakt oss, bedriftsforespørsel, tjenester"
+        }
       },
       "address": {
         "street": "Maglebjergvej 6",
@@ -657,6 +717,7 @@
         "vat": "MVA",
         "message": "Melding",
         "period": "Book et møte",
+        "freeNote": "Å be om et tilbud er gratis og forplikter deg ikke på noen måte",
         "terms": {
           "text": "Jeg har lest",
           "terms": "Bruksvilkår",
@@ -666,8 +727,7 @@
         "submit": "Send bestilling",
         "required": "Påkrevd",
         "optional": "Valgfritt",
-        "freeNote": "Å be om et tilbud er gratis og forplikter deg ikke på noen måte.",
-        "requestedServices": "Etterspurte Tjenester"
+        "requestedServices": "Etterspurte tjenester"
       },
       "cart": {
         "title": "Din handlekurv",

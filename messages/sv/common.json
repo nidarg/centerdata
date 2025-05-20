@@ -82,6 +82,9 @@
         "management": "MIX OCH MATCH MODULER HANTERING",
         "implement": "MIX OCH MATCH MODULER IMPLEMENTERING"
       },
+      "messages": {
+        "planTypes": "Light, Pro eller Premium"
+      },
       "additional": {
         "title": "Ytterligare TJÄNSTER OCH SUPPORT UTAN EXTRA KOSTNAD",
         "maturityAssessment": "Bedömning av datacompliance-mognad",
@@ -770,17 +773,48 @@
       "title": "Fyll i kontaktformulär",
       "description": "Fyll i formuläret nedan för att slutföra din beställning",
       "contact": {
+        "quoteTitle": "Begär Offerter",
+        "quoteDescription": "Kontakta oss för att diskutera dina datacompliance-behov. Vårt team är redo att ge dig en skräddarsydd lösning.",
         "title": "Vill du komma i kontakt?",
-        "description": "Tveka inte att kontakta oss med frågor, funderingar eller hjälp du kan behöva. Vårt team finns här för att hjälpa dig och ser fram emot att höra från dig!"
+        "description": "Tveka inte att kontakta oss med frågor, funderingar eller hjälp du kan behöva. Vårt team finns här för att hjälpa dig och ser fram emot att höra från dig!",
+        "address": {
+          "street": "Maglebjergvej 6",
+          "city": "2800 Kongens Lyngby",
+          "country": "Danmark",
+          "vat": "VAT DK 44251434",
+          "email": "hello@datacompliancecentre.com"
+        },
+        "form": {
+          "fullname": "Fullständigt namn",
+          "email": "Företags-e-post",
+          "phone": "Telefonnummer",
+          "company": "Företagsnamn",
+          "vat": "Moms",
+          "message": "Meddelande",
+          "period": "Boka ett möte",
+          "terms": {
+            "text": "Jag har läst",
+            "terms": "Användarvillkor",
+            "and": "och",
+            "privacy": "Integritetspolicy"
+          },
+          "termsLink": "Användarvillkor",
+          "privacyLink": "Integritetspolicy",
+          "submit": "Begär offert",
+          "requestedServices": "Efterfrågade Tjänster",
+          "freeNote": "Att begära en offert är kostnadsfritt och förbinder dig inte på något sätt."
+        }
       },
       "form": {
         "fullname": "Fullständigt namn",
-        "email": "Företags-e-post",
-        "phone": "Telefonnummer",
+        "email": "E-post",
+        "phone": "Telefon",
         "company": "Företagsnamn",
-        "vat": "Moms",
+        "vat": "Företagsmoms",
         "message": "Meddelande",
         "period": "Boka ett möte",
+        "freeNote": "Att begära en offert är kostnadsfritt och förbinder dig inte på något sätt",
+        "requestedServices": "Efterfrågade tjänster",
         "terms": {
           "text": "Jag har läst",
           "terms": "Användarvillkor",
@@ -789,9 +823,7 @@
         },
         "termsLink": "Användarvillkor",
         "privacyLink": "Integritetspolicy",
-        "submit": "Begär offert",
-        "requestedServices": "Efterfrågade Tjänster",
-        "freeNote": "Att begära en offert är kostnadsfritt och förbinder dig inte på något sätt."
+        "submit": "Begär offert"
       },
       "address": {
         "street": "Maglebjergvej 6",

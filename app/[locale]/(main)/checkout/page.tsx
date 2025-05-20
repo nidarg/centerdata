@@ -3,18 +3,22 @@ import CheckoutForm from './CheckoutForm';
 
 export const metadata: Metadata = {
   title: 'Contact Us | Data Compliance Centre',
-  description: 'Want to get in touch? Feel free to reach out to us with any inquiries, concerns, or assistance you may require.',
-  keywords: 'contact, get in touch, inquiry, support, company, help, business inquiries',
+  description:
+    'Want to get in touch? Feel free to reach out to us with any inquiries, concerns, or assistance you may require.',
+  keywords:
+    'contact, get in touch, inquiry, support, company, help, business inquiries',
   authors: [{ name: 'Data Compliance Centre' }],
   openGraph: {
     title: 'Contact Us | Data Compliance Centre',
-    description: 'Feel free to reach out to us for any inquiries, assistance, or feedback. Our team is ready to help you.',
+    description:
+      'Feel free to reach out to us for any inquiries, assistance, or feedback. Our team is ready to help you.',
     url: 'https://www.datacompliancecentre.com/checkout',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Contact Us | Data Compliance Centre',
-    description: 'Contact us today for any business inquiries or assistance. We\'re here to help!',
+    description:
+      "Contact us today for any business inquiries or assistance. We're here to help!",
   },
   alternates: {
     canonical: 'https://www.datacompliancecentre.com/checkout',
@@ -41,28 +45,8 @@ export const metadata: Metadata = {
 
 export default function CheckoutPage() {
   return (
-    <div className='max-w-screen-lg w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-gray-800 grid grid-cols-1 md:grid-cols-2 gap-4 mt-20'>
-      {/* Contact Information */}
-      <div className='bg-teal flex flex-col items-center justify-center text-neutral-200 p-6'>
-        <h1 className='font-bold text-xl lg:text-2xl leading-tight'>
-          Want to get in touch?
-        </h1>
-        <p className='text-base lg:text-lg mt-4 max-w-md text-center leading-relaxed'>
-          Feel free to reach out to us with any inquiries, concerns, or assistance you may require. Our team is here to help and eager to hear from you!
-        </p>
-        <ul className='text-neutral-200 mt-6 text-sm lg:text-base space-y-2'>
-          <li>Maglebjergvej 6</li>
-          <li>2800 Kongens Lyngby</li>
-          <li>Danmark</li>
-          <li>VAT DK 44251434</li>
-          <li>hello@datacompliancecentre.com</li>
-        </ul>
-      </div>
-
-      {/* Form Section */}
-      <div className='p-6'>
-        <CheckoutForm />
-      </div>
-    </div>
+    // <div className='max-w-screen-lg w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-gray-800 mt-20'>
+    <CheckoutForm />
+    // </div>
   );
 }
