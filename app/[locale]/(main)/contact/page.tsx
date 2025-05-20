@@ -4,10 +4,10 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import ReCAPTCHA from 'react-google-recaptcha';
-import { useRouter, useParams } from 'next/navigation';
+import { useParams } from 'next/navigation';
 import { useToast } from '@/hooks/use-toast';
 import { useTranslations } from 'next-intl';
-import { Button } from '@/components/ui/button';
+// import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import Link from 'next/link';
@@ -17,7 +17,7 @@ import Head from 'next/head';
 import { IconBrandLinkedin } from '@tabler/icons-react';
 import { DateInput } from '@/components/ui/date-input';
 import { cn } from '@/lib/utils';
-import { Check } from 'lucide-react';
+// import { Check } from 'lucide-react';
 
 export default function ContactPage() {
   const t = useTranslations('common.contact');
@@ -67,7 +67,7 @@ export default function ContactPage() {
     handleSubmit,
     formState: { errors, isSubmitted },
     reset,
-    clearErrors,
+    // clearErrors,
   } = useForm<FormSchemaType>({
     resolver: zodResolver(formSchema),
   });
@@ -90,6 +90,7 @@ export default function ContactPage() {
         }
       }
     } catch (e) {
+      console.error('Error during reCAPTCHA submission:', e);
       setIsVerified(false);
     }
   }
@@ -120,6 +121,7 @@ export default function ContactPage() {
         recaptchaRef.current.reset();
       }
     } catch (error) {
+      console.log(error);
       toast({
         title: t('form.error'),
         description: t('form.errors.submissionError'),

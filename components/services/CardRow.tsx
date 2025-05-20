@@ -3,8 +3,8 @@
 import React, { useState } from 'react';
 import { useCartContext } from '@/utils/context/CartContext';
 import { useTranslations } from 'next-intl';
-import { Button } from '@/components/ui/button';
-import Link from 'next/link';
+// import { Button } from '@/components/ui/button';
+// import Link from 'next/link';
 import { IntProduct, IntSubscription, IntProductOption } from '@/utils/types';
 
 type TranslatedItem = (IntProduct | IntSubscription) & {
@@ -20,7 +20,9 @@ interface CardRowProps {
 }
 
 const CardRow: React.FC<CardRowProps> = ({ items, header }) => {
-  const [selectedProduct, setSelectedProduct] = useState<TranslatedItem | null>(null);
+  const [selectedProduct, setSelectedProduct] = useState<TranslatedItem | null>(
+    null
+  );
   const [showPlanModal, setShowPlanModal] = useState(false);
   const [showUpgradeModal, setShowUpgradeModal] = useState(false);
   const [showAll, setShowAll] = useState(false);
@@ -33,7 +35,8 @@ const CardRow: React.FC<CardRowProps> = ({ items, header }) => {
   const getTranslatedDescription = (item: TranslatedItem) => {
     if (!item.titleKey) return item.data;
     const key = item.titleKey.split('.')[0];
-    const namespace = item.itemType === 'subscription' ? 'subscriptions' : 'products';
+    const namespace =
+      item.itemType === 'subscription' ? 'subscriptions' : 'products';
     const desc = t.raw(`${namespace}.${key}.description`);
     return Array.isArray(desc) ? desc : [desc];
   };
