@@ -42,7 +42,7 @@ export interface IntShopContext {
 }
 
 export interface IntProductPayload {
-  title: string;
+  titleKey: string;
   type: string;
   price: number;
   priceApi: string;

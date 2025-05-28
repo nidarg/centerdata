@@ -7,7 +7,7 @@ interface AdditionalServicesProps {
   type: string;
 }
 
-const AdditionalServices: React.FC<AdditionalServicesProps> = ({ type }) => {
+const AdditionalServices: React.FC<AdditionalServicesProps> = ({ }) => {
   const t = useTranslations('common.services.additional');
 
   const additionalServices = [

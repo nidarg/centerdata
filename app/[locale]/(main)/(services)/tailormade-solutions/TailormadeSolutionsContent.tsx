@@ -79,6 +79,11 @@ export default function TailormadeSolutionsContent() {
             height='80vh'
             headers={headers}
           />
+          {/* <MemoizedVideoBackground
+            videoUrl='/videos/tailormade.mp4'
+            height='80vh'
+            headers={headers}
+          /> */}
 
           {/* Main Content */}
           <div className='mt-[90vh]'>

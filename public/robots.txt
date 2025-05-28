@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://www.datacompliancecentre.com
+Host: https://datacompliancecentre.com
 
 # Sitemaps
-Sitemap: https://www.datacompliancecentre.com/sitemap.xml
+Sitemap: https://datacompliancecentre.com/sitemap.xml

@@ -12,7 +12,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import Link from 'next/link';
 import { Textarea } from '@/components/ui/textarea';
-import { Checkbox } from '@/components/ui/checkbox';
+
 import Head from 'next/head';
 import { IconBrandLinkedin } from '@tabler/icons-react';
 import { DateInput } from '@/components/ui/date-input';
@@ -30,7 +30,7 @@ export default function ContactPage() {
   const [isVerified, setIsVerified] = useState(false);
 
   const formSchema = z.object({
-    fullName: z
+    fullname: z
       .string()
       .min(1, 'Name is required')
       .max(100)
@@ -67,7 +67,8 @@ export default function ContactPage() {
     handleSubmit,
     formState: { errors, isSubmitted },
     reset,
-    // clearErrors,
+    setValue,
+    clearErrors,
   } = useForm<FormSchemaType>({
     resolver: zodResolver(formSchema),
   });
@@ -95,8 +96,18 @@ export default function ContactPage() {
     }
   }
 
+  const handleChange = (token: string | null) => {
+    handleCaptchaSubmission(token);
+  };
+
+  function handleExpired() {
+    setIsVerified(false);
+  }
+
   const onSubmit = async (data: FormSchemaType) => {
     try {
+      console.log('data ', data);
+      
       setIsSubmitting(true);
       const response = await fetch('/api/email', {
         method: 'POST',
@@ -115,11 +126,21 @@ export default function ContactPage() {
       toast({
         description: t('form.success'),
       });
-      reset();
-      setIsVerified(false);
-      if (recaptchaRef.current) {
-        recaptchaRef.current.reset();
-      }
+      reset({
+        fullname: '',
+        email: '',
+        company: '',
+        vat:'',
+        phone: '',
+        message: '',
+        period: '', // Reset the period field
+        terms: false,
+      });
+      setValue('period', ''); // Reset only 'period' field
+      // setIsVerified(false);
+      // if (recaptchaRef.current) {
+      //   recaptchaRef.current.reset();
+      // }
     } catch (error) {
       console.log(error);
       toast({
@@ -215,13 +236,13 @@ export default function ContactPage() {
         <form className='my-8' onSubmit={handleSubmit(onSubmit)}>
           {/* Full Name */}
           <LabelInputContainer className='mb-4'>
-            <Label htmlFor='fullName' className='flex flex-col gap-y-2'>
+            <Label htmlFor='fullname' className='flex flex-col gap-y-2'>
               <span>{t('form.fullname')}</span>
             </Label>
-            <Input id='fullName' type='text' {...register('fullName')} />
-            {errors.fullName && isSubmitted && (
+            <Input id='fullname' type='text' {...register('fullname')} />
+            {errors.fullname && isSubmitted && (
               <span className='text-destructive text-sm'>
-                {errors.fullName.message}
+                {errors.fullname.message}
               </span>
             )}
           </LabelInputContainer>
@@ -307,11 +328,18 @@ export default function ContactPage() {
           {/* Terms and Conditions */}
           <LabelInputContainer className='mb-8'>
             <div className='flex items-center space-x-2'>
-              <Checkbox
-                id='terms'
-                {...register('terms')}
-                className='border-neutral-200'
-              />
+             <input
+              className={'text-primary'}
+              type='checkbox'
+              id='terms'
+              {...register('terms')}
+              onChange={(e) => {
+                // setValue('checked', e.target.checked);
+                if (e.target.checked) {
+                  clearErrors('terms'); // Clear error if checkbox is checked
+                }
+              }}
+            />
               <label
                 htmlFor='terms'
                 className='text-sm text-neutral-200 leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
@@ -344,8 +372,8 @@ export default function ContactPage() {
             <ReCAPTCHA
               sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''}
               ref={recaptchaRef}
-              onChange={(token) => handleCaptchaSubmission(token)}
-              onExpired={() => setIsVerified(false)}
+            onChange={handleChange}
+            onExpired={handleExpired}
             />
           </div>
 

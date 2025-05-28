@@ -94,8 +94,6 @@ const VideoBackground: React.FC<VideoBackgroundProps> = ({
             <TextGenerateEffect
               className='text-4xl lg:text-5xl text-goldish font-bold pr-10'
               words={currentHeaders[0]}
-              filter={true}
-              duration={1.5}
             />
           </div>
         </div>
@@ -117,8 +115,6 @@ const VideoBackground: React.FC<VideoBackgroundProps> = ({
                   <TextGenerateEffect
                     className={`${size} text-goldish font-bold`}
                     words={header}
-                    filter={true}
-                    duration={1.5}
                     paddingLeft={paddingLeft}
                   />
                 </div>

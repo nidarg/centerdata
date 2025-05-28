@@ -35,23 +35,22 @@ export const CardContainer = ({
     containerRef.current.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
   };
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const handleMouseEnter = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleMouseEnter = () => {
     setIsMouseEntered(true);
     if (!containerRef.current) return;
   };
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const handleMouseLeave = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleMouseLeave = () => {
     if (!containerRef.current) return;
     setIsMouseEntered(false);
     containerRef.current.style.transform = `rotateY(0deg) rotateX(0deg)`;
   };
+
   return (
     <MouseEnterContext.Provider value={[isMouseEntered, setIsMouseEntered]}>
       <div
         className={cn(
-          ' flex items-center justify-center',
+          'flex items-center justify-center',
           containerClassName
         )}
         style={{
@@ -88,7 +87,7 @@ export const CardBody = ({
   return (
     <div
       className={cn(
-        'h-96 w-96 [transform-style:preserve-3d]  [&>*]:[transform-style:preserve-3d]',
+        'h-96 w-96 [transform-style:preserve-3d] [&>*]:[transform-style:preserve-3d]',
         className
       )}
     >
@@ -118,9 +117,7 @@ export const CardItem = ({
   rotateX?: number | string;
   rotateY?: number | string;
   rotateZ?: number | string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  [key: string]: any;
-}) => {
+} & Omit<React.HTMLAttributes<HTMLElement>, 'as' | 'className' | 'children'>) => {
   const ref = useRef<HTMLDivElement>(null);
   const [isMouseEntered] = useMouseEnter();
 

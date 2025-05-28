@@ -39,10 +39,11 @@ const formParamsSchema = z.object({
     .max(20)
     .trim()
     .regex(/^\d+$/, 'Phone must contain only numbers'),
-  message: z.string().min(1).max(1000).trim().optional(),
+  message: z.string().max(1000).trim().or(z.literal('')).optional(),
+
   vat: z.string().min(1).max(1000).trim().optional(),
   period: z.string().optional(),
-  checked: z.boolean().refine((val) => val === true, {
+  terms: z.boolean().refine((val) => val === true, {
     message: 'You must accept the terms and conditions',
   }),
   services: z
@@ -163,6 +164,7 @@ const handler = async (req: NextRequest): Promise<NextResponse> => {
 
   try {
     const body = await req.json();
+    console.log('🟡 Raw request body:', body);
     const validatedParams = validateWithZodSchema(formParamsSchema, body);
 
     const responseMessage = await sendEmail(validatedParams);

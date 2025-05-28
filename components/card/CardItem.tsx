@@ -20,6 +20,7 @@ export default function CardItem({
 }: CardItemProps) {
   const { addToCart } = useCartContext();
   const t = useTranslations('cart');
+  const tProduct = useTranslations('products');
 
   return (
     <div
@@ -33,7 +34,7 @@ export default function CardItem({
     >
       {/* Basic Info Column */}
       <div className='space-y-3'>
-        <h3 className='text-lg font-semibold text-primary'>{product.title}</h3>
+        <h3 className='text-lg font-semibold text-primary'>{tProduct(product.titleKey)}</h3>
 
         <div className='space-y-2 text-sm text-muted-foreground'>
           <p>

@@ -1,22 +1,22 @@
 // import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata } from 'next';
 // import localFont from "next/font/local";
-import { Montserrat, Open_Sans } from 'next/font/google';
+// import { Montserrat, Open_Sans } from 'next/font/google';
 // import './globals.css';
 import { ShopProvider } from '@/utils/context/CartContext';
 import Providers from './providers';
 import Navbar from '@/components/navbar/Navbar';
 
 
-const monserrat = Montserrat({
-  weight: ['100', '200', '400', '700'], // Adjust weights as needed
-  subsets: ['latin'],
-});
+// const monserrat = Montserrat({
+//   weight: ['100', '200', '400', '700'], // Adjust weights as needed
+//   subsets: ['latin'],
+// });
 
-const openSans = Open_Sans({
-  weight: ['300', '400', '700'], // Adjust weights as needed
-  subsets: ['latin'],
-});
+// const openSans = Open_Sans({
+//   weight: ['300', '400', '700'], // Adjust weights as needed
+//   subsets: ['latin'],
+// });
 
 export const metadata: Metadata = {
  title: 'Nordic Data Compliance Center | GDPR & Data Privacy Consulting Services',

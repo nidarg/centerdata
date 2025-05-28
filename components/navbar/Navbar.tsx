@@ -7,7 +7,7 @@ import NavLinks from '../NavLinks';
 import DarkMode from './DarkMode';
 import Logo from './Logo';
 import Basket from './Basket';
-import LanguageSelector from '../LanguageSelector';
+// import LanguageSelector from '../LanguageSelector';
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -95,7 +95,7 @@ function Navbar() {
               closeMenu={closeMenu}
             />
           </div>
-          <LanguageSelector />
+          {/* <LanguageSelector /> */}
           <div className='flex flex-row gap-4 items-center justify-between'>
             <DarkMode />
             {pathname.includes('/tailormade-solutions') && <Basket />}

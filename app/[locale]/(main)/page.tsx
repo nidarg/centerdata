@@ -9,6 +9,7 @@ import Divider from '@/components/Divider';
 import ConsultationModal from '@/components/free-consultation-modal';
 import { useTranslations } from 'next-intl';
 import Head from 'next/head';
+import Script from 'next/script';
 
 // Client component
 function HomeContent() {
@@ -54,6 +55,13 @@ function HomeContent() {
           })}
         </script>
       </Head>
+      <Script
+        id="CookieConsent"
+        src="https://policy.app.cookieinformation.com/uc.js"
+        data-culture="EN"
+        type="text/javascript"
+        defer
+      />
       <div className='flex flex-cols justify-center gap-6'>
         <VideoBackground
           videoUrl='./videos/businessman.mp4'

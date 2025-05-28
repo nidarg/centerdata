@@ -5,13 +5,13 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import ReCAPTCHA from 'react-google-recaptcha';
-import { useRouter, useParams } from 'next/navigation';
+import {useParams } from 'next/navigation';
 import { useToast } from '@/hooks/use-toast';
 import { useTranslations } from 'next-intl';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import Link from 'next/link';
-import { Checkbox } from '@/components/ui/checkbox';
+
 import { cn } from '@/lib/utils';
 import { useCartContext } from '@/utils/context/CartContext';
 import { Check } from 'lucide-react';
@@ -19,7 +19,7 @@ import { IconBrandLinkedin } from '@tabler/icons-react';
 import Head from 'next/head';
 
 const formSchema = z.object({
-  fullName: z
+  fullname: z
     .string()
     .min(1, 'Name is required')
     .max(100)
@@ -39,6 +39,8 @@ const formSchema = z.object({
     .regex(/^\d+$/, 'Phone number must contain only numbers'),
   vat: z.string().min(1).max(1000).trim().optional(),
   period: z.string().optional(),
+  message: z.string().max(1000).trim().optional(),
+
   terms: z.boolean().refine((val) => val === true, {
     message: 'You must accept the terms and conditions',
   }),
@@ -48,8 +50,8 @@ type FormSchemaType = z.infer<typeof formSchema>;
 
 export default function CheckoutForm() {
   const t = useTranslations('common.checkout');
-  const cartT = useTranslations('common.cart');
-  const router = useRouter();
+  const cartT = useTranslations('common.services.products');
+  // const router = useRouter();
   const params = useParams();
   const locale = (params?.locale as string) || 'en';
   const { toast } = useToast();
@@ -58,7 +60,7 @@ export default function CheckoutForm() {
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [isVerified, setIsVerified] = useState<boolean>(false);
   const [isHydrated, setIsHydrated] = useState<boolean>(false);
-
+const{removeAllFromCart} = useCartContext()
   useEffect(() => {
     setIsHydrated(true);
   }, []);
@@ -68,6 +70,7 @@ export default function CheckoutForm() {
     handleSubmit,
     formState: { errors, isSubmitted },
     reset,
+    clearErrors,
   } = useForm<FormSchemaType>({
     resolver: zodResolver(formSchema),
   });
@@ -90,6 +93,8 @@ export default function CheckoutForm() {
         }
       }
     } catch (e) {
+      console.log(e);
+      
       setIsVerified(false);
     }
   };
@@ -97,7 +102,12 @@ export default function CheckoutForm() {
   const onSubmit = async (data: FormSchemaType) => {
     try {
       setIsSubmitting(true);
-      const formData = { ...data, services: cart };
+      const formData = { 
+      ...data, 
+      services: cart.map(service => ({
+      title: cartT(`${service.titleKey}`) || service.titleKey, // or get the actual translated title here
+      type: service.type,
+  })), message: ''  };
       const response = await fetch('/api/email', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -115,12 +125,22 @@ export default function CheckoutForm() {
       toast({
         description: t('form.success'),
       });
-      reset();
-      setIsVerified(false);
-      if (recaptchaRef.current) {
-        recaptchaRef.current.reset();
-      }
+       removeAllFromCart();
+      reset({
+        fullname: '',
+        email: '',
+        company: '',
+        vat:'',
+        phone: '',
+        terms: false,
+      });
+      
+      // if (recaptchaRef.current) {
+      //   recaptchaRef.current.reset();
+      // }
     } catch (error) {
+      console.log(error);
+      
       toast({
         title: t('form.error'),
         description: t('form.errors.submissionError'),
@@ -192,11 +212,11 @@ export default function CheckoutForm() {
         <form className='my-8' onSubmit={handleSubmit(onSubmit)}>
           {/* Full Name */}
           <LabelInputContainer className='mb-4'>
-            <Label htmlFor='fullName'>{t('form.fullname')}</Label>
-            <Input id='fullName' type='text' {...register('fullName')} />
-            {errors.fullName && isSubmitted && (
+            <Label htmlFor='fullname'>{t('form.fullname')}</Label>
+            <Input id='fullname' type='text' {...register('fullname')} />
+            {errors.fullname && isSubmitted && (
               <span className='text-destructive text-sm'>
-                {errors.fullName.message}
+                {errors.fullname.message}
               </span>
             )}
           </LabelInputContainer>
@@ -255,7 +275,7 @@ export default function CheckoutForm() {
                 {cart.map((service, index) => (
                   <li key={index}>
                     <span>
-                      {cartT(`${service.id}.title`)} - {service.type}
+                      {cartT(`${service.titleKey}`)} - {service.type}
                     </span>
                   </li>
                 ))}
@@ -273,20 +293,27 @@ export default function CheckoutForm() {
 
           {/* Terms and Conditions */}
           <LabelInputContainer className='mb-8'>
-            <div className='items-top flex space-x-2'>
-              <Checkbox
-                id='terms'
-                {...register('terms')}
-                className='border-neutral-200'
-              />
-              <div className='grid gap-1.5 leading-none'>
+          <div className='flex items-center space-x-2'>
+               <input
+              className={'text-primary'}
+              type='checkbox'
+              id='terms'
+              {...register('terms')}
+              onChange={(e) => {
+                // setValue('checked', e.target.checked);
+                if (e.target.checked) {
+                  clearErrors('terms'); // Clear error if checkbox is checked
+                }
+              }}
+            />
+             
                 <label
                   htmlFor='terms'
-                  className='text-sm text-neutral-200 font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
+                  className='text-sm text-neutral-200 leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
+
                 >
-                  {t('form.terms.text')}
-                </label>
-                <p className='text-sm text-neutral-200'>
+                 
+                {t('form.terms.text')}{' '}
                   <Link href={`/${locale}/terms-and-conditions`} className="text-teal-500 hover:text-teal-400">
                     {t('form.terms.terms')}
                   </Link>{' '}
@@ -294,8 +321,7 @@ export default function CheckoutForm() {
                   <Link href={`/${locale}/privacy`} className="text-teal-500 hover:text-teal-400">
                     {t('form.terms.privacy')}
                   </Link>
-                </p>
-              </div>
+                </label>
             </div>
             {errors.terms && isSubmitted && (
               <span className='text-destructive text-sm'>
@@ -317,10 +343,10 @@ export default function CheckoutForm() {
           {/* Submit Button */}
           <button
             type='submit'
-            disabled={!isVerified || isSubmitting}
+            disabled={isSubmitting || !isVerified}
             className={cn(
               'bg-gradient-to-br relative group/btn from-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium',
-              (!isVerified || isSubmitting) && 'opacity-50 cursor-not-allowed'
+              (isSubmitting || !isVerified) && 'opacity-50 cursor-not-allowed'
             )}
           >
             {isSubmitting ? t('form.submitting') : t('form.submit')}
@@ -355,3 +381,5 @@ const LabelInputContainer = ({
     {children}
   </div>
 ); 
+
+

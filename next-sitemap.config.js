@@ -1,4 +1,4 @@
 module.exports = {
-  siteUrl: 'https://www.datacompliancecentre.com',
+  siteUrl: 'https://datacompliancecentre.com',
   generateRobotsTxt: true,
 };

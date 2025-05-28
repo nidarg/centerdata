@@ -34,6 +34,7 @@ const CartContext = createContext<IntShopContext>({
 
 export const ShopProvider = ({ children }: PropsWithChildren) => {
   const t = useTranslations('common.cart.messages');
+  const tProduct = useTranslations('common.services.products');
   const allProducts = [...products, ...onetimeproduct, ...subscriptions];
   const { toast } = useToast(); // Initialize the toast
   const totalModules = products.length + subscriptions.length;
@@ -69,9 +70,12 @@ export const ShopProvider = ({ children }: PropsWithChildren) => {
     if (isProductInCart) {
       // Show a toast message if the product is already in the cart
       const product = allProducts.find((item) => item.id === productId);
-      toast({
-        description: t('alreadyInCart', { title: product?.title! }),
-      });
+      if (product) {
+        const translatedTitle = tProduct(product.titleKey);
+        toast({
+          description: t('alreadyInCart', { title: translatedTitle }),
+        });
+      }
       return; // Exit the function to prevent adding the duplicate
     }
 
@@ -84,7 +88,7 @@ export const ShopProvider = ({ children }: PropsWithChildren) => {
     }
 
     const payload: IntProductPayload = {
-      title: product.title,
+      titleKey: product.titleKey,
       type: product.type,
       price: product.price,
       priceApi: product.priceApi,

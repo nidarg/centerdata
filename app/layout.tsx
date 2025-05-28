@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import Script from 'next/script';
+// import Script from 'next/script';
 import { ThemeProvider } from '@/app/[locale]/(main)/theme-provider';
 import { Toaster } from '@/components/ui/toaster';
 
